@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Redirecting...</title>
   <script>
     const userLang = navigator.language || navigator.userLanguage;
-    if (userLang.startsWith("pl")) {
-      window.location.href = "https://samuelstudio.com/indexpl";
+
+    if (userLang && userLang.toLowerCase().startsWith("pl")) {
+      window.location.replace("indexpl.html");
     } else {
-      window.location.href = "https://samuelstudio.com/indexen";
+      window.location.replace("indexen.html");
     }
   </script>
 </head>
