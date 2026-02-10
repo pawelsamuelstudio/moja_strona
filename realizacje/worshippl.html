@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+  <title>Uwielbienie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      background: #fff; 
+      color: #333; 
+      margin: 0; 
+      padding: 0; 
+
+        letter-spacing: 0.4px;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+  height: 100%;
+
+      user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+    }
+
+
+header {
+  background-color: #f0bb1c;
+  min-height: 90px;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 100%;
+z-index: 1000;
+  transition: top 0.4s ease; 
+}
+header.hidden {
+  top: -100px;
+  opacity: 0; 
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;  
+  justify-content: center;
+  overflow: visible;
+    margin: 0;
+}
+
+.logo-container img {
+ width: auto;
+ display: block;
+   height: 90px;  
+  width: auto;
+}
+
+
+@media (max-width: 768px) {
+
+  .logo-container img {
+    max-height: 80px;
+     z-index: 9999;
+  }
+.logo-container a {
+  display: inline-flex; 
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.logo-container img {
+  max-width: 90px;
+  max-height: 90px;
+  height: auto;
+  width: auto;
+  object-fit: contain;
+}}
+
+    .center-links {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .center-links a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 22px;
+      font-weight: 700;
+      padding: 1px 5px;
+      transition: color 0.3s;
+    }
+    .center-links a:hover {
+      color: #ffffff;
+        transform: scale(1.05);
+    }
+
+    .hamburger {
+      width: 35px;
+      height: 23px;
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+        z-index: 1100;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 3px;
+      background: rgb(0, 0, 0);
+      border-radius: 50px; 
+      transition: 0.3s;
+    }
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(9px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #f0bb1c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.5s ease;
+  z-index: 1050;
+}
+
+.mobile-menu a {
+  font-size: 1.5rem;
+  margin: 15px 0;
+  text-decoration: none;
+  color: #000;
+      font-weight: 600;
+      padding: 1px 6px;
+      transition: color 0.3s;
+}
+
+    .mobile-menu a:hover {
+      color: #ffffff;
+    }
+
+@media (max-width: 768px) {
+  .center-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }}
+
+header.hidden {
+  top: -50%;
+}
+
+    .text-section { 
+      max-width: 1200px; 
+      margin-top: 13%;
+      margin-bottom: 80px;
+      margin-left: 12%;
+    }
+
+.text-section h2 {
+  text-align: left;
+  font-size: 2rem;
+  margin-top: 4%;
+  }
+
+  .text-section:last-of-type {
+  margin-top: 16%; 
+  margin-bottom: 20%; 
+}
+
+.text-section .separator {
+  width: 250px;             
+  height: 8px;              
+  background-color: #f0bb1c;
+  margin-bottom: 3%;
+  margin-top: 2%;
+  text-align: left;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 9s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+      .text-section { 
+      margin-left: 13%;
+      margin-top: 47%;
+      margin-right: 10%;
+      margin-bottom: 21%;
+}    
+.text-section h2 {
+  font-size: 1.7rem;
+  text-align: left;
+  margin-top: 8%;
+}
+.text-section .separator {
+    margin-bottom: 12%;
+      margin-top: 10%;
+
+}
+}
+
+
+@keyframes drawLine {
+  0% {
+    transform: scaleX(0);
+  }
+  25% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+  75% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+.text-section p {
+  text-align: left;
+  max-width: 700px;
+  color: #000000; 
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.text-section .highlight {
+  font-weight: bold;
+}
+
+    .gallery-section { 
+      max-width: 2500px; 
+      margin: auto; 
+      padding: 0px 20px; 
+      margin-bottom: 8%;
+    }
+
+
+@media (max-width: 768px) {
+        .gallery-section { 
+margin-top: 10%;
+margin-bottom: 20%;
+    }
+    .text-section p {
+    font-size: 1.4rem;     
+  }}
+
+
+    .gallery-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.gallery-section p {
+  text-align: center;
+  max-width: 700px;
+  margin-bottom: 20px; 
+  color: #000000; 
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.gallery-section .highlight {
+  font-weight: bold;
+}
+     .gallery-item:hover { 
+      transform: scale(1.01); 
+    }
+    .gallery-item img { 
+      width: 100%; 
+      aspect-ratio: 1/1; 
+      object-fit: cover; 
+      display: block; 
+      transition: transform 0.4s ease; 
+    }
+
+    .gallery-item {
+  width: 600px;
+  height: 450px;
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid #000000;
+  text-align: center;
+  transition: transform 0.4s ease;
+}
+
+.gallery-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.gallery-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-media img,
+.gallery-media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-media video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-media img {
+  opacity: 0;
+}
+
+.gallery-item:hover .gallery-media video {
+  opacity: 1;
+}
+
+  @media(max-width: 768px) {
+  .gallery-item .gallery-media img {
+    display: none; 
+  }
+  .gallery-item .gallery-media video {
+    position: static; 
+    opacity: 1 !important; 
+    pointer-events: auto;
+  }}
+
+
+.footer {
+  background: #f0bb1c;
+  color: #000000;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.footer-subscribe h3 {
+  margin-top: 0;       
+  margin-bottom: 40px; 
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.subscribe-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  padding: 10px 25px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+   border: 1px solid #000;
+  border-radius: 120px;
+  transition: 0.3s;
+  }
+
+
+.subscribe-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+.subscribe-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.footer-nav {
+    margin: 25px 0;
+  }
+
+.footer-nav a {
+  margin: 0 25px;
+  color: #000000;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+  }
+
+   @media (max-width: 700px) {
+
+.footer {
+  background: #f0bb1c;
+  color: #000000;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer-subscribe h3 {
+  margin-top: 0;       
+  margin-bottom: 15px; 
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.subscribe-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  padding: 10px 25px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 120px;
+  transition: 0.3s;
+}
+
+.subscribe-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+  .footer-nav {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;   
+}
+
+.footer-nav a {
+  margin: 0 10px;
+  color: #000000;
+  font-weight: bold;
+  font-size: clamp(12px, 4vw, 20px); 
+  text-decoration: none;
+  white-space: nowrap; 
+}}
+
+.footer-socials {
+  display: flex;             
+  justify-content: center;
+  align-items: flex-end;   
+  gap: 16px;
+  height: 40px;   
+  margin-bottom: 4%;        
+}
+
+.footer-socials a {
+  display: flex;           
+  align-items: flex-end;   
+  justify-content: center;
+  height: 100%;            
+}
+
+.footer-socials a img {
+  width: 38px;
+  height: 32px;
+   max-height: 100%;        
+  width: auto;
+  margin: 0 16px;
+    fill: #ffffff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-socials a:hover img {
+  transform: scale(1.2);
+ filter: brightness(0) saturate(100%);}
+
+ @media (max-width: 600px) {
+  .footer-socials {
+    gap: 3px;
+      margin-bottom: 0%;        
+
+  }
+  .footer-socials a img {
+    width: 28px;
+    height: 24px;
+  }
+}
+
+.footer-bottom {
+  border-top: 1px solid #000000;
+  margin-top: 20px;
+  padding-top: 12px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-bottom a {
+  color: #000000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-bottom a:hover {
+  color: #000000;
+}  
+
+@media (min-width: 768px) and (max-width: 1024px) {
+      .text-section { 
+      margin-left: 15%;
+      margin-top: 27%;
+      margin-right: 7%;
+      margin-bottom: 21%;
+}    
+.text-section h2 {
+  margin-bottom: -9%;
+  margin-top: 4%;
+}}
+
+
+@media (min-width: 2560px) {
+  .text-section { 
+    margin-left: 35%;
+    margin-top: 7%;
+    margin-right: 7%;
+    margin-bottom: 7%;
+}    
+.text-section h2 {
+  margin-bottom: 9%;
+  margin-top: 10%;
+}}
+
+@media (min-width: 768px) and (max-width: 1366px) {
+
+    .text-section { 
+    margin-top: 25%;
+    margin-bottom: 11%;
+}  
+.text-section h2 {
+  
+}
+.text-section .separator {
+    margin-bottom: 8%;
+      margin-top: 15%;
+}}
+
+
+.back-button {
+  display: block;
+  width: fit-content;
+  margin: 50px auto; 
+  padding: 12px 25px;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 38px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #f0bb1c; 
+  color: #000;
+  transform: scale(1.05);
+}
+
+
+.video-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 27px;      
+}
+.why-list {
+  list-style-type: disc;
+  padding: 20px;
+  line-height: 1.8;
+  color: #333;
+  font-size: 1.4rem;
+  animation: fadeIn 1s ease forwards;
+}
+
+.why-list li {
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.why-list li:hover {
+  transform: translateX(5px);
+  color: #c00; /* zmień na kolor akcentu strony */
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+</style>
+  
+</head>
+<body>
+
+<header>
+  <div class="logo-container">
+    <a href="https://samuelstudio.com/index.html">
+      <img src="logosamuelstudio.svg" alt="Logo" style="width:90px; height:90px;" />
+    </a>
+  </div>
+
+
+  <nav class="center-links">
+    <a href="https://samuelstudio.com/indexpl.html">Strona Główna</a>
+    <a href="https://samuelstudio.com/workpl.html">Realizacje</a>
+    <a href="https://samuelstudio.com/aboutpl.html">O mnie</a>
+    <a href="https://samuelstudio.com/contactpl.html">Kontakt</a>
+    <a href="https://blog.samuelstudio.pl/">Blog</a>
+    <a href="https://samuelstudio.com/indexen.html" title="Angielska wersja" class="lang-switch">
+      <img src="ukflag.svg" alt="English Version" style="width:35px; vertical-align:middle;">
+    </a>
+  </nav>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="https://samuelstudio.com/indexpl.html">Strona Główna</a>
+    <a href="https://samuelstudio.com/workpl.html">Realizacje</a>
+    <a href="https://samuelstudio.com/aboutpl.html">O mnie</a>
+    <a href="https://samuelstudio.com/contactpl.html">Kontakt</a>
+    <a href="https://blog.samuelstudio.pl/">Blog</a>
+
+    <a href="https://samuelstudio.com/indexen.html" title="Polska wersja" class="lang-switch">
+      <img src="ukflag.svg" alt="Polska wersja" style="width:35px; vertical-align:middle;">
+    </a>
+  </div>
+  
+</header>
+
+<section class="text-section">
+  <h2>UWIELBIENIE W&nbsp;CENTRUM MIASTA 2022
+
+</h2>
+  <div class="separator"></div>
+
+    <div style="
+    position:relative;
+    width:calc(100% - 80px);   
+    max-width:900px;          
+    margin:40px auto 0;      
+    aspect-ratio:16/9;        
+    overflow:hidden;
+  ">
+    <iframe 
+      class="video-frame"
+      src="https://www.youtube-nocookie.com/embed/gHBO2o73vu4?rel=0&modestbranding=1&controls=1&showinfo=0"
+      title="Film promocyjny 2"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="width:100%; height:100%;">
+    </iframe>
+  </div>
+  <br>
+  <p>
+
+
+ Animacja 3D promująca uwielbienie eucharystyczne, zaprojektowana tak, aby natychmiast przyciągać uwagę i&nbsp;podkreślać wyjątkowy, duchowy charakter wydarzenia.
+Projekt łączy grafikę 2D z&nbsp;trójwymiarowymi elementami i&nbsp;symboliką, tworząc nowoczesny, czytelny przekaz skutecznie angażujący odbiorcę.
+ <br><br>
+<img 
+    src="Worship-poster-10-edytion.jpg.webp" 
+    alt="Uwielbienie -plakat"
+    style="width:100%; max-width:900px; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.2); object-fit:cover;">
+  </img>
+ <br>
+
+
+
+
+
+<img 
+    src="3D-solid-frame-for-animated-spot.png.webp" 
+    alt="Uwielbienie -plakat"
+    style="width:100%; max-width:900px; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.2); object-fit:cover;">
+  </img>
+</section>
+
+
+
+<section id="video" style="text-align:center; padding:40px 0; background:#ffffff;">
+
+  <div style="
+    position:relative;
+    width:calc(100% - 80px);   
+    max-width:900px;          
+    margin:auto;
+    aspect-ratio:16/9;        
+    overflow:hidden;
+  ">
+    <iframe 
+      class="video-frame"
+      src="https://www.youtube-nocookie.com/embed/eqhWw5Oe4xQ?rel=0&modestbranding=1&controls=1&showinfo=0"
+      title="Film promocyjny 1"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="width:100%; height:100%;">
+    </iframe>
+  </div>
+
+
+
+</section>
+
+  <a href="https://samuelstudio.com/indexpl.html#gallery" class="back-button">← Powrót</a>
+
+
+
+
+  <footer class="footer">
+  <div class="footer-subscribe">
+    <h3>SUBSKRYBUJ</h3>
+    <div class="footer-buttons">
+      <a href="https://www.youtube.com/@samuelstudio_" class="subscribe-btn">
+        <img src="samuelstudio icon.svg" alt="Animator 1"> 
+        YT Samuel Studio
+      </a>
+      <a href="https://www.youtube.com/@explainersinanimation" class="subscribe-btn">
+        <img src="explainers icon.svg" alt="Animator 2"> 
+        YT Explainers in Animation</a>
+    </div>
+  </div>
+
+  <nav class="footer-nav">
+  <a href="https://samuelstudio.com/indexpl.html">Strona główna</a>
+  <a href="https://samuelstudio.com/workpl">Realizacje</a>
+  <a href="https://samuelstudio.com/aboutpl.html">O mnie</a>
+  <a href="https://samuelstudio.com/contactpl.html">Kontakt</a>
+  <a href="https://blog.samuelstudio.pl/">Blog</a>
+  </nav>
+
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/pawel-pauksztello-samuel-studio/" target="_blank">
+      <img src="linked icon.svg" alt="LinkedIn">
+    </a>
+    <a href="https://www.youtube.com/@SamuelStudio_" target="_blank">
+      <img src="yt icon.svg" alt="YouTube">
+    </a>
+    <a href="https://www.facebook.com/pawelpauksztello" target="_blank">
+      <img src="fb icon.svg" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/pawel_samuel_studio/" target="_blank">
+      <img src="insta icon.svg" alt="Instagram">
+    </a>
+    <a href="https://samuelstudio.com/indexen.html" title="English version" class="lang-switch">
+      <img src="ukflag.svg" alt="English" style="width:35px; vertical-align:middle;">
+    </a>
+  </div>
+
+  <div class="footer-bottom">
+    <a href="https://samuelstudio.com/privacy.html">Polityka Prywatności</a>
+    <span>Copyright by <p></p>Michal Baran Grafik & Pawel Pauksztello 2025</span>
+  </div>
+</footer>
+
+
+
+<script>
+document.querySelectorAll('.gallery-item').forEach(item => {
+  const video = item.querySelector('video');
+
+  item.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 768) {
+      video.play();
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 768) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
+
+if (window.innerWidth <= 768) {
+  const videos = document.querySelectorAll(".gallery-item video");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+      } else {
+        entry.target.pause();
+        entry.target.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.5 }); 
+  videos.forEach(video => {
+    video.muted = true; 
+    video.setAttribute("playsinline", "true"); 
+    video.setAttribute("autoplay", "true"); // 
+    observer.observe(video);
+  });
+}
+</script>
+
+
+<script>
+
+const hamburger = document.getElementById("hamburger");
+const mobileMenu = document.getElementById("mobileMenu");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+
+  mobileMenu.style.top = mobileMenu.style.top === "0%" ? "-100%" : "0%";
+});
+
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove("active");
+    mobileMenu.style.top = "-100%";
+  });
+});
+
+</script>
+
+
+<script>
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (
+    (e.ctrlKey && (e.key === "s" || e.key === "u")) ||
+    (e.ctrlKey && e.shiftKey && e.key === "I")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+  document.querySelector('.back-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    sessionStorage.setItem('scrollTarget', '#gallery');
+    window.location.href = 'https://samuelstudio.com/indexpl.html#gallery';
+  });
+</script>
+
+
+<script>
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) { 
+        const video = item.querySelector('video');
+        const img = item.querySelector('img');
+
+        img.style.opacity = '0';
+        video.style.opacity = '1';
+        video.style.pointerEvents = 'auto';
+        video.play();
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
