@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+  <title>O mnie</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      background: #ffffff; 
+      color: #040404; 
+
+        letter-spacing: 0.4px;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+  height: 100%;
+
+        user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+    }
+
+
+
+.text-section { 
+  margin-top: 12%;
+  transition: transform 0.9s ease;
+  width: 80%; 
+  margin-left: 12%;
+  margin-right: 5%;
+    }
+
+.text-section h2 {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  margin-right: 5%;
+  margin-top: 8%;
+
+}
+
+.text-section .separator {
+  width: 250px;             
+  height: 8px;              
+  background-color: #f0bb1c;
+  margin-bottom: 13%;
+  margin-top: 12%;
+  text-align: left;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 9s ease-in-out infinite;
+}
+
+@keyframes drawLine {
+  0% { transform: scaleX(0); }
+  25% { transform: scaleX(1); }
+  75% { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+
+.text-section p {
+  text-align: left;
+  max-width: 700px;
+  margin-bottom: 60px; 
+
+  color: #000000; 
+  font-size: 1.5rem;
+ line-height: 1.6;
+}
+
+.highlight-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #000;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.highlight-link:hover {
+  transform: scale(1.05);
+  color: #f0bb1c;
+}
+
+@media (max-width: 768px) {
+  .text-section {
+    text-align: left;
+      margin-top: 35%;
+  margin-left: 14%;
+  margin-right: 10%;
+  }
+
+  .text-section h2 {
+    text-align: left;
+      font-size: 1.7rem;
+
+        margin-left: 0%;
+margin-bottom: 10%;
+  }
+
+  .text-section .separator {
+    margin-left: 0%;
+  }
+
+  .text-section p {
+    text-align: left;
+    margin-left: 0%;
+    margin-right: 13%;
+    font-size: 1.4rem;     
+    max-width: 100%;
+  }
+
+  .highlight-link {
+    font-size: clamp(22px, 3vw, 28px);     
+  }
+}
+
+
+.section-header9 h2 {
+  font-size: 2rem;
+  font-weight: bold;
+margin-top: 6%;
+  margin-bottom: 8%;
+    margin-left: 12%;
+}
+
+ @media (max-width: 768px) {
+.section-header9 h2 {
+  font-weight: bold;
+    font-size: 2rem;
+  margin-top: 7%;
+  margin-left: 12%;
+  margin-bottom: 25%;
+}}
+
+.opinie-carousel {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden;
+  border: 1px solid #000; /* <-- to działa na div */
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.opinie-carousel:hover {
+  transform: scale(1.011);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15); /* efekt uniesienia przy hover */
+}
+
+
+.opinie-track {
+  display: flex;
+}
+
+.opinia {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.opinia img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .opinie-carousel {
+    max-width: 90%; 
+    margin: 0 auto; 
+    padding: 0 10px; 
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  color: rgba(0, 0, 0, 0);
+  font-size: 24px;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+
+.see-more-btn3 {
+  font-size: 24px;
+  padding: 14px 36px;
+  background: #000;
+  color: #f0bb1c;
+  border: none;
+  border-radius: 30px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 0%;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.4s ease, background 0.3s ease;  
+  display: inline-block; 
+}
+
+.see-more-btn3:hover {
+  background: #000000;
+  transform: scale(1.1);
+  transition: transform 0.4s ease;
+}
+
+
+.text-section a {
+  color: #000000; 
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.text-section a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.text-section a:hover {
+  color: #000000; 
+}
+
+.text-section a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+.review-container {
+  margin-top: 100px;
+  margin-bottom: 120px;
+  
+}
+
+.review-btn {
+  font-size: 24px;
+  padding: 14px 36px;
+  background: #000;
+  color: #f0bb1c;
+  border: none;
+  border-radius: 30px;
+  margin-left: 12%;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.4s ease, background 0.3s ease;  
+  display: inline-block; 
+}
+
+@media (max-width: 768px) {
+  .review-btn {
+    display: block;   
+    margin: 20px auto; 
+  }
+}
+
+
+.review-btn:hover {
+  background: #000000;
+  transform: scale(1.1);
+  transition: transform 0.4s ease;
+}
+
+.review-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 8px rgba(0, 123, 255, 0.2);
+}
+
+
+
+
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  padding: 0px;
+  flex-wrap: wrap; 
+}
+
+.about-text {
+  flex: 1 1 60%;
+   order: 1;
+}
+
+.about-image {
+  flex: 1 1 35%;
+  display: flex;
+  justify-content: center;
+  align-self: flex-start; 
+  margin-top: 200px; 
+   order: 2;
+}
+
+.about-image img {
+  max-width: 1000%;
+  height: auto;
+  border-radius: 20px;
+  transition: transform 0.4s ease;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    display: ;
+  }
+
+  .about-text {
+    order: 1;
+  }
+
+  .about-image {
+    order: 2;
+    margin-top: 20px;
+      display: none;
+  }
+  
+  .see-more-container {
+    order: 3; 
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+  }
+
+.see-more-btn3 {
+  padding: 14px 79px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: -15%;
+}}
+
+
+.inline-image {
+  display: none;
+
+}
+
+@media (max-width: 768px) {
+  .inline-image {
+    display: block;      
+    margin: 20px auto;  
+    margin-bottom: 70px;  
+    width: 80%;           
+    max-width: 300px;     
+  }
+
+  .inline-image img {
+    width: 100%;          
+    height: auto;         
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: block;      
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+      .text-section { 
+      margin-left: 15%;
+      margin-top: 27%;
+      margin-right: 7%;
+      margin-bottom: 21%;
+}    
+.text-section h2 {
+  margin-bottom: -9%;
+  margin-top: 4%;
+}}
+
+
+@media (min-width: 2560px) {
+  .text-section { 
+    margin-left: 30%;
+    margin-top: 7%;
+    margin-right: 7%;
+    margin-bottom: 7%;
+}    
+.text-section h2 {
+  margin-bottom: 9%;
+  margin-top: 10%;
+}
+.section-header9 h2 {
+
+    margin-left: 30%;
+}
+
+.review-btn {
+}}
+
+
+
+</style>
+  
+</head>
+<body>
+
+<div id="headerpl-placeholder"></div>
+
+
+<section class="text-section">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>Witaj na mojej stronie</h2>
+      <div class="separator"></div>
+
+      <p>
+        Nazywam się <strong>Paweł Pauksztełło</strong> i&nbsp;jestem motion designerem z&nbsp;Polski.  
+  Tworzę animacje, które pomagają firmom, organizacjom i&nbsp;osobom prywatnym komunikować swoje przekazy w&nbsp;sposób jasny i&nbsp;skuteczny.  
+  Niezależnie od&nbsp;tego, czy&nbsp;potrzebujesz wyjaśnić jakiś koncept, promować wydarzenie czy&nbsp;opowiedzieć historię,  
+  dostarczam wysokiej jakości animacje, które angażują i&nbsp;informują.
+</p>
+
+<p>
+  Wiele osób ma trudność z&nbsp;przedstawieniem swoich pomysłów w&nbsp;sposób, który przyciąga uwagę i&nbsp;robi wrażenie.  
+  Animacja rozwiązuje ten problem, przekształcając informacje w&nbsp;wizualne doświadczenie, które jest łatwe do&nbsp;zrozumienia i&nbsp;zapamiętania.  
+  Skupiam się na&nbsp;tworzeniu animacji wspierających cele moich klientów — niezależnie od&nbsp;tego, czy&nbsp;działają w&nbsp;edukacji, marketingu, czy&nbsp;opowiadaniu historii.  
+  Zobacz przykłady moich prac:  
+  <a href="portfolio.html" class="highlight-link">Portfolio</a>
+</p>
+
+<p>
+  Specjalizuję się także w&nbsp;wizualizowaniu motywów chrześcijańskich, pomagając kościołom i&nbsp;organizacjom religijnym  
+  przekazywać ich przesłanie w&nbsp;sposób pełen znaczenia.
+        <a href="christian-animations.html" class="highlight-link">Animacja Chrześcijańska</a>
+      </p>
+
+
+          <img src="fotopawla.jpg" alt="Paweł Pauksztełło - Motion Designer" class="inline-image">
+
+      <p>
+         Poza pracą spędzam czas z&nbsp;moją żoną i&nbsp;trzema synami.  
+  Jestem również zaangażowany w&nbsp;życie mojej parafii jako lektor oraz pomagam organizować wydarzenia uwielbieniowe w&nbsp;moim mieście.
+</p>
+
+<p>
+  Potrzebujesz animacji, która uczyni Twój przekaz jasnym i&nbsp;angażującym — współpracujmy!
+      </p>
+
+      <div class="see-more-container">
+        <button class="see-more-btn3" onclick="window.location.href='contactpl.html'">
+          Skontaktuj się
+        </button>
+      </div>
+    </div>
+
+    <div class="about-image">
+      <img src="fotopawla.jpg" alt="Paweł Pauksztełło - Motion Designer">
+    </div>
+  </div>
+</section>
+
+
+
+
+<section style="background: #ffffff;">
+
+
+    <div class="section-header9">
+    <h2>Opinie klientów</h2>
+    <div class="separator8"></div>
+  </div>
+
+  <div class="opinie-carousel">
+    <div class="opinie-track">
+      <div class="opinia">
+        <a href="https://www.google.com/search?sca_esv=8e23599b05dcda53&sxsrf=AE3TifOD2Eq75ubp-mwDPJzIYybLXtVqyA:1756146450645&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzOrb8msZ41PbwrtZCXgAS73mjE7vfglHotkveeSsehsF7n7_aNLXU9IjqTLnhpaHW5JSmbdOg1DYPGlSgQCOhxcNAtRO-KOuuOkPuYQJFm4ohHkhAHIRomp2fd8_9H9ZoxMzlNyrArlXtvkRcJIipU9vtzrRDTqgBOBJl6btSzrmhvgorgupv84bQFF1BFBAzEanXtw&q=Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach+Opinie&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7R6JI_1RwpooYacCjMiXkLWjXwcJ5GZ9efbiggoACmyzoCnvCjaYFsjXLiywuJjMwc-ecctZwV1c6CML7HEQwVXORu_9OAavF2o0S8LgA5cNhM2SoQ1V1YH1w6ay8YerXoxUukSuXLEpL6u9iAvYA10DaEw&hl=pl-PL&sa=X&ved=2ahUKEwic3PSqy6aPAxVLFBAIHQvLBXIQ_4MLegQITBAN&biw=1920&bih=1039&dpr=1" target="_blank">
+          <img src="opinia1.png" alt="Opinia 1">
+        </a>
+      </div>
+      <div class="opinia">
+        <a href="https://www.google.com/search?sca_esv=8e23599b05dcda53&sxsrf=AE3TifOD2Eq75ubp-mwDPJzIYybLXtVqyA:1756146450645&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzOrb8msZ41PbwrtZCXgAS73mjE7vfglHotkveeSsehsF7n7_aNLXU9IjqTLnhpaHW5JSmbdOg1DYPGlSgQCOhxcNAtRO-KOuuOkPuYQJFm4ohHkhAHIRomp2fd8_9H9ZoxMzlNyrArlXtvkRcJIipU9vtzrRDTqgBOBJl6btSzrmhvgorgupv84bQFF1BFBAzEanXtw&q=Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach+Opinie&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7R6JI_1RwpooYacCjMiXkLWjXwcJ5GZ9efbiggoACmyzoCnvCjaYFsjXLiywuJjMwc-ecctZwV1c6CML7HEQwVXORu_9OAavF2o0S8LgA5cNhM2SoQ1V1YH1w6ay8YerXoxUukSuXLEpL6u9iAvYA10DaEw&hl=pl-PL&sa=X&ved=2ahUKEwic3PSqy6aPAxVLFBAIHQvLBXIQ_4MLegQITBAN&biw=1920&bih=1039&dpr=1m" target="_blank">
+          <img src="opinia2.png" alt="Opinia 2">
+        </a>
+      </div>
+      <div class="opinia">
+        <a href="https://www.google.com/search?sca_esv=8e23599b05dcda53&sxsrf=AE3TifOD2Eq75ubp-mwDPJzIYybLXtVqyA:1756146450645&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzOrb8msZ41PbwrtZCXgAS73mjE7vfglHotkveeSsehsF7n7_aNLXU9IjqTLnhpaHW5JSmbdOg1DYPGlSgQCOhxcNAtRO-KOuuOkPuYQJFm4ohHkhAHIRomp2fd8_9H9ZoxMzlNyrArlXtvkRcJIipU9vtzrRDTqgBOBJl6btSzrmhvgorgupv84bQFF1BFBAzEanXtw&q=Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach+Opinie&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7R6JI_1RwpooYacCjMiXkLWjXwcJ5GZ9efbiggoACmyzoCnvCjaYFsjXLiywuJjMwc-ecctZwV1c6CML7HEQwVXORu_9OAavF2o0S8LgA5cNhM2SoQ1V1YH1w6ay8YerXoxUukSuXLEpL6u9iAvYA10DaEw&hl=pl-PL&sa=X&ved=2ahUKEwic3PSqy6aPAxVLFBAIHQvLBXIQ_4MLegQITBAN&biw=1920&bih=1039&dpr=1" target="_blank">
+          <img src="opinia3.png" alt="Opinia 3">
+        </a>
+      </div>
+      <div class="opinia">
+        <a href="https://www.google.com/search?sca_esv=8e23599b05dcda53&sxsrf=AE3TifOD2Eq75ubp-mwDPJzIYybLXtVqyA:1756146450645&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzOrb8msZ41PbwrtZCXgAS73mjE7vfglHotkveeSsehsF7n7_aNLXU9IjqTLnhpaHW5JSmbdOg1DYPGlSgQCOhxcNAtRO-KOuuOkPuYQJFm4ohHkhAHIRomp2fd8_9H9ZoxMzlNyrArlXtvkRcJIipU9vtzrRDTqgBOBJl6btSzrmhvgorgupv84bQFF1BFBAzEanXtw&q=Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach+Opinie&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7R6JI_1RwpooYacCjMiXkLWjXwcJ5GZ9efbiggoACmyzoCnvCjaYFsjXLiywuJjMwc-ecctZwV1c6CML7HEQwVXORu_9OAavF2o0S8LgA5cNhM2SoQ1V1YH1w6ay8YerXoxUukSuXLEpL6u9iAvYA10DaEw&hl=pl-PL&sa=X&ved=2ahUKEwic3PSqy6aPAxVLFBAIHQvLBXIQ_4MLegQITBAN&biw=1920&bih=1039&dpr=1" target="_blank">
+          <img src="opinia4.png" alt="Opinia 4">
+        </a>
+      </div>
+      <div class="opinia">
+        <a href="https://www.google.com/search?sca_esv=8e23599b05dcda53&sxsrf=AE3TifOD2Eq75ubp-mwDPJzIYybLXtVqyA:1756146450645&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzOrb8msZ41PbwrtZCXgAS73mjE7vfglHotkveeSsehsF7n7_aNLXU9IjqTLnhpaHW5JSmbdOg1DYPGlSgQCOhxcNAtRO-KOuuOkPuYQJFm4ohHkhAHIRomp2fd8_9H9ZoxMzlNyrArlXtvkRcJIipU9vtzrRDTqgBOBJl6btSzrmhvgorgupv84bQFF1BFBAzEanXtw&q=Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach+Opinie&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7R6JI_1RwpooYacCjMiXkLWjXwcJ5GZ9efbiggoACmyzoCnvCjaYFsjXLiywuJjMwc-ecctZwV1c6CML7HEQwVXORu_9OAavF2o0S8LgA5cNhM2SoQ1V1YH1w6ay8YerXoxUukSuXLEpL6u9iAvYA10DaEw&hl=pl-PL&sa=X&ved=2ahUKEwic3PSqy6aPAxVLFBAIHQvLBXIQ_4MLegQITBAN&biw=1920&bih=1039&dpr=1" target="_blank">
+          <img src="opinia5.png" alt="Opinia 5">
+        </a>
+      </div>
+    </div>
+
+    <button class="arrow prev">&#10094;</button>
+    <button class="arrow next">&#10095;</button>
+  </div>
+
+<div class="review-container">
+  <button class="review-btn" onclick="window.location.href='https://www.google.com/maps/place/Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach/@46.423669,-84.4270629,3z/data=!4m18!1m9!3m8!1s0xac688efcb209881f:0x50fac03e7d6b27cb!2sSamuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach!8m2!3d46.423669!4d-84.4270629!9m1!1b1!16s%2Fg%2F11lzkl8mz_!3m7!1s0xac688efcb209881f:0x50fac03e7d6b27cb!8m2!3d46.423669!4d-84.4270629!9m1!1b1!16s%2Fg%2F11lzkl8mz_?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D'">
+    Napisz recenzje
+  </button>
+</div>
+</section>
+
+<div id="footerpl-placeholder"></div>
+
+
+
+<script>
+  fetch("headerpl.html")
+    .then(response => response.text())
+    .then(html => {
+      const placeholder = document.getElementById("headerpl-placeholder");
+      const shadowRoot = placeholder.attachShadow({ mode: "open" });
+      shadowRoot.innerHTML = html;
+
+      const header = shadowRoot.getElementById("mainHeader");
+      const hamburger = shadowRoot.getElementById("hamburger");
+      const mobileMenu = shadowRoot.getElementById("mobileMenu");
+
+      let lastScroll = 0;
+      const headerHeight = header.offsetHeight;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScroll && currentScroll > 60) {
+    header.style.transform = `translateY(-${header.offsetHeight + 20}px)`;
+  } else {
+    header.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
+});
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("active");
+        });
+      });
+    });
+</script>
+
+<script>
+  fetch("footerpl.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footerpl-placeholder").innerHTML = data;
+    });
+</script>
+
+
+
+</body>
+</html>
