@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Statek kosmiczny</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      background: black;
+    }
+
+    #stars {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      background: black;
+    }
+
+    #panel {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      background: url("panel.png") no-repeat center center;
+      background-size: cover;
+      pointer-events: none;
+    }
+
+    .button {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      cursor: pointer;
+      transition: transform 0.25s, filter 0.25s;
+      width: 200px;
+      height: auto;
+      z-index: 2;
+    }
+
+    .button:hover {
+      transform: translateX(-50%) scale(1.1);
+      filter: drop-shadow(0 0 15px rgba(255,255,255,0.8));
+    }
+
+    #button {
+      top: 42%;
+    }
+
+    #stopButton {
+      top: calc(38% + 150px);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <div id="panel"></div>
+
+  <!-- przyciski -->
+  <img id="button" class="button" src="buttonn.png" alt="Przycisk start">
+  <img id="stopButton" class="button" src="buttonn2.png" alt="Przycisk stop">
+
+  <!-- dźwięki -->
+  <audio id="sound" src="hyperspeed.mp3"></audio>
+  <audio id="stopSound" src="efx cosmics thx.mp3"></audio>
+
+  <script>
+    /* === Gwiazdy === */
+    const canvas = document.getElementById("stars");
+    const ctx = canvas.getContext("2d");
+    let w, h;
+    function resize() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
+
+    const stars = [];
+    const numStars = 500;
+
+    function initStars() {
+      stars.length = 0;
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: (Math.random() - 0.5) * w,
+          y: (Math.random() - 0.5) * h,
+          z: Math.random() * w,
+          pz: null
+        });
+      }
+    }
+    initStars();
+
+    let speed = 10;
+    let targetSpeed = 10;
+    const baseSpeed = 10;
+    const maxSpeed = 50;
+
+    function animateStars() {
+      ctx.fillStyle = "black";
+      ctx.fillRect(0, 0, w, h);
+
+      // płynne przyspieszanie/zwalnianie
+      speed += (targetSpeed - speed) * 0.05;
+
+      for (let s of stars) {
+        s.z -= speed;
+        if (s.z <= 1) {
+          s.x = (Math.random() - 0.5) * w;
+          s.y = (Math.random() - 0.5) * h;
+          s.z = w;
+          s.pz = s.z;
+        }
+
+        const k = 300 / s.z;
+        const px = s.x * k + w / 2;
+        const py = s.y * k + h / 2;
+
+        const pk = 300 / (s.pz || s.z);
+        const ppx = s.x * pk + w / 2;
+        const ppy = s.y * pk + h / 2;
+
+        s.pz = s.z;
+
+        if (px >= 0 && px < w && py >= 0 && py < h) {
+          ctx.strokeStyle = "white";
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(ppx, ppy);
+          ctx.lineTo(px, py);
+          ctx.stroke();
+        }
+      }
+
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
+
+    /* === Przyciski i dźwięki === */
+    const button = document.getElementById("button");
+    const stopButton = document.getElementById("stopButton");
+    const sound = document.getElementById("sound");
+    const stopSound = document.getElementById("stopSound");
+
+    function playSound(audio) {
+      audio.currentTime = 0;
+      audio.play();
+    }
+    function stopAudio(audio) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+
+    // Przycisk główny
+    button.addEventListener("mousedown", () => {
+      playSound(sound);
+      targetSpeed = maxSpeed;
+    });
+    button.addEventListener("mouseup", () => {
+      stopAudio(sound);
+      targetSpeed = baseSpeed;
+    });
+    button.addEventListener("mouseleave", () => {
+      stopAudio(sound);
+      targetSpeed = baseSpeed;
+    });
+
+    // Mobile
+    button.addEventListener("touchstart", (e) => {
+      e.preventDefault();
+      playSound(sound);
+      targetSpeed = maxSpeed;
+    });
+    button.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      stopAudio(sound);
+      targetSpeed = baseSpeed;
+    });
+
+    // Drugi przycisk - stop
+    stopButton.addEventListener("click", () => {
+      playSound(stopSound);
+      targetSpeed = 0; // w ciągu ~5 sekund prędkość spadnie do zera
+    });
+  </script>
+</body>
+</html>

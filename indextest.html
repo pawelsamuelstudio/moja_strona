@@ -1,0 +1,2872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+  <title>Samuel Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+   
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      background: #fff; 
+      color: #333; 
+      margin: 0; 
+      padding: 0; 
+        letter-spacing: 0.4px;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+  height: 100%;
+      user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+    }
+
+
+
+
+img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none; 
+}
+
+    .line-break-sm {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .line-break-sm {
+    display: inline;
+  }
+
+}
+
+.text-video-container {
+  display: flex;
+  justify-content: center; 
+  align-items: flex-start; 
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap; 
+}
+.bottom-video {
+  max-width: 1000px;
+  
+  }
+.bottom-video video {
+  width: 10%;
+  border-radius: 20px;
+ }
+
+
+.separator2 {
+  width: 180px;
+  height: 7px;
+  background-color: #f0bb1c;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+}
+
+
+
+
+.separator8 {
+  width: 180px;
+  height: 7px;
+  background-color: #f0bb1c;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+}
+
+.separator7 {
+  width: 180px;
+  height: 7px;
+  background-color: #f0bb1c;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+.separator7 {
+  width: 180px;
+  height: 7px;
+  background-color: #f0bb1c;
+}
+.separator8 {
+  width: 180px;
+  height: 7px;
+  background-color: #f0bb1c;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+}
+}
+
+.text-1,
+.text-3 {
+  display: block;
+  width: fit-content;
+}
+
+.text-1,
+.text-3 {
+  font-size: 22px;
+}
+
+.text-2,
+.text-4 {
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .text-1,
+  .text-3,
+    .text-2,
+.text-4 {
+    font-size: 22px;
+  }}
+
+
+
+.separator {
+  width: 180px;
+  height: 7px;
+  background-color: #f0bb1c;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+}
+
+
+
+.separator00 {
+  width: 180px;
+  height: 7px;
+  background-color: #f0bb1c;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+  margin-top: 7%;
+  margin-bottom: 7%;
+  margin-left: 25%;
+}
+
+
+    .video-section {
+      position: relative;
+      width: 100%;
+      height: 95ch;
+      overflow: hidden;
+      
+    }
+    .video-section video {
+      position: absolute;
+      top: 50%;
+      left: 50%;          
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
+        }
+
+
+    .video-overlay {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding-top: 210px;
+          }
+    .video-overlay h1 {
+      font-size: 3rem;
+      letter-spacing: 0px;
+      color: #f0bb1c;
+    }
+
+    .video-overlay .btn {
+    padding: 12px 29px;
+    flex: 1 1 300px;     
+    margin: 20px 0;
+    max-width: 350px;    
+    min-width: 350px;    
+    text-align: center;
+    background: #f0bb1c;
+    color: rgb(29, 29, 29);
+    border-radius: 65px;
+    font-size: 25px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    transition: transform 0.4s ease;
+    cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+
+.separator00 {
+  margin-left: 14%;
+}
+
+          .video-overlay {
+      padding-top: 170px;
+      padding-bottom: 150px;
+          }
+
+    .video-overlay h1 {
+    font-size: 2.4rem;
+        margin-left: 10%;  
+                margin-right: 10%;  
+    text-align: center;
+   }  .video-overlay h4 {
+    font-size: 1.4rem;
+            margin-left: 10%;  
+                margin-right: 10%;  
+
+      }
+
+   .video-overlay .btn {
+    margin-left: 0;  
+        padding: 12px 20px;
+            max-width: 350px;    
+    min-width: 270px;    
+
+
+   }}
+
+   .video-overlay .btn:hover {
+    font-family: 'Roboto', sans-serif;
+    background: #e2af16;
+    transform: scale(1.1);
+    }
+    
+
+.video-overlay .separator {
+    width: 150px;           
+    height: 7px;             
+    background-color: #f0bb1c; 
+    transform: scaleX(0);
+    align-items: center;
+    transform-origin: center;
+     margin: 0 auto;
+     margin-top: 35px;
+     margin-bottom: 35px;
+animation: drawLine 4s ease-in-out infinite;}
+
+@media (max-width: 700px) {
+    .video-overlay .separator {
+        width: 120px;
+    }}
+
+
+    .video-section3 {
+      position: relative;
+      width: 100%;
+      height: 80ch;
+      overflow: hidden;
+    }
+    .video-section3 video {
+      position: absolute;
+      top: 50%;
+      left: 50%;          
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
+    }
+    .video-overlay3 {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding-top: 320px;
+    }
+
+     .video-hero {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      overflow: hidden;
+  margin: 0;    
+    flex-direction: column;
+  align-items: center; 
+     }
+    .video-hero .video-wrapper {
+  height: 300px;
+  background-color: #ffffff;
+  align-items: center;
+
+}
+.video-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 30px;
+}
+
+.content {
+  text-align: center;
+    margin-bottom: 0;    
+
+}
+
+.video-testimonial .video-wrapper {
+  height: 200px;
+  background-color: #fdf2e9;
+}
+
+    .video-section5 {
+      position: relative;
+      width: 100%;
+   height: 80ch;
+
+      overflow: hidden;
+    }
+    .video-section5 video {
+      position: absolute;
+      top: 50%;
+      left: 50%;          
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      z-index: 0;
+    }
+    .video-overlay5 {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding-top: 320px;
+    }
+
+
+    .overlay-text {
+  position: absolute;
+  left: 50%;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  z-index: 2;
+  max-width: 90%;
+}
+
+
+ .see-more-btn {
+  font-size: 24px;
+  padding: 14px 36px;
+  background: #000;
+  color: #f0bb1c;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.see-more-btn:hover {
+  background: #000000;
+  transform: scale(1.1);
+  transition: transform 0.4s ease;
+}
+
+
+.nav.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: top 0.3s ease;
+  z-index: 999;
+}
+
+   h2 {
+      color: #050505;
+       font-size: 33px;
+
+    }
+
+    h3 {
+  font-size: 20px;
+  color: black;
+  border-radius: 38px;
+
+}
+
+
+    h5 {
+  font-size: 22px;
+  color: black;
+  border-radius: 38px;
+
+}
+    h6 {
+      color: #050505;
+       font-size: 33px;
+            position: absolute; 
+    z-index: 10; 
+    }
+
+    h4 {
+       font-size: 2rem;
+       color: rgb(255, 255, 255);
+       margin: 35px 0;
+      }
+
+      @media (max-width: 768px) {
+      h6 {
+       font-size: 1.7rem;
+        font-weight: 600;
+       color: rgb(0, 0, 0);
+}
+}
+   
+.yellow-section {
+  font-family: 'Roboto', sans-serif;
+  background: #f0bb1c;
+  align-items: center;
+    padding: 1px 0px 60px;
+
+  }
+
+    #oferta.yellow-section {
+    background-color: hsl(43, 91%, 54%);
+  }
+
+  .yellow-section h2.yellow-h2 {
+
+      font-size: 2rem;
+  padding-top: 10%;
+  padding-right: 5%;
+}
+  .yellow-section h2.yellow2-h2 {
+      font-size: 2rem;
+    padding-top: 3%;
+}
+
+
+.yellow-section h2 {
+font-size: 31px;
+}
+
+.yellow-section-bottom-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: rgb(29, 29, 29);
+}
+
+
+@media (max-width: 768px) {
+  .yellow-section h2.yellow-h2 {
+     font-size: 1.4rem; 
+       padding-top: 24%;
+}
+
+  .yellow-section h2.yellow2-h2 {
+        font-size: 1.4rem; 
+               padding-top: 4%;
+               padding-bottom: 6%;
+}
+}
+
+    .ellipse-video {
+      position: absolute;
+      top: 770px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 90%/100%;
+      z-index: 2;
+    }
+    
+    .ellipse-video video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+        .ellipse-video {
+      top: 760px;
+    }}
+
+.grid-2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px; 
+  row-gap: 30px;      
+  margin: 10px 0 0 0; 
+  max-width: 100%; 
+  justify-items: center; 
+  padding: 40px 20px 0 20px; 
+}
+
+.grid-item {
+  background: #fff;
+  border-radius: 39px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 400px;
+  transition: transform 0.3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.grid-item:hover {
+  transform: translateY(-10px);
+}
+
+.grid-item img {
+  width: 100%;
+  border-radius: 39px;
+}
+
+.grid-item .desc {
+  font-weight: 500;
+  color: #000;
+}
+
+@media (max-width: 768px) {
+  .grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr;  
+    column-gap: 0;               
+    row-gap: 20px;              
+    max-width: 90%;
+    justify-items: center;
+    padding: 0 20px;
+  }
+
+  .grid-item:hover {
+    transform: translateY(-5px);
+  }
+
+  .grid-item .desc {
+    color: #333;
+  }
+}
+
+
+    #kontakt {
+    font-family: 'Roboto', sans-serif;
+    background: #f9f9f9;
+    padding: 100px 20px;
+    text-align: center;
+    }
+    #kontakt h2 {
+      font-size: 2rem;
+    }
+    #kontakt p {
+      font-size: 1.1rem;
+      margin: 10px 0;
+    }
+
+    #kontakt a {
+  text-decoration: none;           
+  color: #333;                  
+  transition: color 0.3s ease;   
+}
+
+#kontakt a:hover {
+  color: #f0bb1c;             
+}
+   .social-icon {
+  width: 40px;
+  margin: 0 10px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+a {
+  display: inline-block;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+
+.footer {
+  background: #f0bb1c;
+  color: #000000;
+  text-align: center;
+  padding: 20px 20px;
+  
+}
+
+.footer > * {
+  margin: 20px 0; /* 20px góra i dół, 0 po bokach */
+}
+
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+  flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.subscribe-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  min-width: 40px;
+  padding: 10px 25px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+   border: 1px solid #000;
+  border-radius: 120px;
+  transition: 0.3s;
+  }
+
+.subscribe-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+.subscribe-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.footer-nav {
+  display: flex;    
+  gap: 26px;  
+  justify-content: center; 
+  align-items: center; 
+}
+
+.footer-nav a {
+  color: #000000;
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 20px;
+  
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #fff;
+  }
+
+   @media (max-width: 700px) {
+
+.footer {
+  background: #f0bb1c;
+  color: #000000;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.footer-subscribe h3 {
+  margin-top: 0;       
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px; 
+  flex-wrap: wrap;
+}
+
+.subscribe-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  padding: 10px 25px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 120px;
+  transition: 0.3s;
+  }
+
+.subscribe-btn img {
+  width: 28px;
+  height: 28px;
+  }
+
+  .footer-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;   
+}
+
+.footer-nav a {
+  color: #000000;
+  font-weight: bold;
+  font-size: clamp(12px, 4vw, 20px); 
+  text-decoration: none;
+  white-space: nowrap; 
+}}
+
+.footer-socials {
+  display: flex;             
+  justify-content: center;
+  align-items: flex-end;   
+  gap: 26px;
+  height: 40px;   
+}
+
+.footer-socials a {
+  display: flex;           
+  align-items: flex-end;   
+  justify-content: center;
+  height: 100%;            
+}
+
+.footer-socials a img {
+  width: 38px;
+  height: 32px;
+   max-height: 100%;        
+  width: auto;
+    fill: #ffffff;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-socials a:hover img {
+  transform: scale(1.2);
+ filter: brightness(0) saturate(100%);}
+
+ @media (max-width: 768px) {
+  .footer-socials {
+    gap: 20px;
+  }
+  .footer-socials a img {
+    width: 28px;
+    height: 24px;
+  }}
+
+.footer-bottom {
+  border-top: 1px solid #000000;
+  margin-top: 50px;
+  padding-top: 22px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.footer-bottom a {
+  color: #000000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-bottom a:hover {
+  color: #000000;
+}  
+.opinie-carousel {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  margin-bottom: 50px;
+  overflow: hidden;
+  border: 1px solid #000; 
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.opinie-carousel:hover {
+  transform: scale(1.011);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15); 
+}
+
+
+.opinie-track {
+  display: flex;
+   transition: transform 0.6s ease-in-out; 
+}
+
+.opinia {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.opinia img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .opinie-carousel {
+    max-width: 90%; 
+    padding: 0 10px; 
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  color: rgba(0, 0, 0, 0);
+  font-size: 24px;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+      .text-section { 
+      max-width: 1200px; 
+      transition: transform 0.9s ease;
+    }
+
+
+    .text-section h2 {
+  text-align: left;
+  font-size: 2rem;
+}
+
+.text-section .separator {
+  width: 220px;            
+  height: 8px;            
+  background-color: #f0bb1c;
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: drawLine 4s ease-in-out infinite;
+}
+
+
+
+@media (max-width: 700px) {
+    .text-section h2 {
+  text-align: left;
+}
+
+.text-section .separator {
+  width: 250px;             
+  height: 8px; 
+}}
+
+
+.logo-carousel {
+  position: relative;
+  width: auto;         
+  margin: 0 auto;    
+  overflow: hidden; 
+}
+
+.logo-track {
+  display: flex;
+  animation: slide 60s infinite; 
+}
+
+
+
+.logo-track a {
+ flex: 0 0 calc(100% / 4);  
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-top: 0%;
+   box-sizing: border-box;
+  margin-bottom: 40px;
+}
+
+.logo-track img {
+  max-height: 280px;
+  max-width: 90%;
+  object-fit: contain;
+  transition: transform 0.3s;
+
+}
+
+.logo-track img:hover {
+  transform: scale(1.1);
+}
+
+@keyframes slide {
+  0%, 3%    { transform: translateX(0); }
+  6%, 10%    { transform: translateX(-25%); }
+  13%, 16%  { transform: translateX(-50%); }
+  19%, 23%  { transform: translateX(-75%); }
+  26%, 29%  { transform: translateX(-100%); }
+  32%, 35%  { transform: translateX(-125%); }
+  39%, 43%  { transform: translateX(-150%); }
+  46%, 49%  { transform: translateX(-175%); }
+  53%, 57%  { transform: translateX(-200%); }
+  61%, 65%  { transform: translateX(-225%); }
+  69%, 73%  { transform: translateX(-250%); }
+  77%, 81%  { transform: translateX(-275%); }
+  85%, 89%  { transform: translateX(-300%); }
+  93%, 97%  { transform: translateX(-325%); }
+  100%, 100%  { transform: translateX(-350%); } 
+}
+
+
+@media (max-width: 760px) {
+  .logo-track {
+    animation: slide-mobile 60s infinite;
+  }
+
+  .logo-track a {
+    flex: 0 0 100%; 
+    justify-content: center;
+  }
+
+  @keyframes slide-mobile {
+  0%, 3%    { transform: translateX(0); }
+  6%, 10%    { transform: translateX(-100%); }
+  13%, 16%  { transform: translateX(-200%); }
+  19%, 23%  { transform: translateX(-300%); }
+  26%, 29%  { transform: translateX(-400%); }
+  32%, 35%  { transform: translateX(-500%); }
+  39%, 43%  { transform: translateX(-600%); }
+  46%, 49%  { transform: translateX(-700%); }
+  53%, 57%  { transform: translateX(-800%); }
+  61%, 65%  { transform: translateX(-900%); }
+  69%, 73%  { transform: translateX(-1000%); }
+  77%, 81%  { transform: translateX(-1100%); }
+  85%, 89%  { transform: translateX(-1200%); }
+  93%, 97%  { transform: translateX(-1300%); }
+  100%, 100%  { transform: translateX(-1400%); } }
+}
+
+
+.video-section2 {
+  width: 100%;
+  box-sizing: border-box;
+    min-height: 100vh;
+     position: relative;
+}
+
+
+.video-container2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;   
+  overflow: hidden;
+}
+
+.video-container2 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.video-overlay2 {
+  position: relative;  
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  line-height: 1.4;
+  box-sizing: border-box;
+  padding: 40px 20px 80px; 
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.178); 
+}
+.video-overlay2 h4 {
+  color: #f0bb1c;
+ font-size: 2rem;  
+}
+
+.video-overlay2 ul {
+  list-style: none;
+}
+
+.video-overlay2 li {
+  font-size: 1.5rem;
+  line-height: 2.95;
+  opacity: 0;
+  animation: fadeSlideIn 0.6s ease forwards;
+}
+
+.video-overlay2 li.white { color: #fff; }
+.video-overlay2 li.yellow { color: #f0bb1c; }
+
+.video-overlay2 a {
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+
+.video-overlay2 a:hover {
+  font-weight: bold;
+  transform: scale(1.05);
+  text-decoration: underline;
+}
+
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(100px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.video-overlay2 li:nth-child(1) { animation-delay: 0.2s; }
+.video-overlay2 li:nth-child(2) { animation-delay: 0.4s; }
+.video-overlay2 li:nth-child(3) { animation-delay: 0.6s; }
+.video-overlay2 li:nth-child(4) { animation-delay: 0.8s; }
+.video-overlay2 li:nth-child(5) { animation-delay: 1s; }
+.video-overlay2 li:nth-child(6) { animation-delay: 1.2s; }
+.video-overlay2 li:nth-child(7) { animation-delay: 1.4s; }
+.video-overlay2 li:nth-child(8) { animation-delay: 1.6s; }
+
+
+
+@media (max-width: 768px) {
+
+.video-container2 {
+    height: auto;
+  }
+  .video-section2 {
+    min-height: 100vh; 
+    height: auto; 
+  }
+  .video-overlay2 {
+    padding: 20px 15px 60px; 
+  }}
+
+
+
+.yellow-section0{
+  background: #f0bb1c;
+  text-align: left;
+  color: #000;
+  display:flex;
+  flex-direction:column;
+  align-items: left;
+  box-sizing: border-box; 
+}
+
+
+@media (max-width: 768px) {
+.video-overlay2 {
+  }
+
+  .video-overlay2 h4 {
+   font-size: 1.7rem;    
+  }
+
+  .video-overlay2 li {
+  font-size: clamp(22px, 3vw, 28px);     
+  line-height: 1.38;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-right: 8%;
+  }
+.yellow-section0{
+  text-align: center;
+  color: #000;
+  padding: 20px;
+}}
+
+.video-overlay2 li:last-child {
+}
+
+@media (max-width: 768px) {
+  .video-overlay2 li:last-child {
+  }
+}
+
+.text-section0 h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.separator0 {
+  width: 180px;
+  height: 7px;
+  background-color: #ffffff; 
+  transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+.separator0 {
+  width: 180px;
+  height: 7px;
+  background-color: #ffffff; 
+  transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+}}
+
+@keyframes drawLine {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+
+
+.separator9 {
+  width: 180px;
+  height: 7px;
+  background-color: #ffffff; 
+  margin-top: 40px;
+  align-items: center;
+  transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+}
+
+
+@media (max-width: 768px) {
+.separator9 {
+  width: 180px;
+  height: 7px;
+  align-items: center;
+  background-color: #ffffff; 
+transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+}
+}
+
+
+.separator90 {
+  width: 180px;
+  height: 7px;
+  background-color: #ffffff; 
+transform-origin: left;
+  animation: drawLine 4s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+.separator90 {
+}}
+
+    .gallery-section { 
+      max-width: auto; 
+      padding: 20px;
+        background: #f0bb1c;
+            }
+
+    .gallery-section h2 {
+  text-align: left;
+  font-size: 2rem;
+}
+
+
+
+.gallery-section p {
+  text-align: left;
+  max-width: 700px;
+      color: #000000; 
+
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.gallery-section1 { 
+      max-width: auto; 
+        background: #f0bb1c;
+            }
+
+@media (max-width: 700px) {
+    .gallery-section h2 {
+font-size: 1.7rem;}}
+
+
+.gallery-section1 p {
+  text-align: left;
+  max-width: 700px;
+      color: #000000; 
+
+  font-size: 1.4rem;
+  line-height: 1.4;
+}
+
+
+    .gallery-grid { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 20px; 
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+        .gallery-grid1 { 
+      display: grid; 
+      grid-template-columns: repeat(2, 1fr); 
+      justify-items: center; 
+        align-items: start;
+  gap: -0px -0px;         
+  max-width: 1200px;      
+  margin: 0 auto;    
+  margin-bottom: 10px;
+    }
+    
+    .gallery-item { 
+      background: #fff; 
+      border-radius: 15px; 
+      overflow: hidden; 
+      border: 1px solid #000000; 
+      text-align: left; 
+      transition: transform 0.3s ease; 
+    }
+
+        .gallery-item:hover { 
+      transform: scale(1.03); 
+    }
+
+
+    .gallery-item img { 
+      width: 100%; 
+      aspect-ratio: 1/1; 
+      object-fit: cover; 
+      display: block; 
+      transition: transform 0.4s ease; 
+    }
+
+    .gallery-caption { 
+      padding: 15px; 
+      
+    }
+    .gallery-caption p { 
+      margin: 6px 0; 
+      
+
+    }
+    .gallery-caption a { 
+      color: #000000; 
+      text-decoration: none; 
+      font-weight: bold; 
+     transition: color 0.2s ease;
+
+    }
+    .gallery-caption a:hover { 
+      color: #f0bb1c;
+    }
+
+
+.see-more-btn3 {
+  font-size: 24px;
+  padding: 14px 36px;
+  background: #000;
+  color: #f0bb1c;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: transform 0.4s ease, background 0.3s ease;  
+  display: inline-block; 
+}
+
+.see-more-btn3:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: scale(1.1);
+  transition: transform 0.4s ease, color 0.5s ease;
+}
+
+.see-more-btn4 {
+   position: absolute;
+  font-size: 24px;
+  padding: 14px 36px;
+  margin-left: 50%;
+  right: 10%;   
+
+  background: #ffffff;
+  color: #f0bb1c;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.4s ease, background 0.3s ease;  
+  display: inline-block; 
+}
+
+.see-more-btn4:hover {
+  background: #000000;
+  color: #f0bb1c;
+  transform: scale(1.1);
+  transition: transform 0.4s ease, color 0.5s ease;
+}
+
+@media (max-width: 768px) {
+
+.see-more-btn3 {
+  padding: 14px 39px;
+
+}}
+
+
+.gallery-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-media img,
+.gallery-media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-media video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-media img {
+  opacity: 0;
+}
+
+.gallery-item:hover .gallery-media video {
+  opacity: 1;
+}
+
+    @media(max-width: 760px) { 
+      .gallery-grid { grid-template-columns: 1fr 1fr; } 
+    }
+    @media(max-width: 600px) { 
+      .gallery-grid { grid-template-columns: 1fr; } 
+    }
+          .gallery-grid1 { grid-template-columns: 1fr 1fr; } 
+    
+    @media(max-width: 600px) { 
+      .gallery-grid1 { grid-template-columns: 1fr; } 
+    }
+
+
+    @media(max-width: 768px) {
+  .gallery-item .gallery-media img {
+    display: none; 
+  }
+  .gallery-item .gallery-media video {
+    position: static; 
+    opacity: 1 !important; 
+    pointer-events: auto;
+  }
+}
+
+
+.video-section4 {
+  background: #fff;
+  text-align: left;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+.section-header8 h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section-header9 h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section-header6 h2 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.video-caption h3 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+}
+.reel-link {
+  font-size: 1.7rem;
+  text-decoration: none;
+  color: #000;
+  transition: font-weight 0.3s ease;}
+
+
+  .video-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+    padding: 0 30px; 
+  box-sizing: border-box; 
+}
+
+.video-container video {
+  width: 95%;
+  height: auto;
+  display: block;
+  align-items: center;
+  object-fit: cover;
+  border-radius: 15px;  
+  border: 1px solid #000;   
+}
+
+
+    @media(max-width: 768px) {
+.section-header9 h2 {
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.section-header6 h2 {
+  font-size: 1.7rem;
+}
+
+.video-container {
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+  overflow: hidden;
+  border-radius: 14px;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+    border: 1px solid #000;   
+}
+
+.video-caption {
+}
+
+.video-caption h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.reel-link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #000;
+  transition: font-weight 0.3s ease;
+}
+
+.reel-link:hover {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: 1.7rem;
+  }
+
+  .video-caption h3 {
+    font-size: 1.2rem;
+  }
+}}
+
+.video-overlay05 {
+  position: absolute;
+  bottom: -190px; 
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
+}
+
+.video-overlay05 a {
+    font-size: 30px;
+
+  font-weight: 400;
+  color: #ffffff; 
+  text-decoration: none;
+  transition: color 0.4s ease;
+  display: block; 
+}
+
+.video-overlay05 a:hover {
+  color: #000000;
+}
+
+@media (max-width: 768px) {
+  .video-overlay05 {
+    bottom: -140px;
+    font-size: 20px;
+  }
+
+  .video-overlay05 a {
+    font-size: 1.4rem;  
+      font-weight: 400;
+
+  }}
+
+
+.gallery-grid-offerta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+gap: 6rem;
+  width: 60%;
+  height: 60%;
+  margin: 4rem auto 0 auto;
+}
+
+@media (max-width: 768px) {
+  .gallery-grid-offerta {
+    grid-template-columns: 1fr;
+      width: 85%;
+  height: 85%;
+  }
+}
+
+.gallery-item-offerta {
+  border: 2px solid #000;      
+  border-radius: 22px;
+  overflow: hidden;
+    width: 100%;
+
+  display: flex;
+  flex-direction: column;       
+  align-items: stretch;
+  transition: transform 0.2s ease;
+}
+
+.gallery-item-offerta:hover {
+   transform: scale(1.03);
+}
+
+.gallery-media-offerta {
+  width: 100%;
+  display: block;
+}
+
+.gallery-media-offerta img,
+.gallery-media-offerta video {
+  width: 100%;
+  height: auto;                
+  display: block;
+  border-bottom: 1px solid #000; 
+}
+
+.gallery-caption-offerta {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 3rem;
+  min-height: 250px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.gallery-caption-offerta p {
+  margin: 0;
+  color: #000;
+  font-size: 1.7rem;
+  font-weight: 400;
+    line-height: 1.3;    
+
+}
+
+@media (max-width: 768px) {
+
+  .gallery-caption-offerta {
+  padding: 3rem;
+  min-height: 100px;
+}
+
+.gallery-caption-offerta p {
+  margin: 0;
+  color: #000;
+  font-size: 1.3rem;
+  font-weight: 400;
+}}
+
+
+
+.carousel-container0 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px; 
+  margin: 0 auto;   
+  gap: 20px;
+}
+
+.carousel-track0 {
+  display: flex;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-slide0 {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  text-align: center;
+  display: none;
+}
+
+.carousel-slide0.active {
+  display: block;
+}
+
+.slide-text {
+  font-size: 1.3rem;
+  text-align: center;
+  align-items: center;
+  font-weight: 500;
+  max-width: 1000%;
+  margin-top: 50px;
+  margin-bottom: 70px;
+}
+
+.circle-img {
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.651);
+  transition: transform 0.5s ease;
+}
+
+.circle-img:hover {
+  transform: scale(1.3);
+}
+
+.nav {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+
+.order-section {
+            background: #f0bb1c;
+}
+
+  .order-section .order-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding-top: 3%;
+    padding-bottom: 3%;
+  }
+
+ 
+
+.see-more-container {
+  text-align: center;
+}
+
+.see-more-container1 {
+}
+
+
+.see-more-container1 .see-more-btn3 {
+margin-bottom: 50px;
+}
+
+  .carousel-track0 {
+    display: flex;
+    justify-content: center;
+    gap: 80px; 
+    overflow: visible;
+  }
+
+  .carousel-slide0 {
+    display: block;
+    flex: 1 1 30%;
+  }
+
+  .carousel-slide0 img {
+    max-width: 220px;
+  }
+
+
+@media (max-width: 768px) {
+
+
+  .slide-text {
+
+  margin-top: 9px;
+  margin-bottom: 30px;
+}
+
+
+  .see-more-container {
+  text-align: left;
+}
+
+  .see-more-container1 .see-more-btn3 {
+}
+
+ .text-section0 .separator9 {
+    align-items: center;
+    transform-origin: center;
+  }
+
+  .carousel-container0 {
+}
+
+.carousel-slide0 {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  text-align: center;
+  display: none; 
+}
+
+.carousel-slide0.active {
+  display: block; 
+}
+
+.nav {
+  display: block; 
+}
+.slide-text {
+  font-size: 1.4rem;
+  text-align: center;
+  align-items: center;
+  font-weight: 500;
+  max-width: 1000%;
+}
+.circle-img {
+      margin-left: 0;
+      margin-bottom: -40px;
+
+}
+
+.order-section .order-content {
+  display: block;
+  text-align: center;
+      padding-right: 0%;
+    padding-left: 0%;
+    padding-bottom: 15%;
+    padding-top: 10%;
+}
+
+.order-section .text-section0 h2 {
+  text-align: center;
+    font-size: 1.7rem;
+}
+
+.order-section .separator9 {
+    align-items: center;
+    transform-origin: center;
+}
+
+   .order-section .see-more-btn3 {
+}
+
+
+  .carousel-track0 {
+    overflow: visible;
+  }
+
+  .nav 
+  { font-size: 45px;
+margin-top: 36%;}}
+  
+
+
+.highlight-link {
+  font-weight: bold;         
+  text-decoration: none;      
+  color: #222;             
+  display: inline-block;      
+  position: relative;         
+  transition: transform 0.3s ease;
+}
+
+.highlight-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;               
+  width: 0;                   
+  height: 2px;                
+  background-color: currentColor; 
+  transition: width 0.3s ease;
+}
+
+.highlight-link:hover {
+  transform: scale(1.02);     
+}
+
+.highlight-link:hover::after {
+  width: 100%;                
+}
+
+
+.gallery-caption-offerta p {
+  transition: opacity 0.6s ease-in-out;
+}
+.video-section:first-of-type h1 {
+}
+.video-section:last-of-type h1 {
+}
+.desktop-only { display: block; }
+.mobile-only { display: none; }
+
+@media (max-width: 768px) {
+  .desktop-only { display: none; }
+  .mobile-only { display: block; }
+}
+
+
+
+.white-section {
+  width: 100%;
+  padding: 10px 0; 
+  box-sizing: border-box;
+  background-color: #fff;
+  padding-right: 3%;
+}
+
+.top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; 
+}
+
+.text-col-left-margin {
+  flex: 1 1 500px; 
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.text-col-left-margin h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  margin-left: 25%;
+}
+
+
+.para-top {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-left: 25%;
+
+}
+
+.highlight-link {
+  color: #f0bb1c;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.4s ease;
+}
+
+.highlight-link:hover {
+  color: #000;
+}
+
+.video-col {
+  flex: 1 1 500px;
+  text-align: left; 
+  box-sizing: border-box;
+}
+
+.video-col video {
+  width: 70%;
+  margin: auto;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.video-col video:hover {
+  transform: scale(1.03);
+}
+
+
+
+@media (max-width: 768px) {
+
+  .top-row {
+    flex-direction: column;
+    gap: 20px;
+  display:block;
+    margin-top: 15%;
+
+}
+
+  .video-col {
+    margin-bottom: -40px;
+
+      }
+
+  .text-col-left-margin h2 {
+    font-size: 1.7rem;
+      margin-left: 14%;
+           margin-right: 10%;
+  }
+  .para-top {
+    font-size: 1.4rem;
+      margin-left: 14%;
+     margin-right: 10%;
+  }
+}
+
+
+
+.video-col2 {
+  width: 80%;
+  display: flex;
+  justify-content: center; 
+  align-items: center;  
+  margin: 0 auto;    
+
+}
+
+.video-col2 video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+    justify-content: center; 
+
+}
+
+@media (max-width: 768px) {
+
+.video-col2 {
+  width: 90%;
+  display: flex;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  justify-content: center; 
+}}
+
+
+.text-col22 {
+  margin-right: 10%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column; 
+  gap: 15px; 
+  
+}
+
+.text-col22 h6 {
+  font-size: 2rem;
+  margin-left: 12.7%;
+
+}
+
+.para-bottom {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-top: 5%;
+  margin-left: 14%;
+
+}
+
+
+@media (max-width: 768px) {
+.text-col22 {
+          margin-bottom: 15%;
+            margin-left: 12%;
+
+ gap: 80px;
+}
+
+.text-col22 h6 {
+      font-size: 1.7rem;
+     margin-right: 10%;
+                   margin-left: 3%;
+}
+
+
+.para-bottom {
+    font-size: 1.4rem;
+    margin-top: 40%;
+        margin-bottom: 15%;
+              margin-left: 3%;
+
+    }
+}
+
+
+
+
+.yellow-h2,
+.section-header9,
+.gallery-section h2,
+.text-section0,
+.separator0,
+.section-header6 h2,
+.separator2,
+.separator90,
+.yellow-h2,
+.yellow2-h2,
+.see-more-btn3,
+.video-caption {  
+  margin: 40px 0;
+  margin-left: 12%;
+  margin-right: 10%;
+}
+
+
+.separator7
+{
+  margin-top: 20px;
+  margin-left: 12%;
+  margin-right: 10%;
+  margin-bottom: 50px;
+}
+
+
+
+
+
+.separator8
+{
+  margin: 40px 0;
+}
+
+
+.video-overlay2 h4 {
+  margin-top: 90px;
+    margin-left: 12%;
+    margin-right: 11%;
+}
+.video-overlay2 li {
+      margin-left: 12%;
+          margin-right: 10%;
+
+
+}
+
+
+@media (max-width: 768px) {
+.separator9 {
+  margin: 40px auto;
+}
+
+.text-section0 {
+    margin: 40px 0;
+  margin-left: 0%;
+}
+
+.gallery-section .see-more-btn3 {
+  margin-left: 0%;
+}
+
+
+
+.order-section .see-more-btn4 {
+     position: static;
+
+ display: block;   
+  margin: 20px auto;
+}
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1366px) {
+  .text-col-left-margin h2 {
+      margin-left: 12%;
+  }
+  .para-top {
+      margin-left: 12%;
+      margin-right: 10%;
+  }
+
+  .separator00 {
+          margin-left: 12%;
+  }
+  .para-bottom {
+      margin-left: 13%;
+      margin-right: 10%;
+  }
+.text-col22 h6 {
+     margin-right: 10%;
+                   margin-left: 12%;
+}
+}
+
+.btn {
+  display: inline-block;
+  background: #ff4747;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none; 
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff2020;
+  text-decoration: none; 
+}
+
+
+</style>
+</head>
+<body>
+   
+
+<div id="header"></div>
+
+
+<section class="video-section" id="video">
+    <video src="animated-diagonal-light-rays-background-samuel-studio.mp4" autoplay muted loop></video>
+    <div class="video-overlay">
+<h1>Reach your audience effectively.</h1>
+<h4>2D and 3D animations that capture attention and build engagement.</h4>
+
+        <div class="separator" style="background-color: #ffffff;"></div>
+<div class="buttons">
+  <button class="btn" onclick="document.querySelector('.yellow-section0').scrollIntoView({ behavior: 'smooth' })">
+    See How it Works
+  </button>
+</div>
+  <button class="btn" 
+          style="background:#fff; color:#000000;" 
+          onclick="document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' })">
+    Explore Examples
+  </button>
+</div>
+    </div>
+</section>
+
+
+<section class="yellow-section" id="oferta">
+  <div class="ellipse-video">
+    <video src="question-mark.mp4" autoplay muted loop></video>
+  </div>
+
+  <h2 class="yellow-h2">Do you have something important&nbsp;to&nbsp;show but&nbsp;don't&nbsp;know&nbsp;how to&nbsp;do&nbsp;it&nbsp;effectively?</h2>
+    <div class="separator90"></div>
+  
+  <div class="gallery-grid gallery-grid-offerta">
+
+    <div class="gallery-item-offerta">
+      <div class="gallery-media-offerta">
+        <img src="SQUARE 1.gif" alt="WORSHIP in the city center 2022 - cover image">
+      </div>
+      <div class="gallery-caption-offerta">
+        <p>You don’t have an&nbsp;animated logo to make your brand stand out.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item-offerta">
+      <div class="gallery-media-offerta">
+        <img src="SQUARE 2.gif" alt="YAGOOSH - Puppeteer cover">
+      </div>
+      <div class="gallery-caption-offerta">
+        <p>Your lectures don’t capture your audience's attention.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item-offerta">
+      <div class="gallery-media-offerta">
+        <img src="SQUARE 3.gif" alt="Bible Unbound - The Bible In a Sentence cover">
+      </div>
+      <div class="gallery-caption-offerta">
+        <p>You find it hard to explain complex topics in an engaging way.</p>
+      </div>
+    </div>
+
+    <div class="gallery-item-offerta">
+      <div class="gallery-media-offerta">
+        <img src="SQUARE 4.gif" alt="Bible Unbound - The Bible In a Sentence cover">
+      </div>
+      <div class="gallery-caption-offerta">
+        <p>Low attendance at your events makes you feel unappreciated.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="yellow2-h2">Don’t let your story fade into&nbsp;the&nbsp;background.</h2>
+   <div class="separator90"></div>
+</section>
+
+
+<section class="white-section">
+  <div class="top-row">
+    <div class="text-col-left-margin">
+      <h2>I’m Paweł Pauksztełło,<br>founder of Samuel Studio.</h2>
+      <div class="separator00"></div>
+      <p class="para-top">
+        I help you capture attention and communicate your message clearly.
+        Check out <a href="work.html" class="highlight-link">my portfolio</a> and see how my animations work in practice.
+      </p>
+    </div>
+    <div class="video-col">
+      <video id="myVideo" src="Pawel-Pauksztello-Samuel-Studio-Owner-Founder.mp4" autoplay muted loop playsinline></video>
+    </div>
+  </div> 
+</section>
+
+
+<section class="video-text-section"> <div class="video-col2"> 
+  <video src="yourstory.mp4" autoplay muted loop playsinline></video> 
+</div> <div class="text-col22"> 
+  <h6>No one wants to be ignored.</h6> 
+  
+<p class="para-bottom"> Well-crafted animation grabs attention, engages your audience, and makes your message unforgettable. 
+  </p> </div> </section>
+
+
+
+<section class="video-section2">
+
+  <div class="video-container2">
+<video src="animated-diagonal-light-rays-background-samuel-studio.mp4" autoplay muted loop playsinline></video>
+    <div class="video-overlay2">
+      <h4>I offer creative solutions for your business needs.</h4>
+      <div class="separator7"></div>
+<li class="white">
+  Make your brand memorable and stand out 
+  <a href="#">– Animated Logos</a>
+</li>
+<li class="yellow">
+  Simplify complex topics and engage your audience 
+  <a href="#">– Explainers</a>
+</li>
+<li class="white">
+  Tell your story with motion
+  <a href="#">– Storytelling</a>
+</li>
+<li class="yellow">
+  Enhance your video projects
+  <a href="#">– Animated elements for larger productions</a>
+</li>
+<li class="white">
+  Perfect for digital branding and social media
+  <a href="#">– Animated GIFs</a>
+</li>
+<li class="yellow">
+  Grab attention and drive awareness
+  <a href="#">– Promotional Animations</a>
+</li>
+<li class="white">
+  Eye-catching visual storytelling for your campaigns
+  <a href="#">– Animated Posters</a>
+</li>
+<li class="yellow">
+  Subtle motion that adds depth
+  <a href="#">– Background Animations</a>
+</li>
+    </div>
+  </div>
+</section>
+
+  
+
+<section style="padding: 60px 0 0 0px; background: #ffffff;">
+
+
+    <div class="section-header9">
+    <h2>Brands that trusted Us</h2>
+    <div class="separator8"></div>
+  </div>
+
+
+  <div class="logo-carousel">
+    <div class="logo-track">
+      <a href="https://uwielbienie.kielce.pl/" target="_blank"><img src="LOGO-UwCM-a-300x164.png" alt="Firma 1"></a>
+      <a href="https://dwaprzymierza.pl/" target="_blank"><img src="logo_dwaprzymierza2019-01-300x214.jpg.webp" alt="Firma 2"></a>
+      <a href="https://muzeum.torun.pl/" target="_blank"><img src="logo-muzeum-okregowe-w-toruniu-300x72.png.webp" alt="Firma 3"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="logo-e1649182133913-300x76.jpg.webp" alt="Firma 4"></a>
+      <a href="https://facebook.com/Chrzescijanskie.Granie" target="_blank"><img src="fundacja_chg_logo-560x280-1-300x150.jpg.webp" alt="Firma 5"></a>
+      <a href="https://firma6.pl" target="_blank"><img src="CM.-Stories-logo-300x170.jpg.webp" alt="Firma 6"></a>
+      <a href="https://www.thebibleunbound.com/" target="_blank"><img src="Logo-Style-3-300x300.png.webp" alt="Firma 7"></a>
+      <a href="https://www.trileas.com/" target="_blank"><img src="TRILEAS-logo-300x246.png.webp" alt="Firma 8"></a>
+      <a href="https://firma6.pl" target="_blank"><img src="FAMILY-FILM-LOGO-230x300.png.webp" alt="Firma 6"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="Redeemified_Logo-300x169.jpg.webp" alt="Firma 4"></a>
+      <a href="https://alfabravo.pl/" target="_blank"><img src="ALFA-BRAVO-LOGO.png" alt="Firma 4"></a>
+      <a href="https://modlitwawdrodze.pl/" target="_blank"><img src="Modlitwa-w-drodze-logo-1-300x133.png.webp" alt="Firma 4"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="30052508_10155961110891636_7592915301371484606_o-300x300.jpg" alt="Firma 4"></a>
+      <a href="https://4-eco.pl/" target="_blank"><img src="4-eco-logo-300x137.png.webp" alt="Firma 4"></a>
+      <a href="https://uwielbienie.kielce.pl/" target="_blank"><img src="LOGO-UwCM-a-300x164.png" alt="Firma 1"></a>
+      <a href="https://dwaprzymierza.pl/" target="_blank"><img src="logo_dwaprzymierza2019-01-300x214.jpg.webp" alt="Firma 2"></a>
+      <a href="https://muzeum.torun.pl/" target="_blank"><img src="logo-muzeum-okregowe-w-toruniu-300x72.png.webp" alt="Firma 3"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="logo-e1649182133913-300x76.jpg.webp" alt="Firma 4"></a>
+      <a href="https://facebook.com/Chrzescijanskie.Granie" target="_blank"><img src="fundacja_chg_logo-560x280-1-300x150.jpg.webp" alt="Firma 5"></a>
+      <a href="https://firma6.pl" target="_blank"><img src="CM.-Stories-logo-300x170.jpg.webp" alt="Firma 6"></a>
+      <a href="https://www.thebibleunbound.com/" target="_blank"><img src="Logo-Style-3-300x300.png.webp" alt="Firma 7"></a>
+      <a href="https://www.trileas.com/" target="_blank"><img src="TRILEAS-logo-300x246.png.webp" alt="Firma 8"></a>
+      <a href="https://firma6.pl" target="_blank"><img src="FAMILY-FILM-LOGO-230x300.png.webp" alt="Firma 6"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="Redeemified_Logo-300x169.jpg.webp" alt="Firma 4"></a>
+      <a href="https://alfabravo.pl/" target="_blank"><img src="ALFA-BRAVO-LOGO.png" alt="Firma 4"></a>
+      <a href="https://modlitwawdrodze.pl/" target="_blank"><img src="Modlitwa-w-drodze-logo-1-300x133.png.webp" alt="Firma 4"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="30052508_10155961110891636_7592915301371484606_o-300x300.jpg" alt="Firma 4"></a>
+      <a href="https://4-eco.pl/" target="_blank"><img src="4-eco-logo-300x137.png.webp" alt="Firma 4"></a>
+      <a href="https://uwielbienie.kielce.pl/" target="_blank"><img src="LOGO-UwCM-a-300x164.png" alt="Firma 1"></a>
+      <a href="https://dwaprzymierza.pl/" target="_blank"><img src="logo_dwaprzymierza2019-01-300x214.jpg.webp" alt="Firma 2"></a>
+      <a href="https://muzeum.torun.pl/" target="_blank"><img src="logo-muzeum-okregowe-w-toruniu-300x72.png.webp" alt="Firma 3"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="logo-e1649182133913-300x76.jpg.webp" alt="Firma 4"></a>
+      <a href="https://facebook.com/Chrzescijanskie.Granie" target="_blank"><img src="fundacja_chg_logo-560x280-1-300x150.jpg.webp" alt="Firma 5"></a>
+      <a href="https://firma6.pl" target="_blank"><img src="CM.-Stories-logo-300x170.jpg.webp" alt="Firma 6"></a>
+      <a href="https://www.thebibleunbound.com/" target="_blank"><img src="Logo-Style-3-300x300.png.webp" alt="Firma 7"></a>
+      <a href="https://www.trileas.com/" target="_blank"><img src="TRILEAS-logo-300x246.png.webp" alt="Firma 8"></a>
+      <a href="https://firma6.pl" target="_blank"><img src="FAMILY-FILM-LOGO-230x300.png.webp" alt="Firma 6"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="Redeemified_Logo-300x169.jpg.webp" alt="Firma 4"></a>
+      <a href="https://alfabravo.pl/" target="_blank"><img src="ALFA-BRAVO-LOGO.png" alt="Firma 4"></a>
+      <a href="https://modlitwawdrodze.pl/" target="_blank"><img src="Modlitwa-w-drodze-logo-1-300x133.png.webp" alt="Firma 4"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="30052508_10155961110891636_7592915301371484606_o-300x300.jpg" alt="Firma 4"></a>
+      <a href="https://4-eco.pl/" target="_blank"><img src="4-eco-logo-300x137.png.webp" alt="Firma 4"></a>
+      <a href="https://uwielbienie.kielce.pl/" target="_blank"><img src="LOGO-UwCM-a-300x164.png" alt="Firma 1"></a>
+      <a href="https://dwaprzymierza.pl/" target="_blank"><img src="logo_dwaprzymierza2019-01-300x214.jpg.webp" alt="Firma 2"></a>
+      <a href="https://muzeum.torun.pl/" target="_blank"><img src="logo-muzeum-okregowe-w-toruniu-300x72.png.webp" alt="Firma 3"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="logo-e1649182133913-300x76.jpg.webp" alt="Firma 4"></a>
+      <a href="https://facebook.com/Chrzescijanskie.Granie" target="_blank"><img src="fundacja_chg_logo-560x280-1-300x150.jpg.webp" alt="Firma 5"></a>
+      <a href="https://firma6.pl" target="_blank"><img src="CM.-Stories-logo-300x170.jpg.webp" alt="Firma 6"></a>
+      <a href="https://www.thebibleunbound.com/" target="_blank"><img src="Logo-Style-3-300x300.png.webp" alt="Firma 7"></a>
+      <a href="https://www.trileas.com/" target="_blank"><img src="TRILEAS-logo-300x246.png.webp" alt="Firma 8"></a>
+      <a href="https://firma6.pl" target="_blank"><img src="FAMILY-FILM-LOGO-230x300.png.webp" alt="Firma 6"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="Redeemified_Logo-300x169.jpg.webp" alt="Firma 4"></a>
+      <a href="https://alfabravo.pl/" target="_blank"><img src="ALFA-BRAVO-LOGO.png" alt="Firma 4"></a>
+      <a href="https://modlitwawdrodze.pl/" target="_blank"><img src="Modlitwa-w-drodze-logo-1-300x133.png.webp" alt="Firma 4"></a>
+      <a href="https://e-religijne.pl" target="_blank"><img src="30052508_10155961110891636_7592915301371484606_o-300x300.jpg" alt="Firma 4"></a>
+      <a href="https://4-eco.pl/" target="_blank"><img src="4-eco-logo-300x137.png.webp" alt="Firma 4"></a>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="yellow-section0">
+  <div class="text-section0">
+    <h2>Simple, Clear, and&nbsp;Effective Process.</h2>
+    <div class="separator9"></div>
+  </div>
+
+  <div class="carousel-container0" aria-roledescription="carousel">
+    <button class="nav prev" aria-label="Poprzedni slajd">‹</button>
+
+    <div class="carousel-track0">
+      <div class="carousel-slide0 active" data-index="0">
+        <p class="slide-text">I create animation that speaks visually</p>
+        <img src="image1.png" alt="grafika 1" class="circle-img">
+      </div>
+
+      <div class="carousel-slide0" data-index="1">
+        <p class="slide-text">You get a&nbsp;finished film that works.</p>
+        <img src="image2.png" alt="grafika 2" class="circle-img">
+      </div>
+
+      <div class="carousel-slide0" data-index="2">
+        <p class="slide-text">We define the story that you want to&nbsp;tell.</p>
+        <img src="image3.png" alt="grafika 3" class="circle-img">
+      </div>
+    </div>
+
+    <button class="nav next" aria-label="Następny slajd">›</button>
+  </div>
+</section>
+
+<section class="order-section">
+  <div class="order-content">
+    <div class="text-section0">
+      <h2>Let’s create together.</h2>
+      <div class="separator9"></div>
+    </div>
+      <button class="see-more-btn4" onclick="window.location.href='https://samuelstudio.com/contact'">
+        Order today
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+  </section>
+
+<section style="padding: 20px 0 0 0px; background: #ffffff;">
+
+
+    <div class="section-header9">
+    <h2>What Clients Say</h2>
+    <div class="separator8"></div>
+  </div>
+
+  <div class="opinie-carousel">
+    <div class="opinie-track">
+      <div class="opinia">
+        <a href="https://www.google.com/search?sca_esv=8e23599b05dcda53&sxsrf=AE3TifOD2Eq75ubp-mwDPJzIYybLXtVqyA:1756146450645&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzOrb8msZ41PbwrtZCXgAS73mjE7vfglHotkveeSsehsF7n7_aNLXU9IjqTLnhpaHW5JSmbdOg1DYPGlSgQCOhxcNAtRO-KOuuOkPuYQJFm4ohHkhAHIRomp2fd8_9H9ZoxMzlNyrArlXtvkRcJIipU9vtzrRDTqgBOBJl6btSzrmhvgorgupv84bQFF1BFBAzEanXtw&q=Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach+Opinie&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7R6JI_1RwpooYacCjMiXkLWjXwcJ5GZ9efbiggoACmyzoCnvCjaYFsjXLiywuJjMwc-ecctZwV1c6CML7HEQwVXORu_9OAavF2o0S8LgA5cNhM2SoQ1V1YH1w6ay8YerXoxUukSuXLEpL6u9iAvYA10DaEw&hl=pl-PL&sa=X&ved=2ahUKEwic3PSqy6aPAxVLFBAIHQvLBXIQ_4MLegQITBAN&biw=1920&bih=1039&dpr=1" target="_blank">
+          <img src="opinia1.png" alt="Opinia 1">
+        </a>
+      </div>
+      <div class="opinia">
+        <a href="https://www.google.com/search?sca_esv=8e23599b05dcda53&sxsrf=AE3TifOD2Eq75ubp-mwDPJzIYybLXtVqyA:1756146450645&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzOrb8msZ41PbwrtZCXgAS73mjE7vfglHotkveeSsehsF7n7_aNLXU9IjqTLnhpaHW5JSmbdOg1DYPGlSgQCOhxcNAtRO-KOuuOkPuYQJFm4ohHkhAHIRomp2fd8_9H9ZoxMzlNyrArlXtvkRcJIipU9vtzrRDTqgBOBJl6btSzrmhvgorgupv84bQFF1BFBAzEanXtw&q=Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach+Opinie&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7R6JI_1RwpooYacCjMiXkLWjXwcJ5GZ9efbiggoACmyzoCnvCjaYFsjXLiywuJjMwc-ecctZwV1c6CML7HEQwVXORu_9OAavF2o0S8LgA5cNhM2SoQ1V1YH1w6ay8YerXoxUukSuXLEpL6u9iAvYA10DaEw&hl=pl-PL&sa=X&ved=2ahUKEwic3PSqy6aPAxVLFBAIHQvLBXIQ_4MLegQITBAN&biw=1920&bih=1039&dpr=1m" target="_blank">
+          <img src="opinia2.png" alt="Opinia 2">
+        </a>
+      </div>
+      <div class="opinia">
+        <a href="https://www.google.com/search?sca_esv=8e23599b05dcda53&sxsrf=AE3TifOD2Eq75ubp-mwDPJzIYybLXtVqyA:1756146450645&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzOrb8msZ41PbwrtZCXgAS73mjE7vfglHotkveeSsehsF7n7_aNLXU9IjqTLnhpaHW5JSmbdOg1DYPGlSgQCOhxcNAtRO-KOuuOkPuYQJFm4ohHkhAHIRomp2fd8_9H9ZoxMzlNyrArlXtvkRcJIipU9vtzrRDTqgBOBJl6btSzrmhvgorgupv84bQFF1BFBAzEanXtw&q=Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach+Opinie&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7R6JI_1RwpooYacCjMiXkLWjXwcJ5GZ9efbiggoACmyzoCnvCjaYFsjXLiywuJjMwc-ecctZwV1c6CML7HEQwVXORu_9OAavF2o0S8LgA5cNhM2SoQ1V1YH1w6ay8YerXoxUukSuXLEpL6u9iAvYA10DaEw&hl=pl-PL&sa=X&ved=2ahUKEwic3PSqy6aPAxVLFBAIHQvLBXIQ_4MLegQITBAN&biw=1920&bih=1039&dpr=1" target="_blank">
+          <img src="opinia3.png" alt="Opinia 3">
+        </a>
+      </div>
+      <div class="opinia">
+        <a href="https://www.google.com/search?sca_esv=8e23599b05dcda53&sxsrf=AE3TifOD2Eq75ubp-mwDPJzIYybLXtVqyA:1756146450645&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzOrb8msZ41PbwrtZCXgAS73mjE7vfglHotkveeSsehsF7n7_aNLXU9IjqTLnhpaHW5JSmbdOg1DYPGlSgQCOhxcNAtRO-KOuuOkPuYQJFm4ohHkhAHIRomp2fd8_9H9ZoxMzlNyrArlXtvkRcJIipU9vtzrRDTqgBOBJl6btSzrmhvgorgupv84bQFF1BFBAzEanXtw&q=Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach+Opinie&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7R6JI_1RwpooYacCjMiXkLWjXwcJ5GZ9efbiggoACmyzoCnvCjaYFsjXLiywuJjMwc-ecctZwV1c6CML7HEQwVXORu_9OAavF2o0S8LgA5cNhM2SoQ1V1YH1w6ay8YerXoxUukSuXLEpL6u9iAvYA10DaEw&hl=pl-PL&sa=X&ved=2ahUKEwic3PSqy6aPAxVLFBAIHQvLBXIQ_4MLegQITBAN&biw=1920&bih=1039&dpr=1" target="_blank">
+          <img src="opinia4.png" alt="Opinia 4">
+        </a>
+      </div>
+      <div class="opinia">
+        <a href="https://www.google.com/search?sca_esv=8e23599b05dcda53&sxsrf=AE3TifOD2Eq75ubp-mwDPJzIYybLXtVqyA:1756146450645&uds=AOm0WdE2fekQnsyfYEw8JPYozOKzOrb8msZ41PbwrtZCXgAS73mjE7vfglHotkveeSsehsF7n7_aNLXU9IjqTLnhpaHW5JSmbdOg1DYPGlSgQCOhxcNAtRO-KOuuOkPuYQJFm4ohHkhAHIRomp2fd8_9H9ZoxMzlNyrArlXtvkRcJIipU9vtzrRDTqgBOBJl6btSzrmhvgorgupv84bQFF1BFBAzEanXtw&q=Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach+Opinie&si=AMgyJEtREmoPL4P1I5IDCfuA8gybfVI2d5Uj7QMwYCZHKDZ-E7R6JI_1RwpooYacCjMiXkLWjXwcJ5GZ9efbiggoACmyzoCnvCjaYFsjXLiywuJjMwc-ecctZwV1c6CML7HEQwVXORu_9OAavF2o0S8LgA5cNhM2SoQ1V1YH1w6ay8YerXoxUukSuXLEpL6u9iAvYA10DaEw&hl=pl-PL&sa=X&ved=2ahUKEwic3PSqy6aPAxVLFBAIHQvLBXIQ_4MLegQITBAN&biw=1920&bih=1039&dpr=1" target="_blank">
+          <img src="opinia5.png" alt="Opinia 5">
+        </a>
+      </div>
+    </div>
+
+    <button class="arrow prev">&#10094;</button>
+    <button class="arrow next">&#10095;</button>
+  </div>
+
+  <div class="see-more-container1">
+   <button class="see-more-btn3" onclick="window.location.href='https://www.google.com/maps/place/Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach/@46.423669,-84.4270629,3z/data=!4m18!1m9!3m8!1s0xac688efcb209881f:0x50fac03e7d6b27cb!2sSamuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach!8m2!3d46.423669!4d-84.4270629!9m1!1b1!16s%2Fg%2F11lzkl8mz_!3m7!1s0xac688efcb209881f:0x50fac03e7d6b27cb!8m2!3d46.423669!4d-84.4270629!9m1!1b1!16s%2Fg%2F11lzkl8mz_?entry=ttu&g_ep=EgoyMDI1MDkxNy4wIKXMDSoASAFQAw%3D%3D'">
+    Write a review
+</div>
+</section>
+
+
+
+  <section id="gallery" class="gallery-section">
+        <h2>Recent Work</h2>
+        <div class="separator0"></div>
+
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      
+      <div class="gallery-media">
+        <img src="Logo-trileas-cover.png" alt="WORSHIP in the city center 2022 - cover image">
+        <video src="Trileas-Animated-Cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>TRILEAS</p>
+        <a href="#trileas.html">Logo animation</a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="The-Gospel-Explained-in-Five-Minutes.jpg" alt="YAGOOSH - Puppeteer cover">
+        <video src="The-Gospel-in-five-minutes-Cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>BIBLE UNBOUND & Samuel Studio</p>
+        <a href="#gospel.html">The Gospel Explained in Five Minutes</a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="cover-of-3d-modern-animation_00099.jpg" alt="Bible Unbound - The Bible In a Sentence cover">
+        <video src="animated-cover-of-modern-3d-animation.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>Modern visualisation</p>
+        <a href="#">3D Animation</a>
+      </div>
+      </div>
+<div class="see-more-container">
+  <a href="https://samuelstudio.com/work" class="see-more-btn3">See More</a>
+</div>
+    </section>
+
+
+<section class="video-section4">
+  <div class="section-header6">
+    <h2>Animations that works</h2>
+    <div class="separator2"></div>
+  </div>
+
+  <div class="video-container">
+    <video src="Samuel-Studio-Reel-2025.mp4" autoplay muted loop playsinline></video>
+  </div>
+
+  <div class="video-caption">
+    <h3>Samuel Studio</h3>
+    <a href="#" class="reel-link">Reel</a>
+  </div>
+</section>
+
+
+<section class="video-section" id="video">
+    <video src="animated-diagonal-light-rays-background-samuel-studio.mp4" autoplay muted loop></video>
+<div class="video-overlay" style="padding-top: 130px; padding-bottom: 1000px;">
+
+          <h1>Ready to create something extraordinary?</h1>
+        <h4>Let’s work together and bring your ideas to&nbsp;life. </h4>
+
+        <div class="separator" style="background-color: #ffffff;"></div>
+
+<div class="buttons">
+  <a href="contact.html" class="btn">Get a Free Consultation</a>
+  <a href="contact.html" class="btn" style="background:#fff; color:#000;">Contact Me Today</a>
+</div>
+<button class="btn" 
+  style="background:#fff; color:#000000;" 
+  onclick="window.location.href='tel:+48693733366'">
+  Call Me Now
+</button>
+</div>
+</section>
+
+
+  <footer class="footer">
+  <div class="footer-subscribe">
+    <h5>CLICK TO SUBSCRIBE</h5>
+    <div class="footer-buttons">
+      <a href="https://www.youtube.com/@samuelstudio_" class="subscribe-btn">
+        <img src="samuelstudio icon.svg" alt="Animator 1"> 
+        YT Samuel Studio
+      </a>
+      <a href="https://www.youtube.com/@explainersinanimation" class="subscribe-btn">
+        <img src="explainers icon.svg" alt="Animator 2"> 
+        YT Explainers in Animation</a>
+    </div>
+  </div>
+
+  <nav class="footer-nav">
+    <a href="https://samuelstudio.com">Home</a>
+    <a href="https://samuelstudio.com/work">Work</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://blog.samuelstudio.com/">Blog</a>
+
+  </nav>
+
+  <div class="footer-socials">
+    <a href="https://www.linkedin.com/in/pawel-pauksztello-samuel-studio/" target="_blank">
+      <img src="linked icon.svg" alt="LinkedIn">
+    </a>
+    <a href="https://www.youtube.com/@SamuelStudio_" target="_blank">
+      <img src="yt icon.svg" alt="YouTube">
+    </a>
+    <a href="https://www.facebook.com/pawelpauksztello" target="_blank">
+      <img src="fb icon.svg" alt="Facebook">
+    </a>
+    <a href="https://www.instagram.com/pawel_samuel_studio/" target="_blank">
+      <img src="insta icon.svg" alt="Instagram">
+    </a>
+    <a href="indexpl.html" title="English version" class="lang-switch">
+      <img src="plflag.svg" alt="English" style="width:35px; vertical-align:middle;">
+    </a>
+  </div>
+
+  <div class="footer-bottom">
+    <a href="privacy.html">Privacy Policy</a>
+    <span><p></p>2025 Paweł Pauksztełło | Web Design by Michał Baran Grafik</span>
+  </div>
+</footer>
+
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+    document.querySelectorAll('nav.menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById("menu").classList.remove("show");
+      });
+    });
+
+  </script>
+    
+
+<script>
+  const hoverVideos = document.querySelectorAll('video.hover-video');
+
+  hoverVideos.forEach(video => {
+    video.addEventListener('mouseenter', () => {
+      video.play();
+    });
+
+    video.addEventListener('mouseleave', () => {
+      video.pause();
+      video.currentTime = 0;
+    });
+  });
+</script>
+
+
+
+
+
+
+
+<script>
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (
+    (e.ctrlKey && (e.key === "s" || e.key === "u")) ||
+    (e.ctrlKey && e.shiftKey && e.key === "I")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+<script>
+const track = document.querySelector('.opinie-track');
+const slides = document.querySelectorAll('.opinia');
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+
+function showSlide(index) {
+  if (index < 0) index = slides.length - 1;
+  if (index >= slides.length) index = 0;
+  currentIndex = index;
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+prevBtn.addEventListener('click', () => showSlide(currentIndex - 1));
+nextBtn.addEventListener('click', () => showSlide(currentIndex + 1));
+
+setInterval(() => {
+  showSlide(currentIndex + 1);
+}, 4000);
+</script>
+
+<script>
+window.onpageshow = function(event) {
+  if (event.persisted) { 
+    window.location.reload();
+  }
+};
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const slides = Array.from(document.querySelectorAll('.carousel-slide0'));
+  if (!slides.length) return;
+
+  let current = 0;
+  let autoplayInterval = null;
+  const INTERVAL_MS = 4000;
+
+  const prevBtn = document.querySelector('.nav.prev');
+  const nextBtn = document.querySelector('.nav.next');
+  const container = document.querySelector('.carousel-container0');
+
+  function showSlide(index) {
+    index = (index + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('active', i === index));
+    current = index;
+  }
+
+  function startAutoplay(){
+    stopAutoplay();
+    autoplayInterval = setInterval(() => showSlide(current + 1), INTERVAL_MS);
+  }
+
+  function stopAutoplay(){
+    if (autoplayInterval) {
+      clearInterval(autoplayInterval);
+      autoplayInterval = null;
+    }
+  }
+
+  prevBtn.addEventListener('click', () => {
+    showSlide(current - 1);
+    startAutoplay(); 
+  });
+  nextBtn.addEventListener('click', () => {
+    showSlide(current + 1);
+    startAutoplay(); 
+  });
+
+  container.addEventListener('mouseenter', stopAutoplay);
+  container.addEventListener('mouseleave', startAutoplay);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') { showSlide(current - 1); startAutoplay(); }
+    if (e.key === 'ArrowRight') { showSlide(current + 1); startAutoplay(); }
+  });
+
+  showSlide(0);
+  startAutoplay();
+});
+</script>
+
+<script>
+document.querySelectorAll('.gallery-item').forEach(item => {
+  const video = item.querySelector('video');
+
+  item.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 768) {
+      video.play();
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 768) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
+
+if (window.innerWidth <= 768) {
+  const videos = document.querySelectorAll(".gallery-item video");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+      } else {
+        entry.target.pause();
+        entry.target.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.5 }); 
+  videos.forEach(video => {
+    video.muted = true; 
+    video.setAttribute("playsinline", "true"); 
+    video.setAttribute("autoplay", "true"); // 
+    observer.observe(video);
+  });
+}
+</script>
+
+
+<script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+</script>
+
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+const futureTexts = [
+  "You will have an animated logo that will make your brand stand out.",
+  "Your lectures will capture your audience's attention.",
+  "You will explain complex topics in an engaging way.",
+  "Your events will have high attendance and make you feel appreciated."
+];
+
+document.querySelectorAll('.gallery-item-offerta').forEach((item, idx) => {
+  const caption = item.querySelector('.gallery-caption-offerta p');
+  if (!caption) return;
+  const original = caption.textContent;
+
+
+
+  if (window.innerWidth > 768) {
+    item.addEventListener('mouseenter', () => {
+      caption.style.opacity = '0';
+      setTimeout(() => {
+        caption.textContent = futureTexts[idx] || original;
+        caption.style.opacity = '1';
+      }, 300);
+    });
+
+
+      item.addEventListener('mouseenter', () => {
+    caption.style.opacity = '0';
+    setTimeout(() => {
+      caption.textContent = futureTexts[idx] || original;
+      caption.style.opacity = '1';
+    }, 180);
+  });
+
+
+    item.addEventListener('mouseleave', () => {
+      caption.style.opacity = '0';
+      setTimeout(() => {
+        caption.textContent = original;
+        caption.style.opacity = '1';
+      }, 180);
+    });
+  }
+
+  if (window.innerWidth <= 768) {
+    let showingFuture = false;
+    setInterval(() => {
+      caption.style.opacity = '0';
+      setTimeout(() => {
+        caption.textContent = showingFuture ? original : futureTexts[idx] || original;
+        caption.style.opacity = '1';
+        showingFuture = !showingFuture;
+      }, 300);
+    }, 4000); 
+  }
+});
+</script>
+
+<script>
+const video = document.getElementById('myVideo');
+
+video.playbackRate = 1;
+
+video.addEventListener('timeupdate', () => {
+  if(video.currentTime >= 5 && video.currentTime < 9) {
+    video.currentTime = 10;
+  }
+
+  if(video.currentTime >= 14) {
+    video.currentTime = 3;
+  }
+});
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = [
+      'trileas.html',     
+      'gospel.html',      
+      'modern3d.html'      
+    ];
+
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    galleryItems.forEach((item, index) => {
+      item.style.cursor = 'pointer'; 
+      item.addEventListener('click', () => {
+        if (links[index]) {
+          window.location.href = links[index];
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('load', () => {
+    const pos = sessionStorage.getItem('scrollPosition');
+    if (pos) window.scrollTo(0, pos);
+  });
+</script>
+
+<script>
+  // Wczytanie headera z zewnętrznego pliku
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header').innerHTML = data;
+    })
+    .catch(error => console.error('Błąd ładowania headera:', error));
+  </script>
+
+</body>
+</html>
