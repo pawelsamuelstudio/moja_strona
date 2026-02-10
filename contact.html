@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+  <title>Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      background: #fff; 
+      color: #333; 
+      margin: 0; 
+      padding: 0; 
+      letter-spacing: 0.4px;
+      font-weight: 400;
+      font-style: normal;
+      overflow-x: hidden;
+      height: 100%;
+      user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+    }
+
+.text-section { 
+  max-width: 1200px; 
+  margin: auto; 
+  margin-top: 100px;
+  margin-left: 12%;
+}
+
+@media (max-width: 768px) {
+.text-section { 
+  margin-left: 4%;
+  margin-right: 10%;
+}}
+
+
+.text-section h2 {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 10px;
+  margin-top: 8%;
+}
+
+.text-section .separator {
+  width: 200px;             
+  height: 8px;              
+  background-color: #f0bb1c;
+  margin-bottom: 18px;
+  margin-top: 4%;
+  text-align: left;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 8s ease-in-out infinite;
+  margin-bottom: 60px;
+
+}
+
+@keyframes drawLine {
+  0% { transform: scaleX(0); }
+  25% { transform: scaleX(1); }
+  75% { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+
+.text-section p {
+  text-align: left;
+  max-width: 700px;
+  margin-bottom: 40px; 
+  color: #000000; 
+  font-size: 1.5rem;   line-height: 1.6;
+}
+
+.highlight-link {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #000;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.highlight-link:hover {
+  transform: scale(1.05);
+  color: #f0bb1c;
+}
+
+@media (max-width: 768px) {
+  .text-section {
+    padding: 100px 16px;
+    text-align: center;
+  }
+
+  .text-section h2 {
+    text-align: left;
+    font-size: 1.7rem;
+    margin-left: 12%;
+    margin-bottom: 10%;
+  }
+
+  .text-section .separator {
+    margin-left: 12%;
+  }
+
+  .text-section p {
+    text-align: left;
+    margin-left: 12%;
+    margin-right: 10%;
+    font-size: 1.4rem;     
+    max-width: 100%;
+  }
+
+  .highlight-link {
+    font-size: clamp(22px, 3vw, 28px);     
+  }}
+
+
+.section-header9 h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 12%;
+  margin-bottom: 10px;
+}
+
+.opinie-carousel {
+  position: relative;
+  max-width: 500px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+.opinie-carousel :hover {
+  transform: scale(1.011);
+}
+
+
+.opinie-track {
+  display: flex;
+}
+
+.opinia {
+  min-width: 100%;
+  box-sizing: border-box;
+}
+
+.opinia img {
+  width: 100%;
+  display: block;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .opinie-carousel {
+    max-width: 90%; 
+    margin: 0 auto; 
+    padding: 0 10px; 
+  }
+}
+
+      .text-section { 
+      max-width: 1200px; 
+      padding: 4px 0px; 
+      transition: transform 0.9s ease;
+    }
+
+
+
+.contact-section {
+  background: #ffffff;
+  padding: 15px 30px;
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  max-width: 700px;
+  width: 100%;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+.contact-container h2 {
+  text-align: center;
+ font-size: clamp(14px, 3vw, 36px);   
+ margin-bottom: 10px;
+}
+
+.contact-container p {
+  text-align: center;
+  font-size: clamp(22px, 3vw, 28px);   
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #727272;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #f0bb1c;
+  box-shadow: 0 0 6px rgba(238, 183, 2, 0.3);
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.form-checkbox input {
+  margin-right: 10px;
+}
+
+.form-checkbox a {
+  color: #f0bb1c;
+  text-decoration: underline;
+  transition: 0.3s ease;
+}
+
+.form-checkbox a:hover {
+  color: #000;
+}
+
+.submit-btn {
+  width: 60%;
+  padding: 14px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #f0bb1c;
+  color: #000;
+  border: none;
+  border-radius: 22px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background: #000;
+  color: #ffffff;
+  transform: scale(1.03);
+}
+
+@media (max-width: 600px) {
+  .contact-container {
+    padding: 20px;
+  }
+
+  .contact-container h2 {
+    font-size: 1.6rem;
+  }
+
+  .submit-btn {
+    font-size: 1rem;
+  }}
+
+.text-section a {
+  color: #000000; 
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s ease;
+
+}
+.text-section a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.text-section a:hover {
+  color: #000000; 
+}
+
+.text-section a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+      .text-section { 
+      margin-left: 15%;
+      margin-top: 27%;
+      margin-right: 7%;
+      margin-bottom: 21%;
+}    
+.text-section h2 {
+  margin-bottom: 0%;
+  margin-top: 5%;
+}}
+
+
+@media (min-width: 2560px) {
+  .text-section { 
+    margin-left: 35%;
+    margin-top: 7%;
+    margin-right: 7%;
+    margin-bottom: 7%;
+}    
+.text-section h2 {
+  margin-bottom: 9%;
+  margin-top: 10%;
+}}
+
+    header,
+header *,
+.hamburger,
+.hamburger * {
+  box-sizing: content-box !important;
+}
+
+
+</style>
+  
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+
+<section class="text-section">
+  <h2>Contact</h2>
+  <div class="separator"></div>
+
+<p>
+You can contact me by&nbsp;e&#8209;mail. Provide a&nbsp;brief explanation of&nbsp;what 
+animation you need and your timeline, theme, language and style. 
+After agreeing on&nbsp;them, I&nbsp;will start working on&nbsp;the project. 
+I’ll keep you updated on&nbsp;the graphics progress and also send you small 
+test animations to&nbsp;make sure I’m on&nbsp;the right track. I&nbsp;will 
+send the&nbsp;finished product your way.
+</p>
+<p><strong>Paweł Pauksztełło</strong></p>  <p>
+    <a href="https://www.google.com/maps/place/Samuel+Studio/@46.423669,-84.4270629,3z/data=!3m1!4b1!4m6!3m5!1s0xac688efcb209881f:0x50fac03e7d6b27cb!8m2!3d46.423669!4d-84.4270629!16s%2Fg%2F11lzkl8mz_?entry=ttu&g_ep=EgoyMDI1MTAwMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
+      Samuel Studio – Animation & Motion Design Kielce
+    </a>
+  </p>
+
+  <p>
+    <a href="mailto:pawel.samuelstudio@gmail.com"> 
+      pawel.samuelstudio<wbr>@gmail.com
+    </a>
+  </p>
+</section>
+
+
+
+
+<section class="contact-section">
+  <div class="contact-container">
+
+    <form class="contact-form" 
+          id="contactForm"
+          action="https://formsubmit.co/pawel.samuelstudio@gmail.com" 
+          method="POST">
+
+      <input type="hidden" name="_subject" value="Nowa wiadomość z formularza!">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter your last name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Write your e-mail address" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Comment or Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+      </div>
+
+      <div class="form-checkbox">
+        <input type="checkbox" id="privacy" required>
+        <label for="privacy">I agree to the Privacy Policy</label>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+
+    <p id="formStatus" style="display:none; text-align:center; margin-top:1rem;"></p>
+
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+
+<script>
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (
+    (e.ctrlKey && (e.key === "s" || e.key === "u")) ||
+    (e.ctrlKey && e.shiftKey && e.key === "I")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
+</script>
+
+<script>
+document.addEventListener('keydown', function(e) {
+  if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  e.preventDefault(); 
+
+  const form = e.target;
+  const status = document.getElementById("formStatus");
+
+  const data = {
+    firstName: form.firstName.value,
+    lastName: form.lastName.value,
+    email: form.email.value,
+    message: form.message.value
+  };
+
+  fetch("https://formsubmit.co/ajax/pawel.samuelstudio@gmail.com", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Accept": "application/json"
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(() => {
+    status.style.display = "block";
+    status.style.color = "green";
+    status.textContent = "✅ Message sent successfully!";
+    form.reset();
+  })
+  .catch(() => {
+    status.style.display = "block";
+    status.style.color = "red";
+    status.textContent = "❌ Something went wrong. Try again.";
+  });
+});
+</script>
+
+<script>
+  fetch("header.html")
+    .then(response => response.text())
+    .then(html => {
+      const placeholder = document.getElementById("header-placeholder");
+      const shadowRoot = placeholder.attachShadow({ mode: "open" });
+      shadowRoot.innerHTML = html;
+
+      const header = shadowRoot.getElementById("mainHeader");
+      const hamburger = shadowRoot.getElementById("hamburger");
+      const mobileMenu = shadowRoot.getElementById("mobileMenu");
+
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("active");
+        });
+      });
+    });
+</script>
+
+<script>
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footer-placeholder").innerHTML = data;
+    });
+</script>
+
+
+</body>
+</html>
