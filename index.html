@@ -13,7 +13,24 @@
     }
   </script>
 </head>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+<script>
+  // Po zalogowaniu przerzuć do panelu CMS
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+  
 <body>
   <p>Redirecting...</p>
 </body>
 </html>
+
