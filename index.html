@@ -1,42 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Redirecting...</title>
   <script>
     const userLang = navigator.language || navigator.userLanguage;
-
-    if (userLang && userLang.toLowerCase().startsWith("pl")) {
-      window.location.replace("indexpl.html");
+    if (userLang.startsWith("pl")) {
+      window.location.href = "https://samuelstudio.com/indexpl";
     } else {
-      window.location.replace("indexen.html");
+      window.location.href = "https://samuelstudio.com/indexen";
     }
   </script>
 </head>
-
-
-
-  
 <body>
   <p>Redirecting...</p>
-
-  <script>
-  // Po zalogowaniu przerzuć do panelu CMS
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-  
 </body>
 </html>
-
-
-

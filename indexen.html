@@ -2198,7 +2198,7 @@ header *,
       <div class="separator9"></div>
     </div>
       <button class="see-more-btn4" onclick="window.location.href='https://samuelstudio.com/contact'">
-        See examples
+        Order Now
       </button>
     </div>
   </div>
@@ -2360,8 +2360,7 @@ header *,
         <div class="separator" style="background-color: #ffffff;"></div>
 
 <div class="buttons">
-  <a href="contact.html" class="btn">Get a Free Consultation</a>
-  <a href="contact.html" class="btn" style="background:#fff; color:#000;">Contact Me Today</a>
+  <a href="https://samuelstudio.com/contact" class="btn">Get a Free Consultation</a>
 </div>
 <button class="btn" 
   style="background:#fff; color:#000000;" 
@@ -2716,22 +2715,6 @@ document.addEventListener('DOMContentLoaded', function () {
 </script>
 
 
-<script>
-  // Po zalogowaniu przerzuć do panelu CMS
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-  }
-</script>
-  
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 </body>
 </html>
-
-
