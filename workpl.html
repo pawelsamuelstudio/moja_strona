@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+  <title>Realizacje</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body { 
+      font-family: 'Roboto', sans-serif; 
+      background: #fff; 
+      color: #333; 
+      margin: 0; 
+      padding: 0; 
+
+        letter-spacing: 0.4px;
+  font-weight: 400;
+  font-style: normal;
+  overflow-x: hidden;
+  height: 100%;
+
+      user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+    }
+
+
+    .text-section { 
+      max-width: 1200px; 
+      margin-top: 13%;
+      margin-bottom: 80px;
+      margin-left: 12%;
+    }
+
+.text-section h2 {
+  text-align: left;
+  font-size: 2rem;
+  margin-top: 4%;
+  }
+
+  .text-section:last-of-type {
+  margin-top: 16%; 
+  margin-bottom: 20%; 
+}
+
+.text-section .separator {
+  width: 250px;             
+  height: 8px;              
+  background-color: #f0bb1c;
+  margin-bottom: 3%;
+  margin-top: 2%;
+  text-align: left;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 9s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+      .text-section { 
+      margin-left: 13%;
+      margin-top: 47%;
+      margin-right: 10%;
+      margin-bottom: 21%;
+}    
+.text-section h2 {
+  font-size: 1.7rem;
+  text-align: left;
+  margin-top: 8%;
+}
+.text-section .separator {
+    margin-bottom: 12%;
+      margin-top: 10%;
+
+}
+}
+
+
+@keyframes drawLine {
+  0% {
+    transform: scaleX(0);
+  }
+  25% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+  75% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+.text-section p {
+  text-align: left;
+  max-width: 700px;
+  color: #000000; 
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.text-section .highlight {
+  font-weight: bold;
+}
+
+    .gallery-section { 
+      max-width: 1200px; 
+      margin: auto; 
+      padding: 0px 20px; 
+    }
+
+
+@media (max-width: 768px) {
+        .gallery-section { 
+margin-top: 10%;
+margin-bottom: 10%;
+    }
+    .text-section p {
+    font-size: 1.4rem;     
+  }
+  
+  }
+
+
+    .gallery-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.gallery-section p {
+  text-align: center;
+  max-width: 700px;
+  margin-bottom: 40px; 
+  color: #000000; 
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.gallery-section .highlight {
+  font-weight: bold;
+}
+
+    .gallery-grid { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 20px; 
+    }
+    .gallery-item { 
+      background: #fff; 
+      border-radius: 15px; 
+      overflow: hidden; 
+      border: 1px solid #000000; 
+      text-align: center; 
+      transition: transform 0.4s ease; 
+    }
+    .gallery-item:hover { 
+      transform: scale(1.05); 
+    }
+    .gallery-item img { 
+      width: 100%; 
+      aspect-ratio: 1/1; 
+      object-fit: cover; 
+      display: block; 
+      transition: transform 0.4s ease; 
+    }
+    .gallery-item img:hover { 
+      transform: scale(1.1); 
+    }
+    .gallery-caption { 
+      padding: 15px; 
+    }
+    .gallery-caption p { 
+      margin: 6px 0; 
+    }
+    .gallery-caption a { 
+      color: #000000; 
+      text-decoration: none; 
+      font-weight: bold; 
+    }
+    .gallery-caption a:hover { 
+      color: #f0bb1c;
+    }
+
+
+.gallery-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.gallery-media img,
+.gallery-media video {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-media video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-media img {
+  opacity: 0;
+}
+
+.gallery-item:hover .gallery-media video {
+  opacity: 1;
+}
+
+    @media(max-width: 900px) { 
+      .gallery-grid { grid-template-columns: 1fr 1fr; } 
+    }
+    @media(max-width: 600px) { 
+      .gallery-grid { grid-template-columns: 1fr; } 
+    }
+
+
+    @media(max-width: 768px) {
+  .gallery-item .gallery-media img {
+    display: none; 
+  }
+  .gallery-item .gallery-media video {
+    position: static; 
+    opacity: 1 !important; 
+    pointer-events: auto;
+  }}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+      .text-section { 
+      margin-left: 15%;
+      margin-top: 27%;
+      margin-right: 7%;
+      margin-bottom: 21%;
+}    
+.text-section h2 {
+  margin-bottom: 0%;
+  margin-top: 5%;
+}}
+
+
+@media (min-width: 2560px) {
+  .text-section { 
+    margin-left: 35%;
+    margin-top: 7%;
+    margin-right: 7%;
+    margin-bottom: 7%;
+}    
+.text-section h2 {
+  margin-bottom: 9%;
+  margin-top: 10%;
+}}
+
+</style>
+  
+</head>
+<body>
+
+<div id="headerpl-placeholder"></div>
+
+
+<section class="text-section">
+  <h2>Zobacz moje realizacje w&nbsp;akcji</h2>
+  <div class="separator"></div>
+  <p>
+    Poniżej znajdziesz przykłady, jak animacja pomaga firmom, organizacjom i&nbsp;twórcom 
+    <span class="highlight">opowiadać ich historie, wyjaśniać pomysły i&nbsp;nawiązywać kontakt z&nbsp;odbiorcami.</span>
+  </p>
+</section>
+
+<section class="gallery-section">
+  <div class="gallery-grid">
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="COVER-SPOT_00139_00139.png" alt="WORSHIP in the city center 2022 - cover image">
+        <video src="Worship-in-the-city-center-2022-animated-cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>UWIELBIENIE w centrum miasta 2022</p>
+        <a href="worshippl.html">Spot Promocyjny</a>
+      </div>
+    </div>
+
+    
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="PUPPETEER-cover.jpg" alt="YAGOOSH - Puppeteer cover">
+        <video src="Puppeteer-animated-animated-cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>YAGOOSH</p>
+        <a href="puppeterpl.html">Puppeteer</a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="Thomas-the-Apostle-cover.png" alt="Bible Unbound - The Bible In a Sentence cover">
+        <video src="St-Thomas-Apostol-animated-cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>BIBLE UNBOUND</p>
+        <a href="thomaspl.html">Historia Tomasza – apostoła wiary</a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="Stained-Glass-of-the-Holy-Spirit-cover.jpg" alt="Church of the Holy Spirit - promotional cover">
+        <video src="Consecration-Church-of-the-Holy-Spirit-animated-cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>Kościół Ducha Świętego</p>
+        <a href="churchpl.html">Spot Promocyjny</a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="Nikifor-Cover.jpg" alt="Museum of Dialogue and Cultures - Nikifor cover">
+        <video src="Nikifor-animated-cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>Muzeum Dialogu Kultur</p>
+        <a href="nikiforpl.html">Nikifor</a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="006.jpeg" alt="Samuel Studio - Kosmos cover">
+        <video src="KOSMOS-animated-cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>Samuel Studio</p>
+        <a href="kosmospl.html">Kosmos</a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="007.jpeg" alt="4 ECO - Promotional spot cover">
+        <video src="4-ECO-animated-cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>4 ECO</p>
+        <a href="4ecopl.html">Spot promocyjny</a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="008.jpeg" alt="WYD Panama in Kielce - promotional spot cover">
+        <video src="Panama-in-Kielce-animated-cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>ŚDM Panama in Kielce</p>
+        <a href="panamapl.html">Spot promocyjny</a>
+      </div>
+    </div>
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+        <img src="Cover-Jozef-Szermentowski-WIDOK-CHECIN.jpg" alt="National Museum in Kielce - View of Chęciny cover">
+        <video src="View-of-Checiny-animated-cover.mp4" muted loop></video>
+      </div>
+      <div class="gallery-caption">
+        <p>Muzuem Narodowe w Kielcach</p>
+        <a href="checinypl.html">Widok na Chęciny</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="text-section">
+  <h2>Chcesz skutecznie przekazać swój komunikat?</h2>
+  <div class="separator"></div>
+  <p>
+    Animacja pomoże Ci pokazać to w prosty&nbsp;i
+    <span class="highlight">atrakcyjny sposób.</span>
+  </p>
+  </section>
+
+  <div id="footerpl-placeholder"></div>
+
+
+
+<script>
+document.querySelectorAll('.gallery-item').forEach(item => {
+  const video = item.querySelector('video');
+
+  item.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 768) {
+      video.play();
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 768) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
+
+if (window.innerWidth <= 768) {
+  const videos = document.querySelectorAll(".gallery-item video");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+      } else {
+        entry.target.pause();
+        entry.target.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.5 }); 
+  videos.forEach(video => {
+    video.muted = true; 
+    video.setAttribute("playsinline", "true"); 
+    video.setAttribute("autoplay", "true"); // 
+    observer.observe(video);
+  });
+}
+</script>
+
+
+
+<script>
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (
+    (e.ctrlKey && (e.key === "s" || e.key === "u")) ||
+    (e.ctrlKey && e.shiftKey && e.key === "I")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = [
+      'worshippl.html',     
+      'puppeterpl.html',      
+      'thomaspl.html',
+      'churchpl.html',     
+      'nikiforpl.html',      
+      'kosmospl.html',
+      '4ecopl.html',     
+      'panamapl.html',      
+      'checinypl.html'          
+        
+    ];
+
+    const galleryItems = document.querySelectorAll('.gallery-item');
+
+    galleryItems.forEach((item, index) => {
+      item.style.cursor = 'pointer'; 
+      item.addEventListener('click', () => {
+        if (links[index]) {
+          window.location.href = links[index];
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  fetch("headerpl.html")
+    .then(response => response.text())
+    .then(html => {
+      const placeholder = document.getElementById("headerpl-placeholder");
+      const shadowRoot = placeholder.attachShadow({ mode: "open" });
+      shadowRoot.innerHTML = html;
+
+      const header = shadowRoot.getElementById("mainHeader");
+      const hamburger = shadowRoot.getElementById("hamburger");
+      const mobileMenu = shadowRoot.getElementById("mobileMenu");
+
+      let lastScroll = 0;
+      const headerHeight = header.offsetHeight;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScroll && currentScroll > 60) {
+    header.style.transform = `translateY(-${header.offsetHeight + 20}px)`;
+  } else {
+    header.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
+});
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("active");
+        });
+      });
+    });
+</script>
+
+<script>
+  fetch("footerpl.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("footerpl-placeholder").innerHTML = data;
+    });
+</script>
+
+
+</body>
+</html>

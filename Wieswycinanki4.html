@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Animowane wycinanki + realistyczny dym</title>
+  <style>
+    :root {
+      --control-bg: rgba(255,255,255,0.9);
+    }
+    html,body{height:100%;margin:0;font-family:Inter,Arial,system-ui,-apple-system;}
+    body{
+      background: url('wiestlo.png') no-repeat center center/cover;
+      overflow: hidden;
+    }
+
+    .container{
+      position:relative;
+      width:100vw;
+      height:100vh;
+    }
+
+    .element{
+      position:absolute;
+      transform: translate(-50%,-50%); 
+      width: 140px; 
+      height: auto;
+      z-index: 20;
+      user-select: none;
+      touch-action: none; 
+      cursor: grab;
+      transition: transform .15s; 
+    }
+
+    @keyframes moveLeft {
+      0%   { transform: translate(-50%,-50%) translateX(0); }
+      50%  { transform: translate(-50%,-50%) translateX(-180px); }
+      100% { transform: translate(-50%,-50%) translateX(0); }
+    }
+    @keyframes moveRight {
+      0%   { transform: translate(-50%,-50%) translateX(0); }
+      50%  { transform: translate(-50%,-50%) translateX(180px); }
+      100% { transform: translate(-50%,-50%) translateX(0); }
+    }
+    @keyframes swing {
+      0%   { transform: translate(-50%,-50%) rotate(0deg); }
+      25%  { transform: translate(-50%,-50%) rotate(8deg); }
+      50%  { transform: translate(-50%,-50%) rotate(0deg); }
+      75%  { transform: translate(-50%,-50%) rotate(-8deg); }
+      100% { transform: translate(-50%,-50%) rotate(0deg); }
+    }
+
+    .animate-left  { animation: moveLeft 3.5s ease-in-out infinite; }
+    .animate-right { animation: moveRight 3.5s ease-in-out infinite; }
+    .animate-swing { animation: swing 2.5s ease-in-out infinite; }
+
+    .smoke-container{
+      position:absolute;
+      width:160px;
+      height:160px;
+      transform: translate(-50%,-50%);
+      pointer-events: none; /* nie przeszkadza w interakcji */
+      z-index: 15; 
+    }
+
+    .smoke-particle{
+      position: absolute;
+      left: 50%;
+      top: 60%;
+      width: 60px;
+      height: 60px;
+      transform: translate(-50%,0) scale(0.6);
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 30%,
+                 rgba(240,240,240,0.95),
+                 rgba(210,210,210,0.6) 40%,
+                 rgba(200,200,200,0.2) 70%,
+                 rgba(200,200,200,0));
+      filter: blur(2px);
+      opacity: 0.6;
+      animation-name: smokeUp;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes smokeUp {
+      0%{
+        transform: translate(-50%,0) translateX(0) translateY(0) scale(0.6);
+        opacity: var(--startOpacity, 0.6);
+      }
+      100%{
+        transform: translate(-50%,0) translateX(var(--drift, 0px)) translateY(calc(-1 * var(--rise, 220px))) scale(1.6);
+        opacity: 0;
+      }
+    }
+
+    /* Panel kontroli */
+    .controls{
+      position:absolute;
+      bottom:20px;
+      left:50%;
+      transform:translateX(-50%);
+      display:flex;
+      gap:10px;
+      align-items:center;
+      z-index:30;
+      background:var(--control-bg);
+      padding:8px 12px;
+      border-radius:12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .controls button, .controls input[type="button"]{
+      border: none;
+      background: #111;
+      color: #fff;
+      padding:8px 14px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:600;
+    }
+    .controls .secondary{
+      background: transparent;
+      color: #111;
+      border-radius:8px;
+      padding:6px 10px;
+      border:1px solid rgba(0,0,0,0.08);
+      cursor:pointer;
+    }
+
+    img.element { display:block; }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+
+    <img src="babcia1.png" alt="el1" class="element" data-init-left="40%" data-init-top="60%" data-anim="left" style="left:40%; top:30%;">
+    <img src="babcia2.png" alt="el2" class="element" data-init-left="60%" data-init-top="60%" data-anim="right" style="left:30%; top:60%;">
+    <img src="pies.png" alt="el3" class="element" data-init-left="60%" data-init-top="70%" data-anim="swing" style="left:60%; top:40%;">
+    <img src="paniipan.png" alt="el4" class="element" data-init-left="70%" data-init-top="70%" data-anim="left" style="left:50%; top:60%;">
+    <img src="babcia3.png" alt="el5" class="element" data-init-left="80%" data-init-top="50%" data-anim="right" style="left:80%; top:50%;">
+
+
+     <img src="babcia1.png" alt="" class="element e1">
+    <img src="babcia2.png" alt="" class="element e2">
+    <img src="pies.png" alt="" class="element e3">
+    <img src="paniipan.png" alt="" class="element e4">
+    <img src="babcia3.png" alt="" class="element e5">
+
+
+    <div class="smoke-container" style="left:5%; top:65%;" data-rate="700"></div>
+    <div class="smoke-container" style="left:75%; top:72%;" data-rate="1000"></div>
+
+    <div class="controls" role="region" aria-label="Kontrolki animacji">
+      <button id="toggleAnim">Start animacji</button>
+      <button class="secondary" id="resetPos">Reset pozycji</button>
+      <label style="display:flex;align-items:center;gap:6px;">
+        <input type="checkbox" id="toggleSmoke" checked> Dym
+      </label>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const container = document.getElementById('container');
+      const elements = Array.from(document.querySelectorAll('.element'));
+      const smokeContainers = Array.from(document.querySelectorAll('.smoke-container'));
+
+      const toggleBtn = document.getElementById('toggleAnim');
+      let animating = false;
+
+      function applyAnimationClasses(on){
+        elements.forEach(el=>{
+          const a = el.dataset.anim; // 'left'|'right'|'swing'
+          el.classList.remove('animate-left','animate-right','animate-swing');
+          if(on){
+            if(a === 'left') el.classList.add('animate-left');
+            if(a === 'right') el.classList.add('animate-right');
+            if(a === 'swing') el.classList.add('animate-swing');
+          }
+        });
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        animating = !animating;
+        applyAnimationClasses(animating);
+        toggleBtn.textContent = animating ? 'Stop animacji' : 'Start animacji';
+      });
+
+      document.getElementById('resetPos').addEventListener('click', ()=>{
+        elements.forEach(el=>{
+          const initL = el.dataset.initLeft || el.getAttribute('data-init-left') || '';
+          const initT = el.dataset.initTop  || el.getAttribute('data-init-top')  || '';
+          if(initL) el.style.left = initL;
+          else el.style.left = '';
+          if(initT) el.style.top = initT;
+          else el.style.top = '';
+          el.style.transform = 'translate(-50%,-50%)';
+        });
+        applyAnimationClasses(animating);
+      });
+
+      elements.forEach(el => {
+        let dragging = false;
+        let startRect = null;
+        let containerRect = null;
+        let offsetX = 0; 
+        let offsetY = 0;
+
+        function beginDrag(clientX, clientY){
+          el.classList.remove('animate-left','animate-right','animate-swing');
+
+          containerRect = container.getBoundingClientRect();
+          startRect = el.getBoundingClientRect();
+
+          const centerX = startRect.left + startRect.width / 2;
+          const centerY = startRect.top + startRect.height / 2;
+          el.style.left = (centerX - containerRect.left) + 'px';
+          el.style.top  = (centerY - containerRect.top)  + 'px';
+          el.style.transform = 'translate(-50%,-50%)';
+
+          offsetX = clientX - startRect.left;
+          offsetY = clientY - startRect.top;
+
+          dragging = true;
+          el.style.cursor = 'grabbing';
+        }
+
+        function onMove(clientX, clientY){
+          if(!dragging) return;
+          const newLeftEdge = clientX - offsetX; 
+          const newTopEdge  = clientY - offsetY;
+          const width = startRect.width;
+          const height = startRect.height;
+          const newCenterX = newLeftEdge + width / 2;
+          const newCenterY = newTopEdge  + height / 2;
+          el.style.left = (newCenterX - containerRect.left) + 'px';
+          el.style.top  = (newCenterY - containerRect.top)  + 'px';
+        }
+
+        function endDrag(){
+          dragging = false;
+          el.style.cursor = 'grab';
+        }
+
+        el.addEventListener('mousedown', (ev) => {
+          ev.preventDefault();
+          beginDrag(ev.clientX, ev.clientY);
+        });
+
+        document.addEventListener('mousemove', (ev) => {
+          if(dragging) {
+            onMove(ev.clientX, ev.clientY);
+          }
+        });
+
+        document.addEventListener('mouseup', (ev) => {
+          if(dragging) endDrag();
+        });
+
+        el.addEventListener('touchstart', (ev) => {
+          ev.preventDefault(); 
+          const t = ev.touches[0];
+          beginDrag(t.clientX, t.clientY);
+        }, {passive:false});
+
+        document.addEventListener('touchmove', (ev) => {
+          if(!dragging) return;
+          const t = ev.touches[0];
+          onMove(t.clientX, t.clientY);
+        }, {passive:false});
+
+        document.addEventListener('touchend', (ev) => {
+          if(dragging) endDrag();
+        });
+      });
+
+      const smokeIntervals = new Map();
+      const smokeEnabledCheckbox = document.getElementById('toggleSmoke');
+
+      function spawnSmoke(container){
+        const p = document.createElement('div');
+        p.className = 'smoke-particle';
+        const size = 20 + Math.random() * 120;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        const leftPct = 50 + (Math.random() * 40 - 20);
+        const topPct  = 60 + (Math.random() * 30 - 10);
+        p.style.left = leftPct + '%';
+        p.style.top  = topPct  + '%';
+        const drift = (Math.random() * 160 - 80) + 'px';        
+        const rise  = (120 + Math.random() * 260) + 'px';      
+        const dur   = (2.2 + Math.random() * 3.3).toFixed(2) + 's';
+        const startOp = (0.25 + Math.random() * 0.6).toFixed(2);
+        p.style.setProperty('--drift', drift);
+        p.style.setProperty('--rise', rise);
+        p.style.setProperty('--startOpacity', startOp);
+        p.style.setProperty('--dur', dur);
+        p.style.animationDuration = dur;
+        p.style.opacity = startOp;
+        p.style.filter = 'blur(' + (1 + Math.random() * 4) + 'px)';
+
+        container.appendChild(p);
+        p.addEventListener('animationend', () => p.remove(), {once:true});
+      }
+
+      function startSmokeFor(container){
+        if(smokeIntervals.has(container)) return;
+        const rate = parseInt(container.dataset.rate) || 900;
+        const id = setInterval(()=>{
+          if(smokeEnabledCheckbox.checked) spawnSmoke(container);
+        }, Math.max(120, rate)); 
+        smokeIntervals.set(container, id);
+      }
+
+      function stopAllSmoke(){
+        smokeIntervals.forEach((id, c)=> clearInterval(id));
+        smokeIntervals.clear();
+      }
+
+      smokeContainers.forEach(c => startSmokeFor(c));
+
+      smokeEnabledCheckbox.addEventListener('change', ()=>{
+        if(smokeEnabledCheckbox.checked){
+          smokeContainers.forEach(c=>{
+            if(!smokeIntervals.has(c)) startSmokeFor(c);
+          });
+        } else {
+          smokeIntervals.forEach((id)=> clearInterval(id));
+          smokeIntervals.clear();
+        }
+      });
+
+      applyAnimationClasses(false);
+
+    })();
+  </script>
+</body>
+</html>
