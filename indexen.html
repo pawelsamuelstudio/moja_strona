@@ -428,10 +428,13 @@ animation: drawLine 4s ease-in-out infinite;}
 }
    
 .yellow-section {
-  font-family: 'Roboto', sans-serif;
+   font-family: 'Roboto', sans-serif;
   background: #f0bb1c;
   align-items: center;
-    padding: 1px 0px 60px;
+  position: relative;
+
+  padding: clamp(180px, 22vw, 420px) 0 60px;
+
 
   }
 
@@ -475,28 +478,34 @@ font-size: 31px;
 }
 }
 
-    .ellipse-video {
-      position: absolute;
-      top: 770px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: 200px;
-      overflow: hidden;
-      border-radius: 90%/100%;
-      z-index: 2;
-    }
-    
-    .ellipse-video video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+ /* OKNO VIDEO */
+.ellipse-video{
+   position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -30%);  /* pół na pół nad żółtą */
+  width: min(1200px, calc(100vw - 60px));
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+  z-index: 5;
+}
 
-    @media (max-width: 768px) {
-        .ellipse-video {
-      top: 760px;
-    }}
+.ellipse-video video{
+  wwidth: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* MOBILE – mniejsze okno */
+@media (max-width: 768px){
+  :root{
+    --video-w: min(520px, 92vw);
+    --video-gap: 28px;
+  }
+}
 
 .grid-2x2 {
   display: grid;
@@ -1988,35 +1997,39 @@ header *,
 
 </style>
 </head>
-<body>
+<
+>
    
 <div id="header-placeholder"></div>
 
 <section class="video-section" id="video">
     <video src="animated-diagonal-light-rays-background-samuel-studio.mp4" autoplay muted loop></video>
     <div class="video-overlay">
-<h1>Animations with purpose.</h1>
-<h4>2D & 3D animation for museums, Christian institutions, and&nbsp;cultural projects.</h4>
+<h4>Pawel&nbsp;Pauksztello</h4>
+      <h1>Effective&nbsp;&&nbsp;Engaging 2D/3D&nbsp;Animation</h1>
+<h4>For advertising, product,&nbsp;and education</h4>
 
         <div class="separator" style="background-color: #ffffff;"></div>
 <div class="buttons">
-  <button class="btn" onclick="document.querySelector('.yellow-section0').scrollIntoView({ behavior: 'smooth' })">
-    See How it Works
+
+  <button class="btn"
+    style="background:#e0b31f; color:#000000;"
+    onclick="window.location.href='https://samuelstudio.com/kontakt'">
+    See How It Works
   </button>
-</div>
-  <button class="btn" 
-          style="background:#fff; color:#000000;" 
-          onclick="document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' })">
+
+  <button class="btn"
+    style="background:#fff; color:#000000;"
+    onclick="document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' })">
     Explore Examples
   </button>
 </div>
-    </div>
 </section>
 
 
 <section class="yellow-section" id="oferta">
   <div class="ellipse-video">
-    <video src="question-mark.mp4" autoplay muted loop></video>
+    <video src="samuel-studio-loop-reel-2025.mp4" autoplay muted loop></video>
   </div>
 
   <h2 class="yellow-h2">Do you have something important&nbsp;to&nbsp;show but&nbsp;don't&nbsp;know&nbsp;how to&nbsp;do&nbsp;it&nbsp;effectively?</h2>
@@ -2718,4 +2731,3 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 </html>
-
