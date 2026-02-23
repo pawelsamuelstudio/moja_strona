@@ -428,12 +428,11 @@ animation: drawLine 4s ease-in-out infinite;}
    
 .yellow-section {
   font-family: 'Roboto', sans-serif;
-    background: #f0bb1c;
-    align-items: center;
+  background: #f0bb1c;
+  align-items: center;
+  position: relative;
 
-    position: relative; /* BARDZO WAŻNE */
-
-    padding: 220px 0px 60px; /* zwiększamy górny padding */
+  padding: clamp(180px, 22vw, 420px) 0 60px;
 
   }
 
@@ -467,7 +466,7 @@ font-size: 31px;
 @media (max-width: 768px) {
   .yellow-section h2.yellow-h2 {
      font-size: 1.4rem; 
-       padding-top: 24%;
+       padding: 60px 0 0px; /* MOBILE: mniejsze miejsce */
 }
 
   .yellow-section h2.yellow2-h2 {
@@ -486,22 +485,20 @@ font-size: 31px;
 
 /* OKNO VIDEO */
 .ellipse-video{
-  position: absolute;
-  top: 0;                      /* trzyma się górnej krawędzi żółtej sekcji */
+   position: absolute;
+  top: 0;
   left: 50%;
-  transform: translate(-50%, -35%); /* pół na pół nachodzi na poprzednią */
-
-  width: min(1200px, calc(100vw - 60px)); /* 30px padding z lewej i prawej */
+  transform: translate(-50%, -30%);  /* pół na pół nad żółtą */
+  width: min(1200px, calc(100vw - 60px));
   aspect-ratio: 16/9;
-
   overflow: hidden;
-  border-radius: 15px;         /* jak w video-container */
+  border-radius: 15px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.25);
   z-index: 5;
 }
 
 .ellipse-video video{
-  width: 100%;
+  wwidth: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
