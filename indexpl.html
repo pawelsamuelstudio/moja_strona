@@ -2118,17 +2118,10 @@ header *,
 }
 
 /* === UKŁAD PRZYCISKÓW === */
-.buttons{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px; /* odstęp domyślny (mobile) */
-}
-
-/* === DESKTOP – większy odstęp === */
+/* DESKTOP – rozsuń przyciski */
 @media (min-width: 1024px){
-  .buttons{
-    gap: 80px;
+  .buttons .btn:first-child{
+    margin-right: 80px;
   }
 }
 
