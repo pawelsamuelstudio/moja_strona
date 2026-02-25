@@ -2117,6 +2117,21 @@ header *,
   }
 }
 
+/* === UKŁAD PRZYCISKÓW === */
+.buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px; /* odstęp domyślny (mobile) */
+}
+
+/* === DESKTOP – większy odstęp === */
+@media (min-width: 1024px){
+  .buttons{
+    gap: 80px;
+  }
+}
+
 </style>
 </head>
 
