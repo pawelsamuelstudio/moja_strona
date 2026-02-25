@@ -519,10 +519,22 @@ font-size: 31px;
   display: block;
 }
 
-/* LAPTOP – mniejszy overlap okna video */
+/* LAPTOP – nie nachodzi na tekst/guziki */
 @media (min-width: 769px) and (max-width: 1200px){
   .ellipse-video{
-    transform: translate(-50%, -15%) !important; /* było -40% */
+    top: 160px !important;                  /* reguluj: 140–220 */
+    transform: translateX(-50%) !important; /* bez przesuwania w górę */
+    width: min(920px, calc(100vw - 60px)) !important;
+    border-radius: 15px !important;
+    overflow: hidden !important;
+  }
+
+  .ellipse-video video{
+    border-radius: inherit !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 }
 
