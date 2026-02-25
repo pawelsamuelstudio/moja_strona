@@ -2001,7 +2001,19 @@ header *,
     margin-top: 40px;
     margin-bottom: 60px;
   }}
+/* OSTATNIA SEKCJA CTA NAD STOPKĄ – nie ma być na pełny ekran */
+.video-section--cta{
+  min-height: auto !important;   /* wyłącza 88svh/65svh */
+  height: auto !important;
+  padding: 70px 0 100px;         /* góra/dół – ustawione “na oko” sensownie */
+}
 
+/* Mobile */
+@media (max-width: 768px){
+  .video-section--cta{
+    padding: 50px 0 70px;
+  }
+}
 
 </style>
 </head>
@@ -2354,26 +2366,12 @@ header *,
     </section>
 
 
-<section class="video-section4">
-  <div class="section-header6">
-    <h2>Animations that help your message reach people</h2>
-    <div class="separator2"></div>
-  </div>
-
-  <div class="video-container">
-    <video src="Samuel-Studio-Reel-2024.mp4" autoplay muted loop playsinline></video>
-  </div>
-
-  <div class="video-caption">
-    <h3>Samuel Studio</h3>
-    <a href="#" class="reel-link">Reel</a>
-  </div>
-</section>
 
 
-<section class="video-section" id="video">
+
+<section class="video-section video-section--cta" id="cta">
     <video src="animated-diagonal-light-rays-background-samuel-studio.mp4" autoplay muted loop></video>
-<div class="video-overlay" style="padding-top: 130px; padding-bottom: 1000px;">
+<div class="video-overlay" style="padding-top: 30px;">
 
           <h1>Ready for your message to reach its audience?</h1>
         <h4>Let’s take the first step toward telling your story well. </h4>
