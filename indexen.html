@@ -166,7 +166,7 @@ img {
     .video-section {
       position: relative;
       width: 100%;
-      height: 95ch;
+       min-height: 88svh; 
       overflow: hidden;
       
     }
@@ -184,7 +184,7 @@ img {
       position: relative;
       z-index: 1;
       text-align: center;
-      padding-top: 210px;
+      padding-top: 120px;
           }
     .video-overlay h1 {
       font-size: 3rem;
@@ -216,8 +216,8 @@ img {
 }
 
           .video-overlay {
-      padding-top: 170px;
-      padding-bottom: 150px;
+      padding-top: 40px;
+      padding-bottom: 90px;
           }
 
     .video-overlay h1 {
@@ -483,7 +483,7 @@ font-size: 31px;
    position: absolute;
   top: 0;
   left: 50%;
-  transform: translate(-50%, -30%);  /* pół na pół nad żółtą */
+  transform: translate(-50%, -40%);  /* pół na pół nad żółtą */
   width: min(1200px, calc(100vw - 60px));
   aspect-ratio: 16/9;
   overflow: hidden;
@@ -2009,7 +2009,7 @@ header *,
       <h1>Effective &&nbsp;Engaging 2D/3D&nbsp;Animation</h1>
 <h4>For advertising, product,&nbsp;and education</h4>
 
-        <div class="separator" style="background-color: #ffffff;"></div>
+      <!--<div class="separator" style="background-color: #ffffff;"></div> -->
 <div class="buttons">
 
   <button class="btn"
@@ -2019,7 +2019,7 @@ header *,
   </button>
 
   <button class="btn"
-    style="background:#fff; color:#000000;"
+    style="background:transparent; color:#e0b31f; border:2px solid currentColor;"
     onclick="document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' })">
     Explore Examples
   </button>
