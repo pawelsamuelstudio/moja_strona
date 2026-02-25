@@ -488,11 +488,7 @@ font-size: 31px;
 }
 }
 
-/* LAPTOP – żeby tekst nie chował się pod sticky header */
-@media (min-width: 769px) and (max-width: 1200px){
-  #video .video-overlay{
-    padding-top: 140px !important; /* testuj 120–160 */
-  }
+
 }
 
     /* USTAWIAMY WYMIAR VIDEO JAKO ZMIENNE */
@@ -521,6 +517,13 @@ font-size: 31px;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* LAPTOP – mniejszy overlap okna video */
+@media (min-width: 769px) and (max-width: 1200px){
+  .ellipse-video{
+    transform: translate(-50%, -15%) !important; /* było -40% */
+  }
 }
 
 /* MOBILE – mniejsze okno */
