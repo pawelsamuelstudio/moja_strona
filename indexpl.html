@@ -2102,6 +2102,20 @@ header *,
   }
 }
 
+/* OSTATNIA SEKCJA CTA NAD STOPKĄ – nie ma być na pełny ekran */
+.video-section--cta{
+  min-height: auto !important;   /* wyłącza 88svh/65svh */
+  height: auto !important;
+  padding: 120px 0 60px;         /* góra/dół – ustawione “na oko” sensownie */
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .video-section--cta{
+    padding: 90px 0 40px;
+  }
+}
+
 </style>
 </head>
 
@@ -2493,9 +2507,9 @@ header *,
 </section>
 
 
-<section class="video-section" id="video">
+<section class="video-section video-section--cta" id="cta">
     <video src="animated-diagonal-light-rays-background-samuel-studio.mp4" autoplay muted loop></video>
-<div class="video-overlay" style="padding-top: 130px; padding-bottom: 1000px;">
+<div class="video-overlay" style="padding-top: 130px;">
 
           <h1>Czas na animację, która działa</h1>
         <h4>Porozmawiajmy o Twoim projekcie. </h4>
