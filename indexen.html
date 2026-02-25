@@ -466,6 +466,12 @@ font-size: 31px;
   color: rgb(29, 29, 29);
 }
 
+@media (min-width: 1024px) and (max-height: 800px){
+  .yellow-section{
+    padding-top: 480px !important; /* żeby tekst był pod kartą */
+  }
+}
+
 
 @media (max-width: 768px) {
 
@@ -505,6 +511,28 @@ font-size: 31px;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* ===== LAPTOP / NISKIE EKRANY – mniej nachodzenia + pewne zaokrąglenia ===== */
+@media (min-width: 1024px) and (max-height: 800px){
+
+  .ellipse-video{
+    /* POZYCJA – mniej w górę (żeby nie nachodziło na tekst/guziki) */
+    transform: translate(-50%, -8%) !important;  /* było -40% */
+    
+    /* ROGI – zawsze działają */
+    border-radius: 15px !important;
+    overflow: hidden !important;
+    -webkit-mask-image: -webkit-radial-gradient(white, black); /* fix na Safari/Chrome bug */
+  }
+
+  .ellipse-video video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 15px !important;  /* dodatkowo, żeby na pewno */
+  }
 }
 
 /* MOBILE – mniejsze okno */
