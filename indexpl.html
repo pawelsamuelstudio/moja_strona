@@ -221,8 +221,8 @@ img {
 }
 
           .video-overlay {
-      padding-top: 80px;
-      padding-bottom: 70px;
+      padding-top: 60px;
+      padding-bottom: 40px;
           }
 
     .video-overlay h1 {
@@ -238,10 +238,11 @@ img {
       }
 
    .video-overlay .btn {
-    margin-left: 0;  
-        padding: 12px 20px;
-            max-width: 350px;    
-    min-width: 270px;    
+    margin: 10px 0 !important;  /* BYŁO: 20px 0 na desktop -> tu zmniejszamy */
+  padding: 10px 22px;         /* mniejsza wysokość przycisku */
+  max-width: 350px;
+  min-width: 260px;
+  font-size: 20px;            /* opcjonalnie, ale polecam na mobile */   
 
 
    }}
@@ -2120,7 +2121,7 @@ header *,
   </button>
 
   <button class="btn"
-    style="background:#fff; color:#000000;"
+    style="background:transparent; color:#e0b31f; border:2px solid currentColor;"
     onclick="document.getElementById('gallery').scrollIntoView({ behavior: 'smooth' })">
     Poznaj przykłady
   </button>
