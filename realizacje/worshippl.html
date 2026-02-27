@@ -641,6 +641,12 @@ margin-bottom: 20%;
   to { opacity: 1; transform: translateY(0); }
 }
 
+.video-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: 27px;  
+
+
 </style>
   
 </head>
@@ -690,7 +696,23 @@ margin-bottom: 20%;
 
 </h2>
   <div class="separator"></div>
-
+ <div style="
+    position:relative;
+    max-width:900px;          
+    margin:40px auto 0;      
+    aspect-ratio:16/9;        
+    overflow:hidden;
+  ">
+    <iframe 
+      class="video-frame"
+      src="https://www.youtube-nocookie.com/embed/eqhWw5Oe4xQ?rel=0&modestbranding=1&controls=1&showinfo=0"
+      title="Film promocyjny 2"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="width:100%; height:100%;">
+    </iframe>
+  </div>
   <br>
   <p>
 
@@ -698,34 +720,8 @@ margin-bottom: 20%;
  Animacja 3D promująca uwielbienie eucharystyczne, zaprojektowana tak, aby natychmiast przyciągać uwagę i&nbsp;podkreślać wyjątkowy, duchowy charakter wydarzenia.
 Projekt łączy grafikę 2D z&nbsp;trójwymiarowymi elementami i&nbsp;symboliką, tworząc nowoczesny, czytelny przekaz skutecznie angażujący odbiorcę.
  
-
-</section>
-
-
-
-<section id="video" style="text-align:center; padding:40px 0; background:#ffffff;">
-
-  <div style="
+<div style="
     position:relative;
-    width:calc(100% - 80px);   
-    max-width:900px;          
-    margin:auto;
-    aspect-ratio:16/9;        
-    overflow:hidden;
-  ">
-    <iframe 
-      class="video-frame"
-      src="https://www.youtube-nocookie.com/embed/eqhWw5Oe4xQ?rel=0&modestbranding=1&controls=1&showinfo=0"
-      title="Film promocyjny 1"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen
-      style="width:100%; height:100%;">
-    </iframe>
-  </div>
-   <div style="
-    position:relative;
-    width:calc(100% - 80px);   
     max-width:900px;          
     margin:40px auto 0;      
     aspect-ratio:16/9;        
@@ -741,8 +737,11 @@ Projekt łączy grafikę 2D z&nbsp;trójwymiarowymi elementami i&nbsp;symboliką
       style="width:100%; height:100%;">
     </iframe>
   </div>
+</section>
 
 
+
+<section id="video" style="text-align:center; padding:40px 0; background:#ffffff;">
 
 </section>
 
