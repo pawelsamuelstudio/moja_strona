@@ -178,11 +178,9 @@ img {
 .video-section .bg-poster,
 .video-section .bg-video{
   position: absolute;
-  top: 50%;
-  left: 50%;
+  inset: 0;
   width: 100%;
   height: 100%;
-  transform: translate(-50%, -50%);
   object-fit: cover;
   z-index: 0;
 }
@@ -190,16 +188,7 @@ img {
 /* start: pokazuj obrazek, ukryj wideo */
 .video-section .bg-video{ display: none; }
 .video-overlay{ position: relative; z-index: 1; }
-    .video-section video {
-     position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 0;
-        }
+    
 
 
     .video-overlay {
@@ -521,16 +510,19 @@ font-size: 31px;
 
 /* OKNO VIDEO */
 .ellipse-video{
-   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -40%);  /* pół na pół nad żółtą */
-  width: min(1200px, calc(100vw - 60px));
+   position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+
+  width: min(560px, 92vw);
+  margin: 16px auto 12px;
+
   aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-  z-index: 5;
+  z-index: 2;
 }
 
 .ellipse-video video{
@@ -545,7 +537,7 @@ font-size: 31px;
 
   .ellipse-video{
     /* POZYCJA – mniej w górę (żeby nie nachodziło na tekst/guziki) */
-    transform: translate(-50%, -8%) !important;  /* było -40% */
+    transform: margin-top: 8px !important;   /* ewentualnie 0px */
     
     /* ROGI – zawsze działają */
     border-radius: 15px !important;
@@ -2211,6 +2203,13 @@ header *,
         <h4> </h4>
       <h1>Animacje, które&nbsp;tłumaczą i&nbsp;przekonują</h1>
         <h4>Promocyjne Produktowe Edukacyjne&nbsp;</h4>
+
+        <div class="ellipse-video">
+  <img class="video-poster" src="samuel-studio-reel-2025.webp" alt="" aria-hidden="true">
+  <video class="hero-video"
+         autoplay muted loop playsinline preload="none"
+         data-src="samuel-studio-loop-reel-2025.mp4"></video>
+</div>
 <!--
         <div class="separator" style="background-color: #ffffff;"></div>
         -->
@@ -2232,7 +2231,7 @@ header *,
 
 
 <section class="yellow-section" id="oferta">
- <div class="ellipse-video">
+ <!--<div class="ellipse-video">
   <img
     class="video-poster"
     src="samuel-studio-reel-2025.webp"
@@ -2249,7 +2248,7 @@ header *,
     preload="none"
     data-src="samuel-studio-loop-reel-2025.mp4"
   ></video>
-</div>
+</div> -->
 
   <h2 class="yellow-h2">Masz coś&nbsp;ważnego do&nbsp;pokazania, ale&nbsp;nie&nbsp;wiesz, jak&nbsp;zrobić&nbsp;to&nbsp;skutecznie?</h2>
     <div class="separator90"></div>
