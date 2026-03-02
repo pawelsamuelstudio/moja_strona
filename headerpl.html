@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nagłówek</title>
+
   <style>
 
       :host {
@@ -88,12 +83,14 @@ z-index: 2100;
     }
 
     .hamburger span {
-      display: block;
-      height: 3px;
-      background: #000000;
-      border-radius: 2px;
-      transition: all 0.4s ease;
-    }
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #000000;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+  transform: translateZ(0);
+}
 
     .hamburger.active span:nth-child(1) {
       transform: translateY(9px) rotate(45deg);
@@ -173,9 +170,26 @@ z-index: 2100;
   }
 }
 
+/* Header zawsze na wierzchu i nie miesza się z tłem */
+header {
+  z-index: 99999 !important;
+  isolation: isolate;
+}
+
+/* Hamburger i kreski nad wszystkim */
+#hamburger, .hamburger {
+  position: relative;
+  z-index: 100000 !important;
+}
+
+.hamburger span {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
   </style>
-</head>
-<body>
+
   <header id="mainHeader">
     <div class="logo-container">
       <a href="index.html">
@@ -249,5 +263,3 @@ window.addEventListener("scroll", () => {
 </script>
 
 
-</body>
-</html>
