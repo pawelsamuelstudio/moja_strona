@@ -630,44 +630,8 @@ margin-bottom: 20%;
 </head>
 <body>
 
-<header>
-  <div class="logo-container">
-    <a href="https://samuelstudio.com/index.html">
-      <img src="logosamuelstudio.svg" alt="Logo" style="width:90px; height:90px;" />
-    </a>
-  </div>
+<div id="site-header"></div>
 
-
-  <nav class="center-links">
-    <a href="https://samuelstudio.com">Home</a>
-    <a href="https://samuelstudio.com/work">Work</a>
-    <a href="https://samuelstudio.com/about.html">About</a>
-    <a href="https://samuelstudio.com/contact.html">Contact</a>
-            <a href="https://blog.samuelstudio.com/">Blog</a>
-    <a href="https://samuelstudio.com/indexpl.html" title="Polska wersja" class="lang-switch">
-      <img src="plflag.svg" alt="Polska wersja" style="width:35px; vertical-align:middle;">
-    </a>
-  </nav>
-
-  <div class="hamburger" id="hamburger">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="https://samuelstudio.com">Home</a>
-    <a href="https://samuelstudio.com/work">Work</a>
-    <a href="https://samuelstudio.com/about.html">About</a>
-    <a href="https://samuelstudio.com/contact.html">Contact</a>
-            <a href="https://blog.samuelstudio.com/">Blog</a>
-
-    <a href="https://samuelstudio.com/indexpl.html" title="Polska wersja" class="lang-switch">
-      <img src="plflag.svg" alt="Polska wersja" style="width:35px; vertical-align:middle;">
-    </a>
-  </div>
-  
-</header>
 <section class="text-section">
   <h2>A Small Story About Big Energy</h2>
   <div class="separator"></div>
@@ -716,7 +680,7 @@ margin-bottom: 20%;
 <section id="video" style="text-align:center; padding:40px 0; background:#ffffff;">
 
   
-     <a href="https://samuelstudio.com/indexen.html#gallery" class="back-button">← Back to home</a>
+     <a href="/indexen#gallery" class="back-button">← Back to home</a>
 
   </div>
 
@@ -730,58 +694,8 @@ margin-bottom: 20%;
 
 </section>
 
-
-
-
-<footer class="footer">
-  <div class="footer-subscribe">
-    <h3>CLICK TO SUBSCRIBE</h3>
-    <div class="footer-buttons">
-      <a href="#" class="subscribe-btn">
-        <img src="samuelstudio icon.svg" alt="Animator 1"> 
-        YT Samuel Studio
-      </a>
-      <a href="#" class="subscribe-btn">
-        <img src="explainers icon.svg" alt="Animator 2"> 
-        YT Explainers in Animation
-      </a>
-    </div>
-  </div>
-
-  <nav class="footer-nav">
-    <a href="https://samuelstudio.com/indexen.html">Home</a>
-    <a href="https://samuelstudio.com/work">Work</a>
-    <a href="https://samuelstudio.com/about.html">About</a>
-    <a href="https://samuelstudio.com/contact.html">Contact</a>
-    <a href="https://blog.samuelstudio.com/">Blog</a>
-
-  </nav>
-
-  <div class="footer-socials">
-    <a href="https://www.linkedin.com/in/pawel-pauksztello-samuel-studio/" target="_blank">
-      <img src="linked icon.svg" alt="LinkedIn">
-    </a>
-    <a href="https://www.youtube.com/@SamuelStudio_" target="_blank">
-      <img src="yt icon.svg" alt="YouTube">
-    </a>
-    <a href="https://www.facebook.com/pawelpauksztello" target="_blank">
-      <img src="fb icon.svg" alt="Facebook">
-    </a>
-    <a href="https://www.instagram.com/pawel_samuel_studio/" target="_blank">
-      <img src="insta icon.svg" alt="Instagram">
-    </a>
-    <a href="https://samuelstudio.com/indexpl.html" title="English version" class="lang-switch">
-      <img src="plflag.svg" alt="English" style="width:35px; vertical-align:middle;">
-    </a>
-    </a>
-  </div>
-
-  <div class="footer-bottom">
-    <a href="https://samuelstudio.com/privacy.html">Privacy Policy</a>
-    <span>Copyright by <p></p>Michal Baran Grafik & Pawel Pauksztello 2025</span>
-  </div>
-</footer>
-
+<div id="site-footer"></div>
+<script src="/js/includesen.js?v=3"></script>
 
 <script>
 document.querySelectorAll('.gallery-item').forEach(item => {
@@ -825,28 +739,6 @@ if (window.innerWidth <= 768) {
 }
 </script>
 
-
-<script>
-
-const hamburger = document.getElementById("hamburger");
-const mobileMenu = document.getElementById("mobileMenu");
-
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("active");
-
-  mobileMenu.style.top = mobileMenu.style.top === "0%" ? "-100%" : "0%";
-});
-
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove("active");
-    mobileMenu.style.top = "-100%";
-  });
-});
-
-</script>
-
-
 <script>
 document.addEventListener("contextmenu", (e) => {
   e.preventDefault();
@@ -866,7 +758,7 @@ document.addEventListener("keydown", (e) => {
   document.querySelector('.back-button').addEventListener('click', (e) => {
     e.preventDefault();
     sessionStorage.setItem('scrollTarget', '#gallery');
-    window.location.href = 'https://samuelstudio.com/indexen.html#gallery';
+    window.location.href = "/indexen#gallery";
   });
 </script>
 
