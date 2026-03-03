@@ -14,23 +14,21 @@ html, body {
 }
 
     header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 15px 28px;
-  background: #f0bb1c;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 2000;
-  transition: all 0.4s ease;    }
+ width: 100%;
+height: 60px;
+padding: 0 24px;
+background: #f0bb1c;
+display: flex;
+align-items: center;
+justify-content: space-between;
+z-index: 2000;
+transition: all 0.4s ease;  }
 
 
 @media (max-width: 768px) {
   header {
-    padding-top: 15px;
-    padding-bottom: 15px;
+     height: 52px;
+    padding: 0 16px;
   }}
 
     nav a {
@@ -71,7 +69,7 @@ nav a:hover {
     }
 
     .hamburger {
-      display: none;
+        display: none;
       flex-direction: column;
       justify-content: space-between;
       width: 36px;
@@ -83,11 +81,13 @@ z-index: 2100;
     }
 
     .hamburger span {
-      display: block;
-      height: 3px;
-      background: #000000;
-      border-radius: 2px;
-      transition: all 0.4s ease;
+       display: block;
+  height: 3px;
+  width: 100%;
+  background: #000000;
+  border-radius: 2px;
+  transition: all 0.4s ease;
+  transform: translateZ(0);
     }
 
     .hamburger.active span:nth-child(1) {
