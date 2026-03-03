@@ -380,7 +380,7 @@ margin-bottom: 10%;
 </head>
 <body>
 
-  <div id="header-placeholder"></div>
+  <div id="site-header"></div>
 
 
 <section class="text-section">
@@ -517,7 +517,8 @@ margin-bottom: 10%;
   </p>
   </section>
 
-<div id="footer-placeholder"></div>
+<div id="site-footer"></div>
+<script src="/js/includesen.js?v=3"></script>
 
 
 <script>
@@ -606,40 +607,7 @@ document.addEventListener("keydown", (e) => {
   });
 </script>
 
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(html => {
-      const placeholder = document.getElementById("header-placeholder");
-      const shadowRoot = placeholder.attachShadow({ mode: "open" });
-      shadowRoot.innerHTML = html;
 
-      const header = shadowRoot.getElementById("mainHeader");
-      const hamburger = shadowRoot.getElementById("hamburger");
-      const mobileMenu = shadowRoot.getElementById("mobileMenu");
-
-
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        mobileMenu.classList.toggle("active");
-      });
-
-      mobileMenu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          hamburger.classList.remove("active");
-          mobileMenu.classList.remove("active");
-        });
-      });
-    });
-</script>
-
-<script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
-    });
-</script>
 
 
 
