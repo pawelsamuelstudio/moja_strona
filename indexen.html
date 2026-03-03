@@ -1982,12 +1982,7 @@ margin-top: 36%;}}
 }
 
 
-header,
-header *,
-.hamburger,
-.hamburger * {
-  box-sizing: content-box !important;
-}
+h
 
 
 .video-wrapper {
@@ -2707,46 +2702,6 @@ video.addEventListener('timeupdate', () => {
     const pos = sessionStorage.getItem('scrollPosition');
     if (pos) window.scrollTo(0, pos);
   });
-</script>
-
-
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(html => {
-      const placeholder = document.getElementById("header-placeholder");
-      const shadowRoot = placeholder.attachShadow({ mode: "open" });
-      shadowRoot.innerHTML = html;
-
-      const header = shadowRoot.getElementById("mainHeader");
-      const hamburger = shadowRoot.getElementById("hamburger");
-      const mobileMenu = shadowRoot.getElementById("mobileMenu");
-
-
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        mobileMenu.classList.toggle("active");
-      });
-
-      mobileMenu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          hamburger.classList.remove("active");
-          mobileMenu.classList.remove("active");
-        });
-      });
-    });
-</script>
-
-
-<script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
-
-      const currentYear = new Date().getFullYear();
-      document.getElementById('year').textContent = currentYear;
-    });
 </script>
 
 <script>
