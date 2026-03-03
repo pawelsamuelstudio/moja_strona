@@ -63,6 +63,7 @@
         transform: scale(1.05);
     }
 
+ 
 
     .text-section { 
       max-width: 1200px; 
@@ -104,7 +105,7 @@
 .text-section h2 {
   font-size: 1.7rem;
   text-align: left;
-  margin-top: 48%;
+  margin-top: 68%;
 }
 .text-section .separator {
     margin-bottom: 12%;
@@ -251,6 +252,58 @@ margin-bottom: 20%;
   }}
 
 
+
+
+.subscribe-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  padding: 10px 25px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+   border: 1px solid #000;
+  border-radius: 120px;
+  transition: 0.3s;
+  }
+
+
+.subscribe-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+.subscribe-btn:hover {
+  background: #000000;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+
+
+.subscribe-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  padding: 10px 25px;
+  background: #ffffff;
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 120px;
+  transition: 0.3s;
+}
+
+.subscribe-btn img {
+  width: 28px;
+  height: 28px;
+}
+
+ 
+
+
+
 @media (min-width: 768px) and (max-width: 1024px) {
       .text-section { 
       margin-left: 15%;
@@ -326,21 +379,20 @@ margin-bottom: 20%;
 <div id="site-header"></div>
 
 <section class="text-section">
-  <h2>“View of Chęciny” Animation: Merging Traditional Art with Digital Technology
-</h2>
+  <h2>View of Checiny Animation: Merging Traditional Art with Digital Technology</h2>
   <div class="separator"></div>
 
   <div style="
     position:relative;
-    max-width:900px;          
+    max-width:900px;
     margin:auto;
-    aspect-ratio:16/9;        
+    aspect-ratio:16/9;
     overflow:hidden;
   ">
-    <iframe 
+    <iframe
       class="video-frame"
       src="https://www.youtube-nocookie.com/embed/4qRhBiFarTg?rel=0&modestbranding=1&controls=1&showinfo=0"
-      title="View of Chęciny - animated reinterpretation of a 19th-century painting"
+      title="View of Checiny - animated reinterpretation of a 19th-century painting"
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       allowfullscreen
@@ -349,36 +401,21 @@ margin-bottom: 20%;
   </div>
 
   <p><br>
-      Józef Szermentowski's "View&nbsp;of&nbsp;Chęciny" has been reimagined through digital animation, transporting 
-      audiences to 19th-century Chęciny by&nbsp;combining classical painting with modern animation techniques. 
-      The project allows viewers to explore the historical details of the painting and understand the 
-      context in which it was created while highlighting the richness of 19th-century art. The 
-      National Museum in Kielce presents Szermentowski and Kostrzewski in a&nbsp;dynamic, engaging format, 
-      attracting a&nbsp;wide audience. This unique experience blends history, culture, and technology, 
-      showing how traditional painting can come to life in motion and space.
-      </p> 
-
- <br>
-
-<section id="video" style="text-align:center; padding:40px 0; background:#ffffff;">
+    Józef Szermentowski's "View&nbsp;of&nbsp;Checiny" has been reimagined through digital animation, transporting audiences to 19th-century Checiny by combining classical painting with modern animation techniques. The project allows viewers to explore the historical details of the painting and understand the context in which it was created while highlighting the richness of 19th-century art. The National Museum in Kielce presents Szermentowski and Kostrzewski in a dynamic, engaging format, attracting a wide audience. This unique experience blends history, culture, and technology, showing how traditional painting can come to life in motion and space.
+  </p>
 
   <div style="
     position:relative;
-    max-width:900px;          
-    margin:40px auto 0;      
-    aspect-ratio:16/9;        
+    max-width:900px;
+    margin:40px auto 0;
     overflow:hidden;
   ">
-     <a href="/indexen#gallery" class="back-button">← Back to home</a>
-
+    <a href="/indexen#gallery" class="back-button">← Back to home</a>
   </div>
-
 </section>
-
 
 <div id="site-footer"></div>
 <script src="/js/includesen.js?v=3"></script>
-
 
 <script>
 document.querySelectorAll('.gallery-item').forEach(item => {
@@ -441,7 +478,7 @@ document.addEventListener("keydown", (e) => {
   document.querySelector('.back-button').addEventListener('click', (e) => {
     e.preventDefault();
     sessionStorage.setItem('scrollTarget', '#gallery');
-    window.location.href = 'indexen#gallery';
+    window.location.href = '/indexen#gallery';
   });
 </script>
 
