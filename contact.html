@@ -350,20 +350,12 @@
   margin-top: 10%;
 }}
 
-    header,
-header *,
-.hamburger,
-.hamburger * {
-  box-sizing: content-box !important;
-}
-
-
 </style>
   
 </head>
 <body>
 
-<div id="header-placeholder"></div>
+<div id="site-header"></div>
 
 <section class="text-section">
   <h2>Contact</h2>
@@ -438,7 +430,8 @@ send the&nbsp;finished product your way.
   </div>
 </section>
 
-<div id="footer-placeholder"></div>
+<div id="site-footer"></div>
+<script src="/js/includesen.js?v=3"></script>
 
 
 <script>
@@ -505,41 +498,6 @@ document.getElementById("contactForm").addEventListener("submit", function(e) {
     status.textContent = "❌ Something went wrong. Try again.";
   });
 });
-</script>
-
-<script>
-  fetch("header.html")
-    .then(response => response.text())
-    .then(html => {
-      const placeholder = document.getElementById("header-placeholder");
-      const shadowRoot = placeholder.attachShadow({ mode: "open" });
-      shadowRoot.innerHTML = html;
-
-      const header = shadowRoot.getElementById("mainHeader");
-      const hamburger = shadowRoot.getElementById("hamburger");
-      const mobileMenu = shadowRoot.getElementById("mobileMenu");
-
-
-      hamburger.addEventListener("click", () => {
-        hamburger.classList.toggle("active");
-        mobileMenu.classList.toggle("active");
-      });
-
-      mobileMenu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          hamburger.classList.remove("active");
-          mobileMenu.classList.remove("active");
-        });
-      });
-    });
-</script>
-
-<script>
-  fetch("footer.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("footer-placeholder").innerHTML = data;
-    });
 </script>
 
 
