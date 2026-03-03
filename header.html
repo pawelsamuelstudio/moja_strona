@@ -22,29 +22,19 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 z-index: 2000;
-transition: all 0.4s ease;  }
-
+transition: all 0.4s ease;
+    }
 
 @media (max-width: 768px) {
   header {
-     height: 52px;
+    height: 52px;
     padding: 0 16px;
-  }}
+  }
 
-    nav a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  transition: 0.3s;
+  .logo-container img {
+    width: 60px;
+  }
 }
-nav a:hover {
-  color: #ffdddd;
-}
-
-    .logo-container img {
-      width: 80px;
-      height: auto;
-    }
 
     .center-links {
       flex: 1;
@@ -69,7 +59,7 @@ nav a:hover {
     }
 
     .hamburger {
-        display: none;
+      display: none;
       flex-direction: column;
       justify-content: space-between;
       width: 36px;
@@ -81,14 +71,14 @@ z-index: 2100;
     }
 
     .hamburger span {
-       display: block;
+  display: block;
   height: 3px;
   width: 100%;
   background: #000000;
   border-radius: 2px;
   transition: all 0.4s ease;
   transform: translateZ(0);
-    }
+}
 
     .hamburger.active span:nth-child(1) {
       transform: translateY(9px) rotate(45deg);
@@ -168,6 +158,28 @@ z-index: 2100;
   }
 }
 
+/* Header zawsze na wierzchu i nie miesza się z tłem */
+header {
+  z-index: 99999 !important;
+  isolation: isolate;
+}
+
+/* Hamburger i kreski nad wszystkim */
+#hamburger, .hamburger {
+  position: relative;
+  z-index: 100000 !important;
+}
+
+.hamburger span {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+.logo-container img {
+  height: 30px;   /* zmień tu wartość */
+  width: auto;
+  display: block;
+}
   </style>
 
 
