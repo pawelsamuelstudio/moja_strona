@@ -1,5 +1,4 @@
 (async function () {
-
   async function inject(id, file) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -9,15 +8,14 @@
       console.error("Nie mogę wczytać:", file, res.status);
       return;
     }
-
     el.innerHTML = await res.text();
   }
 
-  // EN VERSION
+  // TWARDY EN:
   await inject("site-header", "/header.html");
   await inject("site-footer", "/footer.html");
 
-  // Hamburger
+  // Hamburger (jeśli masz #hamburger i #mobileMenu w header.html)
   const hamburger = document.getElementById("hamburger");
   const mobileMenu = document.getElementById("mobileMenu");
 
@@ -42,5 +40,4 @@
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
-
 })();
