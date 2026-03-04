@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+  <title>The Gospel - Ewangelia wyjaśniona w pięć minut | Animacja biblijna</title>
+  <meta name="description" content="Animowana interpretacja Ewangelii stworzona we współpracy z Bible Unbound. Ilustracje i dynamiczna animacja przedstawiają historię zbawienia w nowoczesnej formie wideo." />
+  <link rel="canonical" href="https://samuelstudio.com/realizacje/gospelpl.html">
+
+<link rel="alternate" hreflang="pl" href="https://samuelstudio.com/realizacje/gospelpl.html">
+<link rel="alternate" hreflang="en" href="https://samuelstudio.com/work/gospel.html">
+<link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/work/gospel.html">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/layout.css?v=1">
+
+  <link rel="stylesheet" href="/css/subpages.css?v=1">
+  
+</head>
+<body>
+
+<div id="site-header"></div>
+<main class="page-content"><
+
+<section class="text-section">
+  <h2>Animowany Gospel - Ewangelia wyjaśniona w&nbsp;pięć minut</h2>
+  <div class="separator"></div>
+
+    <div style="
+    position:relative;
+    max-width:900px;          
+    margin:40px auto 0;      
+    aspect-ratio:16/9;        
+    overflow:hidden;
+
+  ">
+    <iframe 
+    class="video-frame"
+      src="https://www.youtube-nocookie.com/embed/icSi1cRC6Yo?rel=0&modestbranding=1&controls=1&showinfo=0"
+      title="The Gospel - Ewangelia wyjaśniona w pięć minut"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="width:100%; height:100%">
+    </iframe>
+  </div>
+  <br> <br>
+  <p>
+Projekt, <em>Ewangelia wyjaśniona w&nbsp;pięć minut</em>, 
+to&nbsp;w&nbsp;pełni animowana interpretacja Ewangelii stworzona we współpracy z&nbsp;Bible Unbound 
+oraz Austinem Smithem, który napisał scenariusz i&nbsp;zajął się udźwiękowieniem, 
+podczas gdy ja skupiłem się na ilustracjach i&nbsp;animacji. Film przedstawia Ewangelię 
+w&nbsp;kontekście całej Biblii, podkreślając kluczowe momenty z&nbsp;Pisma Świętego 
+i&nbsp;łącząc wydarzenia Starego Testamentu z&nbsp;Nowym Testamentem. 
+Projekt był zarówno wymagający, jak i&nbsp;satysfakcjonujący — eksplorował, 
+w&nbsp;jaki sposób animacja biblijna może służyć jako narzędzie edukacyjne 
+i&nbsp;duchowego rozwoju. Ta animacja oferuje przystępny sposób na zrozumienie 
+Ewangelii i&nbsp;Bożego planu zbawienia.
+  </p>
+</section>
+  <a href="indexpl.html#gallery" class="back-button">← Powrót</a>
+
+
+
+<section id="video" style="text-align:center; padding:40px 0; background:#ffffff;">
+
+
+</section>
+
+
+/main>
+
+ <div id="site-footer"></div>
+<script src="/js/includespl.js?v=3"></script>
+
+
+
+<script>
+document.querySelectorAll('.gallery-item').forEach(item => {
+  const video = item.querySelector('video');
+
+  item.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 768) {
+      video.play();
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 768) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
+
+if (window.innerWidth <= 768) {
+  const videos = document.querySelectorAll(".gallery-item video");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+      } else {
+        entry.target.pause();
+        entry.target.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.5 }); 
+  videos.forEach(video => {
+    video.muted = true; 
+    video.setAttribute("playsinline", "true"); 
+    video.setAttribute("autoplay", "true"); // 
+    observer.observe(video);
+  });
+}
+</script>
+
+
+<script>
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (
+    (e.ctrlKey && (e.key === "s" || e.key === "u")) ||
+    (e.ctrlKey && e.shiftKey && e.key === "I")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+  document.querySelector('.back-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    sessionStorage.setItem('scrollTarget', '#gallery');
+    window.location.href = "/indexpl.html#gallery";
+  });
+</script>
+
+
+<script>
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) { 
+        const video = item.querySelector('video');
+        const img = item.querySelector('img');
+
+        img.style.opacity = '0';
+        video.style.opacity = '1';
+        video.style.pointerEvents = 'auto';
+        video.play();
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

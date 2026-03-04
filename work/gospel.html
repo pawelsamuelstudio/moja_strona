@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+  <title>The Gospel Explained in 5 Minutes | Animated Bible Video</title>
+  <meta name="description" content="Watch a fully animated explanation of the Gospel in five minutes. Discover how the Old and New Testament connect in this engaging Bible overview video.">
+ <link rel="canonical" href="https://samuelstudio.com/work/gospel.html">
+
+<link rel="alternate" hreflang="en" href="https://samuelstudio.com/work/gospel.html">
+<link rel="alternate" hreflang="pl" href="https://samuelstudio.com/realizacje/gospelpl.html">
+<link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/work/gospel.html">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/layout.css?v=1">
+<link rel="stylesheet" href="/css/subpages.css?v=1">
+  
+  
+</head>
+
+<body>
+
+<div id="site-header"></div>
+<main class="page-content">
+
+<section class="text-section">
+  <h2>Animated Gospel – The Gospel Explained in Five Minutes</h2>
+  <div class="separator"></div>
+
+  <div style="
+    position:relative;
+    max-width:900px;
+    margin:40px auto 0;
+    aspect-ratio:16/9;
+    overflow:hidden;
+  ">
+    <iframe
+      class="video-frame"
+      src="https://www.youtube-nocookie.com/embed/icSi1cRC6Yo?rel=0&modestbranding=1&controls=1&showinfo=0"
+      title="The Gospel Explained in Five Minutes - Animated Bible Overview"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="width:100%; height:100%;">
+    </iframe>
+  </div>
+
+  <p><br>
+    The Gospel Explained in Five Minutes is a fully animated interpretation of the Gospel created with Bible Unbound and Austin Smith, who wrote the script and handled sound design, while I focused on illustrations and animation. The film presents the Gospel in the context of the entire Bible, highlighting key moments from Scripture and connecting Old Testament events to the New Testament. The project was both challenging and rewarding, exploring how biblical animation can serve as a tool for education and spiritual growth. This animation offers an accessible way to understand the Gospel and God's plan of salvation.
+  </p>
+
+  <div style="text-align:center; margin:60px 0;">
+    <a href="/indexen.html#gallery" class="back-button">← Back to home</a>
+  </div>
+</section>
+
+</main>
+<div id="site-footer"></div>
+<script src="/js/includesen.js?v=3"></script>
+
+
+<script>
+document.querySelectorAll('.gallery-item').forEach(item => {
+  const video = item.querySelector('video');
+
+  item.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 768) {
+      video.play();
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 768) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
+
+if (window.innerWidth <= 768) {
+  const videos = document.querySelectorAll(".gallery-item video");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+      } else {
+        entry.target.pause();
+        entry.target.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.5 }); 
+  videos.forEach(video => {
+    video.muted = true; 
+    video.setAttribute("playsinline", "true"); 
+    video.setAttribute("autoplay", "true"); // 
+    observer.observe(video);
+  });
+}
+</script>
+
+<script>
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (
+    (e.ctrlKey && (e.key === "s" || e.key === "u")) ||
+    (e.ctrlKey && e.shiftKey && e.key === "I")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+  document.querySelector('.back-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    sessionStorage.setItem('scrollTarget', '#gallery');
+    window.location.href = '/indexen.html#gallery';
+  });
+</script>
+
+
+<script>
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) { 
+        const video = item.querySelector('video');
+        const img = item.querySelector('img');
+
+        img.style.opacity = '0';
+        video.style.opacity = '1';
+        video.style.pointerEvents = 'auto';
+        video.play();
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

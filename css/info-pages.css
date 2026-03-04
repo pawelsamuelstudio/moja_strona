@@ -1,0 +1,399 @@
+/* =========================
+   INFO PAGES
+   About / Contact
+   ========================= */
+
+/* żeby treść nie wchodziła pod fixed header */
+:root{
+  --content-top: 90px;
+}
+
+main.page-content{
+  padding-top: var(--content-top);
+}
+
+/* =========================
+   TEXT SECTION
+   ========================= */
+
+.text-section{
+  max-width:1200px;
+  width:80%;
+  margin-left:12%;
+  margin-right:5%;
+  margin-top:80px;
+}
+
+.text-section h2{
+  font-size:2rem;
+  margin-top:40px;
+  margin-bottom:10px;
+}
+
+/* separator */
+
+.text-section .separator{
+  width:250px;
+  height:8px;
+  background:#f0bb1c;
+  margin-top:12px;
+  margin-bottom:40px;
+
+  transform:scaleX(0);
+  transform-origin:left;
+  animation:drawLine 9s ease-in-out infinite;
+}
+
+@keyframes drawLine{
+  0%{transform:scaleX(0);}
+  25%{transform:scaleX(1);}
+  75%{transform:scaleX(1);}
+  100%{transform:scaleX(0);}
+}
+
+.text-section p{
+  max-width:700px;
+  font-size:1.5rem;
+  line-height:1.6;
+  margin-bottom:40px;
+}
+
+/* linki */
+
+.text-section a{
+  color:#000;
+  text-decoration:none;
+  font-weight:600;
+  position:relative;
+}
+
+.text-section a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:100%;
+  height:2px;
+  background:#000;
+
+  transform:scaleX(0);
+  transform-origin:right;
+  transition:transform .3s ease;
+}
+
+.text-section a:hover::after{
+  transform:scaleX(1);
+  transform-origin:left;
+}
+
+/* highlight */
+
+.highlight-link{
+  font-weight:bold;
+  text-decoration:underline;
+  transition:.3s;
+}
+
+.highlight-link:hover{
+  color:#f0bb1c;
+  transform:scale(1.05);
+}
+
+/* =========================
+   ABOUT SECTION
+   ========================= */
+
+.about-container{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:40px;
+  max-width:1200px;
+  flex-wrap:wrap;
+}
+
+.about-text{
+  flex:1 1 60%;
+}
+
+.about-image{
+  flex:1 1 35%;
+  display:flex;
+  justify-content:center;
+  margin-top:200px;
+}
+
+.about-image img{
+  max-width:100%;
+  height:auto;
+  border-radius:20px;
+  transition:transform .4s ease;
+}
+
+.about-image img:hover{
+  transform:scale(1.05);
+}
+
+/* obraz w tekście (mobile) */
+
+.inline-image{
+  display:none;
+}
+
+.inline-image img{
+  width:100%;
+  border-radius:20px;
+}
+
+/* =========================
+   OPINIE / REVIEWS
+   ========================= */
+
+.section-header9 h2{
+  font-size:2rem;
+  font-weight:bold;
+  margin-top:60px;
+  margin-bottom:40px;
+  margin-left:12%;
+}
+
+.opinie-carousel{
+  position:relative;
+  max-width:500px;
+  margin:auto;
+
+  overflow:hidden;
+  border-radius:14px;
+  border:1px solid #000;
+
+  background:#fff;
+
+  box-shadow:0 4px 15px rgba(0,0,0,0.1);
+  transition:.4s;
+}
+
+.opinie-carousel:hover{
+  transform:scale(1.01);
+}
+
+.opinie-track{
+  display:flex;
+}
+
+.opinia{
+  min-width:100%;
+}
+
+.opinia img{
+  width:100%;
+  display:block;
+  border-radius:12px;
+}
+
+/* przyciski opinii */
+
+.review-container{
+  margin-top:100px;
+  margin-bottom:120px;
+}
+
+.review-btn,
+.review-btn2{
+  font-size:24px;
+  padding:14px 36px;
+
+  background:#000;
+  color:#f0bb1c;
+
+  border:none;
+  border-radius:30px;
+
+  margin-left:12%;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.review-btn:hover,
+.review-btn2:hover{
+  transform:scale(1.08);
+}
+
+.review-btn:active,
+.review-btn2:active{
+  transform:scale(.95);
+}
+
+/* =========================
+   CONTACT FORM
+   ========================= */
+
+.contact-section{
+  padding:40px 30px 80px;
+  display:flex;
+  justify-content:center;
+}
+
+.contact-container{
+  max-width:700px;
+  width:100%;
+
+  background:#fff;
+
+  padding:40px;
+
+  border-radius:20px;
+
+  box-shadow:0 6px 20px rgba(0,0,0,0.18);
+}
+
+.contact-container h2{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.contact-container p{
+  text-align:center;
+  margin-bottom:30px;
+  color:#555;
+}
+
+.contact-form .form-group{
+  display:flex;
+  flex-direction:column;
+  margin-bottom:20px;
+}
+
+.contact-form label{
+  margin-bottom:6px;
+  font-weight:600;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:12px;
+
+  border:1px solid #777;
+  border-radius:10px;
+
+  font-size:1rem;
+
+  transition:.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  outline:none;
+  border-color:#f0bb1c;
+
+  box-shadow:0 0 6px rgba(240,187,28,.4);
+}
+
+/* checkbox */
+
+.form-checkbox{
+  display:flex;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.form-checkbox input{
+  margin-right:10px;
+}
+
+/* button */
+
+.submit-btn{
+  width:60%;
+
+  padding:14px;
+
+  font-size:1.2rem;
+  font-weight:bold;
+
+  background:#f0bb1c;
+  color:#000;
+
+  border:none;
+  border-radius:22px;
+
+  cursor:pointer;
+
+  transition:.3s;
+}
+
+.submit-btn:hover{
+  background:#000;
+  color:#fff;
+  transform:scale(1.03);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width:768px){
+
+:root{
+  --content-top:70px;
+}
+
+.text-section{
+  margin-top:35%;
+  margin-left:14%;
+  margin-right:10%;
+}
+
+.text-section h2{
+  font-size:1.7rem;
+}
+
+.text-section p{
+  font-size:1.4rem;
+  max-width:100%;
+}
+
+.about-container{
+  flex-direction:column;
+  text-align:center;
+}
+
+.about-image{
+  display:none;
+}
+
+.inline-image{
+  display:block;
+  margin:20px auto 70px;
+  width:80%;
+  max-width:300px;
+}
+
+.review-btn,
+.review-btn2{
+  display:block;
+  margin:20px auto;
+}
+
+.contact-container{
+  padding:20px;
+}
+
+.submit-btn{
+  width:100%;
+}
+
+}
+
+@media (min-width:2560px){
+
+.text-section{
+  margin-left:30%;
+}
+
+.section-header9 h2{
+  margin-left:30%;
+}
+
+}

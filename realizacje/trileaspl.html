@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+  <title>Animowane logo Trileas - nowoczesna identyfikacja marki | Samuel Studio</title>
+  <meta name="description" content="Animowane logo dla marki Trileas zaprojektowane przez Samuel Studio. Nowoczesna, dynamiczna identyfikacja wizualna, która wzmacnia wizerunek i wyróżnia markę w sieci." />
+  <link rel="canonical" href="https://samuelstudio.com/realizacje/trileaspl.html">
+
+<link rel="alternate" hreflang="pl" href="https://samuelstudio.com/realizacje/trileaspl.html">
+<link rel="alternate" hreflang="en" href="https://samuelstudio.com/work/trileas.html">
+<link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/work/trileas.html">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/layout.css?v=1">
+<link rel="stylesheet" href="/css/subpages.css?v=1">
+  
+</head>
+<body>
+
+<div id="site-header"></div>
+<main class="page-content">
+
+<section class="text-section">
+  <h2>Trileas - animacja logo</h2>
+  <div class="separator"></div>
+
+    <div class="gallery-grid">
+
+    <div class="gallery-item">
+      <div class="gallery-media">
+       <img src="../Logo-trileas-cover.png" alt="Trileas logo">
+<video src="../trileas-logo-animation.mp4" muted loop></video>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <p>
+      Animowane logo nadało marce Trileas   
+      <span class="highlight">nowoczesny, dynamiczny charakter,</span>
+  który natychmiast przyciąga uwagę. Opowiada historię o&nbsp;łączeniu, współpracy 
+  i&nbsp;rozwoju - idealnie odzwierciedlając ich misję i&nbsp;wartości.
+  Dzięki nowej, 
+  profesjonalnej tożsamości Trileas      <span class="highlight">wyróżnia się w sieci, szybciej buduje zaufanie 
+  i&nbsp;skuteczniej angażuje swoją społeczność.</span>
+
+    
+   
+
+  </p>
+
+
+</section>
+  <a href="indexpl.html#gallery" class="back-button">← Powrót</a>
+
+<section class="gallery-section">
+
+</section>
+
+
+
+
+
+</main>
+<div id="site-footer"></div>
+<script src="/js/includespl.js?v=3"></script>
+
+
+<script>
+document.querySelectorAll('.gallery-item').forEach(item => {
+  const video = item.querySelector('video');
+
+  item.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 768) {
+      video.play();
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 768) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
+
+if (window.innerWidth <= 768) {
+  const videos = document.querySelectorAll(".gallery-item video");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+      } else {
+        entry.target.pause();
+        entry.target.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.5 }); 
+  videos.forEach(video => {
+    video.muted = true; 
+    video.setAttribute("playsinline", "true"); 
+    video.setAttribute("autoplay", "true"); // 
+    observer.observe(video);
+  });
+}
+</script>
+
+
+<script>
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (
+    (e.ctrlKey && (e.key === "s" || e.key === "u")) ||
+    (e.ctrlKey && e.shiftKey && e.key === "I")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+  document.querySelector('.back-button').addEventListener('click', (e) => {
+    e.preventDefault();
+    sessionStorage.setItem('scrollTarget', '#gallery');
+    window.location.href = "/indexpl.html#gallery";
+  });
+</script>
+
+
+<script>
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) { 
+        const video = item.querySelector('video');
+        const img = item.querySelector('img');
+
+        img.style.opacity = '0';
+        video.style.opacity = '1';
+        video.style.pointerEvents = 'auto';
+        video.play();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
