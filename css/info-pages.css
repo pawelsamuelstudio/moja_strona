@@ -17,31 +17,39 @@ main.page-content{
    ========================= */
 
 .text-section{
-  max-width:1200px;
-  width:80%;
-  margin-left:12%;
-  margin-right:5%;
-  margin-top:80px;
+  max-width: 1200px;
+  width: 80%;
+  margin-left: 12%;
+  margin-right: 5%;
+  margin-top: 80px;
 }
 
 .text-section h2{
-  font-size:2rem;
-  margin-top:40px;
-  margin-bottom:10px;
+  font-size: 2rem;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.text-section p{
+  max-width: 700px;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  text-align: left;
 }
 
 /* separator */
-
 .text-section .separator{
-  width:250px;
-  height:8px;
-  background:#f0bb1c;
-  margin-top:12px;
-  margin-bottom:40px;
+  width: 250px;
+  height: 8px;
+  background: #f0bb1c;
+  margin-top: 12px;
+  margin-bottom: 40px;
 
-  transform:scaleX(0);
-  transform-origin:left;
-  animation:drawLine 9s ease-in-out infinite;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 9s ease-in-out infinite;
 }
 
 @keyframes drawLine{
@@ -51,15 +59,7 @@ main.page-content{
   100%{transform:scaleX(0);}
 }
 
-.text-section p{
-  max-width:700px;
-  font-size:1.5rem;
-  line-height:1.6;
-  margin-bottom:40px;
-}
-
 /* linki */
-
 .text-section a{
   color:#000;
   text-decoration:none;
@@ -86,17 +86,52 @@ main.page-content{
   transform-origin:left;
 }
 
-/* highlight */
-
+/* highlight link (jeśli używasz) */
 .highlight-link{
   font-weight:bold;
   text-decoration:underline;
-  transition:.3s;
+  color:#000;
+  display:inline-block;
+  transition: transform .3s ease, color .3s ease;
 }
 
 .highlight-link:hover{
   color:#f0bb1c;
   transform:scale(1.05);
+}
+
+/* =========================
+   TOOLTIP (About/O mnie)
+   ========================= */
+
+.tooltip-trigger{
+  position: relative;
+  cursor: help;
+  font-weight: 700;
+}
+
+.tooltip-text{
+  position: absolute;
+  left: 0;
+  top: 120%;
+  min-width: 260px;
+  max-width: 340px;
+  background: #000;
+  color: #fff;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.35;
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+  transition: 0.2s ease;
+  z-index: 9999;
+}
+
+.tooltip-trigger:hover .tooltip-text{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =========================
@@ -114,6 +149,7 @@ main.page-content{
 
 .about-text{
   flex:1 1 60%;
+  text-align: left; /* ważne */
 }
 
 .about-image{
@@ -135,7 +171,6 @@ main.page-content{
 }
 
 /* obraz w tekście (mobile) */
-
 .inline-image{
   display:none;
 }
@@ -143,6 +178,7 @@ main.page-content{
 .inline-image img{
   width:100%;
   border-radius:20px;
+  display:block;
 }
 
 /* =========================
@@ -155,12 +191,13 @@ main.page-content{
   margin-top:60px;
   margin-bottom:40px;
   margin-left:12%;
+  text-align:left;
 }
 
 .opinie-carousel{
   position:relative;
   max-width:500px;
-  margin:auto;
+  margin: 0 auto;
 
   overflow:hidden;
   border-radius:14px;
@@ -169,11 +206,12 @@ main.page-content{
   background:#fff;
 
   box-shadow:0 4px 15px rgba(0,0,0,0.1);
-  transition:.4s;
+  transition: transform .4s ease, box-shadow .4s ease;
 }
 
 .opinie-carousel:hover{
   transform:scale(1.01);
+  box-shadow:0 6px 20px rgba(0,0,0,0.15);
 }
 
 .opinie-track{
@@ -191,7 +229,6 @@ main.page-content{
 }
 
 /* przyciski opinii */
-
 .review-container{
   margin-top:100px;
   margin-bottom:120px;
@@ -212,7 +249,8 @@ main.page-content{
 
   cursor:pointer;
 
-  transition:.3s;
+  transition: transform .3s ease, background .3s ease;
+  display:inline-block;
 }
 
 .review-btn:hover,
@@ -291,7 +329,6 @@ main.page-content{
 }
 
 /* checkbox */
-
 .form-checkbox{
   display:flex;
   align-items:center;
@@ -303,7 +340,6 @@ main.page-content{
 }
 
 /* button */
-
 .submit-btn{
   width:60%;
 
@@ -320,7 +356,7 @@ main.page-content{
 
   cursor:pointer;
 
-  transition:.3s;
+  transition: transform .2s ease, background .3s ease;
 }
 
 .submit-btn:hover{
@@ -335,65 +371,97 @@ main.page-content{
 
 @media (max-width:768px){
 
-:root{
-  --content-top:70px;
-}
+  :root{
+    --content-top:70px;
+  }
 
-.text-section{
-  margin-top:35%;
-  margin-left:14%;
-  margin-right:10%;
-}
+  .text-section{
+    width: auto;
+    margin-top: 35%;
+    margin-left: 14%;
+    margin-right: 10%;
+  }
 
-.text-section h2{
-  font-size:1.7rem;
-}
+  .text-section h2{
+    font-size:1.7rem;
+    text-align:left;
+  }
 
-.text-section p{
-  font-size:1.4rem;
-  max-width:100%;
-}
+  .text-section p{
+    font-size:1.4rem;
+    max-width:100%;
+    text-align:left;
+  }
 
-.about-container{
-  flex-direction:column;
-  text-align:center;
-}
+  /* WAŻNE: kolumna, ale bez centrowania tekstu */
+  .about-container{
+    flex-direction:column;
+    align-items:stretch;
+    text-align:left;
+  }
 
-.about-image{
-  display:none;
-}
+  .about-text{
+    text-align:left;
+  }
 
-.inline-image{
-  display:block;
-  margin:20px auto 70px;
-  width:80%;
-  max-width:300px;
-}
+  .about-image{
+    display:none;
+  }
 
-.review-btn,
-.review-btn2{
-  display:block;
-  margin:20px auto;
-}
+  .inline-image{
+    display:block;
+    margin:20px auto 70px;
+    width:80%;
+    max-width:300px;
+  }
 
-.contact-container{
-  padding:20px;
-}
+  /* Opinie: marginesy, żeby nie dobijało do krawędzi */
+  .opinie-carousel{
+    width: calc(100% - 32px);
+    max-width: 520px;
+    margin: 0 auto;
+  }
 
-.submit-btn{
-  width:100%;
-}
+  .section-header9 h2{
+    margin-left:14%;
+    margin-right:10%;
+  }
 
+  .review-btn,
+  .review-btn2{
+    display:block;
+    margin:20px auto;
+  }
+
+  .contact-container{
+    padding:20px;
+  }
+
+  .submit-btn{
+    width:100%;
+  }
+
+  /* tooltip bez przesady na telefonie */
+  .tooltip-text{
+    min-width:220px;
+    max-width:280px;
+  }
 }
 
 @media (min-width:2560px){
+  .text-section{
+    margin-left:30%;
+  }
 
-.text-section{
-  margin-left:30%;
+  .section-header9 h2{
+    margin-left:30%;
+  }
 }
 
-.section-header9 h2{
-  margin-left:30%;
-}
-
+/* Bezpiecznik: jeśli gdzieś coś próbuje centrować treść */
+.text-section,
+.about-text,
+.text-section p,
+.text-section h2{
+  text-align:left;
 }
