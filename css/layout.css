@@ -1,5 +1,6 @@
-/* ===== RESET ===== */
-/* ===== RESET / GLOBAL ===== */
+/* =========================
+   RESET / GLOBAL
+   ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -21,17 +22,21 @@ body {
   overflow-x: hidden;
 }
 
-/* Rezerwacja miejsca pod header (żeby nie skakało przy wstrzyknięciu) */
+/* Zmienne */
 :root {
   --header-height: 60px;   /* desktop */
+  --header-height-mobile: 52px; /* mobile */
   --header-bg: #f0bb1c;
 }
 
+/* Rezerwacja miejsca pod header (żeby nie skakało przy wstrzyknięciu headera) */
 #site-header {
   min-height: var(--header-height);
 }
 
-/* ===== HEADER ===== */
+/* =========================
+   HEADER
+   ========================= */
 header {
   position: fixed;
   top: 0;
@@ -50,10 +55,10 @@ header {
 
 /* gdy chowasz header skryptem */
 header.hidden {
-  top: -120px; /* bezpiecznie więcej niż wysokość */
+  top: -120px;
 }
 
-/* LOGO */
+/* Logo */
 .logo-container a {
   display: inline-flex;
   align-items: center;
@@ -68,7 +73,7 @@ header.hidden {
   object-fit: contain;
 }
 
-/* NAV DESKTOP */
+/* Desktop nav */
 .center-links {
   flex: 1;
   display: flex;
@@ -91,7 +96,7 @@ header.hidden {
   transform: scale(1.05);
 }
 
-/* HAMBURGER */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -125,7 +130,7 @@ header.hidden {
   transform: translateY(-9px) rotate(-45deg);
 }
 
-/* MOBILE MENU */
+/* Mobile menu */
 .mobile-menu {
   display: flex;
   flex-direction: column;
@@ -161,14 +166,15 @@ header.hidden {
   color: #fff;
 }
 
-/* MOBILE */
+/* Mobile */
 @media (max-width: 768px) {
-  :root {
-    --header-height: 52px; /* mobile */
+  header {
+    height: var(--header-height-mobile);
+    padding: 0 16px;
   }
 
-  header {
-    padding: 0 16px;
+  #site-header {
+    min-height: var(--header-height-mobile);
   }
 
   .center-links {
@@ -184,7 +190,9 @@ header.hidden {
   }
 }
 
-/* ===== FOOTER ===== */
+/* =========================
+   FOOTER
+   ========================= */
 .footer {
   border-top: 1px solid #000;
   background: var(--header-bg);
@@ -197,7 +205,7 @@ header.hidden {
   margin-top: 0;
   margin-bottom: 40px;
   font-size: 22px;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .footer-subscribe::after {
@@ -217,32 +225,40 @@ header.hidden {
   flex-wrap: wrap;
 }
 
-/* subscribe button (używasz też w footer i czasem w treści) */
-.subscribe-btn {
-  display: flex;
+/* ===== PRZYCISKI W STOPCE (YT) =====
+   białe wypełnienie, czarny tekst, hover czarne + białe
+*/
+.footer .subscribe-btn {
+  display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
-  padding: 10px 25px;
+
+  padding: 12px 26px;
   background: #fff;
   color: #000;
-  font-weight: bold;
+
+  font-weight: 700;
   text-decoration: none;
-  border: 1px solid #000;
-  border-radius: 120px;
-  transition: 0.3s;
+
+  border: 2px solid #000;
+  border-radius: 30px;
+
+  transition: all 0.25s ease;
 }
 
-.subscribe-btn img {
-  width: 28px;
-  height: 28px;
-}
-
-.subscribe-btn:hover {
+.footer .subscribe-btn:hover {
   background: #000;
   color: #fff;
   transform: scale(1.05);
 }
 
+.footer .subscribe-btn img {
+  width: 24px;
+  height: 24px;
+}
+
+/* Footer nav */
 .footer-nav {
   margin: 25px 0;
   padding-top: 20px;
@@ -252,7 +268,7 @@ header.hidden {
   margin: 0 25px;
   color: #000;
   font-variant: small-caps;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 20px;
   text-decoration: none;
   transition: 0.3s;
@@ -262,6 +278,7 @@ header.hidden {
   color: #fff;
 }
 
+/* Social */
 .footer-socials {
   display: flex;
   justify-content: center;
@@ -290,6 +307,7 @@ header.hidden {
   filter: brightness(0) saturate(100%);
 }
 
+/* Footer bottom */
 .footer-bottom {
   border-top: 1px solid #000;
   margin-top: 20px;
@@ -314,6 +332,7 @@ header.hidden {
   display: inline;
 }
 
+/* Footer responsive */
 @media (max-width: 760px) {
   .footer {
     padding: 30px 20px;
@@ -325,6 +344,7 @@ header.hidden {
 
   .footer-buttons {
     margin-bottom: 20px;
+    gap: 16px;
   }
 
   .footer-nav {
