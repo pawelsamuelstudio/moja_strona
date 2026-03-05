@@ -63,7 +63,7 @@ img {
 }
 
 .separator00 {
-  margin-top: 7%;
+  margin-top: 14px;
   margin-bottom: 7%;
   margin-left: 25%;
 }
@@ -289,8 +289,8 @@ img {
 .see-more-btn4 {
   /* było: position:absolute; margin-left:50%; right:10%; -> powodowało bug */
   position: static;
-  margin-left: 0;
-  right: auto;
+  margin-left: 0%;
+  margin-right: 10%;
 
   font-size: 24px;
   padding: 14px 36px;
@@ -781,7 +781,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   animation: drawLine 4s ease-in-out infinite;
 }
 
-.separator9 { margin-top: 40px; align-items: center; }
+.separator9 { margin-top: 14px; align-items: center; }
 
 @keyframes drawLine {
   0% { transform: scaleX(0); }
@@ -1333,7 +1333,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   margin-bottom: 50px;
 }
 
-.separator8 { margin: 40px 0; }
+.separator8 { margin: 14px 0; }
 
 .video-overlay2 h4 {
   margin-top: 90px;
@@ -1346,7 +1346,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 }
 
 @media (max-width: 768px) {
-  .separator9 { margin: 40px auto; }
+  .separator9 { margin: 14px auto; }
   .text-section0 { margin: 40px 0; margin-left: 0%; }
   .gallery-section .see-more-btn3 { margin-left: 0%; }
 }
