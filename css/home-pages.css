@@ -63,7 +63,7 @@ img {
 }
 
 .separator00 {
-  margin-top:14px;
+  margin-top: 7%;
   margin-bottom: 7%;
   margin-left: 25%;
 }
@@ -781,7 +781,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   animation: drawLine 4s ease-in-out infinite;
 }
 
-.separator9 { margin-top: 14px; align-items: center; }
+.separator9 { margin-top: 40px; align-items: center; }
 
 @keyframes drawLine {
   0% { transform: scaleX(0); }
@@ -1321,7 +1321,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 .yellow2-h2,
 .see-more-btn3,
 .video-caption {  
-  margin: 14px 0;
+  margin: 40px 0;
   margin-left: 12%;
   margin-right: 10%;
 }
@@ -1333,7 +1333,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   margin-bottom: 50px;
 }
 
-.separator8 { margin: 14px 0; }
+.separator8 { margin: 40px 0; }
 
 .video-overlay2 h4 {
   margin-top: 90px;
@@ -1347,7 +1347,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 
 @media (max-width: 768px) {
   .separator9 { margin: 40px auto; }
-  .text-section0 { margin: 14px 0; margin-left: 0%; }
+  .text-section0 { margin: 40px 0; margin-left: 0%; }
   .gallery-section .see-more-btn3 { margin-left: 0%; }
 }
 
