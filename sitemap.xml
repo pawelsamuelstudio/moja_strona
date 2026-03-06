@@ -1,75 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <sitemap>
-        <loc>https://samuelstudio.com/indexpl</loc>
-        <lastmod>2025-11-30</lastmod>
-    </sitemap>
-    <sitemap>
-        <loc>https://samuelstudio.com/realizacje</loc>
-        <lastmod>2025-11-30</lastmod>
-    </sitemap>
-    <sitemap>
-        <loc>https://samuelstudio.com/omnie</loc>
-        <lastmod>2025-11-30</lastmod>
-    </sitemap>
-    <sitemap>
-        <loc>https://samuelstudio.com/kontakt</loc>
-        <lastmod>2025-11-30</lastmod>
-    </sitemap>
-    <sitemap>
-        <loc>https://blog.samuelstudio.pl/</loc>
-        <lastmod>2025-11-30</lastmod>
-    </sitemap>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-    <sitemap>
-        <loc>https://samuelstudio.com/indexen</loc>
-        <lastmod>2025-11-30</lastmod>
-    </sitemap>
-    <sitemap>
-        <loc>https://samuelstudio.com/work</loc>
-        <lastmod>2025-11-30</lastmod>
-    </sitemap>
-    <sitemap>
-        <loc>https://samuelstudio.com/about</loc>
-        <lastmod>2025-11-30</lastmod>
-    </sitemap>
-    <sitemap>
-        <loc>https://samuelstudio.com/contact</loc>
-        <lastmod>2025-11-30</lastmod>
-    </sitemap>
-    <sitemap>
-        <loc>https://blog.samuelstudio.com/</loc>
-        <lastmod>2025-11-30</lastmod>
-    </sitemap>
+<!-- Home -->
+<url><loc>https://samuelstudio.com/</loc></url>
 
-    <sitemap><loc>https://samuelstudio.com/work/worship</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/work/puppeter</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/work/thomas</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/work/church</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/work/nikifor</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/work/kosmos</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/work/4eco</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/work/panama</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/work/checiny</loc><lastmod>2025-11-30</lastmod></sitemap>
+<!-- PL -->
+<url><loc>https://samuelstudio.com/indexpl</loc></url>
+<url><loc>https://samuelstudio.com/realizacje</loc></url>
+<url><loc>https://samuelstudio.com/omnie</loc></url>
+<url><loc>https://samuelstudio.com/kontakt</loc></url>
 
+<!-- EN -->
+<url><loc>https://samuelstudio.com/indexen</loc></url>
+<url><loc>https://samuelstudio.com/work</loc></url>
+<url><loc>https://samuelstudio.com/about</loc></url>
+<url><loc>https://samuelstudio.com/contact</loc></url>
 
-    <sitemap><loc>https://samuelstudio.com/trileas</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/gospel</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/modern3d</loc><lastmod>2025-11-30</lastmod></sitemap>
+<!-- Blog -->
+<url><loc>https://blog.samuelstudio.pl/</loc></url>
+<url><loc>https://blog.samuelstudio.com/</loc></url>
 
-    <sitemap><loc>https://samuelstudio.com/realizacje/worshippl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/realizacje/puppeterpl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/realizacje/thomaspl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/realizacje/churchpl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/realizacje/nikiforpl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/realizacje/kosmospl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/realizacje/4ecopl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/realizacje/panamapl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/realizacje/checinypl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    
-    <sitemap><loc>https://samuelstudio.com/trileaspl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/gospelpl</loc><lastmod>2025-11-30</lastmod></sitemap>
-    <sitemap><loc>https://samuelstudio.com/modern3dpl</loc><lastmod>2025-11-30</lastmod></sitemap>
+<!-- WORK projects -->
+<url><loc>https://samuelstudio.com/work/worship</loc></url>
+<url><loc>https://samuelstudio.com/work/puppeter</loc></url>
+<url><loc>https://samuelstudio.com/work/thomas</loc></url>
+<url><loc>https://samuelstudio.com/work/church</loc></url>
+<url><loc>https://samuelstudio.com/work/nikifor</loc></url>
+<url><loc>https://samuelstudio.com/work/kosmos</loc></url>
+<url><loc>https://samuelstudio.com/work/4eco</loc></url>
+<url><loc>https://samuelstudio.com/work/panama</loc></url>
+<url><loc>https://samuelstudio.com/work/checiny</loc></url>
 
-</sitemapindex>
+<!-- WORK new projects -->
+<url><loc>https://samuelstudio.com/work/trileas.html</loc></url>
+<url><loc>https://samuelstudio.com/work/gospel.html</loc></url>
+<url><loc>https://samuelstudio.com/work/modern3d.html</loc></url>
+
+<!-- REALIZACJE projects -->
+<url><loc>https://samuelstudio.com/realizacje/worshippl</loc></url>
+<url><loc>https://samuelstudio.com/realizacje/puppeterpl</loc></url>
+<url><loc>https://samuelstudio.com/realizacje/thomaspl</loc></url>
+<url><loc>https://samuelstudio.com/realizacje/churchpl</loc></url>
+<url><loc>https://samuelstudio.com/realizacje/nikiforpl</loc></url>
+<url><loc>https://samuelstudio.com/realizacje/kosmospl</loc></url>
+<url><loc>https://samuelstudio.com/realizacje/4ecopl</loc></url>
+<url><loc>https://samuelstudio.com/realizacje/panamapl</loc></url>
+<url><loc>https://samuelstudio.com/realizacje/checinypl</loc></url>
+
+<!-- REALIZACJE new projects -->
+<url><loc>https://samuelstudio.com/realizacje/trileaspl.html</loc></url>
+<url><loc>https://samuelstudio.com/realizacje/gospelpl.html</loc></url>
+<url><loc>https://samuelstudio.com/realizacje/modern3dpl.html</loc></url>
+
+</urlset>
