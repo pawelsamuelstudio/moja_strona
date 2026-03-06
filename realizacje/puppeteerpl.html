@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+  <title>Teledysk animowany 2D i 3D - Puppeteer | Samuel Studio</title>
+  <meta name="description" content="Teledysk animowany 2D i 3D dla zespołu YAGOOSH. Puppeteer to wizualna opowieść łącząca subtelną animację z symbolicznymi elementami 3D.">
+  <link rel="canonical" href="https://samuelstudio.com/realizacje/puppeteerpl.html">
+
+<link rel="alternate" hreflang="pl" href="https://samuelstudio.com/realizacje/puppeteerpl.html">
+<link rel="alternate" hreflang="en" href="https://samuelstudio.com/work/puppeteer.html">
+<link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/work/puppeteer.html">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/layout.css?v=1">
+<link rel="stylesheet" href="/css/subpages.css?v=1">
+
+</head>
+<body>
+
+<div id="site-header"></div>
+<main class="page-content">
+
+<section class="text-section">
+
+
+  <h2>Puppeteer - Teledysk animowany 2D/3D</h2>
+
+    <div class="separator"></div>
+
+<div style="
+    position:relative;
+    max-width:900px;          
+    margin:40px auto 0;      
+    aspect-ratio:16/9;        
+    overflow:hidden;
+  ">
+    <iframe 
+      class="video-frame"
+      src="https://www.youtube-nocookie.com/embed/00trGdrx74A?rel=0&modestbranding=1&controls=1"
+      title="Puppeteer - animowany teledysk 2D i 3D zespołu YAGOOSH"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+      style="width:100%; height:100%;">
+    </iframe>
+  </div>
+ 
+  <p><br>
+<strong>O projekcie:</strong> </p>
+<p>„Puppeteer” to teledysk animowany stworzony na prośbę Agnieszki Majcher z&nbsp;zespołu YAGOOSH. Projekt 
+  łączy animację 2D i&nbsp;animację 3D, tworząc poetycką opowieść o&nbsp;emocjach, relacjach i&nbsp;ludzkiej kruchości.
+
+Inspiracją były fotografie Magdaleny Szczykutowicz, które ożywiłem poprzez subtelną animację 2D i&nbsp;wzbogaciłem 
+elementami 3D, nadając im nowy, symboliczny wymiar. Postacie poruszają się niczym marionetki kierowane 
+niewidzialnymi siłami - metafora zależności i&nbsp;wewnętrznego poszukiwania.
+
+Dodatkowe efekty - unoszące się chmury, migoczące światła i&nbsp;abstrakcyjne kształty - tworzą atmosferę 
+nostalgii i&nbsp;refleksji, współgrając z&nbsp;emocjonalnym tonem muzyki zespołu YAGOOSH.
+
+„Puppeteer” to nie tylko animowany teledysk, ale również wizualna podróż po świecie uczuć i&nbsp;myśli, 
+która zachęca do refleksji nad relacjami i&nbsp;ludzką naturą.
+ <br>
+</p><br>
+</section>
+
+<section class="text-section">
+ <p style="
+    margin-top:4%;        
+    margin-left: 6%;
+        margin-right: 6%;
+
+    font-size:18px;         
+    font-weight:500;        
+    color:#333333;          
+    line-height:1.6;       
+  ">
+Zespół YAGOOSH:<br>
+Agnieszka Majcher - wokal, tekst
+Ala Zawisza - gitary
+Damian Szydłowski - instrumenty klawiszowe
+Wiktor Michalczyk - perkusja
+Muzyka: YAGOOSH
+Scenariusz video: Agnieszka Majcher
+<br>Realizacja video: Paweł Pauksztełło
+<br>Fotografie: Magdalena Szczykutowicz  </p>
+
+</section>
+
+
+
+  <a href="/realizacje.html" class="back-button">← Powrót do Realizacje</a>
+
+
+</main>
+ <div id="site-footer"></div>
+<script src="/js/includespl.js"></script>
+
+
+
+
+<script>
+document.querySelectorAll('.gallery-item').forEach(item => {
+  const video = item.querySelector('video');
+
+  item.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 768) {
+      video.play();
+    }
+  });
+
+  item.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 768) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
+
+if (window.innerWidth <= 768) {
+  const videos = document.querySelectorAll(".gallery-item video");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.play().catch(err => {
+          console.log("Autoplay blocked:", err);
+        });
+      } else {
+        entry.target.pause();
+        entry.target.currentTime = 0;
+      }
+    });
+  }, { threshold: 0.5 }); 
+  videos.forEach(video => {
+    video.muted = true; 
+    video.setAttribute("playsinline", "true"); 
+    video.setAttribute("autoplay", "true"); // 
+    observer.observe(video);
+  });
+}
+</script>
+
+<script>
+document.addEventListener("contextmenu", (e) => {
+  e.preventDefault();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (
+    (e.ctrlKey && (e.key === "s" || e.key === "u")) ||
+    (e.ctrlKey && e.shiftKey && e.key === "I")
+  ) {
+    e.preventDefault();
+  }
+});
+</script>
+
+<script>
+  document.querySelectorAll('.gallery-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (window.innerWidth <= 768) { 
+        const video = item.querySelector('video');
+        const img = item.querySelector('img');
+
+        img.style.opacity = '0';
+        video.style.opacity = '1';
+        video.style.pointerEvents = 'auto';
+        video.play();
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>
