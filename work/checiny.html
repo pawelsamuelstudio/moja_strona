@@ -54,7 +54,7 @@
     margin:40px auto 0;
     overflow:hidden;
   ">
-    <a href="/indexen.html#gallery" class="back-button">← Back to home</a>
+    <a href="/indexen/work" class="back-button">← Back to Work</a>
   </div>
 </section>
 
@@ -118,15 +118,6 @@ document.addEventListener("keydown", (e) => {
   }
 });
 </script>
-
-<script>
-  document.querySelector('.back-button').addEventListener('click', (e) => {
-    e.preventDefault();
-    sessionStorage.setItem('scrollTarget', '#gallery');
-    window.location.href = '/indexen.html#gallery';
-  });
-</script>
-
 
 <script>
   document.querySelectorAll('.gallery-item').forEach(item => {
