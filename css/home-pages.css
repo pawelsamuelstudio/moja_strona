@@ -28,6 +28,7 @@ img {
 }
 
 .line-break-sm { display: none; }
+
 @media (max-width: 768px) {
   .line-break-sm { display: inline; }
 }
@@ -40,7 +41,9 @@ img {
   margin: 0 auto;
   flex-wrap: wrap; 
 }
+
 .bottom-video { max-width: 1000px; }
+
 .bottom-video video {
   width: 10%;
   border-radius: 20px;
@@ -69,26 +72,50 @@ img {
 }
 
 @media (max-width: 768px) {
-  .separator7 { width: 180px; height: 7px; background-color: #f0bb1c; }
-  .separator8 { width: 180px; height: 7px; background-color: #f0bb1c; }
+  .separator7,
+  .separator8 {
+    width: 180px;
+    height: 7px;
+    background-color: #f0bb1c;
+  }
+
   .separator00 { margin-left: 14%; }
 }
 
-.text-1, .text-3 { display: block; width: fit-content; }
-.text-1, .text-3,
-.text-2, .text-4 { font-size: 22px; }
+.text-1,
+.text-3 {
+  display: block;
+  width: fit-content;
+}
+
+.text-1,
+.text-3,
+.text-2,
+.text-4 {
+  font-size: 22px;
+}
 
 @media (max-width: 768px) {
-  .text-1, .text-2, .text-3, .text-4 { font-size: 22px; }
+  .text-1,
+  .text-2,
+  .text-3,
+  .text-4 {
+    font-size: 22px;
+  }
 }
 
 /* =========================
    HERO video section
    ========================= */
-.video-section { position: relative; width: 100%; min-height: 88svh; overflow: hidden; }
+.video-section {
+  position: relative;
+  width: 100%;
+  min-height: 88svh;
+  overflow: hidden;
+}
 
 .video-section .bg-poster,
-.video-section .bg-video{
+.video-section .bg-video {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -100,9 +127,12 @@ img {
 }
 
 /* start: pokazuj obrazek, ukryj wideo */
-.video-section .bg-video{ display: none; }
+.video-section .bg-video { display: none; }
 
-.video-overlay{ position: relative; z-index: 1; }
+.video-overlay {
+  position: relative;
+  z-index: 1;
+}
 
 .video-section video {
   position: absolute;
@@ -119,6 +149,7 @@ img {
   text-align: center;
   padding-top: 120px;
 }
+
 .video-overlay h1 {
   font-size: 3rem;
   letter-spacing: 0px;
@@ -170,18 +201,24 @@ img {
 }
 
 @media (max-width: 768px) {
-  .video-overlay { padding-top: 40px; padding-bottom: 90px; }
+  .video-overlay {
+    padding-top: 40px;
+    padding-bottom: 90px;
+  }
+
   .video-overlay h1 {
     font-size: 2.4rem;
     margin-left: 10%;  
     margin-right: 10%;  
     text-align: center;
   }
+
   .video-overlay h4 {
     font-size: 1.4rem;
     margin-left: 10%;  
     margin-right: 10%;
   }
+
   .video-overlay .btn {
     margin: 10px 0 !important;
     padding: 10px 22px;
@@ -194,7 +231,13 @@ img {
 /* =========================
    Inne sekcje video
    ========================= */
-.video-section3 { position: relative; width: 100%; height: 80ch; overflow: hidden; }
+.video-section3 {
+  position: relative;
+  width: 100%;
+  height: 80ch;
+  overflow: hidden;
+}
+
 .video-section3 video {
   position: absolute;
   top: 50%;
@@ -203,7 +246,13 @@ img {
   object-fit: cover;
   z-index: 0;
 }
-.video-overlay3 { position: relative; z-index: 1; text-align: center; padding-top: 120px; }
+
+.video-overlay3 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 120px;
+}
 
 .video-hero {
   position: relative;
@@ -215,15 +264,42 @@ img {
   align-items: center; 
 }
 
-.video-hero .video-wrapper { height: 300px; background-color: #ffffff; align-items: center; }
-.video-wrapper { width: 100%; max-width: 600px; margin: 0 auto; }
-.video-wrapper video { width: 100%; height: auto; display: block; border-radius: 30px; }
+.video-hero .video-wrapper {
+  height: 300px;
+  background-color: #ffffff;
+  align-items: center;
+}
 
-.content { text-align: center; margin-bottom: 0; }
+.video-wrapper {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-.video-testimonial .video-wrapper { height: 200px; background-color: #fdf2e9; }
+.video-wrapper video {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 30px;
+}
 
-.video-section5 { position: relative; width: 100%; height: 80ch; overflow: hidden; }
+.content {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.video-testimonial .video-wrapper {
+  height: 200px;
+  background-color: #fdf2e9;
+}
+
+.video-section5 {
+  position: relative;
+  width: 100%;
+  height: 80ch;
+  overflow: hidden;
+}
+
 .video-section5 video {
   position: absolute;
   top: 50%;
@@ -232,7 +308,13 @@ img {
   object-fit: cover;
   z-index: 0;
 }
-.video-overlay5 { position: relative; z-index: 1; text-align: center; padding-top: 320px; }
+
+.video-overlay5 {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding-top: 320px;
+}
 
 .overlay-text {
   position: absolute;
@@ -287,11 +369,9 @@ img {
 
 /* ===== FIX z Twoich screenów: see-more-btn4 absolut + biały klocek ===== */
 .see-more-btn4 {
-  /* było: position:absolute; margin-left:50%; right:10%; -> powodowało bug */
   position: static;
   margin-left: 0%;
   margin-right: 10%;
-
   font-size: 24px;
   padding: 14px 36px;
   background: #ffffff;
@@ -312,9 +392,9 @@ img {
   transition: transform 0.4s ease, color 0.5s ease;
 }
 
-/* Mobile było OK: static — zostawiam */
 @media (max-width: 768px) {
   .see-more-btn3 { padding: 14px 39px; }
+
   .order-section .see-more-btn4 {
     position: static;
     display: block;
@@ -325,9 +405,22 @@ img {
 /* =========================
    Headings
    ========================= */
-h2 { color: #050505; font-size: 33px; }
-h3 { font-size: 20px; color: black; border-radius: 38px; }
-h5 { font-size: 22px; color: black; border-radius: 38px; }
+h2 {
+  color: #050505;
+  font-size: 33px;
+}
+
+h3 {
+  font-size: 20px;
+  color: black;
+  border-radius: 38px;
+}
+
+h5 {
+  font-size: 22px;
+  color: black;
+  border-radius: 38px;
+}
 
 h6 {
   color: #050505;
@@ -336,10 +429,18 @@ h6 {
   z-index: 10;
 }
 
-h4 { font-size: 2rem; color: rgb(255, 255, 255); margin: 35px 0; }
+h4 {
+  font-size: 2rem;
+  color: rgb(255, 255, 255);
+  margin: 35px 0;
+}
 
 @media (max-width: 768px) {
-  h6 { font-size: 1.7rem; font-weight: 600; color: rgb(0, 0, 0); }
+  h6 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+  }
 }
 
 /* =========================
@@ -356,8 +457,17 @@ h4 { font-size: 2rem; color: rgb(255, 255, 255); margin: 35px 0; }
 
 #oferta.yellow-section { background-color: hsl(43, 91%, 54%); }
 
-.yellow-section h2.yellow-h2 { font-size: 2rem; padding-top: 10%; padding-right: 5%; }
-.yellow-section h2.yellow2-h2 { font-size: 2rem; padding-top: 3%; }
+.yellow-section h2.yellow-h2 {
+  font-size: 2rem;
+  padding-top: 10%;
+  padding-right: 5%;
+}
+
+.yellow-section h2.yellow2-h2 {
+  font-size: 2rem;
+  padding-top: 3%;
+}
+
 .yellow-section h2 { font-size: 31px; }
 
 .yellow-section-bottom-text {
@@ -366,26 +476,38 @@ h4 { font-size: 2rem; color: rgb(255, 255, 255); margin: 35px 0; }
   color: rgb(29, 29, 29);
 }
 
-@media (min-width: 1024px) and (max-height: 800px){
-  .yellow-section{ padding-top: 480px !important; }
+@media (min-width: 1024px) and (max-height: 800px) {
+  .yellow-section { padding-top: 480px !important; }
 }
 
 @media (max-width: 768px) {
-  .yellow-section{ padding-top: 40px; padding-bottom: 40px; }
-  .yellow-section h2.yellow-h2 { font-size: 1.4rem; padding-top: 24%; }
-  .yellow-section h2.yellow2-h2 { font-size: 1.4rem; padding-top: 4%; padding-bottom: 6%; }
+  .yellow-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .yellow-section h2.yellow-h2 {
+    font-size: 1.4rem;
+    padding-top: 24%;
+  }
+
+  .yellow-section h2.yellow2-h2 {
+    font-size: 1.4rem;
+    padding-top: 4%;
+    padding-bottom: 6%;
+  }
 }
 
 /* =========================
    Ellipse video
    ========================= */
-:root{
+:root {
   --video-w: min(700px, 90vw);
   --video-h: calc(var(--video-w) * 9 / 16);
   --video-gap: 40px;
 }
 
-.ellipse-video{
+.ellipse-video {
   position: absolute;
   top: 0;
   left: 50%;
@@ -398,22 +520,23 @@ h4 { font-size: 2rem; color: rgb(255, 255, 255); margin: 35px 0; }
   z-index: 5;
 }
 
-.ellipse-video video{
-  width: 100%;   /* FIX: było wwidth */
+.ellipse-video video {
+  width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
 /* laptop / niskie ekrany */
-@media (min-width: 1024px) and (max-height: 800px){
-  .ellipse-video{
+@media (min-width: 1024px) and (max-height: 800px) {
+  .ellipse-video {
     transform: translate(-50%, -8%) !important;
     border-radius: 15px !important;
     overflow: hidden !important;
     -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
-  .ellipse-video video{
+
+  .ellipse-video video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -423,8 +546,8 @@ h4 { font-size: 2rem; color: rgb(255, 255, 255); margin: 35px 0; }
 }
 
 /* mobile */
-@media (max-width: 768px){
-  :root{
+@media (max-width: 768px) {
+  :root {
     --video-w: min(520px, 92vw);
     --video-gap: 28px;
   }
@@ -475,6 +598,7 @@ h4 { font-size: 2rem; color: rgb(255, 255, 255); margin: 35px 0; }
     justify-items: center;
     padding: 0 20px;
   }
+
   .grid-item:hover { transform: translateY(-5px); }
   .grid-item .desc { color: #333; }
 }
@@ -488,14 +612,20 @@ h4 { font-size: 2rem; color: rgb(255, 255, 255); margin: 35px 0; }
   padding: 100px 20px;
   text-align: center;
 }
+
 #kontakt h2 { font-size: 2rem; }
-#kontakt p { font-size: 1.1rem; margin: 10px 0; }
+
+#kontakt p {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
 
 #kontakt a {
   text-decoration: none;
   color: #333;
   transition: color 0.3s ease;
 }
+
 #kontakt a:hover { color: #f0bb1c; }
 
 .social-icon {
@@ -503,8 +633,13 @@ h4 { font-size: 2rem; color: rgb(255, 255, 255); margin: 35px 0; }
   margin: 0 10px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
-a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej */
-.social-icon:hover { transform: scale(1.1); filter: brightness(1.2); }
+
+a { display: inline-block; }
+
+.social-icon:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
 
 /* =========================
    Opinie carousel
@@ -527,8 +662,15 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   box-shadow: 0 6px 20px rgba(0,0,0,0.15); 
 }
 
-.opinie-track { display: flex; transition: transform 0.6s ease-in-out; }
-.opinia { min-width: 100%; box-sizing: border-box; }
+.opinie-track {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.opinia {
+  min-width: 100%;
+  box-sizing: border-box;
+}
 
 .opinia img {
   width: 100%;
@@ -537,7 +679,10 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 }
 
 @media (max-width: 768px) {
-  .opinie-carousel { max-width: 90%; padding: 0 10px; }
+  .opinie-carousel {
+    max-width: 90%;
+    padding: 0 10px;
+  }
 }
 
 .arrow {
@@ -552,14 +697,22 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   cursor: pointer;
   border-radius: 50%;
 }
+
 .prev { left: 10px; }
 .next { right: 10px; }
 
 /* =========================
    Text section
    ========================= */
-.text-section { max-width: 1200px; transition: transform 0.9s ease; }
-.text-section h2 { text-align: left; font-size: 2rem; }
+.text-section {
+  max-width: 1200px;
+  transition: transform 0.9s ease;
+}
+
+.text-section h2 {
+  text-align: left;
+  font-size: 2rem;
+}
 
 .text-section .separator {
   width: 220px;
@@ -572,7 +725,11 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 
 @media (max-width: 700px) {
   .text-section h2 { text-align: left; }
-  .text-section .separator { width: 250px; height: 8px; }
+
+  .text-section .separator {
+    width: 250px;
+    height: 8px;
+  }
 }
 
 /* =========================
@@ -607,6 +764,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   object-fit: contain;
   transition: transform 0.3s;
 }
+
 .logo-track img:hover { transform: scale(1.1); }
 
 @keyframes slide {
@@ -624,12 +782,16 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   77%, 81%  { transform: translateX(-275%); }
   85%, 89%  { transform: translateX(-300%); }
   93%, 97%  { transform: translateX(-325%); }
-  100%, 100%{ transform: translateX(-350%); }
+  100%, 100% { transform: translateX(-350%); }
 }
 
 @media (max-width: 760px) {
   .logo-track { animation: slide-mobile 60s infinite; }
-  .logo-track a { flex: 0 0 100%; justify-content: center; }
+
+  .logo-track a {
+    flex: 0 0 100%;
+    justify-content: center;
+  }
 
   @keyframes slide-mobile {
     0%, 3%    { transform: translateX(0); }
@@ -646,7 +808,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
     77%, 81%  { transform: translateX(-1100%); }
     85%, 89%  { transform: translateX(-1200%); }
     93%, 97%  { transform: translateX(-1300%); }
-    100%,100% { transform: translateX(-1400%); }
+    100%, 100% { transform: translateX(-1400%); }
   }
 }
 
@@ -693,7 +855,11 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   background: rgba(0, 0, 0, 0.178);
 }
 
-.video-overlay2 h4 { color: #f0bb1c; font-size: 2rem; }
+.video-overlay2 h4 {
+  color: #f0bb1c;
+  font-size: 2rem;
+}
+
 .video-overlay2 ul { list-style: none; }
 
 .video-overlay2 li {
@@ -711,6 +877,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   text-decoration: none;
   transition: transform 0.3s ease, font-weight 0.3s ease;
 }
+
 .video-overlay2 a:hover {
   font-weight: bold;
   transform: scale(1.05);
@@ -718,8 +885,15 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 }
 
 @keyframes fadeSlideIn {
-  from { opacity: 0; transform: translateY(100px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .video-overlay2 li:nth-child(1) { animation-delay: 0.2s; }
@@ -736,6 +910,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   .video-section2 { min-height: 100vh; height: auto; }
   .video-overlay2 { padding: 20px 15px 60px; }
   .video-overlay2 h4 { font-size: 1.7rem; }
+
   .video-overlay2 li {
     font-size: clamp(22px, 3vw, 28px);
     line-height: 1.38;
@@ -748,18 +923,18 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 /* =========================
    yellow-section0
    ========================= */
-.yellow-section0{
+.yellow-section0 {
   background: #f0bb1c;
   text-align: left;
   color: #000;
-  display:flex;
-  flex-direction:column;
-  align-items: left;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   box-sizing: border-box; 
 }
 
 @media (max-width: 768px) {
-  .yellow-section0{
+  .yellow-section0 {
     text-align: center;
     color: #000;
     padding: 20px;
@@ -769,7 +944,10 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 /* =========================
    separator0/9/90
    ========================= */
-.text-section0 h2 { font-size: 2rem; font-weight: 600; }
+.text-section0 h2 {
+  font-size: 2rem;
+  font-weight: 600;
+}
 
 .separator0,
 .separator9,
@@ -781,7 +959,10 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   animation: drawLine 4s ease-in-out infinite;
 }
 
-.separator9 { margin-top: 14px; align-items: center; }
+.separator9 {
+  margin-top: 14px;
+  align-items: center;
+}
 
 @keyframes drawLine {
   0% { transform: scaleX(0); }
@@ -792,12 +973,14 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
    Gallery
    ========================= */
 .gallery-section { 
-  max-width: auto; 
   padding: 20px;
   background: #f0bb1c;
 }
 
-.gallery-section h2 { text-align: left; font-size: 2rem; }
+.gallery-section h2 { 
+  text-align: left;
+  font-size: 2rem;
+}
 
 .gallery-section p {
   text-align: left;
@@ -807,7 +990,9 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   line-height: 1.6;
 }
 
-.gallery-section1 { max-width: auto; background: #f0bb1c; }
+.gallery-section1 {
+  background: #f0bb1c;
+}
 
 @media (max-width: 700px) {
   .gallery-section h2 { font-size: 1.7rem; }
@@ -841,56 +1026,128 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 }
 
 .gallery-item { 
+  display: block;
   background: #fff; 
   border-radius: 15px; 
   overflow: hidden; 
   border: 1px solid #000000; 
   text-align: left; 
-  transition: transform 0.3s ease; 
-}
-.gallery-item:hover { transform: scale(1.03); }
-
-.gallery-item img { 
-  width: 100%; 
-  aspect-ratio: 1/1; 
-  object-fit: cover; 
-  display: block; 
-  transition: transform 0.4s ease; 
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
-.gallery-caption { padding: 15px; }
-.gallery-caption p { margin: 6px 0; }
-
-.gallery-caption a { 
-  color: #000000; 
-  text-decoration: none; 
-  font-weight: bold; 
-  transition: color 0.2s ease;
+.gallery-item:hover {
+  transform: scale(1.03);
 }
-.gallery-caption a:hover { color: #f0bb1c; }
 
-/* hover img->video */
-.gallery-media { position: relative; width: 100%; overflow: hidden; }
-.gallery-media img,
-.gallery-media video { width: 100%; height: auto; display: block; transition: opacity 0.3s ease-in-out; }
-.gallery-media video { position: absolute; top: 0; left: 0; opacity: 0; pointer-events: none; }
+.gallery-item:focus,
+.gallery-item:visited,
+.gallery-item:active {
+  color: inherit;
+  text-decoration: none;
+}
 
-.gallery-item:hover .gallery-media img { opacity: 0; }
-.gallery-item:hover .gallery-media video { opacity: 1; }
+.gallery-item:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+}
 
-@media(max-width: 760px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
-@media(max-width: 600px) { .gallery-grid { grid-template-columns: 1fr; } }
-@media(max-width: 600px) { .gallery-grid1 { grid-template-columns: 1fr; } }
+.gallery-media {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  background: #fff;
+}
 
-@media(max-width: 768px) {
-  .gallery-item .gallery-media img { display: none; }
-  .gallery-item .gallery-media video { position: static; opacity: 1 !important; pointer-events: auto; }
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-media video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.gallery-caption {
+  padding: 15px;
+}
+
+.gallery-caption p {
+  margin: 6px 0;
+}
+
+.gallery-caption span {
+  color: #000;
+  line-height: 1.5;
+  display: inline-block;
+  font-weight: 700;
+  transition: color 0.25s ease;
+}
+
+.gallery-item:hover .gallery-caption span {
+  color: #f0bb1c;
+}
+
+.gallery-item:hover .gallery-media img {
+  opacity: 0;
+}
+
+.gallery-item:hover .gallery-media video {
+  opacity: 1;
+}
+
+@media (max-width: 760px) {
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid1 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-item .gallery-media img {
+    display: none;
+  }
+
+  .gallery-item .gallery-media video {
+    position: static;
+    opacity: 1 !important;
+    pointer-events: auto;
+    height: auto;
+  }
 }
 
 /* =========================
    Video section4/reels
    ========================= */
-.video-section4 { background: #fff; text-align: left; }
+.video-section4 {
+  background: #fff;
+  text-align: left;
+}
 
 .section-header h2,
 .section-header8 h2,
@@ -931,16 +1188,35 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   border: 1px solid #000;   
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .section-header9 h2,
-  .section-header6 h2 { font-size: 1.7rem; }
+  .section-header6 h2 {
+    font-size: 1.7rem;
+  }
 
-  .video-container { padding: 0; border-radius: 14px; }
-  .video-container video { width: 100%; border: 1px solid #000; }
+  .video-container {
+    padding: 0;
+    border-radius: 14px;
+  }
 
-  .video-caption h3 { font-size: 1.5rem; }
-  .reel-link { font-size: 1.2rem; }
-  .reel-link:hover { font-weight: bold; text-decoration: underline; }
+  .video-container video {
+    width: 100%;
+    border: 1px solid #000;
+  }
+
+  .video-caption h3 {
+    font-size: 1.5rem;
+  }
+
+  .reel-link {
+    font-size: 1.2rem;
+  }
+
+  .reel-link:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
   .section-header h2 { font-size: 1.7rem; }
   .video-caption h3 { font-size: 1.2rem; }
 }
@@ -969,8 +1245,15 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 .video-overlay05 a:hover { color: #000000; }
 
 @media (max-width: 768px) {
-  .video-overlay05 { bottom: -140px; font-size: 20px; }
-  .video-overlay05 a { font-size: 1.4rem; font-weight: 400; }
+  .video-overlay05 {
+    bottom: -140px;
+    font-size: 20px;
+  }
+
+  .video-overlay05 a {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
 }
 
 /* =========================
@@ -1003,6 +1286,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   align-items: stretch;
   transition: transform 0.2s ease;
 }
+
 .gallery-item-offerta:hover { transform: scale(1.03); }
 
 .gallery-media-offerta img,
@@ -1031,7 +1315,11 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 }
 
 @media (max-width: 768px) {
-  .gallery-caption-offerta { padding: 3rem; min-height: 100px; }
+  .gallery-caption-offerta {
+    padding: 3rem;
+    min-height: 100px;
+  }
+
   .gallery-caption-offerta p { font-size: 1.3rem; }
 }
 
@@ -1078,6 +1366,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.651);
   transition: transform 0.5s ease;
 }
+
 .circle-img:hover { transform: scale(1.3); }
 
 /* ===== FIX: konflikt z menu headera =====
@@ -1092,6 +1381,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 }
 
 .order-section { background: #f0bb1c; }
+
 .order-section .order-content {
   display: flex;
   justify-content: space-between;
@@ -1102,6 +1392,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 }
 
 .see-more-container { text-align: center; }
+
 .see-more-container1 .see-more-btn3 { margin-bottom: 50px; }
 
 .carousel-track0 {
@@ -1110,19 +1401,42 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   gap: 80px; 
   overflow: visible;
 }
-.carousel-slide0 { display: block; flex: 1 1 30%; }
+
+.carousel-slide0 {
+  display: block;
+  flex: 1 1 30%;
+}
+
 .carousel-slide0 img { max-width: 220px; }
 
 @media (max-width: 768px) {
-  .slide-text { margin-top: 9px; margin-bottom: 30px; font-size: 1.4rem; }
+  .slide-text {
+    margin-top: 9px;
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+  }
+
   .see-more-container { text-align: left; }
 
-  .carousel-slide0 { flex: 0 0 100%; scroll-snap-align: center; text-align: center; display: none; }
+  .carousel-slide0 {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    text-align: center;
+    display: none;
+  }
+
   .carousel-slide0.active { display: block; }
 
-  .carousel-container0 .nav { display: block; font-size: 45px; margin-top: 36%; }
+  .carousel-container0 .nav {
+    display: block;
+    font-size: 45px;
+    margin-top: 36%;
+  }
 
-  .circle-img { margin-left: 0; margin-bottom: -40px; }
+  .circle-img {
+    margin-left: 0;
+    margin-bottom: -40px;
+  }
 
   .order-section .order-content {
     display: block;
@@ -1133,7 +1447,10 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
     padding-top: 10%;
   }
 
-  .order-section .text-section0 h2 { text-align: center; font-size: 1.7rem; }
+  .order-section .text-section0 h2 {
+    text-align: center;
+    font-size: 1.7rem;
+  }
 }
 
 /* =========================
@@ -1147,6 +1464,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   position: relative;
   transition: transform 0.3s ease;
 }
+
 .highlight-link::after {
   content: "";
   position: absolute;
@@ -1157,7 +1475,9 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   background-color: currentColor;
   transition: width 0.3s ease;
 }
+
 .highlight-link:hover { transform: scale(1.02); }
+
 .highlight-link:hover::after { width: 100%; }
 
 /* =========================
@@ -1230,12 +1550,15 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
     display: block;
     margin-top: 15%;
   }
+
   .video-col { margin-bottom: -40px; }
+
   .text-col-left-margin h2 {
     font-size: 1.7rem;
     margin-left: 14%;
     margin-right: 10%;
   }
+
   .para-top {
     font-size: 1.4rem;
     margin-left: 14%;
@@ -1294,11 +1617,13 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
     margin-left: 12%;
     gap: 80px;
   }
+
   .text-col22 h6 {
     font-size: 1.7rem;
     margin-right: 10%;
     margin-left: 3%;
   }
+
   .para-bottom {
     font-size: 1.4rem;
     margin-top: 40%;
@@ -1340,6 +1665,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   margin-left: 12%;
   margin-right: 11%;
 }
+
 .video-overlay2 li {
   margin-left: 12%;
   margin-right: 10%;
@@ -1371,7 +1697,11 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   pointer-events: none;
   transition: 0.4s ease;
 }
-.cookie-banner.show { opacity: 1; pointer-events: all; }
+
+.cookie-banner.show {
+  opacity: 1;
+  pointer-events: all;
+}
 
 .cookie-content p {
   margin: 0 0 15px 0;
@@ -1379,7 +1709,10 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   font-size: 15px;
 }
 
-.cookie-buttons { display: flex; gap: 10px; }
+.cookie-buttons {
+  display: flex;
+  gap: 10px;
+}
 
 .cookie-btn {
   flex: 1;
@@ -1391,14 +1724,26 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   transition: 0.25s ease;
 }
 
-.cookie-btn.primary { background: #111; color: white; }
+.cookie-btn.primary {
+  background: #111;
+  color: white;
+}
+
 .cookie-btn:hover { opacity: 0.8; }
 
 /* =========================
    Video popup
    ========================= */
-.video-wrapper { position: relative; display: inline-block; cursor: pointer; }
-.preview-video { width: 100%; border-radius: 12px; }
+.video-wrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.preview-video {
+  width: 100%;
+  border-radius: 12px;
+}
 
 .tooltip {
   position: absolute;
@@ -1411,9 +1756,10 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   border-radius: 28px;
   opacity: 1;
   pointer-events: none;
-  transition: .3s;
+  transition: 0.3s;
   font-size: 16px;
 }
+
 .video-wrapper:hover .tooltip { opacity: 1; }
 
 .popup {
@@ -1446,7 +1792,10 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   z-index: 10;
 }
 
-.popup-video-container { width: 100%; aspect-ratio: 16/9; }
+.popup-video-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+}
 
 .popup-video-container iframe {
   width: 100%;
@@ -1469,7 +1818,7 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
 .preview-video {
   width: 100%;
   height: 100%;
-  border:#000;
+  border: #000;
   object-fit: cover;   
   display: block;
   margin-bottom: 5%;
@@ -1489,32 +1838,46 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
-.video-btn:hover { background: rgba(0,0,0,0.85); transform: scale(1.05); }
-.video-btn.hidden { opacity: 0; pointer-events: none; }
+.video-btn:hover {
+  background: rgba(0,0,0,0.85);
+  transform: scale(1.05);
+}
 
-.video-text-section { margin-top: 5px; margin-bottom: 5px; }
+.video-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.video-text-section {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 @media (max-width: 600px) {
-  .video-text-section { margin-top: 40px; margin-bottom: 60px; }
+  .video-text-section {
+    margin-top: 40px;
+    margin-bottom: 60px;
+  }
 }
 
 /* CTA section */
-.video-section--cta{
+.video-section--cta {
   min-height: auto !important;
   height: auto !important;
   padding: 70px 0 100px;
 }
 
-@media (max-width: 768px){
-  .video-section--cta{ padding: 50px 0 70px; }
+@media (max-width: 768px) {
+  .video-section--cta { padding: 50px 0 70px; }
 }
 
 /* buttons hero desktop */
-@media (min-width: 1024px){
-  .buttonshero .btn:first-child{ margin-right: 80px; }
+@media (min-width: 1024px) {
+  .buttonshero .btn:first-child { margin-right: 80px; }
 }
 
 .ellipse-video .video-poster,
-.ellipse-video .hero-video{
+.ellipse-video .hero-video {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -1522,14 +1885,11 @@ a { display: inline-block; } /* zostawiam, ale nadpisania przycisków są wyżej
   object-fit: cover;
 }
 
-.ellipse-video .hero-video{ display:none; }
-.ellipse-video .video-poster{ display:block; }
+.ellipse-video .hero-video { display: none; }
+.ellipse-video .video-poster { display: block; }
 
 /* =========================
    (USUNIĘTE z home-pages.css)
    - .nav.menu (header fixed) -> masz to w header/footer css
    - .nav { display:none } global -> zawężone do .carousel-container0 .nav
    ========================= */
-
- 
-
