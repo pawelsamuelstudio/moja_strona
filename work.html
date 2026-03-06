@@ -220,33 +220,7 @@ document.addEventListener("keydown", (e) => {
 });
 </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const links = [
-      'work/worship',     
-      'work/puppeter',      
-      'work/thomas',
-      'work/church',     
-      'work/nikifor',      
-      'work/kosmos',
-      'work/4eco',     
-      'work/panama',      
-      'work/checiny'          
-        
-    ];
 
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    galleryItems.forEach((item, index) => {
-      item.style.cursor = 'pointer'; 
-      item.addEventListener('click', () => {
-        if (links[index]) {
-          window.location.href = links[index];
-        }
-      });
-    });
-  });
-</script>
 
 
 
