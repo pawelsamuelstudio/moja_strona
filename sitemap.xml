@@ -3,54 +3,151 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <!-- Home -->
-<url><loc>https://samuelstudio.com/</loc></url>
+<url>
+<loc>https://samuelstudio.com/</loc>
+</url>
 
 <!-- PL -->
-<url><loc>https://samuelstudio.com/indexpl</loc></url>
-<url><loc>https://samuelstudio.com/realizacje</loc></url>
-<url><loc>https://samuelstudio.com/omnie</loc></url>
-<url><loc>https://samuelstudio.com/kontakt</loc></url>
+<url>
+<loc>https://samuelstudio.com/indexpl</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/omnie</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/kontakt</loc>
+</url>
 
 <!-- EN -->
-<url><loc>https://samuelstudio.com/indexen</loc></url>
-<url><loc>https://samuelstudio.com/work</loc></url>
-<url><loc>https://samuelstudio.com/about</loc></url>
-<url><loc>https://samuelstudio.com/contact</loc></url>
+<url>
+<loc>https://samuelstudio.com/indexen</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/about</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/contact</loc>
+</url>
 
 <!-- Blog -->
-<url><loc>https://blog.samuelstudio.pl/</loc></url>
-<url><loc>https://blog.samuelstudio.com/</loc></url>
+<url>
+<loc>https://blog.samuelstudio.pl/</loc>
+</url>
+
+<url>
+<loc>https://blog.samuelstudio.com/</loc>
+</url>
 
 <!-- WORK projects -->
-<url><loc>https://samuelstudio.com/work/worship</loc></url>
-<url><loc>https://samuelstudio.com/work/puppeter</loc></url>
-<url><loc>https://samuelstudio.com/work/thomas</loc></url>
-<url><loc>https://samuelstudio.com/work/church</loc></url>
-<url><loc>https://samuelstudio.com/work/nikifor</loc></url>
-<url><loc>https://samuelstudio.com/work/kosmos</loc></url>
-<url><loc>https://samuelstudio.com/work/4eco</loc></url>
-<url><loc>https://samuelstudio.com/work/panama</loc></url>
-<url><loc>https://samuelstudio.com/work/checiny</loc></url>
+<url>
+<loc>https://samuelstudio.com/work/worship</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work/puppeter</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work/thomas</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work/church</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work/nikifor</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work/kosmos</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work/4eco</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work/panama</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work/checiny</loc>
+</url>
 
 <!-- WORK new projects -->
-<url><loc>https://samuelstudio.com/work/trileas.html</loc></url>
-<url><loc>https://samuelstudio.com/work/gospel.html</loc></url>
-<url><loc>https://samuelstudio.com/work/modern3d.html</loc></url>
+<url>
+<loc>https://samuelstudio.com/work/trileas.html</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work/gospel.html</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/work/modern3d.html</loc>
+</url>
 
 <!-- REALIZACJE projects -->
-<url><loc>https://samuelstudio.com/realizacje/worshippl</loc></url>
-<url><loc>https://samuelstudio.com/realizacje/puppeterpl</loc></url>
-<url><loc>https://samuelstudio.com/realizacje/thomaspl</loc></url>
-<url><loc>https://samuelstudio.com/realizacje/churchpl</loc></url>
-<url><loc>https://samuelstudio.com/realizacje/nikiforpl</loc></url>
-<url><loc>https://samuelstudio.com/realizacje/kosmospl</loc></url>
-<url><loc>https://samuelstudio.com/realizacje/4ecopl</loc></url>
-<url><loc>https://samuelstudio.com/realizacje/panamapl</loc></url>
-<url><loc>https://samuelstudio.com/realizacje/checinypl</loc></url>
+<url>
+<loc>https://samuelstudio.com/realizacje/worshippl</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje/puppeterpl</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje/thomaspl</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje/churchpl</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje/nikiforpl</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje/kosmospl</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje/4ecopl</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje/panamapl</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje/checinypl</loc>
+</url>
 
 <!-- REALIZACJE new projects -->
-<url><loc>https://samuelstudio.com/realizacje/trileaspl.html</loc></url>
-<url><loc>https://samuelstudio.com/realizacje/gospelpl.html</loc></url>
-<url><loc>https://samuelstudio.com/realizacje/modern3dpl.html</loc></url>
+<url>
+<loc>https://samuelstudio.com/realizacje/trileaspl.html</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje/gospelpl.html</loc>
+</url>
+
+<url>
+<loc>https://samuelstudio.com/realizacje/modern3dpl.html</loc>
+</url>
 
 </urlset>
