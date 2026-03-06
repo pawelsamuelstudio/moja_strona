@@ -1,93 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-<!-- Home -->
 <url>
 <loc>https://samuelstudio.com/</loc>
 </url>
 
-<!-- PL -->
 <url>
-<loc>https://samuelstudio.com/indexpl</loc>
+<loc>https://samuelstudio.com/indexpl.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/realizacje</loc>
+<loc>https://samuelstudio.com/indexen.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/omnie</loc>
+<loc>https://samuelstudio.com/realizacje.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/kontakt</loc>
-</url>
-
-<!-- EN -->
-<url>
-<loc>https://samuelstudio.com/indexen</loc>
+<loc>https://samuelstudio.com/work.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/work</loc>
+<loc>https://samuelstudio.com/omnie.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/about</loc>
+<loc>https://samuelstudio.com/kontakt.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/contact</loc>
-</url>
-
-<!-- Blog -->
-<url>
-<loc>https://blog.samuelstudio.pl/</loc>
+<loc>https://samuelstudio.com/about.html</loc>
 </url>
 
 <url>
-<loc>https://blog.samuelstudio.com/</loc>
-</url>
-
-<!-- WORK projects -->
-<url>
-<loc>https://samuelstudio.com/work/worship</loc>
+<loc>https://samuelstudio.com/contact.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/work/puppeter</loc>
+<loc>https://samuelstudio.com/work/worship.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/work/thomas</loc>
+<loc>https://samuelstudio.com/work/puppeter.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/work/church</loc>
+<loc>https://samuelstudio.com/work/thomas.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/work/nikifor</loc>
+<loc>https://samuelstudio.com/work/church.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/work/kosmos</loc>
+<loc>https://samuelstudio.com/work/nikifor.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/work/4eco</loc>
+<loc>https://samuelstudio.com/work/kosmos.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/work/panama</loc>
+<loc>https://samuelstudio.com/work/4eco.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/work/checiny</loc>
+<loc>https://samuelstudio.com/work/panama.html</loc>
 </url>
 
-<!-- WORK new projects -->
+<url>
+<loc>https://samuelstudio.com/work/checiny.html</loc>
+</url>
+
 <url>
 <loc>https://samuelstudio.com/work/trileas.html</loc>
 </url>
@@ -100,44 +85,42 @@
 <loc>https://samuelstudio.com/work/modern3d.html</loc>
 </url>
 
-<!-- REALIZACJE projects -->
 <url>
-<loc>https://samuelstudio.com/realizacje/worshippl</loc>
+<loc>https://samuelstudio.com/realizacje/worshippl.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/realizacje/puppeterpl</loc>
+<loc>https://samuelstudio.com/realizacje/puppeterpl.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/realizacje/thomaspl</loc>
+<loc>https://samuelstudio.com/realizacje/thomaspl.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/realizacje/churchpl</loc>
+<loc>https://samuelstudio.com/realizacje/churchpl.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/realizacje/nikiforpl</loc>
+<loc>https://samuelstudio.com/realizacje/nikiforpl.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/realizacje/kosmospl</loc>
+<loc>https://samuelstudio.com/realizacje/kosmospl.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/realizacje/4ecopl</loc>
+<loc>https://samuelstudio.com/realizacje/4ecopl.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/realizacje/panamapl</loc>
+<loc>https://samuelstudio.com/realizacje/panamapl.html</loc>
 </url>
 
 <url>
-<loc>https://samuelstudio.com/realizacje/checinypl</loc>
+<loc>https://samuelstudio.com/realizacje/checinypl.html</loc>
 </url>
 
-<!-- REALIZACJE new projects -->
 <url>
 <loc>https://samuelstudio.com/realizacje/trileaspl.html</loc>
 </url>
