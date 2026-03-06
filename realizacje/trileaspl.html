@@ -52,7 +52,7 @@
 
 
 </section>
-  <a href="indexpl.html#gallery" class="back-button">← Powrót</a>
+  <a href="/indexpl#gallery" class="back-button">← Powrót</a>
 
 <section class="gallery-section">
 
@@ -123,14 +123,6 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault();
   }
 });
-</script>
-
-<script>
-  document.querySelector('.back-button').addEventListener('click', (e) => {
-    e.preventDefault();
-    sessionStorage.setItem('scrollTarget', '#gallery');
-    window.location.href = "/indexpl.html#gallery";
-  });
 </script>
 
 
