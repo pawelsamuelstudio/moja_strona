@@ -349,48 +349,48 @@
 
 
   <section id="gallery" class="gallery-section">
-        <h2>This is how your materials could look</h2>
-        <div class="separator0"></div>
-
+  <h2>This is how your materials could look</h2>
+  <div class="separator0"></div>
 
   <div class="gallery-grid">
-    <div class="gallery-item">
-      
+    <a class="gallery-item" href="/work/trileas.html">
       <div class="gallery-media">
-        <img src="Logo-trileas-cover.png" alt="">
-        <video src="Trileas-Animated-Cover.mp4" muted loop></video>
+        <img src="Logo-trileas-cover.png" alt="TRILEAS project cover">
+        <video src="Trileas-Animated-Cover.mp4" muted loop playsinline preload="metadata"></video>
       </div>
       <div class="gallery-caption">
         <p>TRILEAS</p>
-        <a href="/work/trileas.html">Logo animation</a>
+        <span>Logo animation</span>
       </div>
-    </div>
+    </a>
 
-    <div class="gallery-item">
+    <a class="gallery-item" href="/work/gospel.html">
       <div class="gallery-media">
-        <img src="The-Gospel-Explained-in-Five-Minutes.jpg" alt="">
-        <video src="The-Gospel-in-five-minutes-Cover.mp4" muted loop></video>
+        <img src="The-Gospel-Explained-in-Five-Minutes.jpg" alt="Bible Unbound project cover">
+        <video src="The-Gospel-in-five-minutes-Cover.mp4" muted loop playsinline preload="metadata"></video>
       </div>
       <div class="gallery-caption">
-        <p>BIBLE UNBOUND & Samuel Studio</p>
-        <a href="/work/gospel.html">The Gospel Explained in Five Minutes</a>
+        <p>BIBLE UNBOUND &amp; Samuel Studio</p>
+        <span>The Gospel Explained in Five Minutes</span>
       </div>
-    </div>
+    </a>
 
-    <div class="gallery-item">
+    <a class="gallery-item" href="/work/modern3d.html">
       <div class="gallery-media">
-        <img src="cover-of-3d-modern-animation_00099.jpg" alt="">
-        <video src="animated-cover-of-modern-3d-animation.mp4" muted loop></video>
+        <img src="cover-of-3d-modern-animation_00099.jpg" alt="Modern visualisation project cover">
+        <video src="animated-cover-of-modern-3d-animation.mp4" muted loop playsinline preload="metadata"></video>
       </div>
       <div class="gallery-caption">
         <p>Modern visualisation</p>
-        <a href="/work/modern3d.html">3D Animation</a>
+        <span>3D Animation</span>
       </div>
-      </div>
-<div class="see-more-container">
-  <a href="https://samuelstudio.com/work" class="see-more-btn3">See More</a>
-</div>
-    </section>
+    </a>
+  </div>
+
+  <div class="see-more-container">
+    <a href="https://samuelstudio.com/work" class="see-more-btn3">See More</a>
+  </div>
+</section>
 
 
 
@@ -621,27 +621,6 @@ video.addEventListener('timeupdate', () => {
     video.currentTime = 3;
   }
 });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const links = [
-      '/work/trileas.html',
-    '/work/gospel.html',
-    '/work/modern3d.html'      
-    ];
-
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    galleryItems.forEach((item, index) => {
-      item.style.cursor = 'pointer'; 
-      item.addEventListener('click', () => {
-        if (links[index]) {
-          window.location.href = links[index];
-        }
-      });
-    });
-  });
 </script>
 
 <script>
