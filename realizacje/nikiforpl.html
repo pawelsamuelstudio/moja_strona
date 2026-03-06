@@ -104,7 +104,8 @@
     </iframe>
   </div>
 
-<a href="/indexpl.html#gallery" class="back-button">← Powrót</a>
+ <a href="/realizacje" class="back-button">← Powrót do Realizacje</a>
+
 
 </section>
 
@@ -178,15 +179,6 @@ document.addEventListener("keydown", (e) => {
   }
 });
 </script>
-
-<script>
-  document.querySelector('.back-button').addEventListener('click', (e) => {
-    e.preventDefault();
-    sessionStorage.setItem('scrollTarget', '#gallery');
-    window.location.href = "/indexpl.html#gallery";
-  });
-</script>
-
 
 <script>
   document.querySelectorAll('.gallery-item').forEach(item => {
