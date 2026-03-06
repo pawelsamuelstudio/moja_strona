@@ -228,33 +228,7 @@ document.addEventListener("keydown", (e) => {
 });
 </script>
 
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const links = [
-      'realizacje/worshippl',     
-      'realizacje/puppeterpl',      
-      'realizacje/thomaspl',
-      'realizacje/churchpl',     
-      'realizacje/nikiforpl',      
-      'realizacje/kosmospl',
-      'realizacje/4ecopl',     
-      'realizacje/panamapl',      
-      'realizacje/checinypl'   
-        
-    ];
 
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    galleryItems.forEach((item, index) => {
-      item.style.cursor = 'pointer'; 
-      item.addEventListener('click', () => {
-        if (links[index]) {
-          window.location.href = links[index];
-        }
-      });
-    });
-  });
-</script>
 
 
 
