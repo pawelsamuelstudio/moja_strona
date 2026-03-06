@@ -370,50 +370,49 @@
 
 
 
-  <section id="gallery" class="gallery-section">
-        <h2>Tak mogą wyglądać Twoje materiały:</h2>
-        <div class="separator0"></div>
-
+ <section id="gallery" class="gallery-section">
+  <h2>Tak mogą wyglądać Twoje materiały</h2>
+  <div class="separator"></div>
 
   <div class="gallery-grid">
-    <div class="gallery-item">
-      
+    <a class="gallery-item" href="https://samuelstudio.com/realizacje/trileaspl">
       <div class="gallery-media">
-        <img src="Logo-trileas-cover.png" alt="">
-        <video src="Trileas-Animated-Cover.mp4" muted loop></video>
+        <img src="Logo-trileas-cover.png" alt="Projekt TRILEAS">
+        <video src="Trileas-Animated-Cover.mp4" muted loop playsinline preload="metadata"></video>
       </div>
       <div class="gallery-caption">
         <p>TRILEAS</p>
-        <a href="https://samuelstudio.com/realizacje/trileaspl">
-        Animacja logo, spójny <br>i zapamiętywalny przekaz</a>
+        <span>Animacja logo, spójny <br> i zapamiętywalny przekaz</span>
       </div>
-    </div>
+    </a>
 
-    <div class="gallery-item">
+    <a class="gallery-item" href="https://samuelstudio.com/realizacje/gospelpl">
       <div class="gallery-media">
-        <img src="The-Gospel-Explained-in-Five-Minutes.jpg" alt="">
-        <video src="The-Gospel-in-five-minutes-Cover.mp4" muted loop></video>
+        <img src="The-Gospel-Explained-in-Five-Minutes.jpg" alt="Projekt BIBLE UNBOUND & Samuel Studio">
+        <video src="The-Gospel-in-five-minutes-Cover.mp4" muted loop playsinline preload="metadata"></video>
       </div>
       <div class="gallery-caption">
-        <p>BIBLE UNBOUND & Samuel Studio</p>
-        <a href="https://samuelstudio.com/realizacje/gospelpl">Wyjaśnienie Ewangelii w prosty <br>i czytelny sposób, animacja 2D</a>
+        <p>BIBLE UNBOUND &amp; Samuel Studio</p>
+        <span>Wyjaśnienie Ewangelii w prosty <br> i czytelny sposób, animacja 2D</span>
       </div>
-    </div>
+    </a>
 
-    <div class="gallery-item">
+    <a class="gallery-item" href="https://samuelstudio.com/realizacje/modern3dpl">
       <div class="gallery-media">
-        <img src="cover-of-3d-modern-animation_00099.jpg" alt="">
-        <video src="animated-cover-of-modern-3d-animation.mp4" muted loop></video>
+        <img src="cover-of-3d-modern-animation_00099.jpg" alt="Projekt nowoczesnej wizualizacji">
+        <video src="animated-cover-of-modern-3d-animation.mp4" muted loop playsinline preload="metadata"></video>
       </div>
       <div class="gallery-caption">
         <p>Nowoczesna wizualizacja</p>
-      <a href="https://samuelstudio.com/realizacje/modern3dpl">Jasne przedstawienie produktu, <br>wizualizacja 3D</a>
+        <span>Jasne przedstawienie produktu, <br> wizualizacja 3D</span>
       </div>
-      </div>
-<div class="see-more-container">
-  <a href="https://samuelstudio.com/realizacje" class="see-more-btn3">Zobacz podobne</a>
-</div>
-    </section>
+    </a>
+  </div>
+
+  <div class="see-more-container">
+    <a href="https://samuelstudio.com/realizacje" class="see-more-btn3">Zobacz podobne</a>
+  </div>
+</section>
 
 
 
@@ -628,27 +627,6 @@ video.addEventListener('timeupdate', () => {
     video.currentTime = 3;
   }
 });
-</script>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const links = [
-      'https://samuelstudio.com/realizacje/trileaspl',
-  'https://samuelstudio.com/realizacje/gospelpl',
-  'https://samuelstudio.com/realizacje/modern3dpl'     
-    ];
-
-    const galleryItems = document.querySelectorAll('.gallery-item');
-
-    galleryItems.forEach((item, index) => {
-      item.style.cursor = 'pointer'; 
-      item.addEventListener('click', () => {
-        if (links[index]) {
-          window.location.href = links[index];
-        }
-      });
-    });
-  });
 </script>
 
 <script>
