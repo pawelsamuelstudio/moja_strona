@@ -1,467 +1,202 @@
-/* =========================
-   INFO PAGES
-   About / Contact
-   ========================= */
-
-/* żeby treść nie wchodziła pod fixed header */
-:root{
-  --content-top: 90px;
+:root {
+  --info-content-top: 90px;
 }
 
-main.page-content{
-  padding-top: var(--content-top);
+/* jeśli header jest fixed */
+main.page-content,
+main.info-page {
+  padding-top: var(--info-content-top);
 }
 
 /* =========================
-   TEXT SECTION
+   WSPÓLNE DOPASOWANIA
+   dla podstron info
    ========================= */
 
-.text-section{
-  max-width: 1200px;
-  width: 80%;
-  margin-left: 12%;
-  margin-right: 5%;
-  margin-top: 80px;
+.kontakt-section,
+.omnie-section {
+  padding: 96px 0;
 }
 
-.text-section h2{
-  font-size: 2rem;
-  margin-top: 40px;
-  margin-bottom: 10px;
-  text-align: left;
+.kontakt-top-row,
+.omnie-top-row {
+  align-items: start;
 }
 
-.text-section p{
-  max-width: 700px;
-  font-size: 1.5rem;
-  line-height: 1.6;
-  margin-bottom: 40px;
-  text-align: left;
-}
-
-/* separator */
-.text-section .separator{
-  width: 250px;
-  height: 8px;
-  background: #f0bb1c;
-  margin-top: 12px;
-  margin-bottom: 40px;
-
-  transform: scaleX(0);
-  transform-origin: left;
-  animation: drawLine 9s ease-in-out infinite;
-}
-
-@keyframes drawLine{
-  0%{transform:scaleX(0);}
-  25%{transform:scaleX(1);}
-  75%{transform:scaleX(1);}
-  100%{transform:scaleX(0);}
-}
-
-/* linki */
-.text-section a{
-  color:#000;
-  text-decoration:none;
-  font-weight:600;
-  position:relative;
-}
-
-.text-section a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-2px;
-  width:100%;
-  height:2px;
-  background:#000;
-
-  transform:scaleX(0);
-  transform-origin:right;
-  transition:transform .3s ease;
-}
-
-.text-section a:hover::after{
-  transform:scaleX(1);
-  transform-origin:left;
-}
-
-/* highlight link (jeśli używasz) */
-.highlight-link{
-  font-weight:bold;
-  text-decoration:underline;
-  color:#000;
-  display:inline-block;
-  transition: transform .3s ease, color .3s ease;
-}
-
-.highlight-link:hover{
-  color:#f0bb1c;
-  transform:scale(1.05);
+.text-col-left-margin .para-top {
+  max-width: none;
 }
 
 /* =========================
-   TOOLTIP (About/O mnie)
+   KONTAKT
    ========================= */
 
-.tooltip-trigger{
-  position: relative;
-  cursor: help;
+.card--contact {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-black);
+}
+
+.card--contact .card-body {
+  padding: var(--space-xl);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
   font-weight: 700;
+  color: var(--color-text);
+  text-align: left;
 }
 
-.tooltip-text{
-  position: absolute;
-  left: 0;
-  top: 120%;
-  min-width: 260px;
-  max-width: 340px;
-  background: #000;
-  color: #fff;
-  padding: 10px 12px;
-  border-radius: 12px;
-  font-size: 14px;
-  line-height: 1.35;
-  opacity: 0;
-  transform: translateY(6px);
-  pointer-events: none;
-  transition: 0.2s ease;
-  z-index: 9999;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #7a7a7a;
+  border-radius: 14px;
+  background: var(--color-white);
+  color: var(--color-text);
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.tooltip-trigger:hover .tooltip-text{
-  opacity: 1;
-  transform: translateY(0);
+.form-group textarea {
+  min-height: 180px;
+  resize: vertical;
 }
 
-/* =========================
-   ABOUT SECTION
-   ========================= */
-
-.about-container{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:40px;
-  max-width:1200px;
-  flex-wrap:wrap;
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #6f6f6f;
 }
 
-.about-text{
-  flex:1 1 60%;
-  text-align: left; /* ważne */
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-strong);
+  box-shadow: 0 0 0 4px rgba(240, 187, 28, 0.18);
 }
 
-.about-image{
-  flex:1 1 35%;
-  display:flex;
-  justify-content:center;
-  margin-top:200px;
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 4px;
 }
 
-.about-image img{
-  max-width:100%;
-  height:auto;
-  border-radius:20px;
-  transition:transform .4s ease;
+.form-checkbox input {
+  margin-top: 5px;
+  flex: 0 0 auto;
 }
 
-.about-image img:hover{
-  transform:scale(1.05);
+.form-checkbox label {
+  font-size: 0.98rem;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--color-text);
 }
 
-/* obraz w tekście (mobile) */
-.inline-image{
-  display:none;
+.contact-form .btn,
+.contact-form button[type="submit"] {
+  align-self: flex-start;
+  min-width: 220px;
 }
 
-.inline-image img{
-  width:100%;
-  border-radius:20px;
-  display:block;
+.form-status {
+  margin-top: 1rem;
+  font-weight: 500;
+  text-align: left;
 }
 
-/* =========================
-   OPINIE / REVIEWS
-   ========================= */
-
-.section-header9 h2{
-  font-size:2rem;
-  font-weight:bold;
-  margin-top:60px;
-  margin-bottom:40px;
-  margin-left:12%;
-  text-align:left;
+.form-status--success {
+  color: green;
 }
 
-.opinie-carousel{
-  position:relative;
-  max-width:500px;
-  margin: 0 auto;
-
-  overflow:hidden;
-  border-radius:14px;
-  border:1px solid #000;
-
-  background:#fff;
-
-  box-shadow:0 4px 15px rgba(0,0,0,0.1);
-  transition: transform .4s ease, box-shadow .4s ease;
-}
-
-.opinie-carousel:hover{
-  transform:scale(1.01);
-  box-shadow:0 6px 20px rgba(0,0,0,0.15);
-}
-
-.opinie-track{
-  display:flex;
-}
-
-.opinia{
-  min-width:100%;
-}
-
-.opinia img{
-  width:100%;
-  display:block;
-  border-radius:12px;
-}
-
-/* przyciski opinii */
-.review-container{
-  margin-top:100px;
-  margin-bottom:120px;
-}
-
-.review-btn,
-.review-btn2{
-  font-size:24px;
-  padding:14px 36px;
-
-  background:#000;
-  color:#f0bb1c;
-
-  border:none;
-  border-radius:30px;
-
-  margin-left:12%;
-
-  cursor:pointer;
-
-  transition: transform .3s ease, background .3s ease;
-  display:inline-block;
-}
-
-.review-btn:hover,
-.review-btn2:hover{
-  transform:scale(1.08);
-}
-
-.review-btn:active,
-.review-btn2:active{
-  transform:scale(.95);
+.form-status--error {
+  color: red;
 }
 
 /* =========================
-   CONTACT FORM
+   O MNIE
    ========================= */
 
-.contact-section{
-  padding:40px 30px 80px;
-  display:flex;
-  justify-content:center;
+.card--about-photo {
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-black);
 }
 
-.contact-container{
-  max-width:700px;
-  width:100%;
-
-  background:#fff;
-
-  padding:40px;
-
-  border-radius:20px;
-
-  box-shadow:0 6px 20px rgba(0,0,0,0.18);
+.card--about-photo .card-media img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-.contact-container h2{
-  text-align:center;
-  margin-bottom:10px;
+.card--about-photo:hover .card-media img {
+  transform: scale(1.015);
 }
 
-.contact-container p{
-  text-align:center;
-  margin-bottom:30px;
-  color:#555;
-}
+/* =========================
+   OPCJONALNIE:
+   lekka korekta sekcji opinii
+   ========================= */
 
-.contact-form .form-group{
-  display:flex;
-  flex-direction:column;
-  margin-bottom:20px;
-}
-
-.contact-form label{
-  margin-bottom:6px;
-  font-weight:600;
-}
-
-.contact-form input,
-.contact-form textarea{
-  padding:12px;
-
-  border:1px solid #777;
-  border-radius:10px;
-
-  font-size:1rem;
-
-  transition:.3s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-  outline:none;
-  border-color:#f0bb1c;
-
-  box-shadow:0 0 6px rgba(240,187,28,.4);
-}
-
-/* checkbox */
-.form-checkbox{
-  display:flex;
-  align-items:center;
-  margin-bottom:25px;
-}
-
-.form-checkbox input{
-  margin-right:10px;
-}
-
-/* button */
-.submit-btn{
-  width:60%;
-
-  padding:14px;
-
-  font-size:1.2rem;
-  font-weight:bold;
-
-  background:#f0bb1c;
-  color:#000;
-
-  border:none;
-  border-radius:22px;
-
-  cursor:pointer;
-
-  transition: transform .2s ease, background .3s ease;
-}
-
-.submit-btn:hover{
-  background:#000;
-  color:#fff;
-  transform:scale(1.03);
+.section .review-carousel {
+  box-shadow: var(--shadow-soft);
 }
 
 /* =========================
    RESPONSIVE
    ========================= */
 
-@media (max-width:768px){
-
-  :root{
-    --content-top:70px;
+@media (max-width: 1024px) {
+  .kontakt-top-row,
+  .omnie-top-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .text-section{
-    width: auto;
-    margin-top: 35%;
-    margin-left: 14%;
-    margin-right: 10%;
-  }
-
-  .text-section h2{
-    font-size:1.7rem;
-    text-align:left;
-  }
-
-  .text-section p{
-    font-size:1.4rem;
-    max-width:100%;
-    text-align:left;
-  }
-
-  /* WAŻNE: kolumna, ale bez centrowania tekstu */
-  .about-container{
-    flex-direction:column;
-    align-items:stretch;
-    text-align:left;
-  }
-
-  .about-text{
-    text-align:left;
-  }
-
-  .about-image{
-    display:none;
-  }
-
-  .inline-image{
-    display:block;
-    margin:20px auto 70px;
-    width:80%;
-    max-width:300px;
-  }
-
-  /* Opinie: marginesy, żeby nie dobijało do krawędzi */
-  .opinie-carousel{
-    width: calc(100% - 32px);
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
-  .section-header9 h2{
-    margin-left:14%;
-    margin-right:10%;
-  }
-
-  .review-btn,
-  .review-btn2{
-    display:block;
-    margin:20px auto;
-  }
-
-  .contact-container{
-    padding:20px;
-  }
-
-  .submit-btn{
-    width:100%;
-  }
-
-  /* tooltip bez przesady na telefonie */
-  .tooltip-text{
-    min-width:220px;
-    max-width:280px;
+  .card--contact,
+  .card--about-photo {
+    max-width: 760px;
   }
 }
 
-@media (min-width:2560px){
-  .text-section{
-    margin-left:30%;
+@media (max-width: 768px) {
+  :root {
+    --info-content-top: 70px;
   }
 
-  .section-header9 h2{
-    margin-left:30%;
+  .kontakt-section,
+  .omnie-section {
+    padding: 64px 0;
   }
-}
 
-/* Bezpiecznik: jeśli gdzieś coś próbuje centrować treść */
-.text-section,
-.about-text,
-.text-section p,
-.text-section h2{
-  text-align:left;
+  .card--contact .card-body {
+    padding: 22px;
+  }
+
+  .contact-form .btn,
+  .contact-form button[type="submit"] {
+    width: 100%;
+    min-width: 0;
+  }
 }
