@@ -3,139 +3,165 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+
+  <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+
   <title>Trileas Animated Logo | Brand Animation & Visual Identity</title>
   <meta name="description" content="An animated logo for Trileas that transforms their brand into a dynamic, memorable presence—boosting recognition, trust, and audience engagement.">
+
   <link rel="canonical" href="https://samuelstudio.com/work/trileas.html">
 
-<link rel="alternate" hreflang="en" href="https://samuelstudio.com/work/trileas.html">
-<link rel="alternate" hreflang="pl" href="https://samuelstudio.com/realizacje/trileaspl.html">
-<link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/work/trileas.html">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/layout.css?v=1">
-<link rel="stylesheet" href="/css/subpages.css?v=1">
-  
+  <link rel="alternate" hreflang="en" href="https://samuelstudio.com/work/trileas.html">
+  <link rel="alternate" hreflang="pl" href="https://samuelstudio.com/realizacje/trileaspl.html">
+  <link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/work/trileas.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/layout.css?v=1">
+  <link rel="stylesheet" href="/css/home-pages.css?v=1">
+  <link rel="stylesheet" href="/css/subpages.css?v=2">
 </head>
-<body>
+<body class="site">
 
-<div id="site-header"></div>
-<main class="page-content">
+  <div id="site-header"></div>
 
-<section class="text-section">
-  <h2>Trileas logo animation</h2>
-  <div class="separator"></div>
+  <main>
 
-<section class="gallery-section">
+    <section class="white-section project-hero-section">
+      <div class="container">
+        <div class="section-heading">
+          <h1 class="section-title">Trileas logo animation</h1>
+          <div class="section-separator section-separator--dark"></div>
+        </div>
 
-  <div class="gallery-grid">
-
-    <div class="gallery-item">
-      <div class="gallery-media">
-       <img src="../Logo-trileas-cover.png" alt="Trileas logo">
-<video src="../trileas-logo-animation.mp4" muted loop></video>
+        <div class="project-media-card project-media-card--autoplay">
+          <div class="project-media-card__media">
+            <video
+              src="../trileas-logo-animation.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-  <p>
-      The animated logo transformed Trileas' brand into a&nbsp;    
-      <span class="highlight">dynamic, 
-  memorable presence</span>
- that instantly captures attention. 
-  It tells a&nbsp;story of connection, collaboration, and growth — 
-  perfectly reflecting their mission and values. With a&nbsp;fresh, 
-  professional identity, 
-  Trileas now   <span class="highlight">stands out online, builds trust faster, 
-    and engages their audience more 
-  effectively.</span>
-  </p>
-<a href="/indexen.html#gallery" class="back-button">← Back</a>
+    <section class="section section--light project-content-section">
+      <div class="container">
+        <div class="text-col-left-margin project-text">
+          <p class="para-top">
+            The animated logo transformed Trileas’ brand into a
+            <strong>dynamic, memorable presence</strong>
+            that instantly captures attention.
+          </p>
 
-</section>
-  
-  
+          <p class="para-top">
+            It tells a story of connection, collaboration, and growth —
+            perfectly reflecting their mission and values.
+          </p>
 
+          <p class="para-top">
+            With a fresh, professional identity, Trileas now
+            <strong>stands out online, builds trust faster,
+            and engages their audience more effectively.</strong>
+          </p>
+        </div>
 
-</main>
-<div id="site-footer"></div>
-<script src="/js/includesen.js?v=3"></script>
+        <div class="section-actions section-actions--between project-actions">
+          <a href="/work.html" class="btn btn--light-outline">← Back to work</a>
+          <a href="/contact.html" class="btn btn--dark">Order similar animation</a>
+        </div>
+      </div>
+    </section>
 
+  </main>
 
-<script>
-document.querySelectorAll('.gallery-item').forEach(item => {
-  const video = item.querySelector('video');
+  <div id="site-footer"></div>
 
-  item.addEventListener('mouseenter', () => {
-    if (window.innerWidth > 768) {
-      video.play();
-    }
-  });
+  <script src="/js/includesen.js?v=3"></script>
 
-  item.addEventListener('mouseleave', () => {
-    if (window.innerWidth > 768) {
-      video.pause();
-      video.currentTime = 0;
-    }
-  });
-});
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    if (menu) menu.classList.toggle("show");
+  }
 
-if (window.innerWidth <= 768) {
-  const videos = document.querySelectorAll(".gallery-item video");
+  window.toggleMenu = toggleMenu;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.play().catch(err => {
-          console.log("Autoplay blocked:", err);
-        });
-      } else {
-        entry.target.pause();
-        entry.target.currentTime = 0;
-      }
+  document.querySelectorAll("nav.menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      const menu = document.getElementById("menu");
+      if (menu) menu.classList.remove("show");
     });
-  }, { threshold: 0.5 }); 
-  videos.forEach(video => {
-    video.muted = true; 
-    video.setAttribute("playsinline", "true"); 
-    video.setAttribute("autoplay", "true"); // 
-    observer.observe(video);
   });
-}
-</script>
 
-<script>
-document.addEventListener("contextmenu", (e) => {
-  e.preventDefault();
-});
-
-document.addEventListener("keydown", (e) => {
-  if (
-    (e.ctrlKey && (e.key === "s" || e.key === "u")) ||
-    (e.ctrlKey && e.shiftKey && e.key === "I")
-  ) {
+  document.addEventListener("contextmenu", function (e) {
     e.preventDefault();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (
+      (e.ctrlKey && (e.key === "s" || e.key === "u" || e.key === "c")) ||
+      (e.ctrlKey && e.shiftKey && e.key === "I")
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  const mediaCard = document.querySelector(".project-media-card:not(.project-media-card--autoplay)");
+  if (mediaCard) {
+    const video = mediaCard.querySelector("video");
+
+    if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+
+      const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+      if (isDesktopHover) {
+        mediaCard.addEventListener("mouseenter", () => {
+          mediaCard.classList.add("is-active");
+          video.play().catch(() => {});
+        });
+
+        mediaCard.addEventListener("mouseleave", () => {
+          mediaCard.classList.remove("is-active");
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
+
+      if (isTouchDevice) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              mediaCard.classList.add("is-active");
+              video.play().catch(() => {});
+            } else {
+              mediaCard.classList.remove("is-active");
+              video.pause();
+              video.currentTime = 0;
+            }
+          });
+        }, {
+          threshold: 0.35
+        });
+
+        observer.observe(mediaCard);
+      }
+    }
   }
 });
-</script>
-
-<script>
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      if (window.innerWidth <= 768) { 
-        const video = item.querySelector('video');
-        const img = item.querySelector('img');
-
-        img.style.opacity = '0';
-        video.style.opacity = '1';
-        video.style.pointerEvents = 'auto';
-        video.play();
-      }
-    });
-  });
-</script>
-
+  </script>
 
 </body>
 </html>
