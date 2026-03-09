@@ -1130,6 +1130,8 @@ select {
 
   .hero-content,
   .video-overlay {
+    width: 100%;
+    max-width: 100%;
     padding-bottom: 70px;
   }
 
@@ -1142,8 +1144,11 @@ select {
   .hero-showreel {
     width: 100%;
     max-width: 100%;
-    transform: translateY(60px);
+    aspect-ratio: 16 / 9;
+    transform: none;
     margin-top: var(--space-lg);
+    margin-left: 0;
+    margin-right: 0;
     border-radius: 18px;
   }
 
