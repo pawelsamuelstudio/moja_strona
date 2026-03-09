@@ -1,211 +1,84 @@
+:root {
+  --list-content-top: 90px;
+}
+
+/* jeśli header jest fixed */
+main.page-content,
+main.list-page {
+  padding-top: var(--list-content-top);
+}
+
 /* =========================
-   LIST PAGES (Realizacje / Work)
-   Tylko strony list: /realizacje i /work
+   INTRO
    ========================= */
 
-/* żeby treść nie wchodziła pod fixed header z layout.css */
-:root{
-  --content-top: 110px; /* dopasuj jeśli chcesz, ale to działa ok z Twoim headerem */
+.list-intro-section {
+  padding: 96px 0 32px;
 }
 
-main.page-content{
-  padding-top: var(--content-top);
-}
-
-/* Reset drobiazgów (bez psucia layout.css) */
-*{ box-sizing:border-box; }
-img, video{ max-width:100%; display:block; }
-
-/* ===== TEXT (nagłówek + opis) ===== */
-.text-section{
-  max-width: 1200px;
-  margin-left: 12%;
-  margin-right: 5%;
-  margin-top: 40px;
-  margin-bottom: 25px;
-}
-
-.text-section h2{
-  font-size: 2rem;
-  line-height: 1.2;
-  margin: 0 0 10px 0;
-  text-align: left;
-}
-
-.text-section p{
-  max-width: 900px;
-  font-size: 1.15rem;
-  line-height: 1.6;
+.list-intro-text .para-top {
   margin: 0;
-  color: #111;
 }
 
-.text-section .highlight{ font-weight: 700; }
+/* =========================
+   GALLERY
+   ========================= */
 
-/* separator */
-.text-section .separator{
-  width: 250px;
-  height: 8px;
-  background: #f0bb1c;
-  margin: 12px 0 18px 0;     /* mały, normalny odstęp */
-  transform-origin: left;
-  animation: drawLine 9s ease-in-out infinite;
+.list-gallery-section {
+  padding-top: 24px;
 }
 
-@keyframes drawLine{
-  0%   { transform: scaleX(0); }
-  25%  { transform: scaleX(1); }
-  75%  { transform: scaleX(1); }
-  100% { transform: scaleX(0); }
+.list-gallery-section .section-actions {
+  margin-top: var(--space-2xl);
 }
 
-/* ===== GALLERY GRID ===== */
-.gallery-section{
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  margin-top: 20px;
-  margin-bottom: 70px;
-}
-
-.gallery-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-/* karta */
-.gallery-item{
-  background: #fff;
-  border: 1px solid #000;
-  border-radius: 15px;
-  overflow: hidden;
-  transition: transform .25s ease;
-}
-
-.gallery-item:hover{ transform: scale(1.03); }
-
-/* media: cover + video */
-.gallery-media{
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* wymuszamy kwadrat i pełne wypełnienie */
-.gallery-media img,
-.gallery-media video{
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-}
-
-/* video na hover (desktop) */
-.gallery-media video{
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .25s ease;
-}
-
-.gallery-item:hover .gallery-media img{ opacity: 0; }
-.gallery-item:hover .gallery-media video{ opacity: 1; }
-
-/* podpis */
-.gallery-caption{
-  padding: 14px 16px;
-}
-
-.gallery-caption p{
-  margin: 0 0 6px 0;
-  font-weight: 700;
-  color: #111;
-}
-
-.gallery-caption a{
-  color: #111;
-  text-decoration: none;
-  font-weight: 700;
-  display: inline-block;
-}
-
-.gallery-caption a:hover{
-  color: #f0bb1c;
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 1024px){
-  :root{ --content-top: 95px; }
-
-  .text-section{
-    margin-left: 10%;
-    margin-right: 8%;
-  }
-
-  .gallery-grid{ grid-template-columns: repeat(2, 1fr); }
-}
-
-@media (max-width: 768px){
-  :root{ --content-top: 80px; }
-
-  .text-section{
-    margin-left: 7%;
-    margin-right: 7%;
-    margin-top: 22px;
-  }
-
-  .text-section h2{ font-size: 1.7rem; }
-  .text-section p{ font-size: 1.05rem; }
-
-  /* mobile: bez hover — pokazujemy video */
-  .gallery-media video{
-    position: static;
-    opacity: 1 !important;
-    pointer-events: auto;
-  }
-  .gallery-media img{ display: none; }
-
-  .gallery-grid{ grid-template-columns: 1fr; }
-}
-
-@media (min-width: 2560px){
-  .text-section{
-    margin-left: 30%;
-    margin-right: 20%;
-  }
-}
-
-/* ===== BUTTONS ===== */
-
-.button-section,
-.button-section2{
-  margin-top: 40px;
-  margin-bottom: 40px;
+.section-actions--center {
   text-align: center;
 }
 
-.new-buttons{
+/* =========================
+   PORTFOLIO CARD FIXES
+   zgodne z indexpl
+   ========================= */
+
+.portfolio-card {
+  height: 100%;
+}
+
+.portfolio-card__body {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
 }
 
-/* główny przycisk */
-.subscribe-btn{
-  display: inline-block;
-  padding: 14px 34px;
-  background: #f0bb1c;
-  color: #000;
-  text-decoration: none;
-  border-radius: 28px;
-  border: 2px solid #000;
-  font-size: 18px;
-  font-weight: 700;
-  transition: 0.25s ease;
+.portfolio-card__title {
+  margin-bottom: 0;
 }
 
-/* hover */
-.subscribe-btn:hover{
-  background: #000;
-  color: #fff;
+.portfolio-card__text {
+  color: var(--color-text);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1024px) {
+  .list-intro-section {
+    padding: 88px 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --list-content-top: 70px;
+  }
+
+  .list-intro-section {
+    padding: 64px 0 20px;
+  }
+
+  .list-gallery-section {
+    padding-top: 12px;
+  }
 }
