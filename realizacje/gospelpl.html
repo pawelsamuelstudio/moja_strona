@@ -4,16 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
-
   <title>The Gospel - Ewangelia wyjaśniona w pięć minut | Animacja biblijna</title>
-  <meta name="description" content="Animowana interpretacja Ewangelii stworzona we współpracy z Bible Unbound. Ilustracje i dynamiczna animacja przedstawiają historię zbawienia w nowoczesnej formie wideo." />
+  <meta name="description" content="Animowana interpretacja Ewangelii stworzona we współpracy z Bible Unbound. Ilustracje i dynamiczna animacja przedstawiają historię zbawienia w nowoczesnej formie wideo.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
   <link rel="canonical" href="https://samuelstudio.com/realizacje/gospelpl.html">
   <link rel="alternate" hreflang="pl" href="https://samuelstudio.com/realizacje/gospelpl.html">
   <link rel="alternate" hreflang="en" href="https://samuelstudio.com/work/gospel.html">
-  <link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/work/gospel.html">
+  <link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/logoicon32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/logoicon16x16.png">
+  <link rel="apple-touch-icon" href="/logoicon32x32.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pl_PL">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:url" content="https://samuelstudio.com/realizacje/gospelpl.html">
+  <meta property="og:title" content="The Gospel - Ewangelia wyjaśniona w pięć minut | Animacja biblijna">
+  <meta property="og:description" content="Animowana interpretacja Ewangelii stworzona we współpracy z Bible Unbound. Ilustracje i dynamiczna animacja przedstawiają historię zbawienia w nowoczesnej formie wideo.">
+  <meta property="og:image" content="https://samuelstudio.com/The-Gospel-Explained-in-Five-Minutes.jpg">
+  <meta property="og:image:secure_url" content="https://samuelstudio.com/The-Gospel-Explained-in-Five-Minutes.jpg">
+  <meta property="og:site_name" content="Samuel Studio">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Gospel - Ewangelia wyjaśniona w pięć minut | Animacja biblijna">
+  <meta name="twitter:description" content="Animowana interpretacja Ewangelii stworzona we współpracy z Bible Unbound. Ilustracje i dynamiczna animacja przedstawiają historię zbawienia w nowoczesnej formie wideo.">
+  <meta name="twitter:image" content="https://samuelstudio.com/The-Gospel-Explained-in-Five-Minutes.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +41,28 @@
   <link rel="stylesheet" href="/css/layout.css?v=1">
   <link rel="stylesheet" href="/css/home-pages.css?v=1">
   <link rel="stylesheet" href="/css/subpages.css?v=2">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "The Gospel - Ewangelia wyjaśniona w pięć minut",
+    "description": "Animowana interpretacja Ewangelii stworzona we współpracy z Bible Unbound. Ilustracje i dynamiczna animacja przedstawiają historię zbawienia w nowoczesnej formie wideo.",
+    "thumbnailUrl": "https://samuelstudio.com/The-Gospel-Explained-in-Five-Minutes.jpg",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/icSi1cRC6Yo",
+    "url": "https://samuelstudio.com/realizacje/gospelpl.html",
+    "inLanguage": "pl",
+    "creator": {
+      "@type": "Person",
+      "name": "Paweł Pauksztełło"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Samuel Studio"
+    }
+  }
+  </script>
 </head>
 <body class="site">
 
@@ -36,10 +77,16 @@
           <div class="section-separator section-separator--dark"></div>
         </div>
 
+        <div class="text-col-left-margin project-text">
+          <p class="para-top">
+            Projekt: animacja biblijna / Współpraca: Bible Unbound / Forma: animowany explainer oparty na historii zbawienia
+          </p>
+        </div>
+
         <div class="project-video-wrap">
           <iframe
             class="project-video-frame"
-            src="https://www.youtube-nocookie.com/embed/icSi1cRC6Yo?rel=0&modestbranding=1&controls=1&showinfo=0"
+            src="https://www.youtube-nocookie.com/embed/icSi1cRC6Yo?rel=0&modestbranding=1&controls=1"
             title="The Gospel - Ewangelia wyjaśniona w pięć minut"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
@@ -86,34 +133,21 @@
   <script src="/js/includespl.js?v=3"></script>
 
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    if (menu) menu.classList.toggle("show");
-  }
-
-  window.toggleMenu = toggleMenu;
-
-  document.querySelectorAll("nav.menu a").forEach(link => {
-    link.addEventListener("click", () => {
+  document.addEventListener("DOMContentLoaded", () => {
+    function toggleMenu() {
       const menu = document.getElementById("menu");
-      if (menu) menu.classList.remove("show");
+      if (menu) menu.classList.toggle("show");
+    }
+
+    window.toggleMenu = toggleMenu;
+
+    document.querySelectorAll("nav.menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        const menu = document.getElementById("menu");
+        if (menu) menu.classList.remove("show");
+      });
     });
   });
-
-  document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-  });
-
-  document.addEventListener("keydown", function (e) {
-    if (
-      (e.ctrlKey && (e.key === "s" || e.key === "u" || e.key === "c")) ||
-      (e.ctrlKey && e.shiftKey && e.key === "I")
-    ) {
-      e.preventDefault();
-    }
-  });
-});
   </script>
 
 </body>
