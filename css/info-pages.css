@@ -10,7 +10,6 @@ main.info-page {
 
 /* =========================
    WSPÓLNE DOPASOWANIA
-   dla podstron info
    ========================= */
 
 .kontakt-section,
@@ -41,6 +40,23 @@ main.info-page {
 
 .card--contact .card-body {
   padding: var(--space-xl);
+}
+
+.contact-form-title {
+  margin: 0 0 var(--space-xs);
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: 700;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.contact-form-lead {
+  margin: 0 0 var(--space-lg);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--color-text);
+  text-align: left;
 }
 
 .contact-form {
@@ -131,7 +147,7 @@ main.info-page {
 }
 
 /* =========================
-   O MNIE
+   O MNIE / ABOUT
    ========================= */
 
 .card--about-photo {
@@ -155,8 +171,7 @@ main.info-page {
 }
 
 /* =========================
-   OPCJONALNIE:
-   lekka korekta sekcji opinii
+   REVIEWS
    ========================= */
 
 .section .review-carousel {
@@ -174,9 +189,11 @@ main.info-page {
     gap: 32px;
   }
 
+  .video-col,
   .card--contact,
   .card--about-photo {
-    max-width: 760px;
+    width: 100%;
+    max-width: 100%;
   }
 }
 
@@ -192,6 +209,14 @@ main.info-page {
 
   .card--contact .card-body {
     padding: 22px;
+  }
+
+  .contact-form-title {
+    font-size: 1.45rem;
+  }
+
+  .contact-form-lead {
+    font-size: 0.98rem;
   }
 
   .contact-form .btn,
