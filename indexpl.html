@@ -481,287 +481,44 @@
   <script src="/js/includespl.js"></script>
 
   <script>
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      if (menu) menu.classList.toggle("show");
-    }
-
-    document.querySelectorAll("nav.menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        const menu = document.getElementById("menu");
-        if (menu) menu.classList.remove("show");
-      });
-    });
-  </script>
-
-  <script>
-    document.addEventListener("contextmenu", function (e) {
-      e.preventDefault();
-    });
-
-    document.addEventListener("keydown", function (e) {
-      if (
-        (e.ctrlKey && (e.key === "s" || e.key === "u" || e.key === "c")) ||
-        (e.ctrlKey && e.shiftKey && e.key === "I")
-      ) {
-        e.preventDefault();
-      }
-    });
-  </script>
-
-  <script>
-    (function () {
-      const carousel = document.querySelector(".review-carousel");
-      if (!carousel) return;
-
-      const track = carousel.querySelector(".review-carousel__track");
-      const slides = carousel.querySelectorAll(".review-slide");
-      const prevBtn = carousel.querySelector(".review-carousel__arrow--prev");
-      const nextBtn = carousel.querySelector(".review-carousel__arrow--next");
-
-      if (!track || !slides.length || !prevBtn || !nextBtn) return;
-
-      let currentIndex = 0;
-
-      function showSlide(index) {
-        if (index < 0) index = slides.length - 1;
-        if (index >= slides.length) index = 0;
-        currentIndex = index;
-        track.style.transform = `translateX(-${index * 100}%)`;
-      }
-
-      prevBtn.addEventListener("click", () => showSlide(currentIndex - 1));
-      nextBtn.addEventListener("click", () => showSlide(currentIndex + 1));
-
-      setInterval(() => {
-        showSlide(currentIndex + 1);
-      }, 4000);
-    })();
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const carousel = document.querySelector(".process-carousel");
-      if (!carousel) return;
-
-      const slides = Array.from(carousel.querySelectorAll(".process-step"));
-      const prevBtn = carousel.querySelector(".process-carousel__nav--prev");
-      const nextBtn = carousel.querySelector(".process-carousel__nav--next");
-
-      if (!slides.length || !prevBtn || !nextBtn) return;
-
-      let current = 0;
-
-      function showSlide(index) {
-        index = (index + slides.length) % slides.length;
-        slides.forEach((s, i) => s.classList.toggle("is-active", i === index));
-        current = index;
-      }
-
-      prevBtn.addEventListener("click", () => {
-        showSlide(current - 1);
-      });
-
-      nextBtn.addEventListener("click", () => {
-        showSlide(current + 1);
-      });
-
-      document.addEventListener("keydown", (e) => {
-        if (window.innerWidth > 768) return;
-        if (e.key === "ArrowLeft") showSlide(current - 1);
-        if (e.key === "ArrowRight") showSlide(current + 1);
-      });
-
-      showSlide(0);
-    });
-  </script>
-
-  <script>
-    document.querySelectorAll(".portfolio-card").forEach(item => {
-      const video = item.querySelector("video");
-      if (!video) return;
-
-      item.addEventListener("mouseenter", () => {
-        if (window.innerWidth > 768) {
-          video.play();
-        }
-      });
-
-      item.addEventListener("mouseleave", () => {
-        if (window.innerWidth > 768) {
-          video.pause();
-          video.currentTime = 0;
-        }
-      });
-    });
-
-    if (window.innerWidth <= 768) {
-      const videos = document.querySelectorAll(".portfolio-card video");
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.play().catch(() => {});
-          } else {
-            entry.target.pause();
-            entry.target.currentTime = 0;
-          }
-        });
-      }, { threshold: 0.5 });
-
-      videos.forEach(video => {
-        video.muted = true;
-        video.setAttribute("playsinline", "true");
-        video.setAttribute("autoplay", "true");
-        observer.observe(video);
-      });
-    }
-  </script>
-
-  <script>
-    const myVideo = document.getElementById("myVideo");
-
-    if (myVideo) {
-      myVideo.playbackRate = 1;
-
-      myVideo.addEventListener("timeupdate", () => {
-        if (myVideo.currentTime >= 5 && myVideo.currentTime < 9) {
-          myVideo.currentTime = 10;
-        }
-
-        if (myVideo.currentTime >= 14) {
-          myVideo.currentTime = 3;
-        }
-      });
-    }
-  </script>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const banner = document.getElementById("cookie-banner");
-      const acceptBtn = document.getElementById("cookie-accept");
-      const declineBtn = document.getElementById("cookie-decline");
-
-      if (!banner || !acceptBtn || !declineBtn) return;
-
-      if (!localStorage.getItem("cookiesDecision")) {
-        banner.classList.add("show");
-      }
-
-      acceptBtn.addEventListener("click", () => {
-        localStorage.setItem("cookiesDecision", "accepted");
-        banner.classList.remove("show");
-      });
-
-      declineBtn.addEventListener("click", () => {
-        localStorage.setItem("cookiesDecision", "declined");
-        banner.classList.remove("show");
-      });
-    });
-  </script>
-
-  <script>
-    let switched = false;
-
-    function changeVideo() {
-      const video = document.getElementById("mainVideo");
-      const btn = document.querySelector(".video-btn");
-
-      if (!video || !btn) return;
-
-      if (switched) {
-        if (video.paused) {
-          video.play();
-          btn.textContent = "⏸";
-        } else {
-          video.pause();
-          btn.textContent = "▶";
-        }
-        return;
-      }
-
-      video.pause();
-      video.removeAttribute("autoplay");
-      video.src = "video2.mp4";
-      video.loop = false;
-      video.muted = false;
-      video.volume = 0.6;
-      video.currentTime = 0;
-      video.load();
-      video.play().catch(() => {});
-      btn.textContent = "⏸";
-      switched = true;
-    }
-  </script>
-
-  <script>
-    window.addEventListener("load", () => {
-      const wrap = document.querySelector(".hero-showreel");
-      const video = wrap?.querySelector(".hero-showreel__video");
-      const poster = wrap?.querySelector(".hero-showreel__poster");
-      if (!wrap || !video || !poster) return;
-
-      const start = () => {
-        if (video.dataset.loaded) return;
-        video.dataset.loaded = "1";
-
-        const src = video.dataset.src;
-        if (!src) return;
-
-        video.src = src;
-
-        video.addEventListener("loadeddata", () => {
-          wrap.classList.add("is-loaded");
-          video.play().catch(() => {});
-        }, { once: true });
-
-        video.load();
-      };
-
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(start, { timeout: 1500 });
-      } else {
-        setTimeout(start, 400);
-      }
-    });
-  </script>
-
-  <script>
-    (function () {
-      const section = document.querySelector(".section--hero#video");
-      const video = section?.querySelector(".hero-video");
-      const poster = section?.querySelector(".hero-poster");
-      if (!section || !video || !poster) return;
-
-      const start = () => {
-        if (video.dataset.loaded) return;
-        video.dataset.loaded = "1";
-
-        const src = video.dataset.src;
-        if (!src) return;
-
-        video.src = src;
-
-        video.addEventListener("loadeddata", () => {
-          video.style.display = "block";
-          poster.style.display = "none";
-          video.play().catch(() => {});
-        }, { once: true });
-
-        video.load();
-      };
-
-      requestAnimationFrame(() => setTimeout(start, 50));
-    })();
-  </script>
-
-  <script>
 document.addEventListener("DOMContentLoaded", () => {
   /* =========================
-     OPINIE / REVIEW CAROUSEL
+     MENU
+     ========================= */
+  function toggleMenu() {
+    const menu = document.getElementById("menu");
+    if (menu) menu.classList.toggle("show");
+  }
+
+  window.toggleMenu = toggleMenu;
+
+  document.querySelectorAll("nav.menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      const menu = document.getElementById("menu");
+      if (menu) menu.classList.remove("show");
+    });
+  });
+
+  /* =========================
+     BLOKADY
+     ========================= */
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (
+      (e.ctrlKey && (e.key === "s" || e.key === "u" || e.key === "c")) ||
+      (e.ctrlKey && e.shiftKey && e.key === "I")
+    ) {
+      e.preventDefault();
+    }
+  });
+
+  /* =========================
+     REVIEW CAROUSEL
      ========================= */
   const reviewCarousel = document.querySelector(".review-carousel");
-
   if (reviewCarousel) {
     const reviewTrack = reviewCarousel.querySelector(".review-carousel__track");
     const reviewSlides = Array.from(reviewCarousel.querySelectorAll(".review-slide"));
@@ -772,7 +529,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let reviewInterval = null;
 
     const showReview = (index) => {
-      if (!reviewSlides.length) return;
+      if (!reviewSlides.length || !reviewTrack) return;
       reviewIndex = (index + reviewSlides.length) % reviewSlides.length;
       reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
     };
@@ -813,10 +570,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     PROCES / PROCESS CAROUSEL
+     PROCESS CAROUSEL
      ========================= */
   const processCarousel = document.querySelector(".process-carousel");
-
   if (processCarousel) {
     const processSlides = Array.from(processCarousel.querySelectorAll(".process-step"));
     const processPrev = processCarousel.querySelector(".process-carousel__nav--prev");
@@ -854,7 +610,116 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     HERO SHOWREEL: poster -> video
+     PORTFOLIO VIDEO
+     desktop = hover
+     mobile/tablet = autoplay in viewport
+     ========================= */
+  const portfolioCards = document.querySelectorAll(".portfolio-card");
+
+  portfolioCards.forEach((card) => {
+    const video = card.querySelector("video");
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("autoplay", "");
+    video.setAttribute("preload", "metadata");
+  });
+
+  const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  if (isDesktopHover) {
+    portfolioCards.forEach((card) => {
+      const video = card.querySelector("video");
+      if (!video) return;
+
+      card.addEventListener("mouseenter", () => {
+        video.play().catch(() => {});
+      });
+
+      card.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  }
+
+  if (isTouchDevice) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const card = entry.target;
+        const video = card.querySelector("video");
+        if (!video) return;
+
+        if (entry.isIntersecting) {
+          card.classList.add("is-visible");
+          video.play().catch(() => {});
+        } else {
+          card.classList.remove("is-visible");
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    }, {
+      threshold: 0.35
+    });
+
+    portfolioCards.forEach((card) => {
+      const video = card.querySelector("video");
+      if (!video) return;
+      video.load();
+      observer.observe(card);
+    });
+  }
+
+  /* =========================
+     COOKIE BANNER
+     ========================= */
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("cookie-accept");
+  const declineBtn = document.getElementById("cookie-decline");
+
+  if (banner && acceptBtn && declineBtn) {
+    if (!localStorage.getItem("cookiesDecision")) {
+      banner.classList.add("show");
+    }
+
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookiesDecision", "accepted");
+      banner.classList.remove("show");
+    });
+
+    declineBtn.addEventListener("click", () => {
+      localStorage.setItem("cookiesDecision", "declined");
+      banner.classList.remove("show");
+    });
+  }
+
+  /* =========================
+     VIDEO O MNIE
+     ========================= */
+  const myVideo = document.getElementById("myVideo");
+  if (myVideo) {
+    myVideo.playbackRate = 1;
+
+    myVideo.addEventListener("timeupdate", () => {
+      if (myVideo.currentTime >= 5 && myVideo.currentTime < 9) {
+        myVideo.currentTime = 10;
+      }
+
+      if (myVideo.currentTime >= 14) {
+        myVideo.currentTime = 3;
+      }
+    });
+  }
+
+  /* =========================
+     HERO SHOWREEL
      ========================= */
   const showreelWrap = document.querySelector(".hero-showreel");
   const showreelVideo = showreelWrap?.querySelector(".hero-showreel__video");
@@ -885,7 +750,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   /* =========================
-     HERO BG VIDEO: poster -> video
+     HERO BG VIDEO
      ========================= */
   const heroSection = document.querySelector(".section--hero#video");
   const heroBgVideo = heroSection?.querySelector(".hero-video");
@@ -912,93 +777,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     requestAnimationFrame(() => setTimeout(startHeroBg, 50));
   }
-<script>
-  document.querySelectorAll(".portfolio-card").forEach((item) => {
-    const video = item.querySelector("video");
-    if (!video) return;
-
-    video.muted = true;
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
-    video.playsInline = true;
-
-    item.addEventListener("mouseenter", () => {
-      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        video.play().catch(() => {});
-      }
-    });
-
-    item.addEventListener("mouseleave", () => {
-      if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-        video.pause();
-        video.currentTime = 0;
-      }
-    });
-  });
-
-  if (window.matchMedia("(hover: none), (pointer: coarse)").matches) {
-    const videos = document.querySelectorAll(".portfolio-card video");
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const video = entry.target;
-
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-          video.currentTime = 0;
-        }
-      });
-    }, { threshold: 0.35 });
-
-    videos.forEach((video) => {
-      observer.observe(video);
-    });
-  }
-</script>
-
-  /* =========================
-     COOKIE BANNER
-     ========================= */
-  const banner = document.getElementById("cookie-banner");
-  const acceptBtn = document.getElementById("cookie-accept");
-  const declineBtn = document.getElementById("cookie-decline");
-
-  if (banner && acceptBtn && declineBtn) {
-    if (!localStorage.getItem("cookiesDecision")) {
-      banner.classList.add("show");
-    }
-
-    acceptBtn.addEventListener("click", () => {
-      localStorage.setItem("cookiesDecision", "accepted");
-      banner.classList.remove("show");
-    });
-
-    declineBtn.addEventListener("click", () => {
-      localStorage.setItem("cookiesDecision", "declined");
-      banner.classList.remove("show");
-    });
-  }
-
-  /* =========================
-     VIDEO O MNIE
-     ========================= */
-  const myVideo = document.getElementById("myVideo");
-
-  if (myVideo) {
-    myVideo.playbackRate = 1;
-
-    myVideo.addEventListener("timeupdate", () => {
-      if (myVideo.currentTime >= 5 && myVideo.currentTime < 9) {
-        myVideo.currentTime = 10;
-      }
-
-      if (myVideo.currentTime >= 14) {
-        myVideo.currentTime = 3;
-      }
-    });
-  }
 });
 
 /* =========================
@@ -1008,7 +786,7 @@ let switched = false;
 
 function changeVideo() {
   const video = document.getElementById("mainVideo");
-  const btn = document.querySelector(".video-preview__button");
+  const btn = document.querySelector(".video-btn");
 
   if (!video || !btn) return;
 
@@ -1035,39 +813,6 @@ function changeVideo() {
   btn.textContent = "⏸";
   switched = true;
 }
-</script>
-
-<script>
-window.addEventListener("load", () => {
-  const wrap = document.querySelector(".hero-showreel");
-  const video = wrap?.querySelector(".hero-showreel__video");
-  const poster = wrap?.querySelector(".hero-showreel__poster");
-
-  if (!wrap || !video || !poster) return;
-
-  const start = () => {
-    if (video.dataset.loaded) return;
-    video.dataset.loaded = "1";
-
-    const src = video.dataset.src;
-    if (!src) return;
-
-    video.src = src;
-
-    video.addEventListener("loadeddata", () => {
-      wrap.classList.add("is-loaded");
-      video.play().catch(() => {});
-    }, { once: true });
-
-    video.load();
-  };
-
-  if ("requestIdleCallback" in window) {
-    requestIdleCallback(start, { timeout: 1500 });
-  } else {
-    setTimeout(start, 400);
-  }
-});
 </script>
 
 </body>
