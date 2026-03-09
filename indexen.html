@@ -245,37 +245,43 @@
     </section>
 
     <!-- PROCESS -->
-    <section class="section section--accent-soft">
-      <div class="container">
-        <div class="section-heading">
-          <h2 class="section-title">A simple, clear and effective process</h2>
-          <div class="section-separator section-separator--dark"></div>
-        </div>
+    <section class="section section--accent-soft process-section">
+  <div class="container">
+    <div class="section-heading">
+      <h2 class="section-title">A simple, clear and effective process</h2>
+      <div class="section-separator section-separator--dark"></div>
+    </div>
 
-        <div class="process-carousel" aria-roledescription="carousel">
-          <button class="process-carousel__nav process-carousel__nav--prev" type="button" aria-label="Previous slide">‹</button>
+    <div class="process-carousel" aria-roledescription="carousel">
+      <button class="process-carousel__nav process-carousel__nav--prev" type="button" aria-label="Previous slide">
+        ‹
+      </button>
 
-          <div class="process-carousel__track">
-            <article class="process-step is-active" data-index="0">
-              <p class="process-step__text">You share your story.</p>
-              <img src="image3.png" alt="Two people discussing a project at a laptop">
-            </article>
+      <div class="process-carousel__viewport">
+        <div class="process-carousel__track">
+          <article class="process-step">
+            <p class="process-step__text">You share your story.</p>
+            <img src="image3.png" alt="Two people discussing a project at a laptop">
+          </article>
 
-            <article class="process-step" data-index="1">
-              <p class="process-step__text">I create an animation tailored to your message.</p>
-              <img src="image1.png" alt="A person creating video content on a computer">
-            </article>
+          <article class="process-step">
+            <p class="process-step__text">I create an animation tailored to your message.</p>
+            <img src="image1.png" alt="A person creating video content on a computer">
+          </article>
 
-            <article class="process-step" data-index="2">
-              <p class="process-step__text">You use the finished material.</p>
-              <img src="image2.png" alt="Presenting video material to another person">
-            </article>
-          </div>
-
-          <button class="process-carousel__nav process-carousel__nav--next" type="button" aria-label="Next slide">›</button>
+          <article class="process-step">
+            <p class="process-step__text">You use the finished material.</p>
+            <img src="image2.png" alt="Presenting video material to another person">
+          </article>
         </div>
       </div>
-    </section>
+
+      <button class="process-carousel__nav process-carousel__nav--next" type="button" aria-label="Next slide">
+        ›
+      </button>
+    </div>
+  </div>
+</section>
 
     <!-- CTA MID -->
     <section class="section section--accent">
@@ -556,41 +562,55 @@ document.addEventListener("DOMContentLoaded", () => {
      PROCESS CAROUSEL
      ========================= */
   const processCarousel = document.querySelector(".process-carousel");
-  if (processCarousel) {
-    const processSlides = Array.from(processCarousel.querySelectorAll(".process-step"));
-    const processPrev = processCarousel.querySelector(".process-carousel__nav--prev");
-    const processNext = processCarousel.querySelector(".process-carousel__nav--next");
+if (processCarousel) {
+  const processTrack = processCarousel.querySelector(".process-carousel__track");
+  const processSlides = Array.from(processCarousel.querySelectorAll(".process-step"));
+  const processPrev = processCarousel.querySelector(".process-carousel__nav--prev");
+  const processNext = processCarousel.querySelector(".process-carousel__nav--next");
 
-    let processIndex = 0;
+  let processIndex = 0;
 
-    const showProcessSlide = (index) => {
-      if (!processSlides.length) return;
-      processIndex = (index + processSlides.length) % processSlides.length;
-      processSlides.forEach((slide, i) => {
-        slide.classList.toggle("is-active", i === processIndex);
-      });
-    };
+  const showProcessSlide = (index) => {
+    if (!processSlides.length || !processTrack) return;
+    processIndex = (index + processSlides.length) % processSlides.length;
+    processTrack.style.transform = `translateX(-${processIndex * 100}%)`;
+  };
 
-    if (processPrev) {
-      processPrev.addEventListener("click", () => {
+  if (processPrev) {
+    processPrev.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
         showProcessSlide(processIndex - 1);
-      });
-    }
-
-    if (processNext) {
-      processNext.addEventListener("click", () => {
-        showProcessSlide(processIndex + 1);
-      });
-    }
-
-    document.addEventListener("keydown", (e) => {
-      if (window.innerWidth > 768) return;
-      if (e.key === "ArrowLeft") showProcessSlide(processIndex - 1);
-      if (e.key === "ArrowRight") showProcessSlide(processIndex + 1);
+      }
     });
+  }
 
+  if (processNext) {
+    processNext.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        showProcessSlide(processIndex + 1);
+      }
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (window.innerWidth > 768) return;
+    if (e.key === "ArrowLeft") showProcessSlide(processIndex - 1);
+    if (e.key === "ArrowRight") showProcessSlide(processIndex + 1);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      processTrack.style.transform = "none";
+    } else {
+      showProcessSlide(processIndex);
+    }
+  });
+
+  if (window.innerWidth <= 768) {
     showProcessSlide(0);
   }
+}
+
 
   /* =========================
      PORTFOLIO VIDEO
