@@ -3,17 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Kontakt - Animacje 2D i 3D | Samuel Studio - Paweł Pauksztełło</title>
   <meta name="description" content="Skontaktuj się z Samuel Studio. Animacje 2D i 3D: spoty promocyjne, explainery i krótkie historie. Napisz, a przygotuję wycenę projektu.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
   <link rel="canonical" href="https://samuelstudio.com/kontakt.html" />
   <link rel="alternate" hreflang="pl" href="https://samuelstudio.com/kontakt.html" />
   <link rel="alternate" hreflang="en" href="https://samuelstudio.com/contact.html" />
-  <link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/contact.html" />
+  <link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/" />
 
-  <link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/logoicon32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/logoicon16x16.png">
+  <link rel="apple-touch-icon" href="/logoicon32x32.png">
 
-  <title>Kontakt - Animacje 2D i 3D | Samuel Studio - Paweł Pauksztełło</title>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="pl_PL" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:url" content="https://samuelstudio.com/kontakt.html" />
+  <meta property="og:title" content="Kontakt - Animacje 2D i 3D | Samuel Studio" />
+  <meta property="og:description" content="Skontaktuj się z Samuel Studio. Animacje 2D i 3D: spoty promocyjne, explainery i krótkie historie. Napisz, a przygotuję wycenę projektu." />
+  <meta property="og:image" content="https://samuelstudio.com/samuel-studio-og-image.jpg" />
+  <meta property="og:image:secure_url" content="https://samuelstudio.com/samuel-studio-og-image.jpg" />
+  <meta property="og:site_name" content="Samuel Studio" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kontakt - Animacje 2D i 3D | Samuel Studio" />
+  <meta name="twitter:description" content="Skontaktuj się z Samuel Studio. Animacje 2D i 3D: spoty promocyjne, explainery i krótkie historie. Napisz, a przygotuję wycenę projektu." />
+  <meta name="twitter:image" content="https://samuelstudio.com/samuel-studio-og-image.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,6 +43,35 @@
   <link rel="stylesheet" href="/css/layout.css?v=1">
   <link rel="stylesheet" href="/css/home-pages.css?v=1">
   <link rel="stylesheet" href="/css/info-pages.css?v=6">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Kontakt - Samuel Studio",
+    "url": "https://samuelstudio.com/kontakt.html",
+    "description": "Skontaktuj się z Samuel Studio w sprawie animacji 2D i 3D, spotów promocyjnych i explainerów.",
+    "inLanguage": "pl",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Samuel Studio",
+      "url": "https://samuelstudio.com/"
+    },
+    "about": {
+      "@type": "ProfessionalService",
+      "name": "Samuel Studio",
+      "alternateName": "Samuel Studio - Paweł Pauksztełło",
+      "email": "pawel.samuelstudio@gmail.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/pawel-pauksztello-samuel-studio/",
+        "https://www.youtube.com/@SamuelStudio_",
+        "https://www.facebook.com/pawelpauksztello",
+        "https://www.instagram.com/pawel_samuel_studio/"
+      ]
+    }
+  }
+  </script>
 </head>
 <body class="site">
   <div id="site-header"></div>
@@ -99,7 +149,7 @@
 
                   <div class="form-checkbox">
                     <input type="checkbox" id="privacy" required>
-                    <label for="privacy">Zgadzam się z polityką prywatności</label>
+                    <label for="privacy">Zgadzam się z <a href="/polityka-prywatnosci.html">polityką prywatności</a></label>
                   </div>
 
                   <div class="section-actions section-actions--left">
@@ -133,70 +183,57 @@
 
   <script src="/js/includespl.js"></script>
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  function toggleMenu() {
-    const menu = document.getElementById("menu");
-    if (menu) menu.classList.toggle("show");
-  }
-  window.toggleMenu = toggleMenu;
-
-  document.querySelectorAll("nav.menu a").forEach(link => {
-    link.addEventListener("click", () => {
+  document.addEventListener("DOMContentLoaded", () => {
+    function toggleMenu() {
       const menu = document.getElementById("menu");
-      if (menu) menu.classList.remove("show");
-    });
-  });
-
-  document.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-  });
-
-  document.addEventListener("keydown", function (e) {
-    if (
-      (e.ctrlKey && (e.key === "s" || e.key === "u" || e.key === "c")) ||
-      (e.ctrlKey && e.shiftKey && e.key === "I")
-    ) {
-      e.preventDefault();
+      if (menu) menu.classList.toggle("show");
     }
-  });
+    window.toggleMenu = toggleMenu;
 
-  const form = document.getElementById("contactForm");
-  const status = document.getElementById("formStatus");
-
-  if (form && status) {
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const data = {
-        firstName: form.firstName.value,
-        lastName: form.lastName.value,
-        email: form.email.value,
-        message: form.message.value
-      };
-
-      fetch("https://formsubmit.co/ajax/pawel.samuelstudio@gmail.com", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(data)
-      })
-      .then(response => response.json())
-      .then(() => {
-        status.style.display = "block";
-        status.className = "form-status form-status--success";
-        status.textContent = "✅ Wiadomość została wysłana.";
-        form.reset();
-      })
-      .catch(() => {
-        status.style.display = "block";
-        status.className = "form-status form-status--error";
-        status.textContent = "❌ Coś poszło nie tak. Spróbuj ponownie.";
+    document.querySelectorAll("nav.menu a").forEach(link => {
+      link.addEventListener("click", () => {
+        const menu = document.getElementById("menu");
+        if (menu) menu.classList.remove("show");
       });
     });
-  }
-});
+
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("formStatus");
+
+    if (form && status) {
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const data = {
+          firstName: form.firstName.value,
+          lastName: form.lastName.value,
+          email: form.email.value,
+          message: form.message.value
+        };
+
+        fetch("https://formsubmit.co/ajax/pawel.samuelstudio@gmail.com", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(() => {
+          status.style.display = "block";
+          status.className = "form-status form-status--success";
+          status.textContent = "✅ Wiadomość została wysłana.";
+          form.reset();
+        })
+        .catch(() => {
+          status.style.display = "block";
+          status.className = "form-status form-status--error";
+          status.textContent = "❌ Coś poszło nie tak. Spróbuj ponownie.";
+        });
+      });
+    }
+  });
   </script>
 </body>
 </html>
