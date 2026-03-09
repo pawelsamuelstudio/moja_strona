@@ -5,10 +5,15 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link rel="logoicon" type="image/png" sizes="32x32" href="logoicon32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="logoicon16x16.png">
+<meta name="robots" content="noindex, follow">
+<link rel="canonical" href="https://samuelstudio.com/polityka-prywatnosci.html" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="/logoicon32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/logoicon16x16.png">
+<link rel="apple-touch-icon" href="/logoicon32x32.png">
 
 <title>Polityka prywatności | Samuel Studio</title>
+<meta name="description" content="Polityka prywatności serwisu samuelstudio.com. Informacje o przetwarzaniu danych osobowych, cookies oraz prawach użytkownika.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +58,7 @@ e-mail: <strong>pawel.samuelstudio@gmail.com</strong>
 </p>
 
 <p>
-Administratorem danych osobowych jest <strong>Paweł Pauksztełło</strong>.  
+Administratorem danych osobowych jest <strong>Paweł Pauksztełło</strong>.
 Kontakt z Administratorem jest możliwy drogą elektroniczną na wskazany adres e-mail.
 </p>
 
@@ -64,7 +69,7 @@ Kontakt z Administratorem jest możliwy drogą elektroniczną na wskazany adres 
 </p>
 
 <p>
-Strona samuelstudio.com ma charakter informacyjny i prezentuje ofertę usług animacji i motion designu.  
+Strona samuelstudio.com ma charakter informacyjny i prezentuje ofertę usług animacji i motion designu.
 Dane osobowe mogą być przetwarzane wyłącznie w następujących celach:
 </p>
 
@@ -100,7 +105,7 @@ Podanie danych jest dobrowolne, ale może być niezbędne do uzyskania odpowiedz
 </p>
 
 <p>
-Strona jest hostowana na platformie <strong>GitHub Pages</strong>  
+Strona jest hostowana na platformie <strong>GitHub Pages</strong>
 (GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA).
 </p>
 
@@ -226,14 +231,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const regex = /\b([aiouwzAIUOWZ]|[A-Za-zĄĆĘŁŃÓŚŹŻąćęłńóśźż]{2})\s+(?=\S)/g;
 
-function fixOrphans(node){
-node.childNodes.forEach(child=>{
-if(child.nodeType===Node.TEXT_NODE){
-child.textContent=child.textContent.replace(regex,"$1\u00A0");
-}else{
-fixOrphans(child);
-}
-});
+function fixOrphans(node) {
+  node.childNodes.forEach(child => {
+    if (child.nodeType === Node.TEXT_NODE) {
+      child.textContent = child.textContent.replace(regex, "$1\u00A0");
+    } else {
+      fixOrphans(child);
+    }
+  });
 }
 
 fixOrphans(document.body);
