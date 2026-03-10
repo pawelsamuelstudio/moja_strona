@@ -824,9 +824,36 @@
 
       requestAnimationFrame(() => setTimeout(startHeroBg, 50));
     }
+
+    const introVideo = document.getElementById("mainVideo");
+    if (introVideo) {
+      introVideo.addEventListener("ended", () => {
+        if (switched) {
+          resetToIntro();
+        }
+      });
+    }
   });
 
   let switched = false;
+
+  function resetToIntro() {
+    const video = document.getElementById("mainVideo");
+    const btn = document.querySelector(".video-btn");
+
+    if (!video || !btn) return;
+
+    video.pause();
+    video.src = "is this your story text animated.mp4";
+    video.loop = true;
+    video.muted = true;
+    video.currentTime = 0;
+    video.load();
+    video.play().catch(() => {});
+
+    btn.textContent = "▶";
+    switched = false;
+  }
 
   function changeVideo() {
     const video = document.getElementById("mainVideo");
@@ -857,7 +884,7 @@
     btn.textContent = "⏸";
     switched = true;
   }
-  </script>
+</script>
 
 </body>
 </html>
