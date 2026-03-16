@@ -1,43 +1,26 @@
 (async function () {
+
   async function inject(id, file) {
     const el = document.getElementById(id);
     if (!el) return;
 
     const res = await fetch(file, { cache: "no-cache" });
+
     if (!res.ok) {
-      console.error("Nie mogę wczytać:", file, res.status);
+      console.error("Cannot load:", file, res.status);
       return;
     }
+
     el.innerHTML = await res.text();
   }
 
-  // TWARDY EN:
-  await inject("site-header", "/header.html");
+  // Only footer
   await inject("site-footer", "/footer.html");
 
-  // Hamburger (jeśli masz #hamburger i #mobileMenu w header.html)
-  const hamburger = document.getElementById("hamburger");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  if (hamburger && mobileMenu && !hamburger.dataset.bound) {
-    hamburger.dataset.bound = "1";
-
-    hamburger.addEventListener("click", () => {
-      hamburger.classList.toggle("active");
-      mobileMenu.classList.toggle("active");
-    });
-
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        hamburger.classList.remove("active");
-        mobileMenu.classList.remove("active");
-      });
-    });
-  }
-
-  // Rok w stopce
+  // Year in footer
   const yearEl = document.getElementById("year");
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
 })();
