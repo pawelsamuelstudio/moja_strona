@@ -268,21 +268,28 @@
 
   <script src="/js/includespl.js"></script>
 
-  <script>
+ <script>
   document.addEventListener("DOMContentLoaded", () => {
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      if (menu) menu.classList.toggle("show");
-    }
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    window.toggleMenu = toggleMenu;
-
-    document.querySelectorAll("nav.menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        const menu = document.getElementById("menu");
-        if (menu) menu.classList.remove("show");
+    if (hamburgerBtn && mobileMenu) {
+      hamburgerBtn.addEventListener("click", () => {
+        const isActive = hamburgerBtn.classList.toggle("active");
+        mobileMenu.classList.toggle("active", isActive);
+        hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+        document.body.style.overflow = isActive ? "hidden" : "";
       });
-    });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          hamburgerBtn.classList.remove("active");
+          mobileMenu.classList.remove("active");
+          hamburgerBtn.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        });
+      });
+    }
 
     const portfolioCards = document.querySelectorAll(".portfolio-card");
 
@@ -347,6 +354,6 @@
       });
     }
   });
-  </script>
+</script>
 </body>
 </html>
