@@ -174,69 +174,81 @@
 
   <script src="/js/includespl.js?v=3"></script>
 
-  <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      if (menu) menu.classList.toggle("show");
-    }
+ <script>
+document.addEventListener("DOMContentLoaded", () => {
 
-    window.toggleMenu = toggleMenu;
+  /* ===== HAMBURGER MENU ===== */
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-    document.querySelectorAll("nav.menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        const menu = document.getElementById("menu");
-        if (menu) menu.classList.remove("show");
-      });
+  if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener("click", () => {
+      const isActive = hamburgerBtn.classList.toggle("active");
+      mobileMenu.classList.toggle("active", isActive);
+      hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+      document.body.style.overflow = isActive ? "hidden" : "";
     });
 
-    const mediaCard = document.querySelector(".project-media-card:not(.project-media-card--autoplay)");
-    if (mediaCard) {
-      const video = mediaCard.querySelector("video");
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburgerBtn.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        hamburgerBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
+    });
+  }
 
-      if (video) {
-        video.muted = true;
-        video.defaultMuted = true;
-        video.playsInline = true;
+  /* ===== VIDEO CARD ===== */
+  const mediaCard = document.querySelector(".project-media-card:not(.project-media-card--autoplay)");
+  
+  if (mediaCard) {
+    const video = mediaCard.querySelector("video");
 
-        const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-        const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    if (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
 
-        if (isDesktopHover) {
-          mediaCard.addEventListener("mouseenter", () => {
-            mediaCard.classList.add("is-active");
-            video.play().catch(() => {});
+      const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+      if (isDesktopHover) {
+        mediaCard.addEventListener("mouseenter", () => {
+          mediaCard.classList.add("is-active");
+          video.play().catch(() => {});
+        });
+
+        mediaCard.addEventListener("mouseleave", () => {
+          mediaCard.classList.remove("is-active");
+          video.pause();
+          video.currentTime = 0;
+        });
+      }
+
+      if (isTouchDevice) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              mediaCard.classList.add("is-active");
+              video.play().catch(() => {});
+            } else {
+              mediaCard.classList.remove("is-active");
+              video.pause();
+              video.currentTime = 0;
+            }
           });
+        }, {
+          threshold: 0.35
+        });
 
-          mediaCard.addEventListener("mouseleave", () => {
-            mediaCard.classList.remove("is-active");
-            video.pause();
-            video.currentTime = 0;
-          });
-        }
-
-        if (isTouchDevice) {
-          const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                mediaCard.classList.add("is-active");
-                video.play().catch(() => {});
-              } else {
-                mediaCard.classList.remove("is-active");
-                video.pause();
-                video.currentTime = 0;
-              }
-            });
-          }, {
-            threshold: 0.35
-          });
-
-          observer.observe(mediaCard);
-        }
+        observer.observe(mediaCard);
       }
     }
-  });
-  </script>
+  }
+
+});
+</script>
 
 </body>
 </html>

@@ -195,24 +195,93 @@
   <div id="site-footer"></div>
 
   <script src="/js/includespl.js"></script>
-
-  <script>
+<script>
   document.addEventListener("DOMContentLoaded", () => {
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      if (menu) menu.classList.toggle("show");
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (hamburgerBtn && mobileMenu) {
+      hamburgerBtn.addEventListener("click", () => {
+        const isActive = hamburgerBtn.classList.toggle("active");
+        mobileMenu.classList.toggle("active", isActive);
+        hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+        document.body.style.overflow = isActive ? "hidden" : "";
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          hamburgerBtn.classList.remove("active");
+          mobileMenu.classList.remove("active");
+          hamburgerBtn.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        });
+      });
     }
 
-    window.toggleMenu = toggleMenu;
+    const portfolioCards = document.querySelectorAll(".portfolio-card");
 
-    document.querySelectorAll("nav.menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        const menu = document.getElementById("menu");
-        if (menu) menu.classList.remove("show");
-      });
+    portfolioCards.forEach((card) => {
+      const video = card.querySelector("video");
+      if (!video) return;
+
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("preload", "metadata");
     });
+
+    const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+    if (isDesktopHover) {
+      portfolioCards.forEach((card) => {
+        const video = card.querySelector("video");
+        if (!video) return;
+
+        card.addEventListener("mouseenter", () => {
+          video.play().catch(() => {});
+        });
+
+        card.addEventListener("mouseleave", () => {
+          video.pause();
+          video.currentTime = 0;
+        });
+      });
+    }
+
+    if (isTouchDevice) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const card = entry.target;
+          const video = card.querySelector("video");
+          if (!video) return;
+
+          if (entry.isIntersecting) {
+            card.classList.add("is-visible");
+            video.play().catch(() => {});
+          } else {
+            card.classList.remove("is-visible");
+            video.pause();
+            video.currentTime = 0;
+          }
+        });
+      }, {
+        threshold: 0.35
+      });
+
+      portfolioCards.forEach((card) => {
+        const video = card.querySelector("video");
+        if (!video) return;
+        video.load();
+        observer.observe(card);
+      });
+    }
   });
-  </script>
+</script>
 
 </body>
 </html>
