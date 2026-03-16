@@ -273,71 +273,90 @@
 
   <script>
   document.addEventListener("DOMContentLoaded", () => {
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      if (menu) menu.classList.toggle("show");
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    if (hamburgerBtn && mobileMenu) {
+      hamburgerBtn.addEventListener("click", () => {
+        const isActive = hamburgerBtn.classList.toggle("active");
+        mobileMenu.classList.toggle("active", isActive);
+        hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+        document.body.style.overflow = isActive ? "hidden" : "";
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          hamburgerBtn.classList.remove("active");
+          mobileMenu.classList.remove("active");
+          hamburgerBtn.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        });
+      });
     }
 
-    window.toggleMenu = toggleMenu;
+    const portfolioCards = document.querySelectorAll(".portfolio-card");
 
-    document.querySelectorAll("nav.menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        const menu = document.getElementById("menu");
-        if (menu) menu.classList.remove("show");
-      });
+    portfolioCards.forEach((card) => {
+      const video = card.querySelector("video");
+      if (!video) return;
+
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("preload", "metadata");
     });
 
-    const reviewCarousel = document.querySelector(".review-carousel");
-    if (reviewCarousel) {
-      const reviewTrack = reviewCarousel.querySelector(".review-carousel__track");
-      const reviewSlides = Array.from(reviewCarousel.querySelectorAll(".review-slide"));
-      const reviewPrev = reviewCarousel.querySelector(".review-carousel__arrow--prev");
-      const reviewNext = reviewCarousel.querySelector(".review-carousel__arrow--next");
+    const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
-      let reviewIndex = 0;
-      let reviewInterval = null;
+    if (isDesktopHover) {
+      portfolioCards.forEach((card) => {
+        const video = card.querySelector("video");
+        if (!video) return;
 
-      const showReview = (index) => {
-        if (!reviewSlides.length || !reviewTrack) return;
-        reviewIndex = (index + reviewSlides.length) % reviewSlides.length;
-        reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
-      };
-
-      const startReviewAutoplay = () => {
-        stopReviewAutoplay();
-        reviewInterval = setInterval(() => {
-          showReview(reviewIndex + 1);
-        }, 4000);
-      };
-
-      const stopReviewAutoplay = () => {
-        if (reviewInterval) {
-          clearInterval(reviewInterval);
-          reviewInterval = null;
-        }
-      };
-
-      if (reviewPrev) {
-        reviewPrev.addEventListener("click", () => {
-          showReview(reviewIndex - 1);
-          startReviewAutoplay();
+        card.addEventListener("mouseenter", () => {
+          video.play().catch(() => {});
         });
-      }
 
-      if (reviewNext) {
-        reviewNext.addEventListener("click", () => {
-          showReview(reviewIndex + 1);
-          startReviewAutoplay();
+        card.addEventListener("mouseleave", () => {
+          video.pause();
+          video.currentTime = 0;
         });
-      }
+      });
+    }
 
-      reviewCarousel.addEventListener("mouseenter", stopReviewAutoplay);
-      reviewCarousel.addEventListener("mouseleave", startReviewAutoplay);
+    if (isTouchDevice) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const card = entry.target;
+          const video = card.querySelector("video");
+          if (!video) return;
 
-      showReview(0);
-      startReviewAutoplay();
+          if (entry.isIntersecting) {
+            card.classList.add("is-visible");
+            video.play().catch(() => {});
+          } else {
+            card.classList.remove("is-visible");
+            video.pause();
+            video.currentTime = 0;
+          }
+        });
+      }, {
+        threshold: 0.35
+      });
+
+      portfolioCards.forEach((card) => {
+        const video = card.querySelector("video");
+        if (!video) return;
+        video.load();
+        observer.observe(card);
+      });
     }
   });
-  </script>
+</script>
 </body>
 </html>
