@@ -30,9 +30,9 @@ body {
   --header-bg: #f0bb1c;
 }
 
-/* Rezerwacja miejsca pod header */
+/* Rezerwacja miejsca pod fixed header */
 #site-header {
-  min-height: var(--header-height);
+  height: var(--header-height);
 }
 
 /* =========================
@@ -53,8 +53,10 @@ body {
   align-items: center;
   column-gap: 24px;
 
-  transition: transform 0.4s ease;
   isolation: isolate;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: auto;
 }
 
 /* Logo */
@@ -139,6 +141,10 @@ body {
   cursor: pointer;
   position: relative;
   z-index: 100000;
+  background: transparent;
+  border: 0;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .hamburger span {
@@ -148,7 +154,7 @@ body {
   background: #000;
   border-radius: 2px;
   transition: all 0.4s ease;
-  will-change: transform;
+  will-change: transform, opacity;
   transform: translateZ(0);
   backface-visibility: hidden;
 }
@@ -240,7 +246,7 @@ body {
   }
 
   #site-header {
-    min-height: var(--header-height-mobile);
+    height: var(--header-height-mobile);
   }
 
   .center-links {
