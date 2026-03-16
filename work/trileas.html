@@ -67,7 +67,87 @@
 </head>
 <body class="site">
 
-  <div id="site-header"></div>
+  <div id="site-header">
+  <header id="mainHeader">
+    <div class="logo-container">
+      <a href="/indexen.html" aria-label="Samuel Studio home">
+        <img src="/logosamuelstudio.svg" alt="Samuel Studio logo">
+      </a>
+    </div>
+
+    <nav class="center-links" aria-label="Main menu">
+      <a href="/indexen.html">Home</a>
+      <a href="/work.html">Work</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="https://blog.samuelstudio.com/">Blog</a>
+
+      <a href="/indexpl.html" title="Polish version" class="lang-switch" aria-label="Polish version">
+        <img src="/plflag.svg" alt="Polish version">
+      </a>
+    </nav>
+
+    <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/indexen.html">Home</a>
+  <a href="/work.html">Work</a>
+  <a href="/about.html">About</a>
+  <a href="/contact.html">Contact</a>
+  <a href="https://blog.samuelstudio.com/">Blog</a>
+
+  <a href="/indexpl.html" title="Polish version" class="lang-switch" aria-label="Polish version">
+    <img src="/plflag.svg" alt="Polish version">
+  </a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("mainHeader");
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    let lastScroll = 0;
+
+    if (header) {
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const headerHeight = header.offsetHeight;
+
+        if (!mobileMenu.classList.contains("active")) {
+          if (currentScroll > lastScroll && currentScroll > 60) {
+            header.style.transform = `translateY(-${headerHeight + 5}px)`;
+          } else {
+            header.style.transform = "translateY(0)";
+          }
+        }
+
+        lastScroll = currentScroll;
+      });
+    }
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener("click", () => {
+        const isActive = hamburger.classList.toggle("active");
+        mobileMenu.classList.toggle("active", isActive);
+        hamburger.setAttribute("aria-expanded", isActive ? "true" : "false");
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          mobileMenu.classList.remove("active");
+          hamburger.setAttribute("aria-expanded", "false");
+        });
+      });
+    }
+  });
+</script>
 
   <main>
 
