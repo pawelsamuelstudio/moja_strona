@@ -1,5 +1,4 @@
 (async function () {
-
   async function inject(id, file) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -16,6 +15,7 @@
 
   // FOOTER
   await inject("site-footer", "/footer.html");
+  initFooterAccordion();
 
   // REVIEWS
   await inject("reviews", "/reviews.html");
@@ -28,8 +28,77 @@
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
-
 })();
+
+function initFooterAccordion() {
+  const accordions = document.querySelectorAll(".footer-accordion");
+  if (!accordions.length) return;
+
+  const mobileBreakpoint = 760;
+  const isMobileOrTablet = () => window.innerWidth <= mobileBreakpoint;
+
+  function closeAccordion(item) {
+    const button = item.querySelector(".footer-accordion-toggle");
+    const content = item.querySelector(".footer-accordion-content");
+    if (!button || !content) return;
+
+    item.classList.remove("active");
+    button.setAttribute("aria-expanded", "false");
+    content.style.maxHeight = "0px";
+    content.style.marginTop = "0px";
+  }
+
+  function openAccordion(item) {
+    const button = item.querySelector(".footer-accordion-toggle");
+    const content = item.querySelector(".footer-accordion-content");
+    if (!button || !content) return;
+
+    item.classList.add("active");
+    button.setAttribute("aria-expanded", "true");
+    content.style.marginTop = "14px";
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
+
+  function resetAccordionState() {
+    accordions.forEach((item) => {
+      const button = item.querySelector(".footer-accordion-toggle");
+      const content = item.querySelector(".footer-accordion-content");
+      if (!button || !content) return;
+
+      if (isMobileOrTablet()) {
+        item.classList.remove("active");
+        button.setAttribute("aria-expanded", "false");
+        content.style.maxHeight = "0px";
+        content.style.marginTop = "0px";
+      } else {
+        item.classList.remove("active");
+        button.setAttribute("aria-expanded", "true");
+        content.style.maxHeight = "none";
+        content.style.marginTop = "18px";
+      }
+    });
+  }
+
+  accordions.forEach((item) => {
+    const button = item.querySelector(".footer-accordion-toggle");
+    if (!button) return;
+
+    button.addEventListener("click", () => {
+      if (!isMobileOrTablet()) return;
+
+      const isOpen = item.classList.contains("active");
+
+      if (isOpen) {
+        closeAccordion(item);
+      } else {
+        openAccordion(item);
+      }
+    });
+  });
+
+  window.addEventListener("resize", resetAccordionState);
+  resetAccordionState();
+}
 
 function initReviewCarousel() {
   const reviewCarousel = document.querySelector(".review-carousel");
