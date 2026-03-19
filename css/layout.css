@@ -377,6 +377,48 @@ body {
   transform: translateX(4px);
 }
 
+/* Footer accordion */
+.footer-accordion-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  color: #000;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.footer-accordion-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.footer-accordion-icon {
+  display: none;
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.footer-accordion-content {
+  overflow: visible;
+  max-height: none;
+}
+
+.footer-accordion.active .footer-accordion-icon {
+  transform: rotate(45deg);
+}
+
 /* Social */
 .footer-socials {
   display: flex;
@@ -462,7 +504,7 @@ body {
   }
 }
 
-/* Mobile */
+/* Mobile + tablet footer accordion */
 @media (max-width: 760px) {
   .footer {
     padding: 30px 20px;
@@ -491,9 +533,30 @@ body {
     text-align: center;
   }
 
-  .footer-links-column h4 {
-    margin-bottom: 12px;
+  .footer-links-column {
+    text-align: left;
+  }
+
+  .footer-accordion-toggle {
+    padding: 0;
+  }
+
+  .footer-accordion-title {
     font-size: 17px;
+  }
+
+  .footer-accordion-icon {
+    display: block;
+  }
+
+  .footer-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, margin-top 0.35s ease;
+  }
+
+  .footer-accordion.active .footer-accordion-content {
+    margin-top: 14px;
   }
 
   .footer-links-list {
@@ -502,7 +565,7 @@ body {
 
   .footer-links-list a {
     font-size: 16px;
-    transform-origin: center;
+    transform-origin: left center;
   }
 
   .footer-links-list a:hover {
@@ -528,5 +591,22 @@ body {
   .author-break {
     display: block;
     margin-top: 5px;
+  }
+}
+
+/* Desktop: sekcje zawsze otwarte */
+@media (min-width: 761px) {
+  .footer-accordion-toggle {
+    pointer-events: none;
+  }
+
+  .footer-accordion-icon {
+    display: none !important;
+  }
+
+  .footer-accordion-content {
+    max-height: none !important;
+    overflow: visible !important;
+    margin-top: 18px;
   }
 }
