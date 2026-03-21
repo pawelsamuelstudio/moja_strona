@@ -271,17 +271,22 @@ select {
 
 /* VIDEO CARDS */
 .video-card {
+  position: relative;
   width: 100%;
   overflow: hidden;
   border-radius: var(--radius-md);
   background: var(--color-white);
   color: var(--color-black);
-  border: 1px solid var(--color-black);
+  border: none;
   box-shadow: var(--shadow-soft);
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
 .video-card--hero {
   border-radius: var(--radius-lg);
+  background: transparent;
   box-shadow: var(--shadow-strong);
 }
 
@@ -291,9 +296,41 @@ select {
   aspect-ratio: 16 / 9;
   overflow: hidden;
   background: #000;
+  isolation: isolate;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+/* pełne przycięcie video w karcie */
+.video-card .video-embed {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.video-card--hero .video-embed {
+  border-radius: inherit;
 }
 
 .video-embed--lite {
+  overflow: hidden;
+}
+
+.video-card .video-embed--lite,
+.video-card .video-embed__button,
+.video-card .video-embed__poster,
+.video-card .video-embed iframe {
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.video-card--hero .video-embed--lite,
+.video-card--hero .video-embed__button,
+.video-card--hero .video-embed__poster,
+.video-card--hero .video-embed iframe {
   border-radius: inherit;
 }
 
@@ -305,13 +342,25 @@ select {
   border: 0;
   background: #000;
   cursor: pointer;
-  display: block;
+  overflow: hidden;
+  appearance: none;
+  -webkit-appearance: none;
 }
 
 .video-embed__poster {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  background: #000;
 }
 
 .video-embed__play {
@@ -329,19 +378,12 @@ select {
   font-size: 2rem;
   line-height: 1;
   transition: transform 0.2s ease, background-color 0.2s ease;
+  z-index: 2;
 }
 
 .video-embed__button:hover .video-embed__play {
   transform: translate(-50%, -50%) scale(1.06);
   background: rgba(0, 0, 0, 0.82);
-}
-
-.video-embed iframe {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
 }
 
 .video-card__body {
@@ -540,6 +582,16 @@ select {
 /* CONTACT */
 .contact-section .hero-content {
   padding-bottom: 0;
+}
+
+/* RENDER FIX */
+.video-card,
+.video-embed,
+.video-embed__button,
+.video-embed__poster,
+.video-embed iframe {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 /* RESPONSIVE */
