@@ -18,7 +18,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/logoicon16x16.png">
   <link rel="apple-touch-icon" href="/logoicon32x32.png">
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="pl_PL" />
@@ -31,23 +30,19 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="2D & 3D Animation, Promotional Videos & Explainers | Samuel Studio" />
   <meta name="twitter:description" content="I create engaging 2D & 3D animation, promotional videos and explainer videos that help brands communicate clearly and connect with their audience." />
   <meta name="twitter:image" content="https://samuelstudio.com/samuel-studio-og-image.jpg" />
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- CSS -->
   <link rel="stylesheet" href="/css/layout.css?v=1">
   <link rel="stylesheet" href="/css/home-pages.css">
   <link rel="stylesheet" href="/css/reviews.css">
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -80,86 +75,44 @@
 
 <body class="site">
   <div id="site-header">
-  <header id="mainHeader">
-    <div class="logo-container">
-      <a href="/indexen.html" aria-label="Samuel Studio home">
-        <img src="/logosamuelstudio.svg" alt="Samuel Studio logo">
-      </a>
-    </div>
+    <header id="mainHeader">
+      <div class="logo-container">
+        <a href="/indexen.html" aria-label="Samuel Studio home">
+          <img src="/logosamuelstudio.svg" alt="Samuel Studio logo">
+        </a>
+      </div>
 
-    <nav class="center-links" aria-label="Main menu">
-      <a href="/indexen.html">Home</a>
-      <a href="/work.html">Work</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <a href="https://blog.samuelstudio.com/">Blog</a>
+      <nav class="center-links" aria-label="Main menu">
+        <a href="/indexen.html">Home</a>
+        <a href="/work.html">Work</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+        <a href="https://blog.samuelstudio.com/">Blog</a>
 
-      <a href="/indexpl.html" title="Polish version" class="lang-switch" aria-label="Polish version">
-        <img src="/plflag.svg" alt="Polish version">
-      </a>
-    </nav>
+        <a href="/indexpl.html" title="Polish version" class="lang-switch" aria-label="Polish version">
+          <img src="/plflag.svg" alt="Polish version">
+        </a>
+      </nav>
 
-    <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </header>
-</div>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </header>
+  </div>
 
-<div class="mobile-menu" id="mobileMenu">
-  <a href="/indexen.html">Home</a>
-  <a href="/work.html">Work</a>
-  <a href="/about.html">About</a>
-  <a href="/contact.html">Contact</a>
-  <a href="https://blog.samuelstudio.com/">Blog</a>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/indexen.html">Home</a>
+    <a href="/work.html">Work</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="https://blog.samuelstudio.com/">Blog</a>
 
-  <a href="/indexpl.html" title="Polish version" class="lang-switch" aria-label="Polish version">
-    <img src="/plflag.svg" alt="Polish version">
-  </a>
-</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const header = document.getElementById("mainHeader");
-    const hamburger = document.getElementById("hamburger");
-    const mobileMenu = document.getElementById("mobileMenu");
-    let lastScroll = 0;
-
-    if (header) {
-      window.addEventListener("scroll", () => {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        const headerHeight = header.offsetHeight;
-
-        if (!mobileMenu.classList.contains("active")) {
-          if (currentScroll > lastScroll && currentScroll > 60) {
-            header.style.transform = `translateY(-${headerHeight + 5}px)`;
-          } else {
-            header.style.transform = "translateY(0)";
-          }
-        }
-
-        lastScroll = currentScroll;
-      });
-    }
-
-    if (hamburger && mobileMenu) {
-      hamburger.addEventListener("click", () => {
-        const isActive = hamburger.classList.toggle("active");
-        mobileMenu.classList.toggle("active", isActive);
-        hamburger.setAttribute("aria-expanded", isActive ? "true" : "false");
-      });
-
-      mobileMenu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          hamburger.classList.remove("active");
-          mobileMenu.classList.remove("active");
-          hamburger.setAttribute("aria-expanded", "false");
-        });
-      });
-    }
-  });
-</script>
+    <a href="/indexpl.html" title="Polish version" class="lang-switch" aria-label="Polish version">
+      <img src="/plflag.svg" alt="Polish version">
+    </a>
+  </div>
 
   <main>
 
@@ -219,7 +172,7 @@
     </section>
 
     <!-- OFFER / PROBLEM -->
-     <section class="section section--accent-soft process-section">
+    <section class="section section--accent-soft process-section">
       <div class="container">
         <div class="section-heading">
           <h2 class="section-title">Do you have something important to show, but don't know how to do it effectively?</h2>
@@ -272,14 +225,13 @@
     </section>
 
     <!-- ABOUT ME -->
-     <section class="section section--light">
+    <section class="section section--light">
       <div class="container">
         <div class="section-heading">
-       
-         
-             <h2 class="section-title"> I help you communicate your&nbsp;message clearly and&nbsp;effectively</h2>
-            <div class="section-separator"></div>
- <div class="top-row">
+          <h2 class="section-title">I help you communicate your&nbsp;message clearly and&nbsp;effectively</h2>
+          <div class="section-separator"></div>
+
+          <div class="top-row">
             <p class="para-top">
               <strong>Paweł Pauksztełło - Samuel Studio</strong>
               I help projects, events and&nbsp;institutions tell important stories
@@ -287,18 +239,16 @@
               that capture attention, help explain ideas, and make sure your message
               doesn't get lost in&nbsp;the background.<br><br>
               <a href="/work.html" class="highlight-link">See animation examples.</a>
-            <br><br>
+              <br><br>
               I create 2D and 3D animation for companies, institutions and&nbsp;brands that want
               to present products, services, events and&nbsp;ideas more effectively. I&nbsp;produce
               promotional videos, explainer videos and animated content for websites,
               social media and presentations.
             </p>
-          
 
-          <div class="video-col">
-            <video id="myVideo" src="Film ang Pawel.mp4" autoplay muted loop playsinline></video>
+            <div class="video-col">
+              <video id="myVideo" src="Film ang Pawel.mp4" autoplay muted loop playsinline></video>
             </div>
-          </div>
           </div>
         </div>
       </div>
@@ -307,7 +257,7 @@
     <section class="video-text-section">
       <div class="container">
         <div class="video-col2">
-          <div class="video-wrapper">
+          <div class="video-wrapper is-paused">
             <video
               id="mainVideo"
               class="preview-video"
@@ -318,7 +268,7 @@
               playsinline
             ></video>
 
-            <button class="video-btn" onclick="changeVideo()">▶</button>
+            <button class="video-btn" onclick="changeVideo(event)" aria-label="Play or pause video">▶</button>
           </div>
         </div>
       </div>
@@ -468,10 +418,9 @@
     </section>
 
     <!-- REVIEWS -->
-    
-<section class="section section--light">
-  <div id="reviews"></div>
-</section>
+    <section class="section section--light">
+      <div id="reviews"></div>
+    </section>
 
     <!-- PORTFOLIO -->
     <section id="gallery" class="section section--accent">
@@ -558,7 +507,7 @@
       <div class="container">
         <div class="hero-content">
           <h2 class="hero-title hero-title--small">It's time for animation that works</h2>
-           <div class="section-separator"></div>
+          <div class="section-separator"></div>
           <p class="hero-lead">Let's talk about your project</p>
 
           <div class="button-group button-group--center">
@@ -589,334 +538,478 @@
   <script src="/js/includesen.js"></script>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    function toggleMenu() {
-      const menu = document.getElementById("menu");
-      if (menu) menu.classList.toggle("show");
-    }
+    document.addEventListener("DOMContentLoaded", () => {
+      const header = document.getElementById("mainHeader");
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobileMenu");
+      let lastScroll = 0;
 
-    window.toggleMenu = toggleMenu;
+      if (header && hamburger && mobileMenu) {
+        window.addEventListener("scroll", () => {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+          const headerHeight = header.offsetHeight;
 
-    document.querySelectorAll("nav.menu a").forEach(link => {
-      link.addEventListener("click", () => {
-        const menu = document.getElementById("menu");
-        if (menu) menu.classList.remove("show");
-      });
-    });
+          if (!mobileMenu.classList.contains("active")) {
+            if (currentScroll > lastScroll && currentScroll > 60) {
+              header.style.transform = `translateY(-${headerHeight + 5}px)`;
+            } else {
+              header.style.transform = "translateY(0)";
+            }
+          }
 
-    const reviewCarousel = document.querySelector(".review-carousel");
-    if (reviewCarousel) {
-      const reviewTrack = reviewCarousel.querySelector(".review-carousel__track");
-      const reviewSlides = Array.from(reviewCarousel.querySelectorAll(".review-slide"));
-      const reviewPrev = reviewCarousel.querySelector(".review-carousel__arrow--prev");
-      const reviewNext = reviewCarousel.querySelector(".review-carousel__arrow--next");
+          lastScroll = currentScroll;
+        });
 
-      let reviewIndex = 0;
-      let reviewInterval = null;
+        hamburger.addEventListener("click", () => {
+          const isActive = hamburger.classList.toggle("active");
+          mobileMenu.classList.toggle("active", isActive);
+          hamburger.setAttribute("aria-expanded", isActive ? "true" : "false");
+          document.body.style.overflow = isActive ? "hidden" : "";
+        });
 
-      const showReview = (index) => {
-        if (!reviewSlides.length || !reviewTrack) return;
-        reviewIndex = (index + reviewSlides.length) % reviewSlides.length;
-        reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
-      };
+        mobileMenu.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            hamburger.classList.remove("active");
+            mobileMenu.classList.remove("active");
+            hamburger.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+          });
+        });
+      }
 
-      const startReviewAutoplay = () => {
-        stopReviewAutoplay();
-        reviewInterval = setInterval(() => {
-          showReview(reviewIndex + 1);
-        }, 4000);
-      };
+      const reviewCarousel = document.querySelector(".review-carousel");
+      if (reviewCarousel) {
+        const reviewTrack = reviewCarousel.querySelector(".review-carousel__track");
+        const reviewSlides = Array.from(reviewCarousel.querySelectorAll(".review-slide"));
+        const reviewPrev = reviewCarousel.querySelector(".review-carousel__arrow--prev");
+        const reviewNext = reviewCarousel.querySelector(".review-carousel__arrow--next");
 
-      const stopReviewAutoplay = () => {
-        if (reviewInterval) {
-          clearInterval(reviewInterval);
-          reviewInterval = null;
+        let reviewIndex = 0;
+        let reviewInterval = null;
+
+        const showReview = (index) => {
+          if (!reviewSlides.length || !reviewTrack) return;
+          reviewIndex = (index + reviewSlides.length) % reviewSlides.length;
+          reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
+        };
+
+        const startReviewAutoplay = () => {
+          stopReviewAutoplay();
+          reviewInterval = setInterval(() => {
+            showReview(reviewIndex + 1);
+          }, 4000);
+        };
+
+        const stopReviewAutoplay = () => {
+          if (reviewInterval) {
+            clearInterval(reviewInterval);
+            reviewInterval = null;
+          }
+        };
+
+        if (reviewPrev) {
+          reviewPrev.addEventListener("click", () => {
+            showReview(reviewIndex - 1);
+            startReviewAutoplay();
+          });
         }
-      };
 
-      if (reviewPrev) {
-        reviewPrev.addEventListener("click", () => {
-          showReview(reviewIndex - 1);
-          startReviewAutoplay();
-        });
+        if (reviewNext) {
+          reviewNext.addEventListener("click", () => {
+            showReview(reviewIndex + 1);
+            startReviewAutoplay();
+          });
+        }
+
+        reviewCarousel.addEventListener("mouseenter", stopReviewAutoplay);
+        reviewCarousel.addEventListener("mouseleave", startReviewAutoplay);
+
+        showReview(0);
+        startReviewAutoplay();
       }
 
-      if (reviewNext) {
-        reviewNext.addEventListener("click", () => {
-          showReview(reviewIndex + 1);
-          startReviewAutoplay();
+      const processCarousel = document.querySelector(".process-carousel");
+      if (processCarousel) {
+        const processTrack = processCarousel.querySelector(".process-carousel__track");
+        const processSlides = Array.from(processCarousel.querySelectorAll(".process-step"));
+        const processPrev = processCarousel.querySelector(".process-carousel__nav--prev");
+        const processNext = processCarousel.querySelector(".process-carousel__nav--next");
+
+        let processIndex = 0;
+
+        const showProcessSlide = (index) => {
+          if (!processSlides.length || !processTrack) return;
+          processIndex = (index + processSlides.length) % processSlides.length;
+          processTrack.style.transform = `translateX(-${processIndex * 100}%)`;
+        };
+
+        if (processPrev) {
+          processPrev.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+              showProcessSlide(processIndex - 1);
+            }
+          });
+        }
+
+        if (processNext) {
+          processNext.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+              showProcessSlide(processIndex + 1);
+            }
+          });
+        }
+
+        document.addEventListener("keydown", (e) => {
+          if (window.innerWidth > 768) return;
+          if (e.key === "ArrowLeft") showProcessSlide(processIndex - 1);
+          if (e.key === "ArrowRight") showProcessSlide(processIndex + 1);
         });
-      }
 
-      reviewCarousel.addEventListener("mouseenter", stopReviewAutoplay);
-      reviewCarousel.addEventListener("mouseleave", startReviewAutoplay);
-
-      showReview(0);
-      startReviewAutoplay();
-    }
-
-    const processCarousel = document.querySelector(".process-carousel");
-    if (processCarousel) {
-      const processTrack = processCarousel.querySelector(".process-carousel__track");
-      const processSlides = Array.from(processCarousel.querySelectorAll(".process-step"));
-      const processPrev = processCarousel.querySelector(".process-carousel__nav--prev");
-      const processNext = processCarousel.querySelector(".process-carousel__nav--next");
-
-      let processIndex = 0;
-
-      const showProcessSlide = (index) => {
-        if (!processSlides.length || !processTrack) return;
-        processIndex = (index + processSlides.length) % processSlides.length;
-        processTrack.style.transform = `translateX(-${processIndex * 100}%)`;
-      };
-
-      if (processPrev) {
-        processPrev.addEventListener("click", () => {
-          if (window.innerWidth <= 768) {
-            showProcessSlide(processIndex - 1);
+        window.addEventListener("resize", () => {
+          if (window.innerWidth > 768) {
+            processTrack.style.transform = "none";
+          } else {
+            showProcessSlide(processIndex);
           }
         });
-      }
 
-      if (processNext) {
-        processNext.addEventListener("click", () => {
-          if (window.innerWidth <= 768) {
-            showProcessSlide(processIndex + 1);
-          }
-        });
-      }
-
-      document.addEventListener("keydown", (e) => {
-        if (window.innerWidth > 768) return;
-        if (e.key === "ArrowLeft") showProcessSlide(processIndex - 1);
-        if (e.key === "ArrowRight") showProcessSlide(processIndex + 1);
-      });
-
-      window.addEventListener("resize", () => {
-        if (window.innerWidth > 768) {
-          processTrack.style.transform = "none";
-        } else {
-          showProcessSlide(processIndex);
+        if (window.innerWidth <= 768) {
+          showProcessSlide(0);
         }
-      });
-
-      if (window.innerWidth <= 768) {
-        showProcessSlide(0);
       }
-    }
 
-    const portfolioCards = document.querySelectorAll(".portfolio-card");
+      const portfolioCards = document.querySelectorAll(".portfolio-card");
 
-    portfolioCards.forEach((card) => {
-      const video = card.querySelector("video");
-      if (!video) return;
-
-      video.muted = true;
-      video.defaultMuted = true;
-      video.playsInline = true;
-
-      video.setAttribute("muted", "");
-      video.setAttribute("playsinline", "");
-      video.setAttribute("autoplay", "");
-      video.setAttribute("preload", "metadata");
-    });
-
-    const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-
-    if (isDesktopHover) {
       portfolioCards.forEach((card) => {
         const video = card.querySelector("video");
         if (!video) return;
 
-        card.addEventListener("mouseenter", () => {
-          video.play().catch(() => {});
-        });
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
 
-        card.addEventListener("mouseleave", () => {
-          video.pause();
-          video.currentTime = 0;
-        });
+        video.setAttribute("muted", "");
+        video.setAttribute("playsinline", "");
+        video.setAttribute("autoplay", "");
+        video.setAttribute("preload", "metadata");
       });
-    }
 
-    if (isTouchDevice) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const card = entry.target;
+      const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+      if (isDesktopHover) {
+        portfolioCards.forEach((card) => {
           const video = card.querySelector("video");
           if (!video) return;
 
-          if (entry.isIntersecting) {
-            card.classList.add("is-visible");
+          card.addEventListener("mouseenter", () => {
             video.play().catch(() => {});
-          } else {
-            card.classList.remove("is-visible");
+          });
+
+          card.addEventListener("mouseleave", () => {
             video.pause();
             video.currentTime = 0;
+          });
+        });
+      }
+
+      if (isTouchDevice) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            const card = entry.target;
+            const video = card.querySelector("video");
+            if (!video) return;
+
+            if (entry.isIntersecting) {
+              card.classList.add("is-visible");
+              video.play().catch(() => {});
+            } else {
+              card.classList.remove("is-visible");
+              video.pause();
+              video.currentTime = 0;
+            }
+          });
+        }, {
+          threshold: 0.35
+        });
+
+        portfolioCards.forEach((card) => {
+          const video = card.querySelector("video");
+          if (!video) return;
+          video.load();
+          observer.observe(card);
+        });
+      }
+
+      const banner = document.getElementById("cookie-banner");
+      const acceptBtn = document.getElementById("cookie-accept");
+      const declineBtn = document.getElementById("cookie-decline");
+
+      if (banner && acceptBtn && declineBtn) {
+        if (!localStorage.getItem("cookiesDecision")) {
+          banner.classList.add("show");
+        }
+
+        acceptBtn.addEventListener("click", () => {
+          localStorage.setItem("cookiesDecision", "accepted");
+          banner.classList.remove("show");
+        });
+
+        declineBtn.addEventListener("click", () => {
+          localStorage.setItem("cookiesDecision", "declined");
+          banner.classList.remove("show");
+        });
+      }
+
+      const myVideo = document.getElementById("myVideo");
+      if (myVideo) {
+        myVideo.playbackRate = 1;
+
+        myVideo.addEventListener("timeupdate", () => {
+          if (myVideo.currentTime >= 5 && myVideo.currentTime < 9) {
+            myVideo.currentTime = 10;
+          }
+
+          if (myVideo.currentTime >= 14) {
+            myVideo.currentTime = 3;
           }
         });
-      }, {
-        threshold: 0.35
-      });
-
-      portfolioCards.forEach((card) => {
-        const video = card.querySelector("video");
-        if (!video) return;
-        video.load();
-        observer.observe(card);
-      });
-    }
-
-    const banner = document.getElementById("cookie-banner");
-    const acceptBtn = document.getElementById("cookie-accept");
-    const declineBtn = document.getElementById("cookie-decline");
-
-    if (banner && acceptBtn && declineBtn) {
-      if (!localStorage.getItem("cookiesDecision")) {
-        banner.classList.add("show");
       }
 
-      acceptBtn.addEventListener("click", () => {
-        localStorage.setItem("cookiesDecision", "accepted");
-        banner.classList.remove("show");
-      });
+      const showreelWrap = document.querySelector(".hero-showreel");
+      const showreelVideo = showreelWrap?.querySelector(".hero-showreel__video");
 
-      declineBtn.addEventListener("click", () => {
-        localStorage.setItem("cookiesDecision", "declined");
-        banner.classList.remove("show");
-      });
-    }
+      if (showreelWrap && showreelVideo) {
+        const startShowreel = () => {
+          if (showreelVideo.dataset.loaded) return;
+          showreelVideo.dataset.loaded = "1";
 
-    const myVideo = document.getElementById("myVideo");
-    if (myVideo) {
-      myVideo.playbackRate = 1;
+          const src = showreelVideo.dataset.src;
+          if (!src) return;
 
-      myVideo.addEventListener("timeupdate", () => {
-        if (myVideo.currentTime >= 5 && myVideo.currentTime < 9) {
-          myVideo.currentTime = 10;
+          showreelVideo.src = src;
+
+          showreelVideo.addEventListener("loadeddata", () => {
+            showreelWrap.classList.add("is-loaded");
+            showreelVideo.play().catch(() => {});
+          }, { once: true });
+
+          showreelVideo.load();
+        };
+
+        if ("requestIdleCallback" in window) {
+          requestIdleCallback(startShowreel, { timeout: 1500 });
+        } else {
+          setTimeout(startShowreel, 400);
         }
+      }
 
-        if (myVideo.currentTime >= 14) {
-          myVideo.currentTime = 3;
-        }
-      });
-    }
+      const heroSection = document.querySelector(".section--hero#video");
+      const heroBgVideo = heroSection?.querySelector(".hero-video");
+      const heroPoster = heroSection?.querySelector(".hero-poster");
 
-    const showreelWrap = document.querySelector(".hero-showreel");
-    const showreelVideo = showreelWrap?.querySelector(".hero-showreel__video");
+      if (heroSection && heroBgVideo && heroPoster) {
+        const startHeroBg = () => {
+          if (heroBgVideo.dataset.loaded) return;
+          heroBgVideo.dataset.loaded = "1";
 
-    if (showreelWrap && showreelVideo) {
-      const startShowreel = () => {
-        if (showreelVideo.dataset.loaded) return;
-        showreelVideo.dataset.loaded = "1";
+          const src = heroBgVideo.dataset.src;
+          if (!src) return;
 
-        const src = showreelVideo.dataset.src;
-        if (!src) return;
+          heroBgVideo.src = src;
 
-        showreelVideo.src = src;
+          heroBgVideo.addEventListener("loadeddata", () => {
+            heroBgVideo.style.display = "block";
+            heroPoster.style.display = "none";
+            heroBgVideo.play().catch(() => {});
+          }, { once: true });
 
-        showreelVideo.addEventListener("loadeddata", () => {
-          showreelWrap.classList.add("is-loaded");
-          showreelVideo.play().catch(() => {});
-        }, { once: true });
+          heroBgVideo.load();
+        };
 
-        showreelVideo.load();
+        requestAnimationFrame(() => setTimeout(startHeroBg, 50));
+      }
+
+      const introVideo = document.getElementById("mainVideo");
+      const introVideoWrap = introVideo?.closest(".video-wrapper");
+      const introVideoBtn = introVideoWrap?.querySelector(".video-btn");
+      const isTouchVideoDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+      let controlsHideTimer = null;
+
+      const showVideoControls = () => {
+        if (!introVideoWrap) return;
+        introVideoWrap.classList.add("is-controls-visible");
       };
 
-      if ("requestIdleCallback" in window) {
-        requestIdleCallback(startShowreel, { timeout: 1500 });
-      } else {
-        setTimeout(startShowreel, 400);
-      }
-    }
-
-    const heroSection = document.querySelector(".section--hero#video");
-    const heroBgVideo = heroSection?.querySelector(".hero-video");
-    const heroPoster = heroSection?.querySelector(".hero-poster");
-
-    if (heroSection && heroBgVideo && heroPoster) {
-      const startHeroBg = () => {
-        if (heroBgVideo.dataset.loaded) return;
-        heroBgVideo.dataset.loaded = "1";
-
-        const src = heroBgVideo.dataset.src;
-        if (!src) return;
-
-        heroBgVideo.src = src;
-
-        heroBgVideo.addEventListener("loadeddata", () => {
-          heroBgVideo.style.display = "block";
-          heroPoster.style.display = "none";
-          heroBgVideo.play().catch(() => {});
-        }, { once: true });
-
-        heroBgVideo.load();
+      const hideVideoControls = () => {
+        if (!introVideoWrap) return;
+        introVideoWrap.classList.remove("is-controls-visible");
       };
 
-      requestAnimationFrame(() => setTimeout(startHeroBg, 50));
-    }
+      const scheduleHideVideoControls = () => {
+        if (!isTouchVideoDevice) return;
+        clearTimeout(controlsHideTimer);
+        controlsHideTimer = setTimeout(() => {
+          if (introVideo && !introVideo.paused && switched) {
+            hideVideoControls();
+          }
+        }, 1800);
+      };
 
-    const introVideo = document.getElementById("mainVideo");
-    if (introVideo) {
-      introVideo.addEventListener("ended", () => {
-        if (switched) {
-          resetToIntro();
+      const syncVideoButtonState = () => {
+        if (!introVideo || !introVideoWrap || !introVideoBtn) return;
+
+        if (!switched || introVideo.paused) {
+          introVideoWrap.classList.add("is-paused");
+          introVideoWrap.classList.remove("is-playing");
+          introVideoBtn.textContent = "▶";
+          introVideoBtn.setAttribute("aria-label", "Play video");
+          showVideoControls();
+          return;
         }
-      });
-    }
-  });
 
-  let switched = false;
+        introVideoWrap.classList.remove("is-paused");
+        introVideoWrap.classList.add("is-playing");
+        introVideoBtn.textContent = "⏸";
+        introVideoBtn.setAttribute("aria-label", "Pause video");
 
-  function resetToIntro() {
-    const video = document.getElementById("mainVideo");
-    const btn = document.querySelector(".video-btn");
+        if (isTouchVideoDevice) {
+          scheduleHideVideoControls();
+        } else {
+          hideVideoControls();
+        }
+      };
 
-    if (!video || !btn) return;
+      if (introVideo) {
+        introVideo.addEventListener("play", syncVideoButtonState);
+        introVideo.addEventListener("pause", syncVideoButtonState);
 
-    video.pause();
-    video.src = "is this your story text animated.mp4";
-    video.loop = true;
-    video.muted = true;
-    video.currentTime = 0;
-    video.load();
-    video.play().catch(() => {});
-
-    btn.textContent = "▶";
-    switched = false;
-  }
-
-  function changeVideo() {
-    const video = document.getElementById("mainVideo");
-    const btn = document.querySelector(".video-btn");
-
-    if (!video || !btn) return;
-
-    if (switched) {
-      if (video.paused) {
-        video.play().catch(() => {});
-        btn.textContent = "⏸";
-      } else {
-        video.pause();
-        btn.textContent = "▶";
+        introVideo.addEventListener("ended", () => {
+          if (switched) {
+            resetToIntro();
+          }
+        });
       }
-      return;
+
+      if (introVideoWrap && introVideoBtn) {
+        if (isTouchVideoDevice) {
+          introVideoWrap.addEventListener("click", (e) => {
+            if (e.target.closest(".video-btn")) return;
+            if (!switched || introVideo.paused) return;
+
+            if (introVideoWrap.classList.contains("is-controls-visible")) {
+              hideVideoControls();
+            } else {
+              showVideoControls();
+              scheduleHideVideoControls();
+            }
+          });
+        } else {
+          introVideoWrap.addEventListener("mouseenter", () => {
+            if (switched && introVideo && !introVideo.paused) {
+              showVideoControls();
+            }
+          });
+
+          introVideoWrap.addEventListener("mouseleave", () => {
+            if (switched && introVideo && !introVideo.paused) {
+              hideVideoControls();
+            }
+          });
+        }
+
+        syncVideoButtonState();
+      }
+    });
+
+    let switched = false;
+
+    function resetToIntro() {
+      const video = document.getElementById("mainVideo");
+      const btn = document.querySelector(".video-btn");
+      const wrap = video?.closest(".video-wrapper");
+
+      if (!video || !btn || !wrap) return;
+
+      video.pause();
+      video.src = "is this your story text animated.mp4";
+      video.loop = true;
+      video.muted = true;
+      video.currentTime = 0;
+      video.load();
+      video.play().catch(() => {});
+
+      switched = false;
+
+      wrap.classList.add("is-paused");
+      wrap.classList.remove("is-playing", "is-controls-visible");
+      btn.textContent = "▶";
+      btn.setAttribute("aria-label", "Play video");
     }
 
-    video.pause();
-    video.removeAttribute("autoplay");
-    video.src = "video3.mp4";
-    video.loop = false;
-    video.muted = false;
-    video.volume = 0.6;
-    video.currentTime = 0;
-    video.load();
-    video.play().catch(() => {});
-    btn.textContent = "⏸";
-    switched = true;
-  }
-</script>
+    function changeVideo(event) {
+      if (event) {
+        event.stopPropagation();
+      }
 
+      const video = document.getElementById("mainVideo");
+      const btn = document.querySelector(".video-btn");
+      const wrap = video?.closest(".video-wrapper");
+      const isTouchVideoDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+      if (!video || !btn || !wrap) return;
+
+      if (switched) {
+        if (video.paused) {
+          video.play().catch(() => {});
+          wrap.classList.remove("is-paused");
+          wrap.classList.add("is-playing");
+
+          if (isTouchVideoDevice) {
+            wrap.classList.add("is-controls-visible");
+            setTimeout(() => {
+              if (!video.paused) {
+                wrap.classList.remove("is-controls-visible");
+              }
+            }, 1800);
+          } else {
+            wrap.classList.remove("is-controls-visible");
+          }
+        } else {
+          video.pause();
+          wrap.classList.add("is-paused");
+          wrap.classList.remove("is-playing");
+          wrap.classList.add("is-controls-visible");
+        }
+        return;
+      }
+
+      video.pause();
+      video.removeAttribute("autoplay");
+      video.src = "video3.mp4";
+      video.loop = false;
+      video.muted = false;
+      video.volume = 0.6;
+      video.currentTime = 0;
+      video.load();
+      video.play().catch(() => {});
+
+      switched = true;
+      wrap.classList.remove("is-paused");
+      wrap.classList.add("is-playing");
+
+      if (isTouchVideoDevice) {
+        wrap.classList.add("is-controls-visible");
+        setTimeout(() => {
+          if (!video.paused) {
+            wrap.classList.remove("is-controls-visible");
+          }
+        }, 1800);
+      } else {
+        wrap.classList.remove("is-controls-visible");
+      }
+    }
+  </script>
 </body>
 </html>

@@ -268,7 +268,7 @@
               playsinline
             ></video>
 
-            <button class="video-btn" onclick="changeVideo()">▶</button>
+            <button class="video-btn" onclick="changeVideo(event)" aria-label="Odtwórz lub zatrzymaj wideo">▶</button>
           </div>
         </div>
       </div>
@@ -538,390 +538,510 @@
  <script src="/js/includespl.js"></script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const hamburgerBtn = document.getElementById("hamburgerBtn");
-      const mobileMenu = document.getElementById("mobileMenu");
+   document.addEventListener("DOMContentLoaded", () => {
+  const hamburgerBtn = document.getElementById("hamburgerBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-      if (hamburgerBtn && mobileMenu) {
-        hamburgerBtn.addEventListener("click", () => {
-          const isActive = hamburgerBtn.classList.toggle("active");
-          mobileMenu.classList.toggle("active", isActive);
-          hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
-          document.body.style.overflow = isActive ? "hidden" : "";
-        });
+  if (hamburgerBtn && mobileMenu) {
+    hamburgerBtn.addEventListener("click", () => {
+      const isActive = hamburgerBtn.classList.toggle("active");
+      mobileMenu.classList.toggle("active", isActive);
+      hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+      document.body.style.overflow = isActive ? "hidden" : "";
+    });
 
-        mobileMenu.querySelectorAll("a").forEach(link => {
-          link.addEventListener("click", () => {
-            hamburgerBtn.classList.remove("active");
-            mobileMenu.classList.remove("active");
-            hamburgerBtn.setAttribute("aria-expanded", "false");
-            document.body.style.overflow = "";
-          });
-        });
-      }
-
-      const yearEl = document.getElementById("year");
-      if (yearEl) {
-        yearEl.textContent = new Date().getFullYear();
-      }
-
-      const reviewCarousel = document.querySelector(".review-carousel");
-if (reviewCarousel) {
-  const reviewTrack = reviewCarousel.querySelector(".review-carousel__track");
-  const reviewPrev = reviewCarousel.querySelector(".review-carousel__arrow--prev");
-  const reviewNext = reviewCarousel.querySelector(".review-carousel__arrow--next");
-
-<!--opinie-->
-  const reviews = [
-    {
-      image: "/cj-miles.jpg",
-      text: "Bardzo dobre źródło do projektów animacyjnych. Paweł bardzo pomógł mi przy jednym z moich projektów, który został bardzo dobrze przyjęty. Zdecydowanie polecam jego kreatywność i wnikliwość, świetną komunikację oraz pracowitość wszystkim.",
-      author: "cj miles",
-      stars: 5,
-      link: "https://www.google.com/maps/place/Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach/"
-    },
-    {
-      text: "Bardzo dobra komunikacja, terminowość i świetny efekt końcowy. Zdecydowanie polecam współpracę.",
-      author: "Marek Nowak",
-      stars: 5,
-      link: "https://www.google.com/maps/place/Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach/"
-    },
-    {
-      text: "Świetne wyczucie przekazu i bardzo estetyczne wykonanie animacji. Wszystko zostało przygotowane z dużą starannością.",
-      author: "Krzysztof Wiśniewski",
-      stars: 5,
-      link: "https://www.google.com/maps/place/Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach/"
-    },
-    {
-      text: "Profesjonalne podejście, duża kreatywność i bardzo dobry kontakt na każdym etapie realizacji.",
-      author: "Joanna Maj",
-      stars: 5,
-      link: "https://www.google.com/maps/place/Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach/"
-    }
-  ];
-
-  if (!reviewTrack) return;
-
-  reviewTrack.innerHTML = reviews.map((review) => `
-    <article class="review-slide">
-      <div class="review-card">
-        <div class="review-card__stars" aria-label="${review.stars} z 5 gwiazdek">${"★".repeat(review.stars)}</div>
-        <p class="review-card__text">${review.text}</p>
-        <p class="review-card__author">${review.author}</p>
-        <a class="review-card__link" href="${review.link}" target="_blank" rel="noopener noreferrer">
-          Zobacz opinię w Google
-        </a>
-      </div>
-    </article>
-  `).join("");
-
-  const reviewSlides = Array.from(reviewCarousel.querySelectorAll(".review-slide"));
-
-  let reviewIndex = 0;
-  let reviewInterval = null;
-
-  const showReview = (index) => {
-    if (!reviewSlides.length) return;
-    reviewIndex = (index + reviewSlides.length) % reviewSlides.length;
-    reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
-  };
-
-  const stopReviewAutoplay = () => {
-    if (reviewInterval) {
-      clearInterval(reviewInterval);
-      reviewInterval = null;
-    }
-  };
-
-  const startReviewAutoplay = () => {
-    stopReviewAutoplay();
-    reviewInterval = setInterval(() => {
-      showReview(reviewIndex + 1);
-    }, 4000);
-  };
-
-  if (reviewPrev) {
-    reviewPrev.addEventListener("click", () => {
-      showReview(reviewIndex - 1);
-      startReviewAutoplay();
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburgerBtn.classList.remove("active");
+        mobileMenu.classList.remove("active");
+        hamburgerBtn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+      });
     });
   }
 
-  if (reviewNext) {
-    reviewNext.addEventListener("click", () => {
-      showReview(reviewIndex + 1);
-      startReviewAutoplay();
-    });
+  const yearEl = document.getElementById("year");
+  if (yearEl) {
+    yearEl.textContent = new Date().getFullYear();
   }
 
-  reviewCarousel.addEventListener("mouseenter", stopReviewAutoplay);
-  reviewCarousel.addEventListener("mouseleave", startReviewAutoplay);
+  const reviewCarousel = document.querySelector(".review-carousel");
+  if (reviewCarousel) {
+    const reviewTrack = reviewCarousel.querySelector(".review-carousel__track");
+    const reviewPrev = reviewCarousel.querySelector(".review-carousel__arrow--prev");
+    const reviewNext = reviewCarousel.querySelector(".review-carousel__arrow--next");
 
-  showReview(0);
-  startReviewAutoplay();
-}
+    const reviews = [
+      {
+        image: "/cj-miles.jpg",
+        text: "Bardzo dobre źródło do projektów animacyjnych. Paweł bardzo pomógł mi przy jednym z moich projektów, który został bardzo dobrze przyjęty. Zdecydowanie polecam jego kreatywność i wnikliwość, świetną komunikację oraz pracowitość wszystkim.",
+        author: "cj miles",
+        stars: 5,
+        link: "https://www.google.com/maps/place/Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach/"
+      },
+      {
+        text: "Bardzo dobra komunikacja, terminowość i świetny efekt końcowy. Zdecydowanie polecam współpracę.",
+        author: "Marek Nowak",
+        stars: 5,
+        link: "https://www.google.com/maps/place/Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach/"
+      },
+      {
+        text: "Świetne wyczucie przekazu i bardzo estetyczne wykonanie animacji. Wszystko zostało przygotowane z dużą starannością.",
+        author: "Krzysztof Wiśniewski",
+        stars: 5,
+        link: "https://www.google.com/maps/place/Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach/"
+      },
+      {
+        text: "Profesjonalne podejście, duża kreatywność i bardzo dobry kontakt na każdym etapie realizacji.",
+        author: "Joanna Maj",
+        stars: 5,
+        link: "https://www.google.com/maps/place/Samuel+Studio+%E2%80%93+Filmy+Animowane+i+Animacje+2D,+3D+w+Kielcach/"
+      }
+    ];
 
-      const processCarousel = document.querySelector(".process-carousel");
-      if (processCarousel) {
-        const processTrack = processCarousel.querySelector(".process-carousel__track");
-        const processSlides = Array.from(processCarousel.querySelectorAll(".process-step"));
-        const processPrev = processCarousel.querySelector(".process-carousel__nav--prev");
-        const processNext = processCarousel.querySelector(".process-carousel__nav--next");
+    if (!reviewTrack) return;
 
-        let processIndex = 0;
+    reviewTrack.innerHTML = reviews.map((review) => `
+      <article class="review-slide">
+        <div class="review-card">
+          <div class="review-card__stars" aria-label="${review.stars} z 5 gwiazdek">${"★".repeat(review.stars)}</div>
+          <p class="review-card__text">${review.text}</p>
+          <p class="review-card__author">${review.author}</p>
+          <a class="review-card__link" href="${review.link}" target="_blank" rel="noopener noreferrer">
+            Zobacz opinię w Google
+          </a>
+        </div>
+      </article>
+    `).join("");
 
-        const showProcessSlide = (index) => {
-          if (!processSlides.length || !processTrack) return;
-          processIndex = (index + processSlides.length) % processSlides.length;
-          processTrack.style.transform = `translateX(-${processIndex * 100}%)`;
-        };
+    const reviewSlides = Array.from(reviewCarousel.querySelectorAll(".review-slide"));
 
-        if (processPrev) {
-          processPrev.addEventListener("click", () => {
-            if (window.innerWidth <= 768) {
-              showProcessSlide(processIndex - 1);
-            }
-          });
-        }
+    let reviewIndex = 0;
+    let reviewInterval = null;
 
-        if (processNext) {
-          processNext.addEventListener("click", () => {
-            if (window.innerWidth <= 768) {
-              showProcessSlide(processIndex + 1);
-            }
-          });
-        }
+    const showReview = (index) => {
+      if (!reviewSlides.length) return;
+      reviewIndex = (index + reviewSlides.length) % reviewSlides.length;
+      reviewTrack.style.transform = `translateX(-${reviewIndex * 100}%)`;
+    };
 
-        document.addEventListener("keydown", (e) => {
-          if (window.innerWidth > 768) return;
-          if (e.key === "ArrowLeft") showProcessSlide(processIndex - 1);
-          if (e.key === "ArrowRight") showProcessSlide(processIndex + 1);
-        });
+    const stopReviewAutoplay = () => {
+      if (reviewInterval) {
+        clearInterval(reviewInterval);
+        reviewInterval = null;
+      }
+    };
 
-        window.addEventListener("resize", () => {
-          if (window.innerWidth > 768) {
-            processTrack.style.transform = "none";
-          } else {
-            showProcessSlide(processIndex);
-          }
-        });
+    const startReviewAutoplay = () => {
+      stopReviewAutoplay();
+      reviewInterval = setInterval(() => {
+        showReview(reviewIndex + 1);
+      }, 4000);
+    };
 
+    if (reviewPrev) {
+      reviewPrev.addEventListener("click", () => {
+        showReview(reviewIndex - 1);
+        startReviewAutoplay();
+      });
+    }
+
+    if (reviewNext) {
+      reviewNext.addEventListener("click", () => {
+        showReview(reviewIndex + 1);
+        startReviewAutoplay();
+      });
+    }
+
+    reviewCarousel.addEventListener("mouseenter", stopReviewAutoplay);
+    reviewCarousel.addEventListener("mouseleave", startReviewAutoplay);
+
+    showReview(0);
+    startReviewAutoplay();
+  }
+
+  const processCarousel = document.querySelector(".process-carousel");
+  if (processCarousel) {
+    const processTrack = processCarousel.querySelector(".process-carousel__track");
+    const processSlides = Array.from(processCarousel.querySelectorAll(".process-step"));
+    const processPrev = processCarousel.querySelector(".process-carousel__nav--prev");
+    const processNext = processCarousel.querySelector(".process-carousel__nav--next");
+
+    let processIndex = 0;
+
+    const showProcessSlide = (index) => {
+      if (!processSlides.length || !processTrack) return;
+      processIndex = (index + processSlides.length) % processSlides.length;
+      processTrack.style.transform = `translateX(-${processIndex * 100}%)`;
+    };
+
+    if (processPrev) {
+      processPrev.addEventListener("click", () => {
         if (window.innerWidth <= 768) {
-          showProcessSlide(0);
+          showProcessSlide(processIndex - 1);
         }
+      });
+    }
+
+    if (processNext) {
+      processNext.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          showProcessSlide(processIndex + 1);
+        }
+      });
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (window.innerWidth > 768) return;
+      if (e.key === "ArrowLeft") showProcessSlide(processIndex - 1);
+      if (e.key === "ArrowRight") showProcessSlide(processIndex + 1);
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        processTrack.style.transform = "none";
+      } else {
+        showProcessSlide(processIndex);
       }
+    });
 
-      const portfolioCards = document.querySelectorAll(".portfolio-card");
+    if (window.innerWidth <= 768) {
+      showProcessSlide(0);
+    }
+  }
 
-      portfolioCards.forEach((card) => {
+  const portfolioCards = document.querySelectorAll(".portfolio-card");
+
+  portfolioCards.forEach((card) => {
+    const video = card.querySelector("video");
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("autoplay", "");
+    video.setAttribute("preload", "metadata");
+  });
+
+  const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  if (isDesktopHover) {
+    portfolioCards.forEach((card) => {
+      const video = card.querySelector("video");
+      if (!video) return;
+
+      card.addEventListener("mouseenter", () => {
+        video.play().catch(() => {});
+      });
+
+      card.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  }
+
+  if (isTouchDevice) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const card = entry.target;
         const video = card.querySelector("video");
         if (!video) return;
 
-        video.muted = true;
-        video.defaultMuted = true;
-        video.playsInline = true;
-
-        video.setAttribute("muted", "");
-        video.setAttribute("playsinline", "");
-        video.setAttribute("autoplay", "");
-        video.setAttribute("preload", "metadata");
-      });
-
-      const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-      const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
-
-      if (isDesktopHover) {
-        portfolioCards.forEach((card) => {
-          const video = card.querySelector("video");
-          if (!video) return;
-
-          card.addEventListener("mouseenter", () => {
-            video.play().catch(() => {});
-          });
-
-          card.addEventListener("mouseleave", () => {
-            video.pause();
-            video.currentTime = 0;
-          });
-        });
-      }
-
-      if (isTouchDevice) {
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            const card = entry.target;
-            const video = card.querySelector("video");
-            if (!video) return;
-
-            if (entry.isIntersecting) {
-              card.classList.add("is-visible");
-              video.play().catch(() => {});
-            } else {
-              card.classList.remove("is-visible");
-              video.pause();
-              video.currentTime = 0;
-            }
-          });
-        }, {
-          threshold: 0.35
-        });
-
-        portfolioCards.forEach((card) => {
-          const video = card.querySelector("video");
-          if (!video) return;
-          video.load();
-          observer.observe(card);
-        });
-      }
-
-      const banner = document.getElementById("cookie-banner");
-      const acceptBtn = document.getElementById("cookie-accept");
-      const declineBtn = document.getElementById("cookie-decline");
-
-      if (banner && acceptBtn && declineBtn) {
-        if (!localStorage.getItem("cookiesDecision")) {
-          banner.classList.add("show");
-        }
-
-        acceptBtn.addEventListener("click", () => {
-          localStorage.setItem("cookiesDecision", "accepted");
-          banner.classList.remove("show");
-        });
-
-        declineBtn.addEventListener("click", () => {
-          localStorage.setItem("cookiesDecision", "declined");
-          banner.classList.remove("show");
-        });
-      }
-
-      const myVideo = document.getElementById("myVideo");
-      if (myVideo) {
-        myVideo.playbackRate = 1;
-
-        myVideo.addEventListener("timeupdate", () => {
-          if (myVideo.currentTime >= 5 && myVideo.currentTime < 9) {
-            myVideo.currentTime = 10;
-          }
-
-          if (myVideo.currentTime >= 14) {
-            myVideo.currentTime = 3;
-          }
-        });
-      }
-
-      const showreelWrap = document.querySelector(".hero-showreel");
-      const showreelVideo = showreelWrap?.querySelector(".hero-showreel__video");
-
-      if (showreelWrap && showreelVideo) {
-        const startShowreel = () => {
-          if (showreelVideo.dataset.loaded) return;
-          showreelVideo.dataset.loaded = "1";
-
-          const src = showreelVideo.dataset.src;
-          if (!src) return;
-
-          showreelVideo.src = src;
-
-          showreelVideo.addEventListener("loadeddata", () => {
-            showreelWrap.classList.add("is-loaded");
-            showreelVideo.play().catch(() => {});
-          }, { once: true });
-
-          showreelVideo.load();
-        };
-
-        if ("requestIdleCallback" in window) {
-          requestIdleCallback(startShowreel, { timeout: 1500 });
+        if (entry.isIntersecting) {
+          card.classList.add("is-visible");
+          video.play().catch(() => {});
         } else {
-          setTimeout(startShowreel, 400);
+          card.classList.remove("is-visible");
+          video.pause();
+          video.currentTime = 0;
         }
-      }
-
-      const heroSection = document.querySelector(".section--hero#video");
-      const heroBgVideo = heroSection?.querySelector(".hero-video");
-      const heroPoster = heroSection?.querySelector(".hero-poster");
-
-      if (heroSection && heroBgVideo && heroPoster) {
-        const startHeroBg = () => {
-          if (heroBgVideo.dataset.loaded) return;
-          heroBgVideo.dataset.loaded = "1";
-
-          const src = heroBgVideo.dataset.src;
-          if (!src) return;
-
-          heroBgVideo.src = src;
-
-          heroBgVideo.addEventListener("loadeddata", () => {
-            heroBgVideo.style.display = "block";
-            heroPoster.style.display = "none";
-            heroBgVideo.play().catch(() => {});
-          }, { once: true });
-
-          heroBgVideo.load();
-        };
-
-        requestAnimationFrame(() => setTimeout(startHeroBg, 50));
-      }
-
-      const introVideo = document.getElementById("mainVideo");
-      if (introVideo) {
-        introVideo.addEventListener("ended", () => {
-          if (switched) {
-            resetToIntro();
-          }
-        });
-      }
+      });
+    }, {
+      threshold: 0.35
     });
 
-    let switched = false;
-
-    function resetToIntro() {
-      const video = document.getElementById("mainVideo");
-      const btn = document.querySelector(".video-btn");
-
-      if (!video || !btn) return;
-
-      video.pause();
-      video.src = "czy-to-twoja-historia-animowany-text.mp4";
-      video.loop = true;
-      video.muted = true;
-      video.currentTime = 0;
+    portfolioCards.forEach((card) => {
+      const video = card.querySelector("video");
+      if (!video) return;
       video.load();
-      video.play().catch(() => {});
+      observer.observe(card);
+    });
+  }
 
-      btn.textContent = "▶";
-      switched = false;
+  const banner = document.getElementById("cookie-banner");
+  const acceptBtn = document.getElementById("cookie-accept");
+  const declineBtn = document.getElementById("cookie-decline");
+
+  if (banner && acceptBtn && declineBtn) {
+    if (!localStorage.getItem("cookiesDecision")) {
+      banner.classList.add("show");
     }
 
-    function changeVideo() {
-      const video = document.getElementById("mainVideo");
-      const btn = document.querySelector(".video-btn");
+    acceptBtn.addEventListener("click", () => {
+      localStorage.setItem("cookiesDecision", "accepted");
+      banner.classList.remove("show");
+    });
 
-      if (!video || !btn) return;
+    declineBtn.addEventListener("click", () => {
+      localStorage.setItem("cookiesDecision", "declined");
+      banner.classList.remove("show");
+    });
+  }
 
-      if (switched) {
-        if (video.paused) {
-          video.play().catch(() => {});
-          btn.textContent = "⏸";
-        } else {
-          video.pause();
-          btn.textContent = "▶";
-        }
-        return;
+  const myVideo = document.getElementById("myVideo");
+  if (myVideo) {
+    myVideo.playbackRate = 1;
+
+    myVideo.addEventListener("timeupdate", () => {
+      if (myVideo.currentTime >= 5 && myVideo.currentTime < 9) {
+        myVideo.currentTime = 10;
       }
 
-      video.pause();
-      video.removeAttribute("autoplay");
-      video.src = "video2.mp4";
-      video.loop = false;
-      video.muted = false;
-      video.volume = 0.6;
-      video.currentTime = 0;
-      video.load();
-      video.play().catch(() => {});
-      btn.textContent = "⏸";
-      switched = true;
+      if (myVideo.currentTime >= 14) {
+        myVideo.currentTime = 3;
+      }
+    });
+  }
+
+  const showreelWrap = document.querySelector(".hero-showreel");
+  const showreelVideo = showreelWrap?.querySelector(".hero-showreel__video");
+
+  if (showreelWrap && showreelVideo) {
+    const startShowreel = () => {
+      if (showreelVideo.dataset.loaded) return;
+      showreelVideo.dataset.loaded = "1";
+
+      const src = showreelVideo.dataset.src;
+      if (!src) return;
+
+      showreelVideo.src = src;
+
+      showreelVideo.addEventListener("loadeddata", () => {
+        showreelWrap.classList.add("is-loaded");
+        showreelVideo.play().catch(() => {});
+      }, { once: true });
+
+      showreelVideo.load();
+    };
+
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(startShowreel, { timeout: 1500 });
+    } else {
+      setTimeout(startShowreel, 400);
     }
+  }
+
+  const heroSection = document.querySelector(".section--hero#video");
+  const heroBgVideo = heroSection?.querySelector(".hero-video");
+  const heroPoster = heroSection?.querySelector(".hero-poster");
+
+  if (heroSection && heroBgVideo && heroPoster) {
+    const startHeroBg = () => {
+      if (heroBgVideo.dataset.loaded) return;
+      heroBgVideo.dataset.loaded = "1";
+
+      const src = heroBgVideo.dataset.src;
+      if (!src) return;
+
+      heroBgVideo.src = src;
+
+      heroBgVideo.addEventListener("loadeddata", () => {
+        heroBgVideo.style.display = "block";
+        heroPoster.style.display = "none";
+        heroBgVideo.play().catch(() => {});
+      }, { once: true });
+
+      heroBgVideo.load();
+    };
+
+    requestAnimationFrame(() => setTimeout(startHeroBg, 50));
+  }
+
+  const introVideo = document.getElementById("mainVideo");
+  const introVideoWrap = introVideo?.closest(".video-wrapper");
+  const introVideoBtn = introVideoWrap?.querySelector(".video-btn");
+  const isTouchVideoDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  let controlsHideTimer = null;
+
+  const showVideoControls = () => {
+    if (!introVideoWrap) return;
+    introVideoWrap.classList.add("is-controls-visible");
+  };
+
+  const hideVideoControls = () => {
+    if (!introVideoWrap) return;
+    introVideoWrap.classList.remove("is-controls-visible");
+  };
+
+  const scheduleHideVideoControls = () => {
+    if (!isTouchVideoDevice) return;
+    clearTimeout(controlsHideTimer);
+    controlsHideTimer = setTimeout(() => {
+      if (introVideo && !introVideo.paused && switched) {
+        hideVideoControls();
+      }
+    }, 1800);
+  };
+
+  const syncVideoButtonState = () => {
+    if (!introVideo || !introVideoWrap || !introVideoBtn) return;
+
+    if (!switched || introVideo.paused) {
+      introVideoWrap.classList.add("is-paused");
+      introVideoWrap.classList.remove("is-playing");
+      introVideoBtn.textContent = "▶";
+      introVideoBtn.setAttribute("aria-label", "Odtwórz wideo");
+      showVideoControls();
+      return;
+    }
+
+    introVideoWrap.classList.remove("is-paused");
+    introVideoWrap.classList.add("is-playing");
+    introVideoBtn.textContent = "⏸";
+    introVideoBtn.setAttribute("aria-label", "Zatrzymaj wideo");
+
+    if (isTouchVideoDevice) {
+      scheduleHideVideoControls();
+    } else {
+      hideVideoControls();
+    }
+  };
+
+  if (introVideo) {
+    introVideo.addEventListener("play", syncVideoButtonState);
+    introVideo.addEventListener("pause", syncVideoButtonState);
+
+    introVideo.addEventListener("ended", () => {
+      if (switched) {
+        resetToIntro();
+      }
+    });
+  }
+
+  if (introVideoWrap && introVideoBtn) {
+    if (isTouchVideoDevice) {
+      introVideoWrap.addEventListener("click", (e) => {
+        if (e.target.closest(".video-btn")) return;
+        if (!switched || introVideo.paused) return;
+
+        if (introVideoWrap.classList.contains("is-controls-visible")) {
+          hideVideoControls();
+        } else {
+          showVideoControls();
+          scheduleHideVideoControls();
+        }
+      });
+    } else {
+      introVideoWrap.addEventListener("mouseenter", () => {
+        if (switched && introVideo && !introVideo.paused) {
+          showVideoControls();
+        }
+      });
+
+      introVideoWrap.addEventListener("mouseleave", () => {
+        if (switched && introVideo && !introVideo.paused) {
+          hideVideoControls();
+        }
+      });
+    }
+
+    syncVideoButtonState();
+  }
+});
+
+let switched = false;
+
+function resetToIntro() {
+  const video = document.getElementById("mainVideo");
+  const btn = document.querySelector(".video-btn");
+  const wrap = video?.closest(".video-wrapper");
+
+  if (!video || !btn || !wrap) return;
+
+  video.pause();
+  video.src = "czy-to-twoja-historia-animowany-text.mp4";
+  video.loop = true;
+  video.muted = true;
+  video.currentTime = 0;
+  video.load();
+  video.play().catch(() => {});
+
+  switched = false;
+
+  wrap.classList.add("is-paused");
+  wrap.classList.remove("is-playing", "is-controls-visible");
+  btn.textContent = "▶";
+  btn.setAttribute("aria-label", "Odtwórz wideo");
+}
+
+function changeVideo(event) {
+  if (event) {
+    event.stopPropagation();
+  }
+
+  const video = document.getElementById("mainVideo");
+  const btn = document.querySelector(".video-btn");
+  const wrap = video?.closest(".video-wrapper");
+  const isTouchVideoDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  if (!video || !btn || !wrap) return;
+
+  if (switched) {
+    if (video.paused) {
+      video.play().catch(() => {});
+      wrap.classList.remove("is-paused");
+      wrap.classList.add("is-playing");
+
+      if (isTouchVideoDevice) {
+        wrap.classList.add("is-controls-visible");
+        setTimeout(() => {
+          if (!video.paused) {
+            wrap.classList.remove("is-controls-visible");
+          }
+        }, 1800);
+      } else {
+        wrap.classList.remove("is-controls-visible");
+      }
+    } else {
+      video.pause();
+      wrap.classList.add("is-paused");
+      wrap.classList.remove("is-playing");
+      wrap.classList.add("is-controls-visible");
+    }
+    return;
+  }
+
+  video.pause();
+  video.removeAttribute("autoplay");
+  video.src = "video2.mp4";
+  video.loop = false;
+  video.muted = false;
+  video.volume = 0.6;
+  video.currentTime = 0;
+  video.load();
+  video.play().catch(() => {});
+
+  switched = true;
+  wrap.classList.remove("is-paused");
+  wrap.classList.add("is-playing");
+
+  if (isTouchVideoDevice) {
+    wrap.classList.add("is-controls-visible");
+    setTimeout(() => {
+      if (!video.paused) {
+        wrap.classList.remove("is-controls-visible");
+      }
+    }, 1800);
+  } else {
+    wrap.classList.remove("is-controls-visible");
+  }
+}
   </script>
 
 </body>
