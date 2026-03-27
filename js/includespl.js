@@ -13,11 +13,11 @@
   }
 
   // Footer
-  await inject("site-footer", "/footerpl.html");
+  await inject("site-footer", "/pl/footer.html");
   initFooterAccordion();
 
   // Opinie
-  await inject("opinie", "/opinie.html");
+  await inject("opinie", "/pl/opinie.html");
 
   // Karuzela opinii
   initReviewCarousel();

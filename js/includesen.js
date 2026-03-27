@@ -14,7 +14,7 @@
   }
 
   // FOOTER
-  await inject("site-footer", "/footer.html");
+  await inject("site-footer", "/en/footer.html");
   initFooterAccordion();
 
   // REVIEWS

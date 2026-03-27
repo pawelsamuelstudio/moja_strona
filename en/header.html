@@ -1,0 +1,76 @@
+
+  
+  <header id="mainHeader">
+    <div class="logo-container">
+      <a href="/indexen.html">
+  <img src="/logosamuelstudio.svg" alt="Logo">
+</a>
+      </a>
+    </div>
+
+ <nav class="center-links">
+    <a href="/indexen.html">Home</a>
+    <a href="/work.html">Work</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+    <a href="https://blog.samuelstudio.com/">Blog</a>
+
+    <a href="/indexpl.html" title="Polska wersja" class="lang-switch">
+      <img src="/plflag.svg" alt="Polska wersja" style="width:35px; vertical-align:middle;">
+    </a>
+  </nav>
+
+  <div class="hamburger" id="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/indexen.html">Home</a>
+  <a href="/work.html">Work</a>
+  <a href="/about.html">About</a>
+  <a href="/contact.html">Contact</a>
+  <a href="https://blog.samuelstudio.com/">Blog</a>
+
+  <a href="/indexpl.html" title="Polska wersja" class="lang-switch">
+    <img src="/plflag.svg" alt="Polska wersja" style="width:35px; vertical-align:middle;">
+  </a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("mainHeader");
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+    let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+  const headerHeight = header.offsetHeight; 
+
+  if (currentScroll > lastScroll && currentScroll > 60) {
+    header.style.transform = `translateY(-${headerHeight + 5}px)`;
+  } else {
+    header.style.transform = "translateY(0)";
+  }
+
+  lastScroll = currentScroll;
+});
+
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mobileMenu.classList.toggle("active");
+    });
+
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove("active");
+        mobileMenu.classList.remove("active");
+      });
+    });
+  });
+</script>
+
+

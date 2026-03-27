@@ -1,55 +1,56 @@
 <!DOCTYPE html>
 <html lang="x-default">
 <head>
-<meta charset="UTF-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, follow">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex, follow">
+  <title>Samuel Studio - 2D & 3D Animation</title>
 
-<title>Samuel Studio - 2D & 3D Animation</title>
+  <meta name="description" content="2D & 3D animation: promotional videos, explainers and short stories. Samuel Studio — Paweł Pauksztełło.">
 
-<meta name="description" content="2D & 3D animation: promotional videos, explainers and short stories. Samuel Studio — Paweł Pauksztełło.">
+  <link rel="canonical" href="https://samuelstudio.com/">
 
-<link rel="canonical" href="https://samuelstudio.com/" />
+  <link rel="alternate" hreflang="pl" href="https://samuelstudio.com/pl/">
+  <link rel="alternate" hreflang="en" href="https://samuelstudio.com/en/">
+  <link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/">
 
-<link rel="alternate" hreflang="pl" href="https://samuelstudio.com/indexpl.html">
-<link rel="alternate" hreflang="en" href="https://samuelstudio.com/indexen.html">
-<link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/">
+  <link rel="icon" href="/favicon.ico">
 
-<link rel="icon" href="/favicon.ico">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://samuelstudio.com/">
+  <meta property="og:title" content="Samuel Studio - 2D & 3D Animation">
+  <meta property="og:description" content="Promotional videos, explainers and short stories in 2D & 3D.">
+  <meta property="og:image" content="https://samuelstudio.com/samuel-studio-og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://samuelstudio.com/">
-<meta property="og:title" content="Samuel Studio - 2D & 3D Animation">
-<meta property="og:description" content="Promotional videos, explainers and short stories in 2D & 3D.">
-<meta property="og:image" content="https://samuelstudio.com/samuel-studio-og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Samuel Studio - 2D & 3D Animation">
+  <meta name="twitter:description" content="Promotional videos, explainers and short stories in 2D & 3D.">
+  <meta name="twitter:image" content="https://samuelstudio.com/samuel-studio-og-image.jpg">
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Samuel Studio - 2D & 3D Animation">
-<meta name="twitter:description" content="Promotional videos, explainers and short stories in 2D & 3D.">
-<meta name="twitter:image" content="https://samuelstudio.com/samuel-studio-og-image.jpg">
+  <script>
+    const userLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
 
-<script>
-const userLang = navigator.language || navigator.userLanguage;
+    if (userLang.startsWith("pl")) {
+      window.location.replace("/pl/");
+    } else {
+      window.location.replace("/en/");
+    }
+  </script>
 
-if (userLang.startsWith("pl")) {
-  window.location.href = "/indexpl.html";
-} else {
-  window.location.href = "/indexen.html";
-}
-</script>
-
-<noscript>
-<meta http-equiv="refresh" content="0; url=/indexen.html">
-</noscript>
-
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/en/">
+  </noscript>
 </head>
-
 <body>
-<p>Redirecting...</p>
+  <p>
+    Redirecting...<br>
+    <a href="/pl/">Polski</a><br>
+    <a href="/en/">English</a>
+  </p>
 </body>
 </html>

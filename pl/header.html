@@ -1,0 +1,79 @@
+<header id="mainHeader">
+  <div class="logo-container">
+    <a href="/pl/">
+      <img src="/logosamuelstudio.svg" alt="Logo">
+    </a>
+  </div>
+
+  <nav class="center-links">
+    <a href="/pl/">Strona główna</a>
+    <a href="/pl/realizacje/">Realizacje</a>
+    <a href="/pl/o-mnie/">O mnie</a>
+    <a href="/pl/kontakt/">Kontakt</a>
+    <a href="https://blog.samuelstudio.pl/">Blog</a>
+
+    <a href="/en/" title="Angielska wersja" class="lang-switch">
+      <img src="/ukflag.svg" alt="Angielska wersja" style="width:35px; vertical-align:middle;">
+    </a>
+  </nav>
+
+  <button class="hamburger" id="hamburgerBtn" type="button" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobileMenu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/pl/">Strona główna</a>
+  <a href="/pl/realizacje/">Realizacje</a>
+  <a href="/pl/o-mnie/">O mnie</a>
+  <a href="/pl/kontakt/">Kontakt</a>
+  <a href="https://blog.samuelstudio.pl/">Blog</a>
+
+  <a href="/en/" title="Angielska wersja" class="lang-switch">
+    <img src="/ukflag.svg" alt="Angielska wersja" style="width:35px; vertical-align:middle;">
+  </a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const header = document.getElementById("mainHeader");
+    const hamburgerBtn = document.getElementById("hamburgerBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    let lastScroll = 0;
+
+    if (header) {
+      window.addEventListener("scroll", () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const headerHeight = header.offsetHeight;
+
+        if (currentScroll > lastScroll && currentScroll > 60) {
+          header.style.transform = `translateY(-${headerHeight + 5}px)`;
+        } else {
+          header.style.transform = "translateY(0)";
+        }
+
+        lastScroll = currentScroll;
+      });
+    }
+
+    if (hamburgerBtn && mobileMenu) {
+      hamburgerBtn.addEventListener("click", () => {
+        const isActive = hamburgerBtn.classList.toggle("active");
+        mobileMenu.classList.toggle("active", isActive);
+        hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+        document.body.style.overflow = isActive ? "hidden" : "";
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          hamburgerBtn.classList.remove("active");
+          mobileMenu.classList.remove("active");
+          hamburgerBtn.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        });
+      });
+    }
+  });
+</script>
