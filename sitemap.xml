@@ -1,144 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <url>
-    <loc>https://samuelstudio.com/</loc>
-  </url>
+  <!-- HOME -->
+  <url><loc>https://samuelstudio.com/</loc></url>
 
-  <url>
-    <loc>https://samuelstudio.com/indexpl.html</loc>
-  </url>
+  <!-- LANDING PAGES -->
+  <url><loc>https://samuelstudio.com/pl/animacja-chrzescijanska/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/wizualizacje-produktowe-3d/</loc></url>
+  <url><loc>https://samuelstudio.com/en/3d-product-visualization/</loc></url>
+  <url><loc>https://samuelstudio.com/en/christian-animation/</loc></url>
 
-  <url>
-    <loc>https://samuelstudio.com/indexen.html</loc>
-  </url>
+  <!-- EN -->
+  <url><loc>https://samuelstudio.com/en/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/</loc></url>
+  <url><loc>https://samuelstudio.com/en/about/</loc></url>
+  <url><loc>https://samuelstudio.com/en/contact/</loc></url>
 
-  <url>
-    <loc>https://samuelstudio.com/realizacje</loc>
-  </url>
+  <url><loc>https://samuelstudio.com/en/work/3d-speaker/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/4-eco/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/church-of-the-holy-spirit/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/cosmos/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/gospel/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/nikifor/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/panam-in-kielce/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/puppeteer/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/thomas-apostol/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/trileas-animation-logo/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/view-of-checiny/</loc></url>
+  <url><loc>https://samuelstudio.com/en/work/worship-in-the-city-center-2022/</loc></url>
 
-  <url>
-    <loc>https://samuelstudio.com/work</loc>
-  </url>
+  <!-- PL -->
+  <url><loc>https://samuelstudio.com/pl/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/o-mnie/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/kontakt/</loc></url>
 
-  <url>
-    <loc>https://samuelstudio.com/omnie.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/kontakt.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/about.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/contact.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/christian-animation</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/animacja-chrzescijanska</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/worship.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/puppeter.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/thomas.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/church.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/nikifor.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/kosmos.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/4eco.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/panama.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/checiny.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/trileas.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/gospel.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/work/modern3d.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/worshippl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/puppeterpl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/thomaspl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/churchpl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/nikiforpl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/kosmospl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/4ecopl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/panamapl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/checinypl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/trileaspl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/gospelpl.html</loc>
-  </url>
-
-  <url>
-    <loc>https://samuelstudio.com/realizacje/modern3dpl.html</loc>
-  </url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/glosnik-3d/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/4-eco/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/kosciol-ducha-swietego/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/kosmos/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/gospel/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/nikifor/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/panama-w-kielcach/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/puppeteer/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/tomasz-apostol/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/trileas-animacja-logo/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/widok-checin/</loc></url>
+  <url><loc>https://samuelstudio.com/pl/realizacje/uwielbienie-w-centrum-miasta-2022/</loc></url>
 
 </urlset>
