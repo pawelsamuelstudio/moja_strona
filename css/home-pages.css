@@ -1528,3 +1528,41 @@ select {
     opacity: 1;
   }
 }
+
+/* =========================================
+   FEATURED / WIDE CARD
+   ========================================= */
+
+.gallery-grid.card-grid--3 {
+  grid-auto-flow: dense;
+}
+
+/* karta zajmuje 2 kolumny */
+.portfolio-card--wide {
+  grid-column: span 2;
+}
+
+/* inne proporcje dla szerokiej miniatury */
+.portfolio-card--wide .portfolio-card__media {
+  aspect-ratio: 16 / 9;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 1024px) {
+  .portfolio-card--wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-card--wide {
+    grid-column: span 1;
+  }
+
+  .portfolio-card--wide .portfolio-card__media {
+    aspect-ratio: 4 / 3;
+  }
+}
