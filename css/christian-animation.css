@@ -757,3 +757,36 @@ select {
     font-size: 1.7rem;
   }
 }
+/* pionowa karta wideo */
+.video-card--short {
+  max-width: 420px;
+  margin-inline: auto;
+}
+
+.video-card--short .video-embed {
+  aspect-ratio: 9 / 16;
+  max-height: 746px;
+}
+
+.video-card--short .video-embed__poster,
+.video-card--short video,
+.video-card--short iframe,
+.video-card--short .video-embed__button {
+  width: 100%;
+  height: 100%;
+}
+
+.video-card--short .video-embed__poster,
+.video-card--short video {
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .video-card--short {
+    max-width: 100%;
+  }
+
+  .video-card--short .video-embed {
+    max-height: none;
+  }
+}
