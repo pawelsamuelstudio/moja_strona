@@ -256,12 +256,12 @@
             </div>
           </article>
 
-    <article class="video-card video-card--short">
+<article class="video-card video-card--short">
   <div
     class="video-embed video-embed--lite video-embed--local video-embed--short"
     data-video-src="/12-chrzescijanskie-granie-festiwal.mp4"
     data-video-type="video/mp4"
-    data-poster-candidates='["/chrzescijanskie-granie-festiwal.jpg"]'
+    data-poster-candidates='["/12-chrzescijanskie-granie-animated-cover.jpg"]'
     aria-label="Odtwórz wideo: Chrześcijańskie Granie Festiwal"
   >
     <button
@@ -601,5 +601,75 @@
       });
     });
   </script>
+  <script>
+document.querySelectorAll(".video-embed--local").forEach((embed) => {
+  const button = embed.querySelector(".video-embed__button");
+  const poster = embed.querySelector(".video-embed__poster");
+  const videoSrc = embed.dataset.videoSrc;
+  const videoType = embed.dataset.videoType || "video/mp4";
+  const label = button?.getAttribute("aria-label") || "Odtwarzacz wideo";
+
+  if (!button || !videoSrc || !poster) return;
+
+  let posterCandidates = [];
+  try {
+    posterCandidates = JSON.parse(embed.dataset.posterCandidates || "[]");
+  } catch (e) {
+    posterCandidates = [];
+    console.error("Błąd data-poster-candidates:", e);
+  }
+
+  const loadPoster = (index = 0) => {
+    if (!posterCandidates.length || index >= posterCandidates.length) {
+      embed.classList.add("poster-failed");
+      console.warn("Nie znaleziono miniatury dla:", videoSrc);
+      return;
+    }
+
+    const testImg = new Image();
+    testImg.onload = () => {
+      poster.src = posterCandidates[index];
+      embed.classList.add("poster-loaded");
+    };
+    testImg.onerror = () => {
+      loadPoster(index + 1);
+    };
+    testImg.src = posterCandidates[index];
+  };
+
+  loadPoster();
+
+  button.addEventListener("click", () => {
+    console.log("Próba uruchomienia wideo:", videoSrc);
+
+    const video = document.createElement("video");
+    video.controls = true;
+    video.autoplay = true;
+    video.playsInline = true;
+    video.preload = "metadata";
+    video.setAttribute("aria-label", label);
+    video.style.width = "100%";
+    video.style.height = "100%";
+    video.style.objectFit = "cover";
+    video.src = videoSrc;
+
+    embed.innerHTML = "";
+    embed.appendChild(video);
+
+    video.addEventListener("loadeddata", () => {
+      console.log("Wideo załadowane:", videoSrc);
+      video.play().catch(err => {
+        console.error("Błąd play():", err);
+      });
+    });
+
+    video.addEventListener("error", () => {
+      console.error("Błąd ładowania wideo:", videoSrc, video.error);
+    });
+
+    video.load();
+  });
+});
+</script>
 </body>
 </html>
