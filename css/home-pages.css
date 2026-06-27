@@ -524,7 +524,7 @@ select {
 
 .card-grid--problem-small .card-media img {
   width: 100%;
-  max-width: 54px;
+  max-width: 96px;
   height: auto;
   object-fit: contain;
 }
@@ -1189,7 +1189,7 @@ select {
   }
 
   .card-grid--problem-small .card-media img {
-    max-width: 50px;
+    max-width: 84px;
   }
 
   .card-grid--problem-small .card-body {
@@ -1361,7 +1361,7 @@ select {
   }
 
   .card-grid--problem-small .card-media img {
-    max-width: 44px;
+    max-width: 72px;
   }
 
   .card-grid--problem-small .card-body {
