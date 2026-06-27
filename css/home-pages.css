@@ -493,53 +493,54 @@ select {
   color: var(--color-black);
 }
 
-/* PROBLEM CARDS - 3 MNIEJSZE KAFELKI, ŻÓŁTA GÓRA + BIAŁY TEKST */
+/* PROBLEM CARDS - 3 KAFELKI, NISKIE PASKI, IKONA PO LEWEJ, TEKST PO PRAWEJ */
 .card-grid--problem-small {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
+  gap: 28px;
   align-items: stretch;
 }
 
 .card-grid--problem-small .card--problem {
   display: flex;
-  flex-direction: column;
-  min-height: auto;
+  flex-direction: row;
+  align-items: stretch;
+  min-height: 145px;
   overflow: hidden;
   border-radius: var(--radius-md);
-  background: var(--color-accent);
+  background: var(--color-white);
   box-shadow: var(--shadow-soft);
   border: 1px solid var(--color-black);
 }
 
 .card-grid--problem-small .card-media {
+  flex: 0 0 28%;
   background: var(--color-accent);
-  min-height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 32px;
+  padding: 16px;
 }
 
 .card-grid--problem-small .card-media img {
   width: 100%;
-  max-width: 150px;
+  max-width: 54px;
   height: auto;
   object-fit: contain;
 }
 
 .card-grid--problem-small .card-body {
-  background: var(--color-white);
-  padding: 24px 24px 28px;
   flex: 1;
+  background: var(--color-white);
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  padding: 18px 20px;
 }
 
 .card-grid--problem-small .card-body p {
   margin: 0;
-  font-size: clamp(1rem, 1vw, 1.15rem);
-  line-height: 1.4;
+  font-size: clamp(0.95rem, 0.9vw, 1.05rem);
+  line-height: 1.35;
   text-align: left;
   color: var(--color-black);
 }
@@ -1175,16 +1176,24 @@ select {
 
   .card-grid--problem-small {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+    gap: 22px;
+  }
+
+  .card-grid--problem-small .card--problem {
+    min-height: 135px;
   }
 
   .card-grid--problem-small .card-media {
-    min-height: 220px;
-    padding: 28px;
+    flex: 0 0 27%;
+    padding: 14px;
   }
 
   .card-grid--problem-small .card-media img {
-    max-width: 135px;
+    max-width: 50px;
+  }
+
+  .card-grid--problem-small .card-body {
+    padding: 16px 18px;
   }
 
   .top-row {
@@ -1342,21 +1351,25 @@ select {
     gap: 16px;
   }
 
+  .card-grid--problem-small .card--problem {
+    min-height: 115px;
+  }
+
   .card-grid--problem-small .card-media {
-    min-height: 150px;
-    padding: 18px;
+    flex: 0 0 24%;
+    padding: 12px;
   }
 
   .card-grid--problem-small .card-media img {
-    max-width: 95px;
+    max-width: 44px;
   }
 
   .card-grid--problem-small .card-body {
-    padding: 16px 16px 18px;
+    padding: 14px 16px;
   }
 
   .card-grid--problem-small .card-body p {
-    font-size: 0.98rem;
+    font-size: 0.96rem;
     line-height: 1.35;
   }
 
