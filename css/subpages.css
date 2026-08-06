@@ -214,3 +214,17 @@ main.subpage-content {
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .project-actions {
+    flex-direction: column;
+  }
+
+  .project-actions .btn--dark {
+    order: 1;
+  }
+
+  .project-actions .btn--light-outline {
+    order: 2;
+  }
+}
