@@ -460,6 +460,7 @@
       <div id="opinie"></div>
     </section>
 
+    <!-- AUTOMATYCZNIE POBIERANE 3 PIERWSZE REALIZACJE -->
     <section id="gallery" class="section section--accent">
       <div class="container">
         <div class="section-heading">
@@ -467,42 +468,7 @@
           <div class="section-separator section-separator--dark"></div>
         </div>
 
-        <div class="card-grid card-grid--3">
-
-          <a class="portfolio-card" href="/pl/realizacje/glosnik-3d/">
-            <div class="portfolio-card__media">
-              <img src="/assets/cover-of-3d-modern-animation_00099.jpg" alt="Projekt nowoczesnej wizualizacji" loading="lazy" decoding="async">
-              <video src="/assets/animated-cover-of-modern-3d-animation.mp4" muted loop playsinline preload="metadata"></video>
-            </div>
-            <div class="portfolio-card__body">
-              <p class="portfolio-card__title">Animacja produktowa 3D & Audio Sync</p>
-              <p class="portfolio-card__text">Jasne przedstawienie produktu, wizualizacja 3D</p>
-            </div>
-          </a>
-
-          <a class="portfolio-card" href="/pl/realizacje/gospel/">
-            <div class="portfolio-card__media">
-              <img src="/assets/The-Gospel-Explained-in-Five-Minutes.jpg" alt="Projekt BIBLE UNBOUND & Samuel Studio" loading="lazy" decoding="async">
-              <video src="/assets/The-Gospel-in-five-minutes-Cover.mp4" muted loop playsinline preload="metadata"></video>
-            </div>
-            <div class="portfolio-card__body">
-              <p class="portfolio-card__title">BIBLE UNBOUND &amp; Samuel Studio</p>
-              <p class="portfolio-card__text">5-minutowy explainer animowany (Ilustracja&nbsp;2D)</p>
-            </div>
-          </a>
-
-          <a class="portfolio-card" href="/pl/realizacje/trileas-animacja-logo/">
-            <div class="portfolio-card__media">
-              <img src="/assets/Logo-trileas-cover.png" alt="Projekt TRILEAS" loading="lazy" decoding="async">
-              <video src="/assets/Trileas-Animated-Cover.mp4" muted loop playsinline preload="metadata"></video>
-            </div>
-            <div class="portfolio-card__body">
-              <p class="portfolio-card__title">TRILEAS</p>
-              <p class="portfolio-card__text">Animacja logo & identyfikacja wizualna</p>
-            </div>
-          </a>
-
-        </div>
+        <div class="card-grid card-grid--3" id="latest-projects"></div>
 
         <div class="section-actions">
           <a href="/pl/realizacje/" class="btn btn--dark">Zobacz podobne</a>
@@ -578,6 +544,7 @@
 
   <script>
 document.addEventListener("DOMContentLoaded", () => {
+
   const hamburgerBtn = document.getElementById("hamburgerBtn");
   const mobileMenu = document.getElementById("mobileMenu");
 
@@ -600,6 +567,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const yearEl = document.getElementById("year");
+
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
@@ -607,18 +575,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const processCarousel = document.querySelector(".process-carousel");
 
   if (processCarousel) {
-    const processTrack = processCarousel.querySelector(".process-carousel__track");
-    const processSlides = Array.from(processCarousel.querySelectorAll(".process-step"));
-    const processPrev = processCarousel.querySelector(".process-carousel__nav--prev");
-    const processNext = processCarousel.querySelector(".process-carousel__nav--next");
+
+    const processTrack = processCarousel.querySelector(
+      ".process-carousel__track"
+    );
+
+    const processSlides = Array.from(
+      processCarousel.querySelectorAll(".process-step")
+    );
+
+    const processPrev = processCarousel.querySelector(
+      ".process-carousel__nav--prev"
+    );
+
+    const processNext = processCarousel.querySelector(
+      ".process-carousel__nav--next"
+    );
 
     let processIndex = 0;
 
     const showProcessSlide = (index) => {
+
       if (!processSlides.length || !processTrack) return;
 
-      processIndex = (index + processSlides.length) % processSlides.length;
-      processTrack.style.transform = `translateX(-${processIndex * 100}%)`;
+      processIndex =
+        (index + processSlides.length) % processSlides.length;
+
+      processTrack.style.transform =
+        `translateX(-${processIndex * 100}%)`;
     };
 
     if (processPrev) {
@@ -638,13 +622,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     document.addEventListener("keydown", (e) => {
+
       if (window.innerWidth > 768) return;
 
-      if (e.key === "ArrowLeft") showProcessSlide(processIndex - 1);
-      if (e.key === "ArrowRight") showProcessSlide(processIndex + 1);
+      if (e.key === "ArrowLeft") {
+        showProcessSlide(processIndex - 1);
+      }
+
+      if (e.key === "ArrowRight") {
+        showProcessSlide(processIndex + 1);
+      }
     });
 
     window.addEventListener("resize", () => {
+
       if (window.innerWidth > 768) {
         processTrack.style.transform = "none";
       } else {
@@ -657,356 +648,893 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  const portfolioCards = document.querySelectorAll(".portfolio-card");
 
-  portfolioCards.forEach((card) => {
-    const video = card.querySelector("video");
+  /* =======================================
+     OBSŁUGA KART PORTFOLIO
+     ======================================= */
 
-    if (!video) return;
+  function initPortfolioCards(parent = document) {
 
-    video.muted = true;
-    video.defaultMuted = true;
-    video.playsInline = true;
+    const portfolioCards =
+      parent.querySelectorAll(".portfolio-card");
 
-    video.setAttribute("muted", "");
-    video.setAttribute("playsinline", "");
-    video.setAttribute("autoplay", "");
-    video.setAttribute("preload", "metadata");
-  });
+    const isDesktopHover =
+      window.matchMedia(
+        "(hover: hover) and (pointer: fine)"
+      ).matches;
 
-  const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-  const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+    const isTouchDevice =
+      window.matchMedia(
+        "(hover: none), (pointer: coarse)"
+      ).matches;
 
-  if (isDesktopHover) {
+
     portfolioCards.forEach((card) => {
+
       const video = card.querySelector("video");
 
       if (!video) return;
 
-      card.addEventListener("mouseenter", () => {
-        video.play().catch(() => {});
-      });
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
 
-      card.addEventListener("mouseleave", () => {
-        video.pause();
-        video.currentTime = 0;
-      });
-    });
-  }
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("preload", "metadata");
 
-  if (isTouchDevice) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        const card = entry.target;
-        const video = card.querySelector("video");
 
-        if (!video) return;
+      if (isDesktopHover) {
 
-        if (entry.isIntersecting) {
-          card.classList.add("is-visible");
+        card.addEventListener("mouseenter", () => {
+
+          video.currentTime = 0;
+
           video.play().catch(() => {});
-        } else {
-          card.classList.remove("is-visible");
+
+        });
+
+        card.addEventListener("mouseleave", () => {
+
           video.pause();
           video.currentTime = 0;
+
+        });
+      }
+    });
+
+
+    if (isTouchDevice) {
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            const card = entry.target;
+            const video = card.querySelector("video");
+
+            if (!video) return;
+
+
+            if (entry.isIntersecting) {
+
+              card.classList.add("is-visible");
+
+              video.play().catch(() => {});
+
+            } else {
+
+              card.classList.remove("is-visible");
+
+              video.pause();
+              video.currentTime = 0;
+
+            }
+          });
+
+        },
+        {
+          threshold: 0.35
         }
+      );
+
+
+      portfolioCards.forEach((card) => {
+
+        if (card.querySelector("video")) {
+          observer.observe(card);
+        }
+
       });
-    }, {
-      threshold: 0.35
-    });
-
-    portfolioCards.forEach((card) => {
-      const video = card.querySelector("video");
-
-      if (!video) return;
-
-      video.load();
-      observer.observe(card);
-    });
+    }
   }
 
-  const banner = document.getElementById("cookie-banner");
-  const acceptBtn = document.getElementById("cookie-accept");
-  const declineBtn = document.getElementById("cookie-decline");
+
+  /* =======================================
+     POBIERANIE 3 PIERWSZYCH REALIZACJI
+     ======================================= */
+
+  async function loadLatestProjects() {
+
+    const container =
+      document.getElementById("latest-projects");
+
+    if (!container) return;
+
+
+    try {
+
+      const response =
+        await fetch("/pl/realizacje/");
+
+
+      if (!response.ok) {
+        throw new Error(
+          `HTTP ${response.status}`
+        );
+      }
+
+
+      const html =
+        await response.text();
+
+
+      const parser =
+        new DOMParser();
+
+
+      const doc =
+        parser.parseFromString(
+          html,
+          "text/html"
+        );
+
+
+      const projects = Array.from(
+        doc.querySelectorAll(
+          ".gallery-grid .portfolio-card"
+        )
+      ).slice(0, 3);
+
+
+      container.innerHTML = "";
+
+
+      projects.forEach((project) => {
+
+        container.appendChild(
+          project.cloneNode(true)
+        );
+
+      });
+
+
+      initPortfolioCards(container);
+
+
+    } catch (error) {
+
+      console.error(
+        "Nie udało się pobrać realizacji:",
+        error
+      );
+
+    }
+  }
+
+
+  loadLatestProjects();
+
+
+  const banner =
+    document.getElementById("cookie-banner");
+
+  const acceptBtn =
+    document.getElementById("cookie-accept");
+
+  const declineBtn =
+    document.getElementById("cookie-decline");
+
 
   if (banner && acceptBtn && declineBtn) {
+
     if (!localStorage.getItem("cookiesDecision")) {
       banner.classList.add("show");
     }
 
+
     acceptBtn.addEventListener("click", () => {
-      localStorage.setItem("cookiesDecision", "accepted");
+
+      localStorage.setItem(
+        "cookiesDecision",
+        "accepted"
+      );
+
       banner.classList.remove("show");
+
     });
+
 
     declineBtn.addEventListener("click", () => {
-      localStorage.setItem("cookiesDecision", "declined");
+
+      localStorage.setItem(
+        "cookiesDecision",
+        "declined"
+      );
+
       banner.classList.remove("show");
+
     });
+
   }
 
-  const myVideo = document.getElementById("myVideo");
+
+  const myVideo =
+    document.getElementById("myVideo");
+
 
   if (myVideo) {
+
     myVideo.playbackRate = 1;
 
-    myVideo.addEventListener("timeupdate", () => {
-      if (myVideo.currentTime >= 5 && myVideo.currentTime < 9) {
-        myVideo.currentTime = 10;
-      }
 
-      if (myVideo.currentTime >= 14) {
-        myVideo.currentTime = 3;
+    myVideo.addEventListener(
+      "timeupdate",
+      () => {
+
+        if (
+          myVideo.currentTime >= 5 &&
+          myVideo.currentTime < 9
+        ) {
+          myVideo.currentTime = 10;
+        }
+
+
+        if (myVideo.currentTime >= 14) {
+          myVideo.currentTime = 3;
+        }
+
       }
-    });
+    );
   }
 
-  const showreelWrap = document.querySelector(".hero-showreel");
-  const showreelVideo = showreelWrap?.querySelector(".hero-showreel__video");
+
+  const showreelWrap =
+    document.querySelector(
+      ".hero-showreel"
+    );
+
+  const showreelVideo =
+    showreelWrap?.querySelector(
+      ".hero-showreel__video"
+    );
+
 
   if (showreelWrap && showreelVideo) {
+
     const startShowreel = () => {
+
       if (showreelVideo.dataset.loaded) return;
+
 
       showreelVideo.dataset.loaded = "1";
 
-      const src = showreelVideo.dataset.src;
+
+      const src =
+        showreelVideo.dataset.src;
+
 
       if (!src) return;
 
+
       showreelVideo.src = src;
 
-      showreelVideo.addEventListener("loadeddata", () => {
-        showreelWrap.classList.add("is-loaded");
-        showreelVideo.play().catch(() => {});
-      }, { once: true });
+
+      showreelVideo.addEventListener(
+        "loadeddata",
+        () => {
+
+          showreelWrap.classList.add(
+            "is-loaded"
+          );
+
+          showreelVideo
+            .play()
+            .catch(() => {});
+
+        },
+        {
+          once: true
+        }
+      );
+
 
       showreelVideo.load();
     };
 
+
     if ("requestIdleCallback" in window) {
-      requestIdleCallback(startShowreel, { timeout: 1500 });
+
+      requestIdleCallback(
+        startShowreel,
+        {
+          timeout: 1500
+        }
+      );
+
     } else {
-      setTimeout(startShowreel, 400);
+
+      setTimeout(
+        startShowreel,
+        400
+      );
+
     }
   }
 
-  const heroSection = document.querySelector(".section--hero#video");
-  const heroBgVideo = heroSection?.querySelector(".hero-video");
-  const heroPoster = heroSection?.querySelector(".hero-poster");
 
-  if (heroSection && heroBgVideo && heroPoster) {
+  const heroSection =
+    document.querySelector(
+      ".section--hero#video"
+    );
+
+  const heroBgVideo =
+    heroSection?.querySelector(
+      ".hero-video"
+    );
+
+  const heroPoster =
+    heroSection?.querySelector(
+      ".hero-poster"
+    );
+
+
+  if (
+    heroSection &&
+    heroBgVideo &&
+    heroPoster
+  ) {
+
     const startHeroBg = () => {
-      if (heroBgVideo.dataset.loaded) return;
+
+      if (
+        heroBgVideo.dataset.loaded
+      ) return;
+
 
       heroBgVideo.dataset.loaded = "1";
 
-      const src = heroBgVideo.dataset.src;
+
+      const src =
+        heroBgVideo.dataset.src;
+
 
       if (!src) return;
 
+
       heroBgVideo.src = src;
 
-      heroBgVideo.addEventListener("loadeddata", () => {
-        heroBgVideo.style.display = "block";
-        heroPoster.style.display = "none";
-        heroBgVideo.play().catch(() => {});
-      }, { once: true });
+
+      heroBgVideo.addEventListener(
+        "loadeddata",
+        () => {
+
+          heroBgVideo.style.display =
+            "block";
+
+          heroPoster.style.display =
+            "none";
+
+          heroBgVideo
+            .play()
+            .catch(() => {});
+
+        },
+        {
+          once: true
+        }
+      );
+
 
       heroBgVideo.load();
+
     };
 
-    requestAnimationFrame(() => setTimeout(startHeroBg, 50));
+
+    requestAnimationFrame(
+      () =>
+        setTimeout(
+          startHeroBg,
+          50
+        )
+    );
+
   }
 
-  const introVideo = document.getElementById("mainVideo");
-  const introVideoWrap = introVideo?.closest(".video-wrapper");
-  const introVideoBtn = introVideoWrap?.querySelector(".video-btn");
-  const isTouchVideoDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  const introVideo =
+    document.getElementById(
+      "mainVideo"
+    );
+
+  const introVideoWrap =
+    introVideo?.closest(
+      ".video-wrapper"
+    );
+
+  const introVideoBtn =
+    introVideoWrap?.querySelector(
+      ".video-btn"
+    );
+
+  const isTouchVideoDevice =
+    window.matchMedia(
+      "(hover: none), (pointer: coarse)"
+    ).matches;
+
 
   let controlsHideTimer = null;
 
+
   const showVideoControls = () => {
+
     if (!introVideoWrap) return;
 
-    introVideoWrap.classList.add("is-controls-visible");
+    introVideoWrap.classList.add(
+      "is-controls-visible"
+    );
+
   };
+
 
   const hideVideoControls = () => {
+
     if (!introVideoWrap) return;
 
-    introVideoWrap.classList.remove("is-controls-visible");
+    introVideoWrap.classList.remove(
+      "is-controls-visible"
+    );
+
   };
+
 
   const scheduleHideVideoControls = () => {
+
     if (!isTouchVideoDevice) return;
 
-    clearTimeout(controlsHideTimer);
 
-    controlsHideTimer = setTimeout(() => {
-      if (introVideo && !introVideo.paused && switched) {
-        hideVideoControls();
-      }
-    }, 1800);
+    clearTimeout(
+      controlsHideTimer
+    );
+
+
+    controlsHideTimer =
+      setTimeout(() => {
+
+        if (
+          introVideo &&
+          !introVideo.paused &&
+          switched
+        ) {
+
+          hideVideoControls();
+
+        }
+
+      }, 1800);
+
   };
 
-  const syncVideoButtonState = () => {
-    if (!introVideo || !introVideoWrap || !introVideoBtn) return;
 
-    if (!switched || introVideo.paused) {
-      introVideoWrap.classList.add("is-paused");
-      introVideoWrap.classList.remove("is-playing");
-      introVideoBtn.textContent = "▶";
-      introVideoBtn.setAttribute("aria-label", "Odtwórz wideo");
+  const syncVideoButtonState = () => {
+
+    if (
+      !introVideo ||
+      !introVideoWrap ||
+      !introVideoBtn
+    ) return;
+
+
+    if (
+      !switched ||
+      introVideo.paused
+    ) {
+
+      introVideoWrap.classList.add(
+        "is-paused"
+      );
+
+      introVideoWrap.classList.remove(
+        "is-playing"
+      );
+
+      introVideoBtn.textContent =
+        "▶";
+
+      introVideoBtn.setAttribute(
+        "aria-label",
+        "Odtwórz wideo"
+      );
+
       showVideoControls();
+
       return;
     }
 
-    introVideoWrap.classList.remove("is-paused");
-    introVideoWrap.classList.add("is-playing");
-    introVideoBtn.textContent = "⏸";
-    introVideoBtn.setAttribute("aria-label", "Zatrzymaj wideo");
+
+    introVideoWrap.classList.remove(
+      "is-paused"
+    );
+
+    introVideoWrap.classList.add(
+      "is-playing"
+    );
+
+    introVideoBtn.textContent =
+      "⏸";
+
+    introVideoBtn.setAttribute(
+      "aria-label",
+      "Zatrzymaj wideo"
+    );
+
 
     if (isTouchVideoDevice) {
+
       scheduleHideVideoControls();
+
     } else {
+
       hideVideoControls();
+
     }
   };
 
-  if (introVideo) {
-    introVideo.addEventListener("play", syncVideoButtonState);
-    introVideo.addEventListener("pause", syncVideoButtonState);
 
-    introVideo.addEventListener("ended", () => {
-      if (switched) {
-        resetToIntro();
+  if (introVideo) {
+
+    introVideo.addEventListener(
+      "play",
+      syncVideoButtonState
+    );
+
+    introVideo.addEventListener(
+      "pause",
+      syncVideoButtonState
+    );
+
+
+    introVideo.addEventListener(
+      "ended",
+      () => {
+
+        if (switched) {
+          resetToIntro();
+        }
+
       }
-    });
+    );
   }
 
-  if (introVideoWrap && introVideoBtn) {
+
+  if (
+    introVideoWrap &&
+    introVideoBtn
+  ) {
+
     if (isTouchVideoDevice) {
-      introVideoWrap.addEventListener("click", (e) => {
-        if (e.target.closest(".video-btn")) return;
-        if (!switched || introVideo.paused) return;
 
-        if (introVideoWrap.classList.contains("is-controls-visible")) {
-          hideVideoControls();
-        } else {
-          showVideoControls();
-          scheduleHideVideoControls();
+      introVideoWrap.addEventListener(
+        "click",
+        (e) => {
+
+          if (
+            e.target.closest(
+              ".video-btn"
+            )
+          ) return;
+
+          if (
+            !switched ||
+            introVideo.paused
+          ) return;
+
+
+          if (
+            introVideoWrap
+              .classList
+              .contains(
+                "is-controls-visible"
+              )
+          ) {
+
+            hideVideoControls();
+
+          } else {
+
+            showVideoControls();
+            scheduleHideVideoControls();
+
+          }
         }
-      });
+      );
+
     } else {
-      introVideoWrap.addEventListener("mouseenter", () => {
-        if (switched && introVideo && !introVideo.paused) {
-          showVideoControls();
-        }
-      });
 
-      introVideoWrap.addEventListener("mouseleave", () => {
-        if (switched && introVideo && !introVideo.paused) {
-          hideVideoControls();
+      introVideoWrap.addEventListener(
+        "mouseenter",
+        () => {
+
+          if (
+            switched &&
+            introVideo &&
+            !introVideo.paused
+          ) {
+
+            showVideoControls();
+
+          }
+
         }
-      });
+      );
+
+
+      introVideoWrap.addEventListener(
+        "mouseleave",
+        () => {
+
+          if (
+            switched &&
+            introVideo &&
+            !introVideo.paused
+          ) {
+
+            hideVideoControls();
+
+          }
+
+        }
+      );
+
     }
 
+
     syncVideoButtonState();
+
   }
+
 });
+
 
 let switched = false;
 
-function resetToIntro() {
-  const video = document.getElementById("mainVideo");
-  const btn = document.querySelector(".video-btn");
-  const wrap = video?.closest(".video-wrapper");
 
-  if (!video || !btn || !wrap) return;
+function resetToIntro() {
+
+  const video =
+    document.getElementById(
+      "mainVideo"
+    );
+
+  const btn =
+    document.querySelector(
+      ".video-btn"
+    );
+
+  const wrap =
+    video?.closest(
+      ".video-wrapper"
+    );
+
+
+  if (
+    !video ||
+    !btn ||
+    !wrap
+  ) return;
+
 
   video.pause();
-  video.src = "/assets/czy-to-twoja-historia-animowany-text.mp4";
+
+  video.src =
+    "/assets/czy-to-twoja-historia-animowany-text.mp4";
+
   video.loop = true;
   video.muted = true;
   video.currentTime = 0;
+
   video.load();
-  video.play().catch(() => {});
+
+  video
+    .play()
+    .catch(() => {});
+
 
   switched = false;
 
-  wrap.classList.add("is-paused");
-  wrap.classList.remove("is-playing", "is-controls-visible");
-  btn.textContent = "▶";
-  btn.setAttribute("aria-label", "Odtwórz wideo");
+
+  wrap.classList.add(
+    "is-paused"
+  );
+
+  wrap.classList.remove(
+    "is-playing",
+    "is-controls-visible"
+  );
+
+  btn.textContent =
+    "▶";
+
+  btn.setAttribute(
+    "aria-label",
+    "Odtwórz wideo"
+  );
 }
 
+
 function changeVideo(event) {
+
   if (event) {
     event.stopPropagation();
   }
 
-  const video = document.getElementById("mainVideo");
-  const btn = document.querySelector(".video-btn");
-  const wrap = video?.closest(".video-wrapper");
-  const isTouchVideoDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
-  if (!video || !btn || !wrap) return;
+  const video =
+    document.getElementById(
+      "mainVideo"
+    );
+
+  const btn =
+    document.querySelector(
+      ".video-btn"
+    );
+
+  const wrap =
+    video?.closest(
+      ".video-wrapper"
+    );
+
+  const isTouchVideoDevice =
+    window.matchMedia(
+      "(hover: none), (pointer: coarse)"
+    ).matches;
+
+
+  if (
+    !video ||
+    !btn ||
+    !wrap
+  ) return;
+
 
   if (switched) {
-    if (video.paused) {
-      video.play().catch(() => {});
 
-      wrap.classList.remove("is-paused");
-      wrap.classList.add("is-playing");
+    if (video.paused) {
+
+      video
+        .play()
+        .catch(() => {});
+
+
+      wrap.classList.remove(
+        "is-paused"
+      );
+
+      wrap.classList.add(
+        "is-playing"
+      );
+
 
       if (isTouchVideoDevice) {
-        wrap.classList.add("is-controls-visible");
+
+        wrap.classList.add(
+          "is-controls-visible"
+        );
+
 
         setTimeout(() => {
+
           if (!video.paused) {
-            wrap.classList.remove("is-controls-visible");
+
+            wrap.classList.remove(
+              "is-controls-visible"
+            );
+
           }
+
         }, 1800);
+
       } else {
-        wrap.classList.remove("is-controls-visible");
+
+        wrap.classList.remove(
+          "is-controls-visible"
+        );
+
       }
+
     } else {
+
       video.pause();
 
-      wrap.classList.add("is-paused");
-      wrap.classList.remove("is-playing");
-      wrap.classList.add("is-controls-visible");
+
+      wrap.classList.add(
+        "is-paused"
+      );
+
+      wrap.classList.remove(
+        "is-playing"
+      );
+
+      wrap.classList.add(
+        "is-controls-visible"
+      );
+
     }
+
 
     return;
   }
 
+
   video.pause();
-  video.removeAttribute("autoplay");
-  video.src = "/assets/video2.mp4";
+
+  video.removeAttribute(
+    "autoplay"
+  );
+
+  video.src =
+    "/assets/video2.mp4";
+
   video.loop = false;
   video.muted = false;
   video.volume = 0.6;
   video.currentTime = 0;
+
   video.load();
-  video.play().catch(() => {});
+
+  video
+    .play()
+    .catch(() => {});
+
 
   switched = true;
 
-  wrap.classList.remove("is-paused");
-  wrap.classList.add("is-playing");
+
+  wrap.classList.remove(
+    "is-paused"
+  );
+
+  wrap.classList.add(
+    "is-playing"
+  );
+
 
   if (isTouchVideoDevice) {
-    wrap.classList.add("is-controls-visible");
+
+    wrap.classList.add(
+      "is-controls-visible"
+    );
+
 
     setTimeout(() => {
+
       if (!video.paused) {
-        wrap.classList.remove("is-controls-visible");
+
+        wrap.classList.remove(
+          "is-controls-visible"
+        );
+
       }
+
     }, 1800);
+
   } else {
-    wrap.classList.remove("is-controls-visible");
+
+    wrap.classList.remove(
+      "is-controls-visible"
+    );
+
   }
 }
   </script>
