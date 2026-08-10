@@ -13,9 +13,9 @@
   <link rel="alternate" hreflang="en" href="https://samuelstudio.com/en/work/cosmos/" />
   <link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/logoicon32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/logoicon16x16.png">
-  <link rel="apple-touch-icon" href="/logoicon32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logoicon32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logoicon16x16.png">
+  <link rel="apple-touch-icon" href="/assets/logoicon32x32.png">
 
   <meta property="og:type" content="article">
   <meta property="og:locale" content="pl_PL">
@@ -23,14 +23,14 @@
   <meta property="og:url" content="https://samuelstudio.com/pl/realizacje/kosmos/">
   <meta property="og:title" content="KOSMOS - Animowane kolaże o miejskiej przestrzeni | Film artystyczny">
   <meta property="og:description" content="Artystyczna animacja kolażowa ukazująca miejską ikonografię i atmosferę miasta. Kreatywne kompozycje wizualne budujące nowatorski film animowany.">
-  <meta property="og:image" content="https://samuelstudio.com/006.jpeg">
-  <meta property="og:image:secure_url" content="https://samuelstudio.com/006.jpeg">
+  <meta property="og:image" content="https://samuelstudio.com/assets/006.jpeg">
+  <meta property="og:image:secure_url" content="https://samuelstudio.com/assets/006.jpeg">
   <meta property="og:site_name" content="Samuel Studio">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="KOSMOS - Animowane kolaże o miejskiej przestrzeni | Film artystyczny">
   <meta name="twitter:description" content="Artystyczna animacja kolażowa ukazująca miejską ikonografię i atmosferę miasta. Kreatywne kompozycje wizualne budujące nowatorski film animowany.">
-  <meta name="twitter:image" content="https://samuelstudio.com/006.jpeg">
+  <meta name="twitter:image" content="https://samuelstudio.com/assets/006.jpeg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
     "@type": "VideoObject",
     "name": "KOSMOS - animowane kolaże o miejskiej przestrzeni",
     "description": "Artystyczna animacja kolażowa ukazująca miejską ikonografię i atmosferę miasta. Kreatywne kompozycje wizualne budujące nowatorski film animowany.",
-    "thumbnailUrl": "https://samuelstudio.com/006.jpeg",
+    "thumbnailUrl": "https://samuelstudio.com/assets/006.jpeg",
     "embedUrl": "https://www.youtube-nocookie.com/embed/uyq-56VfGLA",
     "url": "https://samuelstudio.com/pl/realizacje/kosmos/",
     "inLanguage": "pl",
@@ -61,6 +61,7 @@
   }
   </script>
 </head>
+
 <body class="site">
 
   <div id="site-header">
@@ -69,7 +70,7 @@
 
       <div class="logo-container">
         <a href="/pl/">
-          <img src="/logosamuelstudio.svg" alt="Samuel Studio">
+          <img src="/assets/logosamuelstudio.svg" alt="Samuel Studio">
         </a>
       </div>
 
@@ -81,11 +82,18 @@
         <a href="https://blog.samuelstudio.pl/">Blog</a>
 
         <a href="/en/work/cosmos/" class="lang-switch">
-          <img src="/ukflag.svg" alt="English">
+          <img src="/assets/ukflag.svg" alt="English">
         </a>
       </nav>
 
-      <button class="hamburger" id="hamburgerBtn" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+      <button
+        class="hamburger"
+        id="hamburgerBtn"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -103,7 +111,7 @@
     <a href="https://blog.samuelstudio.pl/">Blog</a>
 
     <a href="/en/work/cosmos/" class="lang-switch">
-      <img src="/ukflag.svg" alt="English">
+      <img src="/assets/ukflag.svg" alt="English">
     </a>
   </nav>
 
@@ -111,6 +119,7 @@
 
     <section class="white-section project-hero-section">
       <div class="container">
+
         <div class="section-heading">
           <h1 class="section-title">KOSMOS - animowane kolaże o miejskiej przestrzeni</h1>
           <div class="section-separator section-separator--dark"></div>
@@ -131,12 +140,15 @@
             allowfullscreen
           ></iframe>
         </div>
+
       </div>
     </section>
 
     <section class="section section--light project-content-section">
       <div class="container">
+
         <div class="text-col-left-margin project-text">
+
           <p class="para-top">
             Animowane kolaże w&nbsp;rzeczywistości ukazują całą ikonografię ulicy.
             Te płynne i&nbsp;kreatywne kompozycje wizualne nie tylko oddają złożoność
@@ -147,12 +159,14 @@
             Dzięki nim film ożywa i staje się niezwykle atrakcyjny wizualnie,
             zaskakując widza nowatorskim podejściem do animacji.
           </p>
+
         </div>
 
         <div class="section-actions section-actions--between project-actions">
           <a href="/pl/realizacje/" class="btn btn--light-outline">← Powrót do realizacji</a>
           <a href="/pl/kontakt/" class="btn btn--dark">Zamów podobną animację</a>
         </div>
+
       </div>
     </section>
 
@@ -163,28 +177,30 @@
   <script src="/js/includespl.js"></script>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const hamburgerBtn = document.getElementById("hamburgerBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
 
-    if (hamburgerBtn && mobileMenu) {
-      hamburgerBtn.addEventListener("click", () => {
-        const isActive = hamburgerBtn.classList.toggle("active");
-        mobileMenu.classList.toggle("active", isActive);
-        hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
-        document.body.style.overflow = isActive ? "hidden" : "";
-      });
+      if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener("click", () => {
+          const isActive = hamburgerBtn.classList.toggle("active");
 
-      mobileMenu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          hamburgerBtn.classList.remove("active");
-          mobileMenu.classList.remove("active");
-          hamburgerBtn.setAttribute("aria-expanded", "false");
-          document.body.style.overflow = "";
+          mobileMenu.classList.toggle("active", isActive);
+          hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+          document.body.style.overflow = isActive ? "hidden" : "";
         });
-      });
-    }
-  });
-</script>
+
+        mobileMenu.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            hamburgerBtn.classList.remove("active");
+            mobileMenu.classList.remove("active");
+            hamburgerBtn.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+          });
+        });
+      }
+    });
+  </script>
+
 </body>
 </html>
