@@ -13,9 +13,9 @@
   <link rel="alternate" hreflang="en" href="https://samuelstudio.com/en/work/church-of-the-holy-spirit/" />
   <link rel="alternate" hreflang="x-default" href="https://samuelstudio.com/" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/logoicon32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/logoicon16x16.png">
-  <link rel="apple-touch-icon" href="/logoicon32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logoicon32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logoicon16x16.png">
+  <link rel="apple-touch-icon" href="/assets/logoicon32x32.png">
 
   <meta property="og:type" content="article" />
   <meta property="og:locale" content="pl_PL" />
@@ -23,14 +23,14 @@
   <meta property="og:url" content="https://samuelstudio.com/pl/realizacje/kosciol-ducha-swietego/" />
   <meta property="og:title" content="Kościół Ducha Świętego - Animowana historia parafii | Samuel Studio" />
   <meta property="og:description" content="Animowany film przedstawiający 35 lat historii parafii Kościoła Ducha Świętego. Wirtualna księga i animacja 3D ukazują rozwój wspólnoty i budowę kościoła." />
-  <meta property="og:image" content="https://samuelstudio.com/Stained-Glass-of-the-Holy-Spirit-cover.jpg" />
-  <meta property="og:image:secure_url" content="https://samuelstudio.com/Stained-Glass-of-the-Holy-Spirit-cover.jpg" />
+  <meta property="og:image" content="https://samuelstudio.com/assets/Stained-Glass-of-the-Holy-Spirit-cover.jpg" />
+  <meta property="og:image:secure_url" content="https://samuelstudio.com/assets/Stained-Glass-of-the-Holy-Spirit-cover.jpg" />
   <meta property="og:site_name" content="Samuel Studio" />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Kościół Ducha Świętego - Animowana historia parafii | Samuel Studio" />
   <meta name="twitter:description" content="Animowany film przedstawiający 35 lat historii parafii Kościoła Ducha Świętego. Wirtualna księga i animacja 3D ukazują rozwój wspólnoty i budowę kościoła." />
-  <meta name="twitter:image" content="https://samuelstudio.com/Stained-Glass-of-the-Holy-Spirit-cover.jpg" />
+  <meta name="twitter:image" content="https://samuelstudio.com/assets/Stained-Glass-of-the-Holy-Spirit-cover.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,7 +46,7 @@
     "@type": "VideoObject",
     "name": "Animowana historia parafii Kościoła Ducha Świętego",
     "description": "Animowany film przedstawiający 35 lat historii parafii Kościoła Ducha Świętego z wykorzystaniem animacji 3D i wirtualnej księgi.",
-    "thumbnailUrl": "https://samuelstudio.com/Stained-Glass-of-the-Holy-Spirit-cover.jpg",
+    "thumbnailUrl": "https://samuelstudio.com/assets/Stained-Glass-of-the-Holy-Spirit-cover.jpg",
     "embedUrl": "https://www.youtube-nocookie.com/embed/ksBpeoHqVTg",
     "url": "https://samuelstudio.com/pl/realizacje/kosciol-ducha-swietego/",
     "inLanguage": "pl",
@@ -70,7 +70,7 @@
 
       <div class="logo-container">
         <a href="/pl/">
-          <img src="/logosamuelstudio.svg" alt="Samuel Studio">
+          <img src="/assets/logosamuelstudio.svg" alt="Samuel Studio">
         </a>
       </div>
 
@@ -82,11 +82,18 @@
         <a href="https://blog.samuelstudio.pl/">Blog</a>
 
         <a href="/en/work/church-of-the-holy-spirit/" class="lang-switch">
-          <img src="/ukflag.svg" alt="English">
+          <img src="/assets/ukflag.svg" alt="English">
         </a>
       </nav>
 
-      <button class="hamburger" id="hamburgerBtn" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+      <button
+        class="hamburger"
+        id="hamburgerBtn"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -104,7 +111,7 @@
     <a href="https://blog.samuelstudio.pl/">Blog</a>
 
     <a href="/en/work/church-of-the-holy-spirit/" class="lang-switch">
-      <img src="/ukflag.svg" alt="English">
+      <img src="/assets/ukflag.svg" alt="English">
     </a>
   </nav>
 
@@ -175,29 +182,30 @@
   <script src="/js/includespl.js"></script>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const hamburgerBtn = document.getElementById("hamburgerBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+    document.addEventListener("DOMContentLoaded", () => {
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
 
-    if (hamburgerBtn && mobileMenu) {
-      hamburgerBtn.addEventListener("click", () => {
-        const isActive = hamburgerBtn.classList.toggle("active");
-        mobileMenu.classList.toggle("active", isActive);
-        hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
-        document.body.style.overflow = isActive ? "hidden" : "";
-      });
+      if (hamburgerBtn && mobileMenu) {
+        hamburgerBtn.addEventListener("click", () => {
+          const isActive = hamburgerBtn.classList.toggle("active");
 
-      mobileMenu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          hamburgerBtn.classList.remove("active");
-          mobileMenu.classList.remove("active");
-          hamburgerBtn.setAttribute("aria-expanded", "false");
-          document.body.style.overflow = "";
+          mobileMenu.classList.toggle("active", isActive);
+          hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
+          document.body.style.overflow = isActive ? "hidden" : "";
         });
-      });
-    }
-  });
-</script>
+
+        mobileMenu.querySelectorAll("a").forEach(link => {
+          link.addEventListener("click", () => {
+            hamburgerBtn.classList.remove("active");
+            mobileMenu.classList.remove("active");
+            hamburgerBtn.setAttribute("aria-expanded", "false");
+            document.body.style.overflow = "";
+          });
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
