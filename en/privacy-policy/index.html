@@ -7,9 +7,9 @@
   <meta name="robots" content="noindex, follow">
   <link rel="canonical" href="https://samuelstudio.com/en/privacy-policy/" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/logoicon32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/logoicon16x16.png">
-  <link rel="apple-touch-icon" href="/logoicon32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logoicon32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/logoicon16x16.png">
+  <link rel="apple-touch-icon" href="/assets/logoicon32x32.png">
 
   <title>Privacy Policy | Samuel Studio</title>
   <meta name="description" content="Privacy Policy of samuelstudio.com. Information about personal data processing, external links and user rights.">
@@ -22,13 +22,15 @@
   <link rel="stylesheet" href="/css/home-pages.css?v=1">
   <link rel="stylesheet" href="/css/info-pages.css?v=1">
 </head>
+
 <body class="site">
 
   <div id="site-header">
     <header id="mainHeader">
+
       <div class="logo-container">
         <a href="/en/" aria-label="Samuel Studio home">
-          <img src="/logosamuelstudio.svg" alt="Samuel Studio logo">
+          <img src="/assets/logosamuelstudio.svg" alt="Samuel Studio logo">
         </a>
       </div>
 
@@ -40,7 +42,7 @@
         <a href="https://blog.samuelstudio.com/">Blog</a>
 
         <a href="/pl/polityka-prywatnosci/" title="Polish version" class="lang-switch" aria-label="Polish version">
-          <img src="/plflag.svg" alt="Polish version">
+          <img src="/assets/plflag.svg" alt="Polish version">
         </a>
       </nav>
 
@@ -49,6 +51,7 @@
         <span></span>
         <span></span>
       </button>
+
     </header>
   </div>
 
@@ -60,7 +63,7 @@
     <a href="https://blog.samuelstudio.com/">Blog</a>
 
     <a href="/pl/polityka-prywatnosci/" title="Polish version" class="lang-switch" aria-label="Polish version">
-      <img src="/plflag.svg" alt="Polish version">
+      <img src="/assets/plflag.svg" alt="Polish version">
     </a>
   </div>
 
@@ -68,6 +71,7 @@
 
     <section class="white-section">
       <div class="container">
+
         <div class="section-heading">
           <h1 class="section-title">Privacy Policy</h1>
           <div class="section-separator section-separator--dark"></div>
@@ -208,6 +212,7 @@
           </p>
 
         </div>
+
       </div>
     </section>
 
@@ -219,43 +224,76 @@
 
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+
       const header = document.getElementById("mainHeader");
       const hamburgerBtn = document.getElementById("hamburgerBtn");
       const mobileMenu = document.getElementById("mobileMenu");
       let lastScroll = 0;
 
       if (header && hamburgerBtn && mobileMenu) {
+
         window.addEventListener("scroll", () => {
-          const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+          const currentScroll =
+            window.pageYOffset ||
+            document.documentElement.scrollTop;
+
           const headerHeight = header.offsetHeight;
 
           if (!mobileMenu.classList.contains("active")) {
+
             if (currentScroll > lastScroll && currentScroll > 60) {
-              header.style.transform = `translateY(-${headerHeight + 5}px)`;
+              header.style.transform =
+                `translateY(-${headerHeight + 5}px)`;
             } else {
               header.style.transform = "translateY(0)";
             }
+
           }
 
           lastScroll = currentScroll;
         });
 
         hamburgerBtn.addEventListener("click", () => {
-          const isActive = hamburgerBtn.classList.toggle("active");
-          mobileMenu.classList.toggle("active", isActive);
-          hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
-          document.body.style.overflow = isActive ? "hidden" : "";
+
+          const isActive =
+            hamburgerBtn.classList.toggle("active");
+
+          mobileMenu.classList.toggle(
+            "active",
+            isActive
+          );
+
+          hamburgerBtn.setAttribute(
+            "aria-expanded",
+            isActive ? "true" : "false"
+          );
+
+          document.body.style.overflow =
+            isActive ? "hidden" : "";
+
         });
 
         mobileMenu.querySelectorAll("a").forEach(link => {
+
           link.addEventListener("click", () => {
+
             hamburgerBtn.classList.remove("active");
             mobileMenu.classList.remove("active");
-            hamburgerBtn.setAttribute("aria-expanded", "false");
+
+            hamburgerBtn.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
             document.body.style.overflow = "";
+
           });
+
         });
+
       }
+
     });
   </script>
 
