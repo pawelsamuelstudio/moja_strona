@@ -64,6 +64,7 @@
   }
   </script>
 </head>
+
 <body class="site">
 
   <div id="site-header">
@@ -87,7 +88,14 @@
         </a>
       </nav>
 
-      <button class="hamburger" id="hamburgerBtn" aria-label="Otwórz menu" aria-expanded="false" aria-controls="mobileMenu" type="button">
+      <button
+        class="hamburger"
+        id="hamburgerBtn"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+        type="button"
+      >
         <span></span>
         <span></span>
         <span></span>
@@ -110,156 +118,320 @@
 
   <main>
 
+    <!-- INTRO -->
     <section class="white-section list-intro-section">
       <div class="container">
+
         <div class="section-heading">
-          <h1 class="section-title">Zobacz moje realizacje w akcji</h1>
+          <h1 class="section-title">Paweł Pauksztełło - portfolio</h1>
           <div class="section-separator section-separator--dark"></div>
         </div>
 
-        <div class="text-col-left-margin list-intro-text">
-          <p class="para-top">
+        <div class="portfolio-section-nav">
+          <a href="#projekty-komercyjne" class="btn btn--dark">
+            Projekty komercyjne
+          </a>
+
+          <a href="#projekty-autorskie" class="btn btn--outline-dark">
+            Projekty autorskie
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- PROJEKTY KOMERCYJNE -->
+    <section
+      id="projekty-komercyjne"
+      class="section section--light list-gallery-section portfolio-category"
+    >
+      <div class="container">
+
+        <div class="section-heading portfolio-category__heading">
+          <h2 class="section-title">Projekty komercyjne</h2>
+          <div class="section-separator section-separator--dark"></div>
+        </div>
+
+        <div class="text-col-left-margin portfolio-category__intro">
+          <p>
             Poniżej znajdziesz przykłady, jak animacja pomaga firmom, organizacjom i&nbsp;twórcom
             <strong>opowiadać ich historie, wyjaśniać pomysły i&nbsp;nawiązywać kontakt z&nbsp;odbiorcami.</strong>
           </p>
-          <p class="para-top">
+
+          <p>
             To portfolio animacji 2D i 3D obejmuje spoty promocyjne, explainery oraz projekty storytellingowe
             przygotowane dla marek, instytucji i&nbsp;organizacji.
           </p>
         </div>
-      </div>
-    </section>
 
-    <section class="section section--light list-gallery-section">
-      <div class="container">
         <div class="gallery-grid card-grid--3">
 
           <a class="portfolio-card" href="/pl/realizacje/glosnik-3d/">
             <div class="portfolio-card__media">
-              <img src="/assets/cover-of-3d-modern-animation_00099.jpg" alt="Projekt nowoczesnej wizualizacji" loading="lazy" decoding="async">
-              <video src="/assets/animated-cover-of-modern-3d-animation.mp4" muted loop playsinline preload="metadata"></video>
+              <img
+                src="/assets/cover-of-3d-modern-animation_00099.jpg"
+                alt="Projekt nowoczesnej wizualizacji"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/animated-cover-of-modern-3d-animation.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">Animacja produktowa 3D & Audio Sync</p>
               <p class="portfolio-card__text">Jasne przedstawienie produktu, wizualizacja 3D</p>
             </div>
           </a>
 
+
           <a class="portfolio-card" href="/pl/realizacje/gospel/">
             <div class="portfolio-card__media">
-              <img src="/assets/The-Gospel-Explained-in-Five-Minutes.jpg" alt="Projekt BIBLE UNBOUND & Samuel Studio" loading="lazy" decoding="async">
-              <video src="/assets/The-Gospel-in-five-minutes-Cover.mp4" muted loop playsinline preload="metadata"></video>
+              <img
+                src="/assets/The-Gospel-Explained-in-Five-Minutes.jpg"
+                alt="Projekt BIBLE UNBOUND & Samuel Studio"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/The-Gospel-in-five-minutes-Cover.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">BIBLE UNBOUND &amp; Samuel Studio</p>
               <p class="portfolio-card__text">5-minutowy explainer animowany (Ilustracja&nbsp;2D)</p>
             </div>
           </a>
 
+
           <a class="portfolio-card" href="/pl/realizacje/trileas-animacja-logo/">
             <div class="portfolio-card__media">
-              <img src="/assets/Logo-trileas-cover.png" alt="Projekt TRILEAS" loading="lazy" decoding="async">
-              <video src="/assets/Trileas-Animated-Cover.mp4" muted loop playsinline preload="metadata"></video>
+              <img
+                src="/assets/Logo-trileas-cover.png"
+                alt="Projekt TRILEAS"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/Trileas-Animated-Cover.mp4"
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">TRILEAS</p>
               <p class="portfolio-card__text">Animacja logo & identyfikacja wizualna</p>
             </div>
           </a>
-          
+
+
           <a class="portfolio-card" href="/pl/realizacje/uwielbienie-w-centrum-miasta-2022/">
             <div class="portfolio-card__media">
-              <img src="/assets/COVER-SPOT_00139_00139.png" alt="Uwielbienie w centrum miasta 2022" loading="lazy" decoding="async">
-              <video src="/assets/Worship-in-the-city-center-2022-animated-cover.mp4" poster="/assets/COVER-SPOT_00139_00139.png" muted loop playsinline preload="auto"></video>
+              <img
+                src="/assets/COVER-SPOT_00139_00139.png"
+                alt="Uwielbienie w centrum miasta 2022"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/Worship-in-the-city-center-2022-animated-cover.mp4"
+                poster="/assets/COVER-SPOT_00139_00139.png"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">UWIELBIENIE 2022</p>
               <p class="portfolio-card__text">Animacja 3D / Spot promocyjny</p>
             </div>
           </a>
 
+
           <a class="portfolio-card" href="/pl/realizacje/puppeteer/">
             <div class="portfolio-card__media">
-              <img src="/assets/PUPPETEER-cover.jpg" alt="YAGOOSH - Puppeteer" loading="lazy" decoding="async">
-              <video src="/assets/Puppeteer-animated-animated-cover.mp4" poster="/assets/PUPPETEER-cover.jpg" muted loop playsinline preload="auto"></video>
+              <img
+                src="/assets/PUPPETEER-cover.jpg"
+                alt="YAGOOSH - Puppeteer"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/Puppeteer-animated-animated-cover.mp4"
+                poster="/assets/PUPPETEER-cover.jpg"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">YAGOOSH - PUPPETEER</p>
               <p class="portfolio-card__text">Art Direction / Animowany teledysk 2.5D</p>
             </div>
           </a>
 
+
           <a class="portfolio-card" href="/pl/realizacje/tomasz-apostol/">
             <div class="portfolio-card__media">
-              <img src="/assets/Thomas-the-Apostle-cover.png" alt="Bible Unbound - Historia Tomasza" loading="lazy" decoding="async">
-              <video src="/assets/St-Thomas-Apostol-animated-cover.mp4" poster="/assets/Thomas-the-Apostle-cover.png" muted loop playsinline preload="auto"></video>
+              <img
+                src="/assets/Thomas-the-Apostle-cover.png"
+                alt="Bible Unbound - Historia Tomasza"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/St-Thomas-Apostol-animated-cover.mp4"
+                poster="/assets/Thomas-the-Apostle-cover.png"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">BIBLE UNBOUND</p>
               <p class="portfolio-card__text">Animacja editorial & collage 2.5D</p>
             </div>
           </a>
 
+
           <a class="portfolio-card portfolio-card--wide" href="/pl/realizacje/kosciol-ducha-swietego/">
             <div class="portfolio-card__media">
-              <img src="/assets/Stained-Glass-of-the-Holy-Spirit-cover.jpg" alt="Kościół Ducha Świętego - spot promocyjny" loading="lazy" decoding="async">
-              <video src="/assets/Consecration-Church-of-the-Holy-Spirit-animated-cover.mp4" poster="/assets/Stained-Glass-of-the-Holy-Spirit-cover.jpg" muted loop playsinline preload="auto"></video>
+              <img
+                src="/assets/Stained-Glass-of-the-Holy-Spirit-cover.jpg"
+                alt="Kościół Ducha Świętego - spot promocyjny"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/Consecration-Church-of-the-Holy-Spirit-animated-cover.mp4"
+                poster="/assets/Stained-Glass-of-the-Holy-Spirit-cover.jpg"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">Kościół Ducha Świętego</p>
               <p class="portfolio-card__text">Animacja 3D / Film jubileuszowy</p>
             </div>
           </a>
 
+
           <a class="portfolio-card" href="/pl/realizacje/nikifor/">
             <div class="portfolio-card__media">
-              <img src="/assets/Nikifor-Cover.jpg" alt="Muzeum Dialogu Kultur - Nikifor" loading="lazy" decoding="async">
-              <video src="/assets/Nikifor-animated-cover.mp4" poster="/assets/Nikifor-Cover.jpg" muted loop playsinline preload="auto"></video>
+              <img
+                src="/assets/Nikifor-Cover.jpg"
+                alt="Muzeum Dialogu Kultur - Nikifor"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/Nikifor-animated-cover.mp4"
+                poster="/assets/Nikifor-Cover.jpg"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">MUZEUM NARODOWE - NIKIFOR</p>
               <p class="portfolio-card__text">Art Direction / Animacja & Montaż wideo</p>
             </div>
           </a>
 
-          <a class="portfolio-card" href="/pl/realizacje/kosmos/">
-            <div class="portfolio-card__media">
-              <img src="/assets/006.jpeg" alt="Samuel Studio - Kosmos" loading="lazy" decoding="async">
-              <video src="/assets/KOSMOS-animated-cover.mp4" poster="/assets/006.jpeg" muted loop playsinline preload="auto"></video>
-            </div>
-            <div class="portfolio-card__body">
-              <p class="portfolio-card__title">Samuel Studio</p>
-              <p class="portfolio-card__text">Kosmos</p>
-            </div>
-          </a>
 
           <a class="portfolio-card" href="/pl/realizacje/4-eco/">
             <div class="portfolio-card__media">
-              <img src="/assets/007.jpeg" alt="4 ECO - spot promocyjny" loading="lazy" decoding="async">
-              <video src="/assets/4-ECO-animated-cover.mp4" poster="/assets/007.jpeg" muted loop playsinline preload="auto"></video>
+              <img
+                src="/assets/007.jpeg"
+                alt="4 ECO - spot promocyjny"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/4-ECO-animated-cover.mp4"
+                poster="/assets/007.jpeg"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">4 ECO</p>
               <p class="portfolio-card__text">Animacja 2D / Corporate Explainer Video</p>
             </div>
           </a>
 
+
           <a class="portfolio-card" href="/pl/realizacje/panama-w-kielcach/">
             <div class="portfolio-card__media">
-              <img src="/assets/008.jpeg" alt="ŚDM Panama in Kielce - spot promocyjny" loading="lazy" decoding="async">
-              <video src="/assets/Panama-in-Kielce-animated-cover.mp4" poster="/assets/008.jpeg" muted loop playsinline preload="auto"></video>
+              <img
+                src="/assets/008.jpeg"
+                alt="ŚDM Panama in Kielce - spot promocyjny"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/Panama-in-Kielce-animated-cover.mp4"
+                poster="/assets/008.jpeg"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">PANAMA W KIELCACH – ŚDM 2019</p>
               <p class="portfolio-card__text">Animowany spot promocyjny / Event Video</p>
             </div>
           </a>
 
+
           <a class="portfolio-card" href="/pl/realizacje/widok-checin/">
             <div class="portfolio-card__media">
-              <img src="/assets/Cover-Jozef-Szermentowski-WIDOK-CHECIN.jpg" alt="Muzeum Narodowe w Kielcach - Widok na Chęciny" loading="lazy" decoding="async">
-              <video src="/assets/View-of-Checiny-animated-cover.mp4" poster="/assets/Cover-Jozef-Szermentowski-WIDOK-CHECIN.jpg" muted loop playsinline preload="auto"></video>
+              <img
+                src="/assets/Cover-Jozef-Szermentowski-WIDOK-CHECIN.jpg"
+                alt="Muzeum Narodowe w Kielcach - Widok na Chęciny"
+                loading="lazy"
+                decoding="async"
+              >
+              <video
+                src="/assets/View-of-Checiny-animated-cover.mp4"
+                poster="/assets/Cover-Jozef-Szermentowski-WIDOK-CHECIN.jpg"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
             </div>
+
             <div class="portfolio-card__body">
               <p class="portfolio-card__title">MUZEUM NARODOWE - WIDOK CHĘCIN</p>
               <p class="portfolio-card__text">Animacja obrazu / Art Parallax 2.5D</p>
@@ -268,125 +440,278 @@
 
         </div>
 
-        <div class="section-actions section-actions--center">
-          <a href="https://blog.samuelstudio.pl/" class="btn btn--dark" target="_blank" rel="noopener noreferrer">Zobacz więcej na moim blogu</a>
-        </div>
       </div>
     </section>
 
+
+    <!-- PROJEKTY AUTORSKIE -->
+    <section
+      id="projekty-autorskie"
+      class="section section--light list-gallery-section portfolio-category portfolio-category--author"
+    >
+      <div class="container">
+
+        <div class="section-heading portfolio-category__heading">
+          <h2 class="section-title">Projekty autorskie</h2>
+          <div class="section-separator section-separator--dark"></div>
+        </div>
+
+        <div class="text-col-left-margin portfolio-category__intro">
+          <p>
+            To moje autorskie projekty, często bardziej abstrakcyjne i inspirowane różnymi formami,
+            muzyką, obrazami i pomysłami. Każdy z nich prowadzi mnie w nieco innym kierunku
+            i pozwala odkrywać nowe sposoby pracy z animacją.
+          </p>
+        </div>
+
+
+        <div class="gallery-grid card-grid--3">
+
+          <a class="portfolio-card" href="/pl/realizacje/kosmos/">
+            <div class="portfolio-card__media">
+              <img
+                src="/assets/006.jpeg"
+                alt="Samuel Studio - Kosmos"
+                loading="lazy"
+                decoding="async"
+              >
+
+              <video
+                src="/assets/KOSMOS-animated-cover.mp4"
+                poster="/assets/006.jpeg"
+                muted
+                loop
+                playsinline
+                preload="auto"
+              ></video>
+            </div>
+
+            <div class="portfolio-card__body">
+              <p class="portfolio-card__title">Samuel Studio</p>
+              <p class="portfolio-card__text">Kosmos</p>
+            </div>
+          </a>
+
+        </div>
+
+
+        <div class="portfolio-section-nav portfolio-section-nav--bottom">
+
+          <a href="#projekty-komercyjne" class="btn btn--dark">
+            Projekty komercyjne
+          </a>
+
+          <a href="#projekty-autorskie" class="btn btn--outline-dark">
+            Projekty autorskie
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CTA -->
     <section class="section section--accent">
       <div class="container">
+
         <div class="cta-row">
+
           <div class="section-heading section-heading--no-margin">
-            <h2 class="section-title">Chcesz skutecznie przekazać swój&nbsp;komunikat?</h2>
+            <h2 class="section-title">
+              Chcesz skutecznie przekazać swój&nbsp;komunikat?
+            </h2>
+
             <div class="section-separator section-separator--dark"></div>
           </div>
 
-          <a href="/pl/kontakt/" class="btn btn--dark">Zamów animację</a>
+          <a href="/pl/kontakt/" class="btn btn--dark">
+            Zamów animację
+          </a>
+
         </div>
+
       </div>
     </section>
 
   </main>
+
 
   <div id="site-footer"></div>
 
   <script src="/js/includespl.js?v=2"></script>
 
   <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const hamburgerBtn = document.getElementById("hamburgerBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
+    document.addEventListener("DOMContentLoaded", () => {
 
-    if (hamburgerBtn && mobileMenu) {
-      hamburgerBtn.addEventListener("click", () => {
-        const isActive = hamburgerBtn.classList.toggle("active");
-        mobileMenu.classList.toggle("active", isActive);
-        hamburgerBtn.setAttribute("aria-expanded", isActive ? "true" : "false");
-        document.body.style.overflow = isActive ? "hidden" : "";
-      });
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const mobileMenu = document.getElementById("mobileMenu");
 
-      mobileMenu.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          hamburgerBtn.classList.remove("active");
-          mobileMenu.classList.remove("active");
-          hamburgerBtn.setAttribute("aria-expanded", "false");
-          document.body.style.overflow = "";
+      if (hamburgerBtn && mobileMenu) {
+
+        hamburgerBtn.addEventListener("click", () => {
+
+          const isActive = hamburgerBtn.classList.toggle("active");
+
+          mobileMenu.classList.toggle("active", isActive);
+
+          hamburgerBtn.setAttribute(
+            "aria-expanded",
+            isActive ? "true" : "false"
+          );
+
+          document.body.style.overflow = isActive ? "hidden" : "";
+
         });
-      });
-    }
 
-    const portfolioCards = document.querySelectorAll(".portfolio-card");
-    const isDesktopHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
-    const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
-    portfolioCards.forEach((card) => {
-      const video = card.querySelector("video");
-      if (!video) return;
+        mobileMenu.querySelectorAll("a").forEach(link => {
 
-      video.muted = true;
-      video.defaultMuted = true;
-      video.playsInline = true;
+          link.addEventListener("click", () => {
 
-      video.setAttribute("muted", "");
-      video.setAttribute("playsinline", "");
-      video.setAttribute("preload", "auto");
+            hamburgerBtn.classList.remove("active");
+            mobileMenu.classList.remove("active");
 
-      try {
-        video.load();
-      } catch (e) {}
-    });
+            hamburgerBtn.setAttribute("aria-expanded", "false");
 
-    if (isDesktopHover) {
+            document.body.style.overflow = "";
+
+          });
+
+        });
+
+      }
+
+
+      const portfolioCards =
+        document.querySelectorAll(".portfolio-card");
+
+
+      const isDesktopHover =
+        window.matchMedia(
+          "(hover: hover) and (pointer: fine)"
+        ).matches;
+
+
+      const isTouchDevice =
+        window.matchMedia(
+          "(hover: none), (pointer: coarse)"
+        ).matches;
+
+
       portfolioCards.forEach((card) => {
+
         const video = card.querySelector("video");
+
         if (!video) return;
 
-        card.addEventListener("mouseenter", async () => {
-          try {
-            video.currentTime = 0;
-            await video.play();
-          } catch (err) {
-            console.error("Video play failed:", err);
-          }
-        });
+        video.muted = true;
+        video.defaultMuted = true;
+        video.playsInline = true;
 
-        card.addEventListener("mouseleave", () => {
-          video.pause();
-          video.currentTime = 0;
-        });
+        video.setAttribute("muted", "");
+        video.setAttribute("playsinline", "");
+        video.setAttribute("preload", "auto");
+
+        try {
+          video.load();
+        } catch (e) {}
+
       });
-    }
 
-    if (isTouchDevice) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          const card = entry.target;
+
+      if (isDesktopHover) {
+
+        portfolioCards.forEach((card) => {
+
           const video = card.querySelector("video");
+
           if (!video) return;
 
-          if (entry.isIntersecting) {
-            card.classList.add("is-visible");
-            video.play().catch((err) => {
+
+          card.addEventListener("mouseenter", async () => {
+
+            try {
+
+              video.currentTime = 0;
+
+              await video.play();
+
+            } catch (err) {
+
               console.error("Video play failed:", err);
-            });
-          } else {
-            card.classList.remove("is-visible");
+
+            }
+
+          });
+
+
+          card.addEventListener("mouseleave", () => {
+
             video.pause();
             video.currentTime = 0;
-          }
-        });
-      }, {
-        threshold: 0.35
-      });
 
-      portfolioCards.forEach((card) => {
-        if (card.querySelector("video")) {
-          observer.observe(card);
-        }
-      });
-    }
-  });
+          });
+
+        });
+
+      }
+
+
+      if (isTouchDevice) {
+
+        const observer =
+          new IntersectionObserver((entries) => {
+
+            entries.forEach((entry) => {
+
+              const card = entry.target;
+              const video = card.querySelector("video");
+
+              if (!video) return;
+
+
+              if (entry.isIntersecting) {
+
+                card.classList.add("is-visible");
+
+                video.play().catch((err) => {
+
+                  console.error(
+                    "Video play failed:",
+                    err
+                  );
+
+                });
+
+              } else {
+
+                card.classList.remove("is-visible");
+
+                video.pause();
+                video.currentTime = 0;
+
+              }
+
+            });
+
+          }, {
+            threshold: 0.35
+          });
+
+
+        portfolioCards.forEach((card) => {
+
+          if (card.querySelector("video")) {
+            observer.observe(card);
+          }
+
+        });
+
+      }
+
+    });
   </script>
+
 </body>
 </html>
