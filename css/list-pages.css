@@ -2,11 +2,13 @@
   --list-content-top: 90px;
 }
 
+
 /* jeśli header jest fixed */
 main.page-content,
 main.list-page {
   padding-top: var(--list-content-top);
 }
+
 
 /* =========================
    INTRO
@@ -16,9 +18,34 @@ main.list-page {
   padding: 96px 0 32px;
 }
 
-.list-intro-text .para-top {
-  margin: 0;
+
+/* =========================
+   PORTFOLIO SECTION NAV
+   ========================= */
+
+.portfolio-section-nav {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
 }
+
+
+/* Projekty autorskie */
+.btn--outline-dark {
+  background: var(--color-accent);
+  color: var(--color-text);
+  border: 2px solid var(--color-accent);
+  font-weight: 700;
+}
+
+
+.btn--outline-dark:hover {
+  background: var(--color-text);
+  color: var(--color-accent);
+  border-color: var(--color-text);
+}
+
 
 /* =========================
    GALLERY
@@ -28,13 +55,53 @@ main.list-page {
   padding-top: 24px;
 }
 
-.list-gallery-section .section-actions {
-  margin-top: var(--space-2xl);
-}
 
 .section-actions--center {
   text-align: center;
 }
+
+
+/* =========================
+   PORTFOLIO CATEGORIES
+   ========================= */
+
+.portfolio-category {
+  scroll-margin-top: calc(var(--list-content-top) + 24px);
+}
+
+
+.portfolio-category__heading {
+  margin-bottom: 28px;
+}
+
+
+.portfolio-category__intro {
+  max-width: 980px;
+  margin-bottom: 36px;
+}
+
+
+.portfolio-category__intro p {
+  margin: 0 0 16px;
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+
+.portfolio-category__intro p:last-child {
+  margin-bottom: 0;
+}
+
+
+.portfolio-category--author {
+  padding-top: 72px;
+}
+
+
+.portfolio-section-nav--bottom {
+  margin-top: 56px;
+}
+
 
 /* =========================
    PORTFOLIO CARD FIXES
@@ -45,40 +112,94 @@ main.list-page {
   height: 100%;
 }
 
+
 .portfolio-card__body {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
 
+
 .portfolio-card__title {
   margin-bottom: 0;
 }
 
+
 .portfolio-card__text {
   color: var(--color-text);
 }
+
 
 /* =========================
    RESPONSIVE
    ========================= */
 
 @media (max-width: 1024px) {
+
   .list-intro-section {
     padding: 88px 0 24px;
   }
+
+
+  .portfolio-category__intro p {
+    font-size: 19px;
+  }
+
 }
 
+
 @media (max-width: 768px) {
+
   :root {
     --list-content-top: 70px;
   }
+
 
   .list-intro-section {
     padding: 64px 0 20px;
   }
 
+
+  .portfolio-section-nav {
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+
+  .portfolio-section-nav .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+
   .list-gallery-section {
     padding-top: 12px;
   }
+
+
+  .portfolio-category__heading {
+    margin-bottom: 24px;
+  }
+
+
+  .portfolio-category__intro {
+    margin-bottom: 28px;
+  }
+
+
+  .portfolio-category__intro p {
+    font-size: 18px;
+    line-height: 1.55;
+  }
+
+
+  .portfolio-category--author {
+    padding-top: 52px;
+  }
+
+
+  .portfolio-section-nav--bottom {
+    margin-top: 40px;
+  }
+
 }
