@@ -339,10 +339,10 @@ select {
 
 .hero-lead,
 .video-overlay h4 {
-  margin: 0 auto 24px;
+  margin: 0 0 24px;
   font-size: var(--fs-lead);
   color: var(--color-white);
-  text-align: center;
+  text-align: left;
 }
 
 .video-overlay .btn {
@@ -382,9 +382,9 @@ select {
   margin: 0 0 35px;
 }
 
-/* HERO: przycisk pod opisem wyśrodkowany na desktopie */
+/* HERO: tekst i przycisk wyrównane do lewej jak nagłówek */
 .hero-content .button-group {
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* HERO SHOWREEL - FIX ZAOKRĄGLEŃ */
