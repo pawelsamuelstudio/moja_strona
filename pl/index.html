@@ -115,59 +115,65 @@
 
   <main>
 
-    <section class="section section--hero" id="video">
-      <div class="hero-media">
+   <section class="section section--hero" id="video">
+  <div class="hero-media">
+    <img
+      class="hero-poster"
+      src="/assets/animated-diagonal-light-rays-background-samuel-studio.webp"
+      alt=""
+      aria-hidden="true"
+      fetchpriority="high"
+      decoding="async"
+    >
+
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="auto"
+      data-src="/assets/animated-diagonal-light-rays-background-samuel-studio.mp4"
+    ></video>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+
+      <h1 class="hero-title">
+        Animacje&nbsp;2D&nbsp;i&nbsp;3D, które&nbsp;tłumaczą i&nbsp;przekonują
+      </h1>
+
+      <div class="hero-showreel">
         <img
-          class="hero-poster"
-          src="/assets/animated-diagonal-light-rays-background-samuel-studio.webp"
+          class="hero-showreel__poster"
+          src="/assets/samuel-studio-reel-2025.webp"
           alt=""
           aria-hidden="true"
-          fetchpriority="high"
-          decoding="async"
         >
 
         <video
-          class="hero-video"
+          class="hero-showreel__video"
           autoplay
           muted
           loop
           playsinline
-          preload="auto"
-          data-src="/assets/animated-diagonal-light-rays-background-samuel-studio.mp4"
+          preload="none"
+          data-src="/assets/samuel-studio-loop-reel-2025.mp4"
         ></video>
       </div>
 
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="hero-title">Animacje&nbsp;2D&nbsp;i&nbsp;3D, które&nbsp;tłumaczą i&nbsp;przekonują</h1>
-          <p class="hero-lead">Animacje promocyjne, edukacyjne&nbsp;i&nbsp;produktowe</p>
+      <p class="hero-lead">
+        Animacje promocyjne, edukacyjne&nbsp;i&nbsp;produktowe
+      </p>
 
-          <div class="button-group button-group--center">
-            <a href="/pl/kontakt/" class="btn btn--primary">Przedstaw swój projekt</a>
-            <a href="#gallery" class="btn btn--outline">Poznaj przykłady</a>
-          </div>
-
-          <div class="hero-showreel">
-            <img
-              class="hero-showreel__poster"
-              src="/assets/samuel-studio-reel-2025.webp"
-              alt=""
-              aria-hidden="true"
-            >
-
-            <video
-              class="hero-showreel__video"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="none"
-              data-src="/assets/samuel-studio-loop-reel-2025.mp4"
-            ></video>
-          </div>
-        </div>
+      <div class="button-group button-group--center">
+        <a href="#gallery" class="btn btn--primary">Poznaj przykłady</a>
       </div>
-    </section>
+
+    </div>
+  </div>
+</section>
 
     <section class="section section--accent-soft process-section">
       <div class="container">
