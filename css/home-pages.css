@@ -338,7 +338,7 @@ select {
 
 .hero-lead,
 .video-overlay h4 {
-  margin: 0 0 var(--space-xl);
+  margin: 0 0 24px;
   font-size: var(--fs-lead);
   color: var(--color-white);
   text-align: left;
@@ -385,13 +385,12 @@ select {
 .hero-showreel {
   position: relative;
   width: 100%;
-  max-width: 1280px;
-  margin: var(--space-xl) auto 0;
+  max-width: 1100px;
+  margin: 48px auto 32px;
   aspect-ratio: 16 / 9;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-strong);
-  transform: translateY(110px);
   background: transparent;
   isolation: isolate;
   clip-path: inset(0 round var(--radius-lg));
@@ -1204,10 +1203,6 @@ select {
   .cta-row {
     grid-template-columns: 1fr;
     align-items: flex-start;
-  }
-
-  .hero-showreel {
-    transform: translateY(90px);
   }
 
   .section--accent#oferta,
