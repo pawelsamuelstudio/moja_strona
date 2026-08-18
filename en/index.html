@@ -117,67 +117,69 @@
 
   <main>
 
-    <section class="section section--hero" id="video">
-      <div class="hero-media">
+    <section class="section section--hero" id="video"> 
+  <div class="hero-media"> 
 
-        <img
-          class="hero-poster"
-          src="/assets/animated-diagonal-light-rays-background-samuel-studio.webp"
-          alt=""
+    <img 
+      class="hero-poster" 
+      src="/assets/animated-diagonal-light-rays-background-samuel-studio.webp" 
+      alt="" 
+      aria-hidden="true" 
+      fetchpriority="high" 
+      decoding="async" 
+    > 
+
+    <video 
+      class="hero-video" 
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      preload="auto" 
+      data-src="/assets/animated-diagonal-light-rays-background-samuel-studio.mp4" 
+    ></video> 
+
+  </div> 
+
+  <div class="container"> 
+    <div class="hero-content"> 
+
+      <h1 class="hero-title">
+        2D &amp; 3D animation that&nbsp;explains and&nbsp;persuades
+      </h1> 
+
+      <div class="hero-showreel"> 
+
+        <img 
+          class="hero-showreel__poster" 
+          src="/assets/samuel-studio-reel-2025.webp" 
+          alt="" 
           aria-hidden="true"
-          fetchpriority="high"
-          decoding="async"
-        >
+        > 
 
-        <video
-          class="hero-video"
-          autoplay
-          muted
-          loop
-          playsinline
-          preload="auto"
-          data-src="/assets/animated-diagonal-light-rays-background-samuel-studio.mp4"
-        ></video>
+        <video 
+          class="hero-showreel__video" 
+          autoplay 
+          muted 
+          loop 
+          playsinline 
+          preload="none" 
+          data-src="/assets/samuel-studio-loop-reel-2025.mp4" 
+        ></video> 
 
-      </div>
+      </div> 
 
-      <div class="container">
-        <div class="hero-content">
+      <p class="hero-lead">
+        Promotional, educational and&nbsp;product&nbsp;animation
+      </p> 
 
-          <h1 class="hero-title">2D & 3D animation that&nbsp;explains and&nbsp;persuades</h1>
-          <p class="hero-lead">Promotional, educational and&nbsp;product&nbsp;animation</p>
+      <div class="button-group"> 
+        <a href="#gallery" class="btn btn--primary">Explore examples</a> 
+      </div> 
 
-          <div class="button-group button-group--center">
-            <a href="/en/contact/" class="btn btn--primary">Tell me about your project</a>
-            <a href="#gallery" class="btn btn--outline">Explore examples</a>
-          </div>
-
-          <div class="hero-showreel">
-
-            <img
-              class="hero-showreel__poster"
-              src="/assets/samuel-studio-reel-2025.webp"
-              alt=""
-              aria-hidden="true"
-            >
-
-            <video
-              class="hero-showreel__video"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="none"
-              data-src="/assets/samuel-studio-loop-reel-2025.mp4"
-            ></video>
-
-          </div>
-
-          
-
-        </div>
-      </div>
-    </section>
+    </div> 
+  </div> 
+</section>
 
 
     <section class="section section--accent-soft process-section">
