@@ -209,6 +209,11 @@ select {
   justify-content: center;
 }
 
+/* HERO: biały tekst i przycisk wyrównane do lewej jak nagłówek */
+.hero-content .button-group {
+  justify-content: flex-start;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -380,11 +385,6 @@ select {
 .hero-content .separator,
 .hero-content .section-separator {
   margin: 0 0 35px;
-}
-
-/* HERO: tekst i przycisk wyrównane do lewej jak nagłówek */
-.hero-content .button-group {
-  justify-content: flex-start;
 }
 
 /* HERO SHOWREEL - FIX ZAOKRĄGLEŃ */
@@ -752,7 +752,7 @@ select {
 }
 
 .video-overlay2 h4 {
-  margin: 0 0 20px;
+  margin: 0;
   font-size: clamp(2rem, 3vw, 3rem);
   line-height: var(--line-tight);
   color: var(--color-accent);
@@ -765,7 +765,7 @@ select {
   height: 7px;
   border-radius: var(--radius-pill);
   background: var(--color-accent);
-  margin: 0 0 48px;
+  margin: 24px 0 48px;
 }
 
 .video-overlay2 ul {
@@ -1210,8 +1210,7 @@ select {
     grid-template-columns: 1fr;
     align-items: flex-start;
   }
-
-  .section--accent#oferta,
+.section--accent#oferta,
   .yellow-section {
     padding-top: 150px;
   }
@@ -1304,15 +1303,11 @@ select {
     justify-content: flex-start;
   }
 
-  .hero-lead {
-    text-align: left;
-    margin: 0 0 24px;
-  }
-
   .hero-showreel {
     width: 100%;
     max-width: 100%;
     aspect-ratio: 16 / 9;
+    transform: none;
     margin: 24px 0 22px;
     border-radius: 18px;
     clip-path: inset(0 round 18px);
