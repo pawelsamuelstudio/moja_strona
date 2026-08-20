@@ -401,15 +401,9 @@ select {
   margin: 0 0 35px;
 }
 
-
-/* HERO: tekst i przycisk wyrównane do lewej jak nagłówek */
-
 .hero-content .button-group {
   justify-content: flex-start;
 }
-
-
-/* CTA / sekcje solutions: przyciski zawsze do lewej */
 
 .section-solutions .button-group,
 .section-solutions .button-group--center {
@@ -417,7 +411,7 @@ select {
 }
 
 
-/* HERO SHOWREEL - FIX ZAOKRĄGLEŃ */
+/* HERO SHOWREEL */
 
 .hero-showreel {
   position: relative;
@@ -586,7 +580,7 @@ select {
 }
 
 
-/* WHITE SECTION - O MNIE */
+/* WHITE SECTION */
 
 .white-section {
   width: 100%;
@@ -648,8 +642,22 @@ select {
 /* VIDEO TEXT SECTION */
 
 .video-text-section {
-  padding: 20px 0 40px;
+  padding: 0 0 40px;
 }
+
+
+/* TYLKO SEKCJA "POMOGĘ CI..." */
+
+.section--about-home {
+  padding-bottom: 24px;
+}
+
+.section--about-home .section-heading {
+  margin-bottom: 0;
+}
+
+
+/* VIDEO 16:9 */
 
 .video-col2 {
   width: 100%;
@@ -680,6 +688,9 @@ select {
   display: block;
   background: var(--color-white);
 }
+
+
+/* VIDEO BUTTON */
 
 .video-btn,
 .video-preview__button {
@@ -938,8 +949,7 @@ select {
 }
 
 
-/* WAŻNA POPRAWKA:
-   przycisk w CTA nie rozciąga się na szerokość */
+/* PRZYCISK ZAMÓW */
 
 .cta-row .btn {
   width: fit-content;
@@ -948,8 +958,6 @@ select {
   align-self: start;
 }
 
-
-/* LEGACY BUTTON */
 
 .see-more-btn4 {
   display: inline-flex;
@@ -1245,9 +1253,7 @@ select {
 }
 
 
-/* =========================================
-   RESPONSIVE - TABLET
-   ========================================= */
+/* TABLET */
 
 @media (max-width: 1024px) {
 
@@ -1293,16 +1299,10 @@ select {
     align-items: flex-start;
   }
 
-  /*
-    WAŻNA POPRAWKA MOBILE / TABLET:
-    przycisk nie wypełnia całej kolumny grida
-  */
-
   .cta-row .btn {
     width: fit-content;
     max-width: 100%;
     justify-self: start;
-    align-self: start;
   }
 
   .section--accent#oferta,
@@ -1343,9 +1343,7 @@ select {
 }
 
 
-/* =========================================
-   PROCESS - DESKTOP
-   ========================================= */
+/* PROCESS DESKTOP */
 
 @media (min-width: 1025px) {
 
@@ -1374,9 +1372,7 @@ select {
 }
 
 
-/* =========================================
-   RESPONSIVE - MOBILE
-   ========================================= */
+/* MOBILE */
 
 @media (max-width: 768px) {
 
@@ -1422,10 +1418,7 @@ select {
     margin: 24px 0 22px;
     border-radius: 18px;
     clip-path: inset(0 round 18px);
-    -webkit-mask-image: -webkit-radial-gradient(
-      white,
-      black
-    );
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
   }
 
   .hero-showreel__poster,
@@ -1440,6 +1433,19 @@ select {
 
   .section-heading {
     margin-bottom: var(--space-xl);
+  }
+
+  /*
+    Ta reguła jest celowo po globalnym mobile
+    i dotyczy tylko sekcji about.
+  */
+
+  .section--about-home .section-heading {
+    margin-bottom: 0;
+  }
+
+  .section--about-home {
+    padding-bottom: 24px;
   }
 
   .section-title,
@@ -1581,24 +1587,10 @@ select {
   .mobile-only {
     display: block;
   }
-
-  /*
-    JESZCZE RAZ WYMUSZAMY POPRAWNY CTA NA MOBILE
-  */
-
-  .cta-row .btn {
-    display: inline-flex;
-    width: fit-content;
-    max-width: 100%;
-    justify-self: start;
-    align-self: start;
-  }
 }
 
 
-/* =========================================
-   BACKGROUND VIDEO
-   ========================================= */
+/* BACKGROUND VIDEO */
 
 .section--background-video {
   position: relative;
@@ -1617,9 +1609,7 @@ select {
 }
 
 
-/* =========================================
-   SOLUTIONS
-   ========================================= */
+/* SOLUTIONS */
 
 .section-solutions {
   position: relative;
@@ -1690,9 +1680,7 @@ select {
 }
 
 
-/* =========================================
-   PORTFOLIO MEDIA
-   ========================================= */
+/* PORTFOLIO MEDIA */
 
 .portfolio-card__media {
   position: relative;
@@ -1738,9 +1726,7 @@ select {
 }
 
 
-/* =========================================
-   FEATURED / WIDE CARD
-   ========================================= */
+/* FEATURED / WIDE CARD */
 
 .gallery-grid.card-grid--3 {
   grid-auto-flow: dense;
@@ -1755,9 +1741,7 @@ select {
 }
 
 
-/* =========================================
-   RESPONSIVE PORTFOLIO
-   ========================================= */
+/* RESPONSIVE PORTFOLIO */
 
 @media (max-width: 1024px) {
 
