@@ -130,7 +130,7 @@ function initReviewCarousel() {
     stopAutoplay();
     reviewInterval = setInterval(() => {
       showReview(reviewIndex + 1);
-    }, 4000);
+    }, 10000);
   }
 
   if (reviewPrev) {
