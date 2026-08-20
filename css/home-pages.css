@@ -43,7 +43,9 @@
   --line-tight: 1.12;
 }
 
+
 /* RESET */
+
 *,
 *::before,
 *::after {
@@ -87,9 +89,14 @@ select {
   font: inherit;
 }
 
+
 /* GLOBAL */
+
 .container {
-  width: min(100% - (var(--container-padding) * 2), var(--container-width));
+  width: min(
+    100% - (var(--container-padding) * 2),
+    var(--container-width)
+  );
   margin-inline: auto;
 }
 
@@ -197,7 +204,9 @@ select {
   display: none;
 }
 
+
 /* BUTTONS */
+
 .button-group {
   display: flex;
   flex-wrap: wrap;
@@ -220,7 +229,11 @@ select {
   font-weight: 500;
   text-align: center;
   cursor: pointer;
-  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .btn:hover {
@@ -270,7 +283,9 @@ select {
   font-size: var(--fs-small);
 }
 
+
 /* HERO */
+
 .section--hero,
 .video-section {
   position: relative;
@@ -355,7 +370,11 @@ select {
   border: 2px solid transparent;
   font-weight: 500;
   cursor: pointer;
-  transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .video-overlay .btn:hover {
@@ -382,18 +401,24 @@ select {
   margin: 0 0 35px;
 }
 
+
 /* HERO: tekst i przycisk wyrównane do lewej jak nagłówek */
+
 .hero-content .button-group {
   justify-content: flex-start;
 }
 
+
 /* CTA / sekcje solutions: przyciski zawsze do lewej */
+
 .section-solutions .button-group,
 .section-solutions .button-group--center {
   justify-content: flex-start;
 }
 
+
 /* HERO SHOWREEL - FIX ZAOKRĄGLEŃ */
+
 .hero-showreel {
   position: relative;
   width: 100%;
@@ -443,7 +468,9 @@ select {
   display: none;
 }
 
+
 /* YELLOW / OFERTA */
+
 .section--accent#oferta,
 .yellow-section {
   background: var(--color-accent);
@@ -504,7 +531,9 @@ select {
   color: var(--color-black);
 }
 
-/* PROBLEM CARDS - 3 KAFELKI, NISKIE PASKI, IKONA PO LEWEJ, TEKST PO PRAWEJ */
+
+/* PROBLEM CARDS */
+
 .card-grid--problem-small {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -556,7 +585,9 @@ select {
   color: var(--color-black);
 }
 
+
 /* WHITE SECTION - O MNIE */
+
 .white-section {
   width: 100%;
   padding: 40px 0;
@@ -613,7 +644,9 @@ select {
   transform: scale(1.03);
 }
 
+
 /* VIDEO TEXT SECTION */
+
 .video-text-section {
   padding: 20px 0 40px;
 }
@@ -702,6 +735,7 @@ select {
 }
 
 @media (hover: hover) and (pointer: fine) {
+
   .video-wrapper.is-playing .video-btn,
   .video-wrapper.is-playing .video-preview__button {
     opacity: 0;
@@ -726,7 +760,9 @@ select {
   display: none;
 }
 
+
 /* SOLUTIONS / VIDEO SECTION 2 */
+
 .video-section2 {
   width: 100%;
   min-height: 90vh;
@@ -806,7 +842,9 @@ select {
   text-underline-offset: 3px;
 }
 
+
 /* PROCESS */
+
 .yellow-section0,
 .order-section {
   background: var(--color-accent);
@@ -834,7 +872,9 @@ select {
   transform: none;
 }
 
+
 /* PROCESS CAROUSEL */
+
 .process-carousel {
   position: relative;
 }
@@ -866,7 +906,9 @@ select {
   box-shadow:
     0 10px 24px rgba(0, 0, 0, 0.18),
     0 3px 8px rgba(0, 0, 0, 0.12);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 .process-step img:hover {
@@ -884,6 +926,9 @@ select {
   line-height: 1;
 }
 
+
+/* CTA */
+
 .order-content,
 .cta-row {
   display: grid;
@@ -891,6 +936,20 @@ select {
   gap: 40px;
   align-items: center;
 }
+
+
+/* WAŻNA POPRAWKA:
+   przycisk w CTA nie rozciąga się na szerokość */
+
+.cta-row .btn {
+  width: fit-content;
+  max-width: 100%;
+  justify-self: start;
+  align-self: start;
+}
+
+
+/* LEGACY BUTTON */
 
 .see-more-btn4 {
   display: inline-flex;
@@ -905,7 +964,9 @@ select {
   cursor: pointer;
 }
 
+
 /* LOGOS */
+
 .section--logos {
   overflow: hidden;
 }
@@ -961,7 +1022,9 @@ select {
   transform: scale(1.06);
 }
 
+
 /* REVIEWS */
+
 .review-carousel {
   position: relative;
   max-width: 560px;
@@ -1006,7 +1069,9 @@ select {
   right: 8px;
 }
 
+
 /* GALLERY / PORTFOLIO */
+
 .gallery-section {
   background: var(--color-accent);
   color: var(--color-black);
@@ -1089,7 +1154,9 @@ select {
   margin-bottom: var(--space-xs);
 }
 
+
 /* POPUP */
+
 .popup {
   position: fixed;
   inset: 0;
@@ -1131,7 +1198,9 @@ select {
   border-radius: 12px;
 }
 
+
 /* COOKIE */
+
 .cookie-banner {
   position: fixed;
   left: 50%;
@@ -1164,7 +1233,9 @@ select {
   gap: var(--space-sm);
 }
 
+
 /* LEGACY HELPERS */
+
 .desktop-only {
   display: block;
 }
@@ -1173,8 +1244,13 @@ select {
   display: none;
 }
 
-/* RESPONSIVE */
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+
 @media (max-width: 1024px) {
+
   .split {
     grid-template-columns: 1fr;
   }
@@ -1217,6 +1293,18 @@ select {
     align-items: flex-start;
   }
 
+  /*
+    WAŻNA POPRAWKA MOBILE / TABLET:
+    przycisk nie wypełnia całej kolumny grida
+  */
+
+  .cta-row .btn {
+    width: fit-content;
+    max-width: 100%;
+    justify-self: start;
+    align-self: start;
+  }
+
   .section--accent#oferta,
   .yellow-section {
     padding-top: 150px;
@@ -1254,7 +1342,13 @@ select {
   }
 }
 
+
+/* =========================================
+   PROCESS - DESKTOP
+   ========================================= */
+
 @media (min-width: 1025px) {
+
   .process-carousel {
     display: block;
   }
@@ -1279,7 +1373,13 @@ select {
   }
 }
 
+
+/* =========================================
+   RESPONSIVE - MOBILE
+   ========================================= */
+
 @media (max-width: 768px) {
+
   :root {
     --container-padding: 20px;
     --section-space-y: var(--section-space-y-mobile);
@@ -1322,7 +1422,10 @@ select {
     margin: 24px 0 22px;
     border-radius: 18px;
     clip-path: inset(0 round 18px);
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-mask-image: -webkit-radial-gradient(
+      white,
+      black
+    );
   }
 
   .hero-showreel__poster,
@@ -1478,7 +1581,24 @@ select {
   .mobile-only {
     display: block;
   }
+
+  /*
+    JESZCZE RAZ WYMUSZAMY POPRAWNY CTA NA MOBILE
+  */
+
+  .cta-row .btn {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    justify-self: start;
+    align-self: start;
+  }
 }
+
+
+/* =========================================
+   BACKGROUND VIDEO
+   ========================================= */
 
 .section--background-video {
   position: relative;
@@ -1495,6 +1615,11 @@ select {
   position: relative;
   z-index: 2;
 }
+
+
+/* =========================================
+   SOLUTIONS
+   ========================================= */
 
 .section-solutions {
   position: relative;
@@ -1553,6 +1678,7 @@ select {
 }
 
 @media (max-width: 768px) {
+
   .section-solutions {
     padding-top: 8px;
   }
@@ -1562,6 +1688,11 @@ select {
     line-height: 1.38;
   }
 }
+
+
+/* =========================================
+   PORTFOLIO MEDIA
+   ========================================= */
 
 .portfolio-card__media {
   position: relative;
@@ -1585,6 +1716,7 @@ select {
 }
 
 @media (hover: hover) and (pointer: fine) {
+
   .portfolio-card:hover .portfolio-card__media img {
     opacity: 0;
   }
@@ -1595,6 +1727,7 @@ select {
 }
 
 @media (hover: none), (pointer: coarse) {
+
   .portfolio-card.is-visible .portfolio-card__media img {
     opacity: 0;
   }
@@ -1603,6 +1736,7 @@ select {
     opacity: 1;
   }
 }
+
 
 /* =========================================
    FEATURED / WIDE CARD
@@ -1620,17 +1754,20 @@ select {
   aspect-ratio: 16 / 9;
 }
 
+
 /* =========================================
-   RESPONSIVE
+   RESPONSIVE PORTFOLIO
    ========================================= */
 
 @media (max-width: 1024px) {
+
   .portfolio-card--wide {
     grid-column: span 2;
   }
 }
 
 @media (max-width: 768px) {
+
   .portfolio-card--wide {
     grid-column: span 1;
   }
