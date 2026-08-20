@@ -221,9 +221,6 @@
       </div>
     </section>
 
-
-    <!-- TYLKO TA SEKCJA MA DODATKOWĄ KLASĘ section--about-home -->
-
     <section class="section section--light section--about-home">
       <div class="container">
 
@@ -260,7 +257,6 @@
       </div>
     </section>
 
-
     <section class="video-text-section">
       <div class="container">
 
@@ -290,7 +286,6 @@
         </div>
       </div>
     </section>
-
 
     <section class="section section--dark section--background-video">
 
@@ -357,7 +352,6 @@
       </div>
     </section>
 
-
     <section class="section section--accent-soft process-section">
 
       <div class="container">
@@ -372,7 +366,6 @@
 
         </div>
 
-
         <div class="process-carousel" aria-roledescription="carousel">
 
           <button
@@ -382,7 +375,6 @@
           >
             ‹
           </button>
-
 
           <div class="process-carousel__viewport">
 
@@ -403,7 +395,6 @@
 
               </article>
 
-
               <article class="process-step">
 
                 <p class="process-step__text">
@@ -418,7 +409,6 @@
                 >
 
               </article>
-
 
               <article class="process-step">
 
@@ -438,7 +428,6 @@
             </div>
           </div>
 
-
           <button
             class="process-carousel__nav process-carousel__nav--next"
             type="button"
@@ -448,11 +437,12 @@
           </button>
 
         </div>
+
       </div>
+
     </section>
 
-
-    <section class="section section--accent">
+    <section class="section section--accent section--process-cta">
 
       <div class="container">
 
@@ -469,7 +459,6 @@
       </div>
     </section>
 
-
     <section class="section section--light section--logos">
 
       <div class="container">
@@ -484,7 +473,6 @@
 
         </div>
       </div>
-
 
       <div class="logo-carousel logo-carousel--full">
 
@@ -550,7 +538,6 @@
             <img src="/assets/4-eco-logo-300x137.png.webp" alt="4ECO Green Energy">
           </a>
 
-
           <!-- powtórzenia dla płynnej karuzeli -->
 
           <a href="https://uwielbienie.kielce.pl" target="_blank" rel="noopener noreferrer">
@@ -573,11 +560,9 @@
       </div>
     </section>
 
-
     <section class="section section--light">
       <div id="opinie"></div>
     </section>
-
 
     <section id="gallery" class="section section--accent">
 
@@ -593,12 +578,10 @@
 
         </div>
 
-
         <div
           class="card-grid card-grid--3"
           id="latest-projects"
         ></div>
-
 
         <div class="section-actions">
 
@@ -613,7 +596,6 @@
       </div>
     </section>
 
-
     <section class="section section--light">
 
       <div class="container">
@@ -627,7 +609,6 @@
           <div class="section-separator"></div>
 
         </div>
-
 
         <div class="faq-list">
 
@@ -646,7 +627,6 @@
 
           </article>
 
-
           <article>
 
             <h3>
@@ -661,7 +641,6 @@
             </p>
 
           </article>
-
 
           <article>
 
@@ -682,7 +661,6 @@
       </div>
     </section>
 
-
     <section class="section section--dark section--background-video">
 
       <div class="hero-media">
@@ -694,7 +672,6 @@
           playsinline
         ></video>
       </div>
-
 
       <div class="container">
 
@@ -711,7 +688,6 @@
             <p class="hero-lead">
               Porozmawiajmy o&nbsp;Twoim&nbsp;projekcie
             </p>
-
 
             <div class="button-group button-group--center">
 
@@ -738,9 +714,7 @@
 
   </main>
 
-
   <div id="site-footer"></div>
-
 
   <div id="cookie-banner" class="cookie-banner">
 
@@ -774,10 +748,8 @@
     </div>
   </div>
 
-
   <script src="/js/includespl.js"></script>
   <script src="/js/logo-carousel.js"></script>
-
 
   <script>
 
@@ -788,7 +760,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const mobileMenu =
     document.getElementById("mobileMenu");
-
 
   if (hamburgerBtn && mobileMenu) {
 
@@ -811,7 +782,6 @@ document.addEventListener("DOMContentLoaded", () => {
         isActive ? "hidden" : "";
 
     });
-
 
     mobileMenu
       .querySelectorAll("a")
@@ -836,7 +806,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   const yearEl =
     document.getElementById("year");
 
@@ -845,10 +814,8 @@ document.addEventListener("DOMContentLoaded", () => {
       new Date().getFullYear();
   }
 
-
   const processCarousel =
     document.querySelector(".process-carousel");
-
 
   if (processCarousel) {
 
@@ -876,14 +843,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let processIndex = 0;
 
-
     const showProcessSlide = (index) => {
 
       if (
         !processSlides.length ||
         !processTrack
       ) return;
-
 
       processIndex =
         (
@@ -892,12 +857,10 @@ document.addEventListener("DOMContentLoaded", () => {
         ) %
         processSlides.length;
 
-
       processTrack.style.transform =
         `translateX(-${processIndex * 100}%)`;
 
     };
-
 
     if (processPrev) {
 
@@ -916,7 +879,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
     if (processNext) {
 
       processNext.addEventListener(
@@ -933,7 +895,6 @@ document.addEventListener("DOMContentLoaded", () => {
       );
 
     }
-
 
     document.addEventListener(
       "keydown",
@@ -956,7 +917,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-
     window.addEventListener(
       "resize",
       () => {
@@ -977,13 +937,11 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
 
-
     if (window.innerWidth <= 768) {
       showProcessSlide(0);
     }
 
   }
-
 
   function initPortfolioCards(parent = document) {
 
@@ -1002,14 +960,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "(hover: none), (pointer: coarse)"
       ).matches;
 
-
     portfolioCards.forEach((card) => {
 
       const video =
         card.querySelector("video");
 
       if (!video) return;
-
 
       video.muted = true;
       video.defaultMuted = true;
@@ -1030,7 +986,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "metadata"
       );
 
-
       if (isDesktopHover) {
 
         card.addEventListener(
@@ -1046,7 +1001,6 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         );
 
-
         card.addEventListener(
           "mouseleave",
           () => {
@@ -1060,7 +1014,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
     });
-
 
     if (isTouchDevice) {
 
@@ -1077,7 +1030,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.querySelector("video");
 
               if (!video) return;
-
 
               if (entry.isIntersecting) {
 
@@ -1108,7 +1060,6 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         );
 
-
       portfolioCards.forEach((card) => {
 
         if (card.querySelector("video")) {
@@ -1121,7 +1072,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   async function loadLatestProjects() {
 
     const container =
@@ -1131,14 +1081,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!container) return;
 
-
     try {
 
       const response =
         await fetch(
           "/pl/realizacje/"
         );
-
 
       if (!response.ok) {
 
@@ -1148,21 +1096,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
 
-
       const html =
         await response.text();
 
-
       const parser =
         new DOMParser();
-
 
       const doc =
         parser.parseFromString(
           html,
           "text/html"
         );
-
 
       const projects =
         Array.from(
@@ -1171,9 +1115,7 @@ document.addEventListener("DOMContentLoaded", () => {
           )
         ).slice(0, 3);
 
-
       container.innerHTML = "";
-
 
       projects.forEach((project) => {
 
@@ -1183,11 +1125,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       });
 
-
       initPortfolioCards(
         container
       );
-
 
     } catch (error) {
 
@@ -1200,9 +1140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   loadLatestProjects();
-
 
   const banner =
     document.getElementById(
@@ -1218,7 +1156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById(
       "cookie-decline"
     );
-
 
   if (
     banner &&
@@ -1238,7 +1175,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
     acceptBtn.addEventListener(
       "click",
       () => {
@@ -1254,7 +1190,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       }
     );
-
 
     declineBtn.addEventListener(
       "click",
@@ -1274,17 +1209,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   const myVideo =
     document.getElementById(
       "myVideo"
     );
 
-
   if (myVideo) {
 
     myVideo.playbackRate = 1;
-
 
     myVideo.addEventListener(
       "timeupdate",
@@ -1299,7 +1231,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
 
-
         if (
           myVideo.currentTime >= 14
         ) {
@@ -1313,7 +1244,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   const showreelWrap =
     document.querySelector(
       ".hero-showreel"
@@ -1323,7 +1253,6 @@ document.addEventListener("DOMContentLoaded", () => {
     showreelWrap?.querySelector(
       ".hero-showreel__video"
     );
-
 
   if (
     showreelWrap &&
@@ -1336,20 +1265,15 @@ document.addEventListener("DOMContentLoaded", () => {
         showreelVideo.dataset.loaded
       ) return;
 
-
       showreelVideo.dataset.loaded =
         "1";
-
 
       const src =
         showreelVideo.dataset.src;
 
-
       if (!src) return;
 
-
       showreelVideo.src = src;
-
 
       showreelVideo.addEventListener(
         "loadeddata",
@@ -1369,11 +1293,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
-
       showreelVideo.load();
 
     };
-
 
     if (
       "requestIdleCallback" in window
@@ -1397,7 +1319,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
-
   const heroSection =
     document.querySelector(
       ".section--hero#video"
@@ -1413,7 +1334,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ".hero-poster"
     );
 
-
   if (
     heroSection &&
     heroBgVideo &&
@@ -1426,20 +1346,15 @@ document.addEventListener("DOMContentLoaded", () => {
         heroBgVideo.dataset.loaded
       ) return;
 
-
       heroBgVideo.dataset.loaded =
         "1";
-
 
       const src =
         heroBgVideo.dataset.src;
 
-
       if (!src) return;
 
-
       heroBgVideo.src = src;
-
 
       heroBgVideo.addEventListener(
         "loadeddata",
@@ -1461,11 +1376,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
-
       heroBgVideo.load();
 
     };
-
 
     requestAnimationFrame(
       () =>
@@ -1476,7 +1389,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   }
-
 
   const introVideo =
     document.getElementById(
@@ -1498,9 +1410,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "(hover: none), (pointer: coarse)"
     ).matches;
 
-
   let controlsHideTimer = null;
-
 
   const showVideoControls = () => {
 
@@ -1512,7 +1422,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   };
 
-
   const hideVideoControls = () => {
 
     if (!introVideoWrap) return;
@@ -1523,16 +1432,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   };
 
-
   const scheduleHideVideoControls = () => {
 
     if (!isTouchVideoDevice) return;
 
-
     clearTimeout(
       controlsHideTimer
     );
-
 
     controlsHideTimer =
       setTimeout(() => {
@@ -1551,7 +1457,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   };
 
-
   const syncVideoButtonState = () => {
 
     if (
@@ -1559,7 +1464,6 @@ document.addEventListener("DOMContentLoaded", () => {
       !introVideoWrap ||
       !introVideoBtn
     ) return;
-
 
     if (
       !switched ||
@@ -1588,7 +1492,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
     introVideoWrap.classList.remove(
       "is-paused"
     );
@@ -1605,7 +1508,6 @@ document.addEventListener("DOMContentLoaded", () => {
       "Zatrzymaj wideo"
     );
 
-
     if (isTouchVideoDevice) {
 
       scheduleHideVideoControls();
@@ -1617,7 +1519,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   };
-
 
   if (introVideo) {
 
@@ -1631,7 +1532,6 @@ document.addEventListener("DOMContentLoaded", () => {
       syncVideoButtonState
     );
 
-
     introVideo.addEventListener(
       "ended",
       () => {
@@ -1644,7 +1544,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
   }
-
 
   if (
     introVideoWrap &&
@@ -1668,7 +1567,6 @@ document.addEventListener("DOMContentLoaded", () => {
             introVideo.paused
           ) return;
 
-
           if (
             introVideoWrap
               .classList
@@ -1690,7 +1588,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       );
 
-
     } else {
 
       introVideoWrap.addEventListener(
@@ -1709,7 +1606,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
       );
-
 
       introVideoWrap.addEventListener(
         "mouseleave",
@@ -1730,16 +1626,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-
     syncVideoButtonState();
 
   }
 
 });
 
-
 let switched = false;
-
 
 function resetToIntro() {
 
@@ -1758,13 +1651,11 @@ function resetToIntro() {
       ".video-wrapper"
     );
 
-
   if (
     !video ||
     !btn ||
     !wrap
   ) return;
-
 
   video.pause();
 
@@ -1781,9 +1672,7 @@ function resetToIntro() {
     .play()
     .catch(() => {});
 
-
   switched = false;
-
 
   wrap.classList.add(
     "is-paused"
@@ -1804,13 +1693,11 @@ function resetToIntro() {
 
 }
 
-
 function changeVideo(event) {
 
   if (event) {
     event.stopPropagation();
   }
-
 
   const video =
     document.getElementById(
@@ -1832,13 +1719,11 @@ function changeVideo(event) {
       "(hover: none), (pointer: coarse)"
     ).matches;
 
-
   if (
     !video ||
     !btn ||
     !wrap
   ) return;
-
 
   if (switched) {
 
@@ -1848,7 +1733,6 @@ function changeVideo(event) {
         .play()
         .catch(() => {});
 
-
       wrap.classList.remove(
         "is-paused"
       );
@@ -1857,13 +1741,11 @@ function changeVideo(event) {
         "is-playing"
       );
 
-
       if (isTouchVideoDevice) {
 
         wrap.classList.add(
           "is-controls-visible"
         );
-
 
         setTimeout(() => {
 
@@ -1877,7 +1759,6 @@ function changeVideo(event) {
 
         }, 1800);
 
-
       } else {
 
         wrap.classList.remove(
@@ -1886,11 +1767,9 @@ function changeVideo(event) {
 
       }
 
-
     } else {
 
       video.pause();
-
 
       wrap.classList.add(
         "is-paused"
@@ -1906,11 +1785,9 @@ function changeVideo(event) {
 
     }
 
-
     return;
 
   }
-
 
   video.pause();
 
@@ -1932,9 +1809,7 @@ function changeVideo(event) {
     .play()
     .catch(() => {});
 
-
   switched = true;
-
 
   wrap.classList.remove(
     "is-paused"
@@ -1944,13 +1819,11 @@ function changeVideo(event) {
     "is-playing"
   );
 
-
   if (isTouchVideoDevice) {
 
     wrap.classList.add(
       "is-controls-visible"
     );
-
 
     setTimeout(() => {
 
@@ -1963,7 +1836,6 @@ function changeVideo(event) {
       }
 
     }, 1800);
-
 
   } else {
 

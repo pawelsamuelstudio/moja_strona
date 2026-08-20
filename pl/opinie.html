@@ -1,9 +1,181 @@
-<div class="container">
+<style>
+
+/* =========================================================
+   OPINIE
+   ========================================================= */
+
+.reviews-home .review-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reviews-home .review-carousel__viewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.reviews-home .review-carousel__track {
+  width: 100%;
+}
+
+.reviews-home .review-slide {
+  min-width: 100%;
+  width: 100%;
+}
+
+.reviews-home .review-card {
+  width: 100%;
+}
+
+
+/* =========================================================
+   STRZAŁKI
+   ========================================================= */
+
+.reviews-home .review-carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 38px;
+  height: 56px;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+  border-radius: 0;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  color: #111111 !important;
+
+  font-size: 2.6rem;
+  font-weight: 400;
+  line-height: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  z-index: 10;
+
+  opacity: 0.65;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.reviews-home .review-carousel__arrow--prev {
+  left: -46px;
+}
+
+.reviews-home .review-carousel__arrow--next {
+  right: -46px;
+}
+
+.reviews-home .review-carousel__arrow:hover {
+  opacity: 1;
+}
+
+.reviews-home .review-carousel__arrow:active {
+  opacity: 1;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .reviews-home .review-carousel {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+
+    /*
+      Strzałki mogą delikatnie wystawać poza ramkę,
+      ale sama opinia zachowuje szerokość kontenera.
+    */
+    overflow: visible;
+  }
+
+  .reviews-home .review-carousel__viewport {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .reviews-home .review-carousel__track {
+    width: 100%;
+  }
+
+  .reviews-home .review-slide {
+    min-width: 100%;
+    width: 100%;
+  }
+
+  .reviews-home .review-card {
+    width: 100%;
+    max-width: none;
+  }
+
+
+  /* STRZAŁKI MOBILE */
+
+  .reviews-home .review-carousel__arrow {
+    width: 28px;
+    height: 48px;
+
+    padding: 0;
+
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+
+    color: #111111 !important;
+
+    font-size: 2.1rem;
+    font-weight: 400;
+    line-height: 1;
+
+    opacity: 0.55;
+  }
+
+  .reviews-home .review-carousel__arrow--prev {
+    left: -20px;
+  }
+
+  .reviews-home .review-carousel__arrow--next {
+    right: -20px;
+  }
+
+}
+
+</style>
+
+
+<div class="container reviews-home">
 
   <div class="section-heading">
-    <h2 class="section-title">Co mówią klienci</h2>
+
+    <h2 class="section-title">
+      Co mówią klienci
+    </h2>
+
     <div class="section-separator"></div>
+
   </div>
+
 
   <div
     class="review-carousel"
@@ -11,29 +183,39 @@
     aria-label="Opinie klientów"
   >
 
+
     <div class="review-carousel__viewport">
 
       <div class="review-carousel__track">
 
 
-        <!-- OPINIA 1 -->
+        <!-- =================================================
+             OPINIA 1
+             ================================================= -->
+
         <article class="review-slide">
+
           <div class="review-card">
+
 
             <div class="review-card__header">
 
               <div class="review-card__avatar">
+
                 <img
                   src="/assets/cj-miles.jpg"
                   alt="Opinia klienta cj miles"
                 >
+
               </div>
+
 
               <div class="review-card__author">
                 cj miles
               </div>
 
             </div>
+
 
             <div
               class="review-card__stars"
@@ -42,12 +224,16 @@
               ★★★★★
             </div>
 
+
             <p class="review-card__text">
+
               Paweł bardzo pomógł mi przy jednym z&nbsp;moich projektów,
               który został bardzo dobrze przyjęty.
               Zdecydowanie polecam jego kreatywność i&nbsp;wnikliwość,
               świetną komunikację oraz pracowitość.
+
             </p>
+
 
             <a
               class="review-card__link"
@@ -57,40 +243,60 @@
               aria-label="Zobacz pełną opinię w Google"
             >
 
-              <svg class="review-card__icon" viewBox="0 0 48 48" aria-hidden="true">
+              <svg
+                class="review-card__icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+              >
+
                 <path
                   fill="#FFC107"
                   d="M43.6 20.5H42V20H24v8h11.3C33.7 32.1 29.3 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.8 0 5.3 1 7.3 2.7l5.7-5.7C33.5 6.5 29 5 24 5 12.4 5 3 14.4 3 26s9.4 21 21 21 21-9.4 21-21c0-1.8-.2-3.5-.6-5.5z"
                 />
+
               </svg>
 
-              <span>Zobacz pełną opinię w Google</span>
+
+              <span>
+                Zobacz pełną opinię w Google
+              </span>
 
             </a>
 
+
           </div>
+
         </article>
 
 
 
-        <!-- OPINIA 2 -->
+        <!-- =================================================
+             OPINIA 2
+             ================================================= -->
+
         <article class="review-slide">
+
           <div class="review-card">
+
 
             <div class="review-card__header">
 
               <div class="review-card__avatar">
+
                 <img
                   src="/assets/austin-smith.jpg"
                   alt="Opinia klienta Austin Smith"
                 >
+
               </div>
+
 
               <div class="review-card__author">
                 Austin Smith - Bible Unbound
               </div>
 
             </div>
+
 
             <div
               class="review-card__stars"
@@ -99,12 +305,16 @@
               ★★★★★
             </div>
 
+
             <p class="review-card__text">
+
               Współpracowałem z&nbsp;Pawłem przy wielu projektach animacyjnych
               i&nbsp;zawsze dostarcza wysokiej jakości produkt na&nbsp;czas.
               Potrzebuję utalentowanych i&nbsp;niezawodnych animatorów takich jak Paweł,
               aby moje studio funkcjonowało.
+
             </p>
+
 
             <a
               class="review-card__link"
@@ -114,40 +324,60 @@
               aria-label="Zobacz pełną opinię w Google"
             >
 
-              <svg class="review-card__icon" viewBox="0 0 48 48" aria-hidden="true">
+              <svg
+                class="review-card__icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+              >
+
                 <path
                   fill="#FFC107"
                   d="M43.6 20.5H42V20H24v8h11.3C33.7 32.1 29.3 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.8 0 5.3 1 7.3 2.7l5.7-5.7C33.5 6.5 29 5 24 5 12.4 5 3 14.4 3 26s9.4 21 21 21 21-9.4 21-21c0-1.8-.2-3.5-.6-5.5z"
                 />
+
               </svg>
 
-              <span>Zobacz pełną opinię w Google</span>
+
+              <span>
+                Zobacz pełną opinię w Google
+              </span>
 
             </a>
 
+
           </div>
+
         </article>
 
 
 
-        <!-- OPINIA 3 -->
+        <!-- =================================================
+             OPINIA 3
+             ================================================= -->
+
         <article class="review-slide">
+
           <div class="review-card">
+
 
             <div class="review-card__header">
 
               <div class="review-card__avatar">
+
                 <img
                   src="/assets/artur-baza.jpg"
                   alt="Opinia klienta Artur Baza"
                 >
+
               </div>
+
 
               <div class="review-card__author">
                 Artur Baza - Alfa Bravo
               </div>
 
             </div>
+
 
             <div
               class="review-card__stars"
@@ -156,11 +386,15 @@
               ★★★★★
             </div>
 
+
             <p class="review-card__text">
+
               Paweł to osoba terminowa, kreatywna i&nbsp;zaangażowana,
               co zdecydowanie przekłada się na&nbsp;wysoką jakość realizacji.
               Z&nbsp;pewnością wrócimy do&nbsp;współpracy w&nbsp;przyszłości!
+
             </p>
+
 
             <a
               class="review-card__link"
@@ -170,40 +404,60 @@
               aria-label="Zobacz pełną opinię w Google"
             >
 
-              <svg class="review-card__icon" viewBox="0 0 48 48" aria-hidden="true">
+              <svg
+                class="review-card__icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+              >
+
                 <path
                   fill="#FFC107"
                   d="M43.6 20.5H42V20H24v8h11.3C33.7 32.1 29.3 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.8 0 5.3 1 7.3 2.7l5.7-5.7C33.5 6.5 29 5 24 5 12.4 5 3 14.4 3 26s9.4 21 21 21 21-9.4 21-21c0-1.8-.2-3.5-.6-5.5z"
                 />
+
               </svg>
 
-              <span>Zobacz pełną opinię w Google</span>
+
+              <span>
+                Zobacz pełną opinię w Google
+              </span>
 
             </a>
 
+
           </div>
+
         </article>
 
 
 
-        <!-- OPINIA 4 -->
+        <!-- =================================================
+             OPINIA 4
+             ================================================= -->
+
         <article class="review-slide">
+
           <div class="review-card">
+
 
             <div class="review-card__header">
 
               <div class="review-card__avatar">
+
                 <img
                   src="/assets/agnieszka-majcher.jpg"
                   alt="Opinia klienta Agnieszka Majcher"
                 >
+
               </div>
+
 
               <div class="review-card__author">
                 Agnieszka Majcher - zespół YAGOOSH
               </div>
 
             </div>
+
 
             <div
               class="review-card__stars"
@@ -212,11 +466,15 @@
               ★★★★★
             </div>
 
+
             <p class="review-card__text">
+
               Profesjonalnie i&nbsp;sympatycznie.
               Współpraca była bardzo satysfakcjonująca,
               a&nbsp;efekt prac zachwycający.
+
             </p>
+
 
             <a
               class="review-card__link"
@@ -226,40 +484,60 @@
               aria-label="Zobacz pełną opinię w Google"
             >
 
-              <svg class="review-card__icon" viewBox="0 0 48 48" aria-hidden="true">
+              <svg
+                class="review-card__icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+              >
+
                 <path
                   fill="#FFC107"
                   d="M43.6 20.5H42V20H24v8h11.3C33.7 32.1 29.3 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.8 0 5.3 1 7.3 2.7l5.7-5.7C33.5 6.5 29 5 24 5 12.4 5 3 14.4 3 26s9.4 21 21 21 21-9.4 21-21c0-1.8-.2-3.5-.6-5.5z"
                 />
+
               </svg>
 
-              <span>Zobacz pełną opinię w Google</span>
+
+              <span>
+                Zobacz pełną opinię w Google
+              </span>
 
             </a>
 
+
           </div>
+
         </article>
 
 
 
-        <!-- OPINIA 5 -->
+        <!-- =================================================
+             OPINIA 5
+             ================================================= -->
+
         <article class="review-slide">
+
           <div class="review-card">
+
 
             <div class="review-card__header">
 
               <div class="review-card__avatar">
+
                 <img
                   src="/assets/jude-chua.jpg"
                   alt="Opinia klienta Jude Chua"
                 >
+
               </div>
+
 
               <div class="review-card__author">
                 Jude Chua
               </div>
 
             </div>
+
 
             <div
               class="review-card__stars"
@@ -268,11 +546,15 @@
               ★★★★★
             </div>
 
+
             <p class="review-card__text">
+
               Jego umiejętność płynnej i&nbsp;precyzyjnej realizacji pomysłów
               jest naprawdę godna podziwu,
               a&nbsp;kreatywność wnosi nieocenioną wartość do&nbsp;każdego projektu.
+
             </p>
+
 
             <a
               class="review-card__link"
@@ -282,35 +564,53 @@
               aria-label="Zobacz pełną opinię w Google"
             >
 
-              <svg class="review-card__icon" viewBox="0 0 48 48" aria-hidden="true">
+              <svg
+                class="review-card__icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+              >
+
                 <path
                   fill="#FFC107"
                   d="M43.6 20.5H42V20H24v8h11.3C33.7 32.1 29.3 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.8 0 5.3 1 7.3 2.7l5.7-5.7C33.5 6.5 29 5 24 5 12.4 5 3 14.4 3 26s9.4 21 21 21 21-9.4 21-21c0-1.8-.2-3.5-.6-5.5z"
                 />
+
               </svg>
 
-              <span>Zobacz pełną opinię w Google</span>
+
+              <span>
+                Zobacz pełną opinię w Google
+              </span>
 
             </a>
 
+
           </div>
+
         </article>
 
 
 
-        <!-- OPINIA 6 -->
+        <!-- =================================================
+             OPINIA 6
+             ================================================= -->
+
         <article class="review-slide">
+
           <div class="review-card">
+
 
             <div class="review-card__header">
 
               <div class="review-card__avatar"></div>
+
 
               <div class="review-card__author">
                 Michał Guzek
               </div>
 
             </div>
+
 
             <div
               class="review-card__stars"
@@ -319,11 +619,15 @@
               ★★★★★
             </div>
 
+
             <p class="review-card__text">
+
               Kreatywne i&nbsp;dopracowane w&nbsp;najdrobniejszych szczegółach
               animacje stworzone specjalnie dla Festiwalu Chrześcijańskie Granie.
               Doskonale oddają ducha i&nbsp;charakter wydarzenia!
+
             </p>
+
 
             <a
               class="review-card__link"
@@ -333,18 +637,29 @@
               aria-label="Zobacz pełną opinię w Google"
             >
 
-              <svg class="review-card__icon" viewBox="0 0 48 48" aria-hidden="true">
+              <svg
+                class="review-card__icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+              >
+
                 <path
                   fill="#FFC107"
                   d="M43.6 20.5H42V20H24v8h11.3C33.7 32.1 29.3 35 24 35c-6.1 0-11-4.9-11-11s4.9-11 11-11c2.8 0 5.3 1 7.3 2.7l5.7-5.7C33.5 6.5 29 5 24 5 12.4 5 3 14.4 3 26s9.4 21 21 21 21-9.4 21-21c0-1.8-.2-3.5-.6-5.5z"
                 />
+
               </svg>
 
-              <span>Zobacz pełną opinię w Google</span>
+
+              <span>
+                Zobacz pełną opinię w Google
+              </span>
 
             </a>
 
+
           </div>
+
         </article>
 
 
@@ -352,6 +667,11 @@
 
     </div>
 
+
+
+    <!-- =====================================================
+         STRZAŁKA W LEWO
+         ===================================================== -->
 
     <button
       class="review-carousel__arrow review-carousel__arrow--prev"
@@ -361,6 +681,12 @@
       ‹
     </button>
 
+
+
+    <!-- =====================================================
+         STRZAŁKA W PRAWO
+         ===================================================== -->
+
     <button
       class="review-carousel__arrow review-carousel__arrow--next"
       type="button"
@@ -368,6 +694,7 @@
     >
       ›
     </button>
+
 
   </div>
 
