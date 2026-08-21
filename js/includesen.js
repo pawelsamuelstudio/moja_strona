@@ -18,7 +18,7 @@
   initFooterAccordion();
 
   // REVIEWS
-  await inject("reviews", "/reviews.html");
+  await inject("reviews", "/en/reviews.html");
 
   // START CAROUSEL
   initReviewCarousel();
