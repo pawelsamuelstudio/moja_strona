@@ -2006,3 +2006,27 @@ html {
     margin-bottom: 0.75rem;
   }
 }
+/* Telefon: hero wypelnia dokladnie caly ekran (pod paskiem menu), tresc wysrodkowana */
+@media (max-width: 560px) {
+  #video.section--hero {
+    min-height: calc(100svh - var(--header-height-mobile, 3.25rem));
+    align-items: center;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  #video .hero-title {
+    font-size: 2.15rem;
+  }
+
+  #video .hero-showreel {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 400px) {
+  #video .hero-title {
+    font-size: 1.9rem;
+  }
+}

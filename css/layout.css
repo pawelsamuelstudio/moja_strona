@@ -642,3 +642,20 @@ html {
     font-size: max(14px, calc(100vw / 120));
   }
 }
+
+/* Stopka na telefonie: oba przyciski YouTube tej samej szerokosci i wysokosci, napis w jednej linii */
+@media (max-width: 560px) {
+  .footer-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer .subscribe-btn {
+    width: min(100%, 21rem);
+    min-height: 3.5rem;
+    padding: 0.625rem 1rem;
+    font-size: 1rem;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+}
