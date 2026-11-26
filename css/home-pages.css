@@ -1946,3 +1946,63 @@ html {
 .services-extra__list a:hover {
   color: var(--color-accent);
 }
+
+/* Nagrody jako linki do filmow */
+.awards-strip a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.awards-strip a:hover,
+.awards-strip a:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+/* Pierwszy ekran na telefonie: krotszy tekst, przyciski obok siebie */
+@media (max-width: 560px) {
+  .section--hero .hero-title {
+    font-size: 2rem;
+  }
+
+  .section--hero .hero-showreel {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-lead__more {
+    display: none;
+  }
+
+  .section--hero .hero-lead {
+    font-size: 1.05rem;
+    line-height: 1.45;
+    margin-bottom: 1rem;
+  }
+
+  .hero-content .button-group {
+    flex-wrap: nowrap;
+    gap: 0.625rem;
+  }
+
+  .hero-content .button-group .btn {
+    flex: 1 1 0;
+    min-height: 3rem;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.95rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .section--hero .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section--hero .hero-showreel {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+}
