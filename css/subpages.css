@@ -1,5 +1,5 @@
 :root {
-  --subpage-content-top: 90px;
+  --subpage-content-top: 5.625rem;
 }
 
 /* jeśli header jest fixed */
@@ -13,16 +13,16 @@ main.subpage-content {
    ========================= */
 
 .project-hero-section {
-  padding: 96px 0 32px;
+  padding: 6rem 0 2rem;
 }
 
 .project-video-wrap,
 .project-image-wrap {
   width: 100%;
-  max-width: 900px;
-  margin: 60px auto;
+  max-width: 56.25rem;
+  margin: 3.75rem auto;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 1rem;
 }
 
 .project-video-wrap {
@@ -44,11 +44,11 @@ main.subpage-content {
    ========================= */
 
 .project-content-section {
-  padding-top: 16px;
+  padding-top: 1rem;
 }
 
 .project-text {
-  max-width: 980px;
+  max-width: 61.25rem;
 }
 
 .project-text .para-top {
@@ -70,7 +70,7 @@ main.subpage-content {
 }
 
 .project-list li {
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   line-height: 1.6;
 }
 
@@ -117,8 +117,8 @@ main.subpage-content {
 
 .project-media-card {
   width: 100%;
-  max-width: 960px;
-  margin: 60px auto;
+  max-width: 60rem;
+  margin: 3.75rem auto;
   overflow: hidden;
   border-radius: var(--radius-lg);
   border: 1px solid var(--color-black);
@@ -176,33 +176,33 @@ main.subpage-content {
 
 @media (max-width: 1024px) {
   .project-hero-section {
-    padding: 88px 0 24px;
+    padding: 5.5rem 0 1.5rem;
   }
 
   .project-video-wrap,
   .project-image-wrap,
   .project-media-card {
-    margin: 48px auto;
+    margin: 3rem auto;
   }
 }
 
 @media (max-width: 768px) {
   :root {
-    --subpage-content-top: 70px;
+    --subpage-content-top: 4.375rem;
   }
 
   .project-hero-section {
-    padding: 64px 0 20px;
+    padding: 4rem 0 1.25rem;
   }
 
   .project-content-section {
-    padding-top: 8px;
+    padding-top: 0.5rem;
   }
 
   .project-video-wrap,
   .project-image-wrap,
   .project-media-card {
-    margin: 36px auto;
+    margin: 2.25rem auto;
   }
 
   .section-actions--between {
@@ -226,5 +226,70 @@ main.subpage-content {
 
   .project-actions .btn--light-outline {
     order: 2;
+  }
+}
+
+/* =========================
+   NEW CASE STUDIES: shorts grid, logo videos, subheadings
+   ========================= */
+
+.project-video-frame--contain {
+  object-fit: contain;
+  background: #000;
+}
+
+.project-subheading {
+  max-width: 56.25rem;
+  margin: 0 auto;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.project-shorts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.75rem, 11.25rem));
+  justify-content: center;
+  gap: 1rem;
+  max-width: 56.25rem;
+  margin: 1.5rem auto 3.75rem;
+}
+
+.project-shorts iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border: 0;
+  border-radius: 0.75rem;
+  background: #000;
+  display: block;
+}
+
+
+@media (max-width: 560px) {
+  .project-shorts {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.project-loops {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  max-width: 56.25rem;
+  margin: 3.75rem auto;
+}
+
+.project-loops video {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  background: #000;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .project-loops {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin: 2.25rem auto;
   }
 }

@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Contact - 2D & 3D Animation | Paweł Pauksztełło</title>
+  <title>Contact – Request an Animation | Paweł Pauksztełło</title>
 
   <meta
     name="description"
-    content="Get in touch with Paweł Pauksztełło. 2D & 3D animation, promotional videos and explainer content for brands and products. Let's discuss your project."
+    content="Tell me what you're working on: a Bible story, an educational series, an event or a campaign. 2D &amp; 3D animation for Christian organizations, with a quote."
   >
 
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -70,17 +70,17 @@
 
   <meta
     property="og:description"
-    content="Get in touch with Paweł Pauksztełło. 2D & 3D animation, promotional videos and explainer content for brands and products. Let's discuss your project."
+    content="Tell me what you're working on: a Bible story, an educational series, an event or a campaign. 2D & 3D animation for Christian organizations – I'll reply with a quote."
   />
 
   <meta
     property="og:image"
-    content="https://pawelmotion.com/assets/assets/pawel-pauksztello-og-image.jpg"
+    content="https://pawelmotion.com/assets/pawel-pauksztello-og-image.jpg"
   />
 
   <meta
     property="og:image:secure_url"
-    content="https://pawelmotion.com/assets/assets/pawel-pauksztello-og-image.jpg"
+    content="https://pawelmotion.com/assets/pawel-pauksztello-og-image.jpg"
   />
 
   <meta
@@ -104,12 +104,12 @@
 
   <meta
     name="twitter:description"
-    content="Get in touch with Paweł Pauksztełło. 2D & 3D animation, promotional videos and explainer content for brands and products. Let's discuss your project."
+    content="Tell me what you're working on: a Bible story, an educational series, an event or a campaign. 2D & 3D animation for Christian organizations – I'll reply with a quote."
   />
 
   <meta
     name="twitter:image"
-    content="https://pawelmotion.com/assets/assets/pawel-pauksztello-og-image.jpg"
+    content="https://pawelmotion.com/assets/pawel-pauksztello-og-image.jpg"
   />
 
 
@@ -125,24 +125,24 @@
   >
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
 
   <link
     rel="stylesheet"
-    href="/css/layout.css?v=1"
+    href="/css/layout.css?v=10"
   >
 
   <link
     rel="stylesheet"
-    href="/css/home-pages.css?v=1"
+    href="/css/home-pages.css?v=11"
   >
 
   <link
     rel="stylesheet"
-    href="/css/info-pages.css?v=5"
+    href="/css/info-pages.css?v=10"
   >
 
 
@@ -171,7 +171,7 @@
         "https://www.linkedin.com/in/pawel-pauksztello/",
         "logo-pawel-pauksztello.https://www.youtube.com/@PawelPauksztello",
         "https://www.facebook.com/pawelpauksztello",
-        "https://www.instagram.com/pawel_samuel_studio/"
+        "https://www.instagram.com/pawel.pauksztello/"
       ]
     }
   }
@@ -333,9 +333,8 @@
 
 
             <p class="para-top">
-              You can contact me by e-mail. Provide a brief description of the animation
-              you need, along with information about the timeline, topic, language, and style.
-            </p>
+            Tell me what you're working on: a&nbsp;Bible story, an educational series, an event, a&nbsp;YouTube channel or a&nbsp;fundraising campaign. Share a&nbsp;few words about the topic, timeline, language and&nbsp;style. I&nbsp;work with churches, ministries, foundations, publishers and&nbsp;animation studios - including long-term collaborations.
+          </p>
 
 
             <p class="para-top">
@@ -417,9 +416,12 @@
                   >
 
                   <input
-                    type="hidden"
-                    name="_captcha"
-                    value="false"
+                    type="text"
+                    name="_honey"
+                    style="display:none"
+                    tabindex="-1"
+                    autocomplete="off"
+                    aria-hidden="true"
                   >
 
                   <input
@@ -727,9 +729,16 @@
 
             e.preventDefault();
 
-
+            // Honeypot: bots fill hidden fields, people don't
+            if (form._honey && form._honey.value) {
+              return;
+            }
 
             const data = {
+
+              _subject: "New message from the form!",
+              _template: "table",
+              _honey: "",
 
               firstName:
                 form.firstName.value,
