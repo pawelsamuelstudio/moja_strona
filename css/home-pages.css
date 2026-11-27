@@ -1971,10 +1971,6 @@ html {
     margin-bottom: 1rem;
   }
 
-  .hero-lead__more {
-    display: none;
-  }
-
   .section--hero .hero-lead {
     font-size: 1.05rem;
     line-height: 1.45;
